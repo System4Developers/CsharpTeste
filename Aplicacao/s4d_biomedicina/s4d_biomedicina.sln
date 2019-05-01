@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "s4d_biomedicina", "s4d_biomedicina\s4d_biomedicina.csproj", "{2B583632-EBD4-4FE5-A52C-C598A460BC59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B583632-EBD4-4FE5-A52C-C598A460BC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B583632-EBD4-4FE5-A52C-C598A460BC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B583632-EBD4-4FE5-A52C-C598A460BC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B583632-EBD4-4FE5-A52C-C598A460BC59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01F5AC7E-79D6-4914-9B8F-599DF1D6C4E3}
+	EndGlobalSection
+EndGlobal
