@@ -16,7 +16,7 @@ namespace s4d_biomedicina
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Apresentacao.frmPrincipal());
         }
     }
 }
