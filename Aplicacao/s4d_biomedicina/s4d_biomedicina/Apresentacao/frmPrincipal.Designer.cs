@@ -28,20 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mnsMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmArquivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAcessoSistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mnsMenu
+            // 
+            this.mnsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmArquivo});
+            this.mnsMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnsMenu.Name = "mnsMenu";
+            this.mnsMenu.Size = new System.Drawing.Size(703, 24);
+            this.mnsMenu.TabIndex = 0;
+            this.mnsMenu.Text = "menuStrip1";
+            // 
+            // tsmArquivo
+            // 
+            this.tsmArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmAcessoSistema});
+            this.tsmArquivo.Name = "tsmArquivo";
+            this.tsmArquivo.Size = new System.Drawing.Size(61, 20);
+            this.tsmArquivo.Text = "Arquivo";
+            // 
+            // tsmAcessoSistema
+            // 
+            this.tsmAcessoSistema.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiUsuarios});
+            this.tsmAcessoSistema.Name = "tsmAcessoSistema";
+            this.tsmAcessoSistema.Size = new System.Drawing.Size(180, 22);
+            this.tsmAcessoSistema.Text = "Acesso ao Sistema";
+            // 
+            // tsiUsuarios
+            // 
+            this.tsiUsuarios.Name = "tsiUsuarios";
+            this.tsiUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsiUsuarios.Text = "Usuarios";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 365);
+            this.Controls.Add(this.mnsMenu);
+            this.MainMenuStrip = this.mnsMenu;
             this.Name = "frmPrincipal";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.mnsMenu.ResumeLayout(false);
+            this.mnsMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip mnsMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmArquivo;
+        private System.Windows.Forms.ToolStripMenuItem tsmAcessoSistema;
+        private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
     }
 }
