@@ -27,8 +27,18 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            frmUsuariosNovo frmNovoUsuario = new frmUsuariosNovo();
+            frmUsuariosNovo frmNovoUsuario = new frmUsuariosNovo(this);
             frmNovoUsuario.ShowDialog();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            this.usuariosTableAdapter.Fill(this.unipBiomedicinaDataSet.usuarios);
+        }
+
+        public void AtualizarTabela()
+        {
+            this.usuariosTableAdapter.Fill(this.unipBiomedicinaDataSet.usuarios);
         }
     }
 }

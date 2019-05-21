@@ -30,20 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.unipBiomedicinaDataSet = new s4d_biomedicina.unipBiomedicinaDataSet();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosTableAdapter = new s4d_biomedicina.unipBiomedicinaDataSetTableAdapters.usuariosTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registroFuncional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unipBiomedicinaDataSet = new s4d_biomedicina.unipBiomedicinaDataSet();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.usuariosTableAdapter = new s4d_biomedicina.unipBiomedicinaDataSetTableAdapters.usuariosTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lOGINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sENHADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rEGISTRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cURSODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eSTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsuarios
@@ -53,18 +56,39 @@
             this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn6,
             this.registroFuncional,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.iDDataGridViewTextBoxColumn,
+            this.lOGINDataGridViewTextBoxColumn,
+            this.sENHADataGridViewTextBoxColumn,
+            this.rADataGridViewTextBoxColumn,
+            this.rEGISTRODataGridViewTextBoxColumn,
+            this.cURSODataGridViewTextBoxColumn,
+            this.eSTADODataGridViewTextBoxColumn,
+            this.tIPODataGridViewTextBoxColumn,
+            this.pessoaDataGridViewTextBoxColumn});
             this.dgvUsuarios.DataSource = this.usuariosBindingSource;
-            this.dgvUsuarios.Location = new System.Drawing.Point(26, 160);
+            this.dgvUsuarios.Location = new System.Drawing.Point(26, 133);
+            this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvUsuarios.Size = new System.Drawing.Size(763, 342);
             this.dgvUsuarios.TabIndex = 16;
+            // 
+            // registroFuncional
+            // 
+            this.registroFuncional.DataPropertyName = "registroFuncional";
+            this.registroFuncional.HeaderText = "registroFuncional";
+            this.registroFuncional.Name = "registroFuncional";
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.unipBiomedicinaDataSet;
+            // 
+            // unipBiomedicinaDataSet
+            // 
+            this.unipBiomedicinaDataSet.DataSetName = "unipBiomedicinaDataSet";
+            this.unipBiomedicinaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnNovo
             // 
@@ -76,62 +100,64 @@
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // unipBiomedicinaDataSet
-            // 
-            this.unipBiomedicinaDataSet.DataSetName = "unipBiomedicinaDataSet";
-            this.unipBiomedicinaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.unipBiomedicinaDataSet;
-            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // iDDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idUsuario";
-            this.dataGridViewTextBoxColumn1.HeaderText = "idUsuario";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // lOGINDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "dslogin";
-            this.dataGridViewTextBoxColumn2.HeaderText = "dslogin";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.lOGINDataGridViewTextBoxColumn.DataPropertyName = "LOGIN";
+            this.lOGINDataGridViewTextBoxColumn.HeaderText = "LOGIN";
+            this.lOGINDataGridViewTextBoxColumn.Name = "lOGINDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn4
+            // sENHADataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ra";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ra";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.sENHADataGridViewTextBoxColumn.DataPropertyName = "SENHA";
+            this.sENHADataGridViewTextBoxColumn.HeaderText = "SENHA";
+            this.sENHADataGridViewTextBoxColumn.Name = "sENHADataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn6
+            // rADataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "curso";
-            this.dataGridViewTextBoxColumn6.HeaderText = "curso";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.rADataGridViewTextBoxColumn.DataPropertyName = "RA";
+            this.rADataGridViewTextBoxColumn.HeaderText = "RA";
+            this.rADataGridViewTextBoxColumn.Name = "rADataGridViewTextBoxColumn";
             // 
-            // registroFuncional
+            // rEGISTRODataGridViewTextBoxColumn
             // 
-            this.registroFuncional.DataPropertyName = "registroFuncional";
-            this.registroFuncional.HeaderText = "registroFuncional";
-            this.registroFuncional.Name = "registroFuncional";
+            this.rEGISTRODataGridViewTextBoxColumn.DataPropertyName = "REGISTRO";
+            this.rEGISTRODataGridViewTextBoxColumn.HeaderText = "REGISTRO";
+            this.rEGISTRODataGridViewTextBoxColumn.Name = "rEGISTRODataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn7
+            // cURSODataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "estadoUsuario";
-            this.dataGridViewTextBoxColumn7.HeaderText = "estadoUsuario";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.cURSODataGridViewTextBoxColumn.DataPropertyName = "CURSO";
+            this.cURSODataGridViewTextBoxColumn.HeaderText = "CURSO";
+            this.cURSODataGridViewTextBoxColumn.Name = "cURSODataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn8
+            // eSTADODataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "tipoUsuario";
-            this.dataGridViewTextBoxColumn8.HeaderText = "tipoUsuario";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.eSTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.HeaderText = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.Name = "eSTADODataGridViewTextBoxColumn";
+            // 
+            // tIPODataGridViewTextBoxColumn
+            // 
+            this.tIPODataGridViewTextBoxColumn.DataPropertyName = "TIPO";
+            this.tIPODataGridViewTextBoxColumn.HeaderText = "TIPO";
+            this.tIPODataGridViewTextBoxColumn.Name = "tIPODataGridViewTextBoxColumn";
+            // 
+            // pessoaDataGridViewTextBoxColumn
+            // 
+            this.pessoaDataGridViewTextBoxColumn.DataPropertyName = "Pessoa";
+            this.pessoaDataGridViewTextBoxColumn.HeaderText = "Pessoa";
+            this.pessoaDataGridViewTextBoxColumn.Name = "pessoaDataGridViewTextBoxColumn";
             // 
             // frmUsuarios
             // 
@@ -144,8 +170,8 @@
             this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +198,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn registroFuncional;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lOGINDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sENHADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rEGISTRODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cURSODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eSTADODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tIPODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pessoaDataGridViewTextBoxColumn;
     }
 }

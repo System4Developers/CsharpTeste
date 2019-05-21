@@ -51,7 +51,7 @@ SELECT idUsuario, dslogin, senha, ra, registroFuncional, curso, estadoUsuario, t
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT idUsuario, dslogin, senha, ra, registroFuncional, curso, estadoUsuario, tipoUsuario, fk_idPessoa_pessoas FROM dbo.usuarios</CommandText>
                     <Parameters />
                   </DbCommand>

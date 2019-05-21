@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbEstadoUsuario = new System.Windows.Forms.TextBox();
-            this.txbTipoUsuario = new System.Windows.Forms.TextBox();
             this.txbCurso = new System.Windows.Forms.TextBox();
             this.txbRegistro = new System.Windows.Forms.TextBox();
             this.txbRA = new System.Windows.Forms.TextBox();
@@ -45,21 +43,9 @@
             this.txbID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txbEstadoUsuario
-            // 
-            this.txbEstadoUsuario.Location = new System.Drawing.Point(158, 368);
-            this.txbEstadoUsuario.Name = "txbEstadoUsuario";
-            this.txbEstadoUsuario.Size = new System.Drawing.Size(173, 20);
-            this.txbEstadoUsuario.TabIndex = 31;
-            // 
-            // txbTipoUsuario
-            // 
-            this.txbTipoUsuario.Location = new System.Drawing.Point(158, 318);
-            this.txbTipoUsuario.Name = "txbTipoUsuario";
-            this.txbTipoUsuario.Size = new System.Drawing.Size(173, 20);
-            this.txbTipoUsuario.TabIndex = 30;
             // 
             // txbCurso
             // 
@@ -185,14 +171,37 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "ATIVADO",
+            "DESATIVADO"});
+            this.cmbEstado.Location = new System.Drawing.Point(158, 369);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(173, 21);
+            this.cmbEstado.TabIndex = 33;
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "ALUNO",
+            "PROFESSOR",
+            "ADMIN"});
+            this.cmbTipo.Location = new System.Drawing.Point(158, 320);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(173, 21);
+            this.cmbTipo.TabIndex = 33;
+            // 
             // frmUsuariosNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 477);
+            this.Controls.Add(this.cmbTipo);
+            this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.txbEstadoUsuario);
-            this.Controls.Add(this.txbTipoUsuario);
             this.Controls.Add(this.txbCurso);
             this.Controls.Add(this.txbRegistro);
             this.Controls.Add(this.txbRA);
@@ -215,9 +224,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txbEstadoUsuario;
-        private System.Windows.Forms.TextBox txbTipoUsuario;
         private System.Windows.Forms.TextBox txbCurso;
         private System.Windows.Forms.TextBox txbRegistro;
         private System.Windows.Forms.TextBox txbRA;
@@ -233,5 +239,7 @@
         private System.Windows.Forms.TextBox txbID;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.ComboBox cmbTipo;
     }
 }
