@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,14 @@ namespace s4d_biomedicina.Modelo
             {
                 this.mensagem = usuario.ToString();
             }
+        }
+
+        public DataTable ListaUsuario()
+        {
+            DataTable dt = new DataTable();
+            DAL.Usuario usuario = new DAL.Usuario();
+            dt = usuario.GetListaUsuario();
+            return dt;
         }
 
     }

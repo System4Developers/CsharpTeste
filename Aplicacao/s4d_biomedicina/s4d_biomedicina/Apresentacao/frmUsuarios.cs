@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace s4d_biomedicina.Apresentacao
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'unipBiomedicinaDataSet.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuariosTableAdapter.Fill(this.unipBiomedicinaDataSet.usuarios);
-
-
+            // this.usuariosTableAdapter.Fill(this.unipBiomedicinaDataSet.usuarios);
+            /*DAL.Conexao con = new DAL.Conexao();
+            SqlDataAdapter sda = new SqlDataAdapter("select * from usuarios", con.Conectar());
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvUsuarios.DataSource = dt;*/
+            AtualizarTabela();                      
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -38,7 +43,8 @@ namespace s4d_biomedicina.Apresentacao
 
         public void AtualizarTabela()
         {
-            this.usuariosTableAdapter.Fill(this.unipBiomedicinaDataSet.usuarios);
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvUsuarios.DataSource = controle.ListaUsuario();
         }
     }
 }

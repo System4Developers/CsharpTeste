@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace s4d_biomedicina.DAL
         Conexao con = new Conexao();
         SqlDataReader dr;
         
+        
         public String VerificarLogin(string login, string senha)
         {
             this.mensagem = "";
@@ -29,6 +31,7 @@ namespace s4d_biomedicina.DAL
             {
                 cmd.Connection = con.Conectar();
                 dr = cmd.ExecuteReader();
+            
                 if (dr.HasRows)
                 {
                     this.mensagem = "";
@@ -73,6 +76,14 @@ namespace s4d_biomedicina.DAL
             }
 
             return this.mensagem;
+        }
+
+        public DataTable GetListaUsuario()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("select idUsuario as [ID], dslogin as [LOGIN], ra as [RA],registroFuncional as [Registro], curso as [CURSO], estadoUsuario as [ESTADO],tipoUsuario as [TIPO]  from usuarios", con.Conectar());
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            return dt;
         }
     }
 }
