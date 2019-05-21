@@ -36,6 +36,20 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
+        public void cadastrarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
+        {
+            DAL.Usuario usuario = new DAL.Usuario();
+            usuario.AdicionarUsuario(login, senha, ra, registro, curso, estado, tipo, idPessoa);
+            if (usuario.ToString().Equals(""))
+            {
+                MessageBox.Show("Cadastro OK");
+            }
+            else
+            {
+                this.mensagem = usuario.ToString();
+            }
+        }
+
 
 
     }

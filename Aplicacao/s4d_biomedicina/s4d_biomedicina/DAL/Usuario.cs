@@ -12,7 +12,7 @@ namespace s4d_biomedicina.DAL
 {
     public class Usuario:absPropriedades
     {
-       
+        
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
@@ -37,12 +37,39 @@ namespace s4d_biomedicina.DAL
                 {
                     this.mensagem = "Usuario/Senha Invalido";
                 }
-
+                con.desconectar();
+                dr.Close();
             }
             catch (SqlException)
             {
 
                 this.mensagem = "Erro com banco de Dados";
+            }
+
+            return this.mensagem;
+        }
+
+        public string AdicionarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
+        {
+            this.mensagem = "";
+            cmd.CommandText = "insert into usuarios (dslogin,senha,ra,registroFuncional,curso,estadoUsuario,tipoUsuario) values (@login,@senha,@ra,@registro,@curso,@estado,@tipo)";
+            cmd.Parameters.AddWithValue("@login", login);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@ra", ra);
+            cmd.Parameters.AddWithValue("@registro", registro);
+            cmd.Parameters.AddWithValue("@curso", curso);
+            cmd.Parameters.AddWithValue("@estado", estado);
+            cmd.Parameters.AddWithValue("@tipo", tipo);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "Erro com Banco";
             }
 
             return this.mensagem;
