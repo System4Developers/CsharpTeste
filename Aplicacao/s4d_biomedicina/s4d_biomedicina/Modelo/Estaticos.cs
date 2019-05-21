@@ -9,5 +9,8 @@ namespace s4d_biomedicina.Modelo
     public static class Estaticos
     {
         public static Boolean logado;
+        public static String userName;
+        
+       
     }
 }

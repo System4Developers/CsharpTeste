@@ -19,14 +19,23 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Modelo.Estaticos.logado = true;
-            this.Close();
+            Modelo.Controle controle = new Modelo.Controle();
+            controle.acessar(txbLogin.Text, txbSenha.Text);
+            if (controle.ToString().Equals(""))
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(controle.ToString());
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Modelo.Estaticos.logado = false;
             this.Close();
+            
         }
     }
 }

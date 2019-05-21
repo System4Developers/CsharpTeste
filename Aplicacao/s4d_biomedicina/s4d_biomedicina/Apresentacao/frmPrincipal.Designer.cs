@@ -32,6 +32,7 @@
             this.tsmArquivo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAcessoSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSair = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             // tsmArquivo
             // 
             this.tsmArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmAcessoSistema});
+            this.tsmAcessoSistema,
+            this.tsmSair});
             this.tsmArquivo.Name = "tsmArquivo";
             this.tsmArquivo.Size = new System.Drawing.Size(61, 20);
             this.tsmArquivo.Text = "Arquivo";
@@ -64,8 +66,16 @@
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsiUsuarios.Size = new System.Drawing.Size(119, 22);
             this.tsiUsuarios.Text = "Usuarios";
+            this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
+            // 
+            // tsmSair
+            // 
+            this.tsmSair.Name = "tsmSair";
+            this.tsmSair.Size = new System.Drawing.Size(180, 22);
+            this.tsmSair.Text = "Sair";
+            this.tsmSair.Click += new System.EventHandler(this.tsmSair_Click);
             // 
             // frmPrincipal
             // 
@@ -90,5 +100,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmArquivo;
         private System.Windows.Forms.ToolStripMenuItem tsmAcessoSistema;
         private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsmSair;
     }
 }

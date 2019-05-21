@@ -64,6 +64,9 @@
     <Compile Include="Apresentacao\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Conexao.cs" />
+    <Compile Include="DAL\Usuario.cs" />
+    <Compile Include="Modelo\absPropriedades.cs" />
     <Compile Include="Modelo\Controle.cs" />
     <Compile Include="Modelo\Estaticos.cs" />
     <Compile Include="Modelo\Validacao.cs" />
@@ -74,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,8 +103,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

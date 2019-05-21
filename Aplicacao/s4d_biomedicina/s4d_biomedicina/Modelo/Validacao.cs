@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace s4d_biomedicina.Modelo
 {
-    class Validacao
+    public class Validacao:absPropriedades
     {
+
+        public void verLogin(string login, string senha)
+        {
+            this.mensagem = "";
+                            
+            if (login.Equals("") || senha.Equals(""))
+            {
+                this.mensagem = "Informe o Login e/ou Senha";
+            }
+
+        }
     }
 }

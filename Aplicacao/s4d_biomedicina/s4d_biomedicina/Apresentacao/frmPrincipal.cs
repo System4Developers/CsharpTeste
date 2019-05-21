@@ -28,5 +28,18 @@ namespace s4d_biomedicina.Apresentacao
                 this.Close();
             }
         }
+
+        private void tsiUsuarios_Click(object sender, EventArgs e)
+        {
+            Apresentacao.frmUsuarios frmUsuarios = new frmUsuarios();
+            frmUsuarios.ShowDialog();
+        }
+
+        private void tsmSair_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Apresentacao.frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+        }
     }
 }

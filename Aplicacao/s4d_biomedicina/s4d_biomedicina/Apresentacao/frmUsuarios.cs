@@ -16,5 +16,11 @@ namespace s4d_biomedicina.Apresentacao
         {
             InitializeComponent();
         }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }
