@@ -125,9 +125,17 @@ namespace s4d_biomedicina.DAL
         {
             cmd.CommandText = "select dslogin,senha,ra,registroFuncional,curso,tipoUsuario,estadoUsuario from usuarios where idUsuario=@idUsuario";
             cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
-            cmd.Connection = con.Conectar();
-            dr = cmd.ExecuteReader();
-           
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "Erro com Banco!";
+            }
+      
         }
 
         public DataTable GetListaUsuario()

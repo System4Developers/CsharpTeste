@@ -38,6 +38,7 @@ namespace s4d_biomedicina.Modelo
             }
         }
         #endregion
+
         #region Manter Usuario
         public void cadastrarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
         {
@@ -71,5 +72,7 @@ namespace s4d_biomedicina.Modelo
             return dt;
         }
         #endregion
+
+
     }
 }

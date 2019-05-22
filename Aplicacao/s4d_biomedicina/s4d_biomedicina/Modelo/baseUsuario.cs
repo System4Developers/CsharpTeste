@@ -29,8 +29,7 @@ namespace s4d_biomedicina.Modelo
         protected string Estado { get => estado; set => estado = value; }
         protected string Tipo { get => tipo; set => tipo = value; }
         protected string Comando { get => comando; set => comando = value; }
-
-       
+               
         public override string ToString()
         {
             return this.mensagem;

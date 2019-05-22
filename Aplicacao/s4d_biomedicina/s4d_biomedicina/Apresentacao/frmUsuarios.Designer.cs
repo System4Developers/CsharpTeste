@@ -31,13 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unipBiomedicinaDataSet = new s4d_biomedicina.unipBiomedicinaDataSet();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.usuariosTableAdapter = new s4d_biomedicina.unipBiomedicinaDataSetTableAdapters.usuariosTableAdapter();
             this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsuarios
@@ -52,16 +49,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(763, 342);
             this.dgvUsuarios.TabIndex = 16;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.unipBiomedicinaDataSet;
-            // 
-            // unipBiomedicinaDataSet
-            // 
-            this.unipBiomedicinaDataSet.DataSetName = "unipBiomedicinaDataSet";
-            this.unipBiomedicinaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btnNovo
             // 
             this.btnNovo.Location = new System.Drawing.Point(26, 22);
@@ -71,10 +58,6 @@
             this.btnNovo.Text = "Novo Usuario";
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // btnEditar
             // 
@@ -99,32 +82,14 @@
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dsloginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn raDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registroFuncionalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cursoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoUsuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoUsuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkidPessoapessoasDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnNovo;
-        private unipBiomedicinaDataSet unipBiomedicinaDataSet;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
-        private unipBiomedicinaDataSetTableAdapters.usuariosTableAdapter usuariosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button btnEditar;
     }
 }

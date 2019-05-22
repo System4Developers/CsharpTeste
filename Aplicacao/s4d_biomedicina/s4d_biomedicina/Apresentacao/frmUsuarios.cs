@@ -39,11 +39,6 @@ namespace s4d_biomedicina.Apresentacao
             frmNovoUsuario.ShowDialog();
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-            this.usuariosTableAdapter.Fill(this.unipBiomedicinaDataSet.usuarios);
-        }
-
         public void AtualizarTabela()
         {
             Modelo.Controle controle = new Modelo.Controle();
