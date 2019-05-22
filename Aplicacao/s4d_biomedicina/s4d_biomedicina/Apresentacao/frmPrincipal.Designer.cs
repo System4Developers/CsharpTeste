@@ -32,6 +32,7 @@
             this.tsmArquivo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAcessoSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmTrocarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSair = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             this.tsmArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmAcessoSistema,
+            this.tsmTrocarUsuario,
             this.tsmSair});
             this.tsmArquivo.Name = "tsmArquivo";
             this.tsmArquivo.Size = new System.Drawing.Size(61, 20);
@@ -69,6 +71,13 @@
             this.tsiUsuarios.Size = new System.Drawing.Size(119, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
+            // 
+            // tsmTrocarUsuario
+            // 
+            this.tsmTrocarUsuario.Name = "tsmTrocarUsuario";
+            this.tsmTrocarUsuario.Size = new System.Drawing.Size(180, 22);
+            this.tsmTrocarUsuario.Text = "Trocar Usuario";
+            this.tsmTrocarUsuario.Click += new System.EventHandler(this.tsmTrocarUsuario_Click);
             // 
             // tsmSair
             // 
@@ -100,6 +109,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmArquivo;
         private System.Windows.Forms.ToolStripMenuItem tsmAcessoSistema;
         private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsmTrocarUsuario;
         private System.Windows.Forms.ToolStripMenuItem tsmSair;
     }
 }

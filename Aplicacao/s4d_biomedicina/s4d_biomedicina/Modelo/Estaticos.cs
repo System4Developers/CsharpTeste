@@ -11,6 +11,5 @@ namespace s4d_biomedicina.Modelo
         public static Boolean logado;
         public static String userName;
         
-       
     }
 }

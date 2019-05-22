@@ -11,7 +11,7 @@ namespace s4d_biomedicina.Modelo
 {
     public class Controle : absPropriedades
     {
-
+        #region Login
         public void acessar(string login, string senha)
         {
             Estaticos.logado = false;
@@ -21,7 +21,7 @@ namespace s4d_biomedicina.Modelo
             validacao.verLogin(login, senha);
             if (validacao.ToString().Equals(""))
             {
-                DAL.Usuario loginCmd = new DAL.Usuario();
+                DAL.dalUsuario loginCmd = new DAL.dalUsuario();
                 loginCmd.VerificarLogin(login, senha);
                 if (loginCmd.ToString().Equals(""))
                 {
@@ -37,12 +37,26 @@ namespace s4d_biomedicina.Modelo
                 this.mensagem = validacao.ToString();
             }
         }
-
+        #endregion
+        #region Manter Usuario
         public void cadastrarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
         {
             this.mensagem = "";
-            DAL.Usuario usuario = new DAL.Usuario();
+            DAL.dalUsuario usuario = new DAL.dalUsuario();
             usuario.AdicionarUsuario(login, senha, ra, registro, curso, estado, tipo, idPessoa);
+            if (!usuario.ToString().Equals(""))
+            {
+                this.mensagem = usuario.ToString();
+            }
+        }
+
+        public void AtualizarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa,int idUsuario)
+        {
+            this.mensagem = "";
+            DAL.dalUsuario usuario = new DAL.dalUsuario();
+
+            usuario.AtualizarUsuario(login, senha, ra, registro, curso, estado, tipo, idPessoa,idUsuario);
+
             if (!usuario.ToString().Equals(""))
             {
                 this.mensagem = usuario.ToString();
@@ -52,10 +66,10 @@ namespace s4d_biomedicina.Modelo
         public DataTable ListaUsuario()
         {
             DataTable dt = new DataTable();
-            DAL.Usuario usuario = new DAL.Usuario();
+            DAL.dalUsuario usuario = new DAL.dalUsuario();
             dt = usuario.GetListaUsuario();
             return dt;
         }
-
+        #endregion
     }
 }

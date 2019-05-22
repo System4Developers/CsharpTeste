@@ -35,11 +35,16 @@ namespace s4d_biomedicina.Apresentacao
             frmUsuarios.ShowDialog();
         }
 
-        private void tsmSair_Click(object sender, EventArgs e)
+        private void tsmTrocarUsuario_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Apresentacao.frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
+        }
+
+        private void tsmSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

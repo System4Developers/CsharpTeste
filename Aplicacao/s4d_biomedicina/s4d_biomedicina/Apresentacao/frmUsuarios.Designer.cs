@@ -34,6 +34,7 @@
             this.unipBiomedicinaDataSet = new s4d_biomedicina.unipBiomedicinaDataSet();
             this.btnNovo = new System.Windows.Forms.Button();
             this.usuariosTableAdapter = new s4d_biomedicina.unipBiomedicinaDataSetTableAdapters.usuariosTableAdapter();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).BeginInit();
@@ -47,6 +48,7 @@
             this.dgvUsuarios.Location = new System.Drawing.Point(26, 133);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(763, 342);
             this.dgvUsuarios.TabIndex = 16;
             // 
@@ -74,11 +76,22 @@
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(26, 69);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(92, 23);
+            this.btnEditar.TabIndex = 18;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 514);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvUsuarios);
             this.Name = "frmUsuarios";
@@ -112,5 +125,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

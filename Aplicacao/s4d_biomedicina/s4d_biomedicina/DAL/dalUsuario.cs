@@ -1,0 +1,143 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using s4d_biomedicina.Modelo;
+
+namespace s4d_biomedicina.DAL
+{
+    public class dalUsuario : baseUsuario
+    {
+        SqlCommand cmd = new SqlCommand();
+        Conexao con = new Conexao();
+        public SqlDataReader dr;
+
+        public String VerificarLogin(string login, string senha)
+        {
+            
+            this.mensagem = "";
+            this.login = login;
+            this.senha = senha;
+            
+            cmd.CommandText = "select * from usuarios where dslogin = @login and senha = @senha";
+            cmd.Parameters.AddWithValue("@login",this.login);
+            cmd.Parameters.AddWithValue("@senha",this.senha);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+            
+                if (dr.HasRows)
+                {
+                    this.mensagem = "";
+                }
+                else
+                {
+                    this.mensagem = "Usuario/Senha Invalido";
+                }
+                con.desconectar();
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "Erro com banco de Dados";
+            }
+
+            return this.mensagem;
+        }
+
+        public string AdicionarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
+        {
+            this.mensagem = "";
+            this.login = login;
+            this.senha = senha;
+            this.ra = ra;
+            this.registro = registro;
+            this.curso = curso;
+            this.estado = estado;
+            this.tipo = tipo;
+  
+            cmd.CommandText = "insert into usuarios (dslogin,senha,ra,registroFuncional,curso,estadoUsuario,tipoUsuario) values (@login,@senha,@ra,@registro,@curso,@estado,@tipo)";
+            cmd.Parameters.AddWithValue("@login", this.login);
+            cmd.Parameters.AddWithValue("@senha", this.senha);
+            cmd.Parameters.AddWithValue("@ra", this.ra);
+            cmd.Parameters.AddWithValue("@registro", this.registro);
+            cmd.Parameters.AddWithValue("@curso", this.curso);
+            cmd.Parameters.AddWithValue("@estado", this.estado);
+            cmd.Parameters.AddWithValue("@tipo", this.tipo);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "Erro com Banco";
+            }
+
+            return this.mensagem;
+        }
+
+        public string AtualizarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa, int idUsuario)
+        {
+            this.mensagem = "";
+            this.login = login;
+            this.senha = senha;
+            this.ra = ra;
+            this.registro = registro;
+            this.curso = curso;
+            this.estado = estado;
+            this.tipo = tipo;
+            this.idUsuario = idUsuario;
+
+            cmd.CommandText = "update usuarios set dslogin = @login, senha = @senha, ra = @ra, registroFuncional = @registro, curso = @curso , estadoUsuario = @estado, tipoUsuario = @tipo where idUsuario = @idUsuario";           
+            cmd.Parameters.AddWithValue("@login", this.login);
+            cmd.Parameters.AddWithValue("@senha", this.senha);
+            cmd.Parameters.AddWithValue("@ra", this.ra);
+            cmd.Parameters.AddWithValue("@registro", this.registro);
+            cmd.Parameters.AddWithValue("@curso", this.curso);
+            cmd.Parameters.AddWithValue("@estado", this.estado);
+            cmd.Parameters.AddWithValue("@tipo", this.tipo);
+            cmd.Parameters.AddWithValue("@idUsuario", this.idUsuario);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "Erro com Banco";
+            }
+
+            return this.mensagem;
+        }
+
+        public void BuscarUsuario(int idUsuario)
+        {
+            cmd.CommandText = "select dslogin,senha,ra,registroFuncional,curso,tipoUsuario,estadoUsuario from usuarios where idUsuario=@idUsuario";
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            cmd.Connection = con.Conectar();
+            dr = cmd.ExecuteReader();
+           
+        }
+
+        public DataTable GetListaUsuario()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("select idUsuario as [ID], dslogin as [LOGIN], ra as [RA],registroFuncional as [REGISTRO], curso as [CURSO], estadoUsuario as [ESTADO],tipoUsuario as [TIPO]  from usuarios", con.Conectar());
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            return dt;
+        }
+
+
+    }
+}

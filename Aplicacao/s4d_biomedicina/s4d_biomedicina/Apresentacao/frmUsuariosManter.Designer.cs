@@ -1,6 +1,6 @@
 ﻿namespace s4d_biomedicina.Apresentacao
 {
-    partial class frmUsuariosNovo
+    partial class frmUsuariosManter
     {
         /// <summary>
         /// Required designer variable.
@@ -43,32 +43,34 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txbID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txbCurso
             // 
-            this.txbCurso.Location = new System.Drawing.Point(155, 212);
+            this.txbCurso.Location = new System.Drawing.Point(155, 266);
             this.txbCurso.Name = "txbCurso";
             this.txbCurso.Size = new System.Drawing.Size(173, 20);
             this.txbCurso.TabIndex = 29;
             // 
             // txbRegistro
             // 
-            this.txbRegistro.Location = new System.Drawing.Point(155, 168);
+            this.txbRegistro.Location = new System.Drawing.Point(155, 222);
             this.txbRegistro.Name = "txbRegistro";
             this.txbRegistro.Size = new System.Drawing.Size(173, 20);
             this.txbRegistro.TabIndex = 28;
             // 
             // txbRA
             // 
-            this.txbRA.Location = new System.Drawing.Point(155, 124);
+            this.txbRA.Location = new System.Drawing.Point(155, 178);
             this.txbRA.Name = "txbRA";
             this.txbRA.Size = new System.Drawing.Size(173, 20);
             this.txbRA.TabIndex = 27;
             // 
             // txbSenha
             // 
-            this.txbSenha.Location = new System.Drawing.Point(155, 76);
+            this.txbSenha.Location = new System.Drawing.Point(155, 130);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.Size = new System.Drawing.Size(173, 20);
             this.txbSenha.TabIndex = 26;
@@ -76,7 +78,7 @@
             // lblEstadoUsuario
             // 
             this.lblEstadoUsuario.AutoSize = true;
-            this.lblEstadoUsuario.Location = new System.Drawing.Point(46, 316);
+            this.lblEstadoUsuario.Location = new System.Drawing.Point(46, 370);
             this.lblEstadoUsuario.Name = "lblEstadoUsuario";
             this.lblEstadoUsuario.Size = new System.Drawing.Size(103, 13);
             this.lblEstadoUsuario.TabIndex = 25;
@@ -85,7 +87,7 @@
             // lblTipoUsuario
             // 
             this.lblTipoUsuario.AutoSize = true;
-            this.lblTipoUsuario.Location = new System.Drawing.Point(46, 267);
+            this.lblTipoUsuario.Location = new System.Drawing.Point(46, 321);
             this.lblTipoUsuario.Name = "lblTipoUsuario";
             this.lblTipoUsuario.Size = new System.Drawing.Size(102, 13);
             this.lblTipoUsuario.TabIndex = 24;
@@ -94,7 +96,7 @@
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(46, 218);
+            this.lblCurso.Location = new System.Drawing.Point(46, 272);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(45, 13);
             this.lblCurso.TabIndex = 23;
@@ -103,7 +105,7 @@
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Location = new System.Drawing.Point(46, 175);
+            this.lblRegistro.Location = new System.Drawing.Point(46, 229);
             this.lblRegistro.Name = "lblRegistro";
             this.lblRegistro.Size = new System.Drawing.Size(63, 13);
             this.lblRegistro.TabIndex = 22;
@@ -112,7 +114,7 @@
             // lblRA
             // 
             this.lblRA.AutoSize = true;
-            this.lblRA.Location = new System.Drawing.Point(45, 131);
+            this.lblRA.Location = new System.Drawing.Point(45, 185);
             this.lblRA.Name = "lblRA";
             this.lblRA.Size = new System.Drawing.Size(22, 13);
             this.lblRA.TabIndex = 21;
@@ -121,7 +123,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(45, 82);
+            this.lblSenha.Location = new System.Drawing.Point(45, 136);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(44, 13);
             this.lblSenha.TabIndex = 20;
@@ -130,7 +132,7 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(45, 33);
+            this.lblLogin.Location = new System.Drawing.Point(45, 87);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(40, 13);
             this.lblLogin.TabIndex = 19;
@@ -138,14 +140,14 @@
             // 
             // txbLogin
             // 
-            this.txbLogin.Location = new System.Drawing.Point(155, 28);
+            this.txbLogin.Location = new System.Drawing.Point(155, 82);
             this.txbLogin.Name = "txbLogin";
             this.txbLogin.Size = new System.Drawing.Size(173, 20);
             this.txbLogin.TabIndex = 17;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(49, 353);
+            this.btnSalvar.Location = new System.Drawing.Point(49, 407);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 32;
@@ -159,7 +161,7 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "ATIVADO",
             "DESATIVADO"});
-            this.cmbEstado.Location = new System.Drawing.Point(155, 313);
+            this.cmbEstado.Location = new System.Drawing.Point(155, 367);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(173, 21);
             this.cmbEstado.TabIndex = 33;
@@ -171,16 +173,35 @@
             "ALUNO",
             "PROFESSOR",
             "ADMIN"});
-            this.cmbTipo.Location = new System.Drawing.Point(155, 264);
+            this.cmbTipo.Location = new System.Drawing.Point(155, 318);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(173, 21);
             this.cmbTipo.TabIndex = 33;
             // 
-            // frmUsuariosNovo
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(45, 37);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.TabIndex = 35;
+            this.lblID.Text = "ID";
+            // 
+            // txbID
+            // 
+            this.txbID.Enabled = false;
+            this.txbID.Location = new System.Drawing.Point(155, 32);
+            this.txbID.Name = "txbID";
+            this.txbID.Size = new System.Drawing.Size(173, 20);
+            this.txbID.TabIndex = 34;
+            // 
+            // frmUsuariosManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 411);
+            this.ClientSize = new System.Drawing.Size(491, 489);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.txbID);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.btnSalvar);
@@ -196,8 +217,9 @@
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txbLogin);
-            this.Name = "frmUsuariosNovo";
+            this.Name = "frmUsuariosManter";
             this.Text = "frmUsuarioNovo";
+            this.Load += new System.EventHandler(this.frmUsuariosManter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +241,7 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txbID;
     }
 }

@@ -10,6 +10,8 @@ namespace s4d_biomedicina.Modelo
     {
         protected string mensagem;
 
+
+
         public override string ToString()
         {
             return this.mensagem;

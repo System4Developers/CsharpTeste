@@ -13,6 +13,8 @@ namespace s4d_biomedicina.Apresentacao
 {
     public partial class frmUsuarios : Form
     {
+        private string comando = "";
+
         public frmUsuarios()
         {
             InitializeComponent();
@@ -32,7 +34,8 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            frmUsuariosNovo frmNovoUsuario = new frmUsuariosNovo(this);
+            this.comando = "inserir";
+            frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this,this.comando,0);
             frmNovoUsuario.ShowDialog();
         }
 
@@ -46,5 +49,22 @@ namespace s4d_biomedicina.Apresentacao
             Modelo.Controle controle = new Modelo.Controle();
             dgvUsuarios.DataSource = controle.ListaUsuario();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.comando = "editar";
+            int idUsuario;
+
+            idUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
+        //MessageBox.Show(dgvUsuarios.CurrentRow.ToString());
+        //MessageBox.Show(dgvUsuarios.CurrentRow.Cells[0].Value.ToString());
+        //foreach (DataGridViewRow row in dgvUsuarios.SelectedCells)
+        //{
+        //   MessageBox.Show(row.Cells[0].Value.ToString());
+
+        //}
+        frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this, this.comando, idUsuario);
+        frmNovoUsuario.ShowDialog();
+    }
     }
 }
