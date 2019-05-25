@@ -29,22 +29,27 @@ namespace s4d_biomedicina.Apresentacao
             }
         }
 
-        private void tsiUsuarios_Click(object sender, EventArgs e)
+        private void tsmSair_Click(object sender, EventArgs e)
         {
-            Apresentacao.frmUsuarios frmUsuarios = new frmUsuarios();
-            AbrirFormulario(frmUsuarios);
+            Application.Exit();
         }
 
         private void tsmTrocarUsuario_Click(object sender, EventArgs e)
         {
-            
             Apresentacao.frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
         }
 
-        private void tsmSair_Click(object sender, EventArgs e)
+        private void tsiPacientes_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Apresentacao.frmPacientes frmPacientes = new frmPacientes();
+            AbrirFormulario(frmPacientes);
+        }
+
+        private void tsiUsuarios_Click(object sender, EventArgs e)
+        {
+            Apresentacao.frmUsuarios frmUsuarios = new frmUsuarios();
+            AbrirFormulario(frmUsuarios);
         }
 
         #region Operacoes de formularios
@@ -81,6 +86,5 @@ namespace s4d_biomedicina.Apresentacao
             pnlForms.Controls.Clear();
         }
         #endregion
-
     }
 }

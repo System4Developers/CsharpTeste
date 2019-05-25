@@ -172,6 +172,7 @@ namespace s4d_biomedicina.DAL
 
         public DataTable GetListaUsuario()
         {
+            Conexao con = new Conexao();
             SqlDataAdapter sda = new SqlDataAdapter("select idUsuario as [ID], dslogin as [LOGIN], ra as [RA],registroFuncional as [REGISTRO], curso as [CURSO], estadoUsuario as [ESTADO],tipoUsuario as [TIPO]  from usuarios", con.Conectar());
             DataTable dt = new DataTable();
             sda.Fill(dt);

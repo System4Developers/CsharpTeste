@@ -30,11 +30,12 @@
         {
             this.mnsMenu = new System.Windows.Forms.MenuStrip();
             this.tsmArquivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAcessoSistema = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTrocarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSair = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlForms = new System.Windows.Forms.Panel();
+            this.tsmConsulta = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiPacientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             // 
             this.mnsMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmArquivo});
+            this.tsmArquivo,
+            this.tsmConsulta});
             this.mnsMenu.Location = new System.Drawing.Point(0, 0);
             this.mnsMenu.Name = "mnsMenu";
             this.mnsMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -53,27 +55,11 @@
             // tsmArquivo
             // 
             this.tsmArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmAcessoSistema,
             this.tsmTrocarUsuario,
             this.tsmSair});
             this.tsmArquivo.Name = "tsmArquivo";
             this.tsmArquivo.Size = new System.Drawing.Size(73, 24);
             this.tsmArquivo.Text = "Arquivo";
-            // 
-            // tsmAcessoSistema
-            // 
-            this.tsmAcessoSistema.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiUsuarios});
-            this.tsmAcessoSistema.Name = "tsmAcessoSistema";
-            this.tsmAcessoSistema.Size = new System.Drawing.Size(216, 26);
-            this.tsmAcessoSistema.Text = "Acesso ao Sistema";
-            // 
-            // tsiUsuarios
-            // 
-            this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(216, 26);
-            this.tsiUsuarios.Text = "Usuarios";
-            this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
             // tsmTrocarUsuario
             // 
@@ -96,6 +82,29 @@
             this.pnlForms.Name = "pnlForms";
             this.pnlForms.Size = new System.Drawing.Size(999, 348);
             this.pnlForms.TabIndex = 1;
+            // 
+            // tsmConsulta
+            // 
+            this.tsmConsulta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiPacientes,
+            this.tsiUsuarios});
+            this.tsmConsulta.Name = "tsmConsulta";
+            this.tsmConsulta.Size = new System.Drawing.Size(78, 24);
+            this.tsmConsulta.Text = "Consulta";
+            // 
+            // tsiPacientes
+            // 
+            this.tsiPacientes.Name = "tsiPacientes";
+            this.tsiPacientes.Size = new System.Drawing.Size(216, 26);
+            this.tsiPacientes.Text = "Pacientes";
+            this.tsiPacientes.Click += new System.EventHandler(this.tsiPacientes_Click);
+            // 
+            // tsiUsuarios
+            // 
+            this.tsiUsuarios.Name = "tsiUsuarios";
+            this.tsiUsuarios.Size = new System.Drawing.Size(216, 26);
+            this.tsiUsuarios.Text = "Usuarios";
+            this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
             // frmPrincipal
             // 
@@ -123,10 +132,11 @@
 
         private System.Windows.Forms.MenuStrip mnsMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmArquivo;
-        private System.Windows.Forms.ToolStripMenuItem tsmAcessoSistema;
-        private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
         private System.Windows.Forms.ToolStripMenuItem tsmTrocarUsuario;
         private System.Windows.Forms.ToolStripMenuItem tsmSair;
         private System.Windows.Forms.Panel pnlForms;
+        private System.Windows.Forms.ToolStripMenuItem tsmConsulta;
+        private System.Windows.Forms.ToolStripMenuItem tsiPacientes;
+        private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
     }
 }

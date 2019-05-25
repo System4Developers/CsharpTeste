@@ -26,6 +26,7 @@ namespace s4d_biomedicina.Modelo
                 if (loginCmd.ToString().Equals(""))
                 {
                     Estaticos.logado = true;
+                    Estaticos.userName = login;
                 }
                 else
                 {
@@ -43,11 +44,20 @@ namespace s4d_biomedicina.Modelo
         public void cadastrarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
         {
             this.mensagem = "";
-            DAL.dalUsuario usuario = new DAL.dalUsuario();
-            usuario.AdicionarUsuario(login, senha, ra, registro, curso, estado, tipo, idPessoa);
-            if (!usuario.ToString().Equals(""))
+            Validacao validacao = new Validacao();
+            validacao.verCadastroUsuario(login,senha,ra,registro,curso,estado,tipo,idPessoa);
+            if (validacao.ToString().Equals(""))
             {
-                this.mensagem = usuario.ToString();
+                DAL.dalUsuario usuario = new DAL.dalUsuario();
+                usuario.AdicionarUsuario(login, senha, ra, registro, curso, estado, tipo, idPessoa);
+                if (!usuario.ToString().Equals(""))
+                {
+                    this.mensagem = usuario.ToString();
+                }
+            }
+            else
+            {
+                this.mensagem = validacao.ToString();
             }
         }
 
@@ -79,6 +89,28 @@ namespace s4d_biomedicina.Modelo
         }
         #endregion
 
+        #region Manter Paciente
+        public void cadastrarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente)
+        {
+            this.mensagem = "";
+
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            paciente.AdicionarPaciente(nome,rg,cpf,dtNascimento,profissao,grauInstrucao,prontuario,peso,altura,grupoSanguineo,estadoPaciente);
+            if (!paciente.ToString().Equals(""))
+            {
+                this.mensagem = paciente.ToString();
+            }
+        }
+
+
+        public DataTable ListaPaciente()
+        {
+            DataTable dt = new DataTable();
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            dt = paciente.GetListaPacientes();
+            return dt;
+        }
+        #endregion
 
     }
 }
