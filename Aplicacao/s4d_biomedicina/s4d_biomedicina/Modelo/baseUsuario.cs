@@ -20,16 +20,9 @@ namespace s4d_biomedicina.Modelo
 
         protected string mensagem;
 
-        protected int IdUsuario { get => idUsuario; set => idUsuario = value; }
-        protected string Login { get => login; set => login = value; }
-        protected string Senha { get => senha; set => senha = value; }
-        protected string Ra { get => ra; set => ra = value; }
-        protected string Registro { get => registro; set => registro = value; }
-        protected string Curso { get => curso; set => curso = value; }
-        protected string Estado { get => estado; set => estado = value; }
-        protected string Tipo { get => tipo; set => tipo = value; }
-        protected string Comando { get => comando; set => comando = value; }
-               
+        public int IdUsuario { get => idUsuario; }
+        public string Login { get => login; }
+                
         public override string ToString()
         {
             return this.mensagem;

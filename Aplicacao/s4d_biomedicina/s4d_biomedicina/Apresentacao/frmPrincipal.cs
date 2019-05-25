@@ -32,7 +32,7 @@ namespace s4d_biomedicina.Apresentacao
         private void tsiUsuarios_Click(object sender, EventArgs e)
         {
             Apresentacao.frmUsuarios frmUsuarios = new frmUsuarios();
-            frmUsuarios.ShowDialog();
+            AbrirFormulario(frmUsuarios);
         }
 
         private void tsmTrocarUsuario_Click(object sender, EventArgs e)
@@ -46,5 +46,41 @@ namespace s4d_biomedicina.Apresentacao
         {
             Application.Exit();
         }
+
+        #region Operacoes de formularios
+        private void AbrirFormulario(Form frm)
+        {
+            string frmStatus = "";
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                if (Application.OpenForms[i].Name == frm.Name)
+                {
+                    frmStatus = "aberto";
+                }
+            }
+            if (frmStatus.Equals(""))
+            {
+                FecharFormularios();
+                frm.TopLevel = false;
+                frm.AutoScroll = true;
+                pnlForms.Controls.Clear();
+                pnlForms.Controls.Add(frm);
+                frm.Show();
+            }
+        }
+
+        private void FecharFormularios()
+        {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                if (Application.OpenForms[i].Name != "frmPrincipal")
+                {
+                    Application.OpenForms[i].Close();
+                }
+            }
+            pnlForms.Controls.Clear();
+        }
+        #endregion
+
     }
 }

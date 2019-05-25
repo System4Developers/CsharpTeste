@@ -29,7 +29,6 @@ namespace s4d_biomedicina.Apresentacao
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Modelo.Controle controle = new Modelo.Controle();
-
             if (this.comando.Equals("inserir"))
             {
                 controle.cadastrarUsuario(txbLogin.Text, txbSenha.Text, txbRA.Text, txbRegistro.Text, txbCurso.Text, cmbEstado.Text, cmbTipo.Text, 0);
@@ -43,7 +42,6 @@ namespace s4d_biomedicina.Apresentacao
                 {
                     MessageBox.Show(controle.ToString());
                 }
-
             }
 
             if (this.comando.Equals("editar"))
@@ -59,10 +57,7 @@ namespace s4d_biomedicina.Apresentacao
                 {
                     MessageBox.Show(controle.ToString());
                 }
-
             }
-            
-            
         }
 
         private void frmUsuariosManter_Load(object sender, EventArgs e)
@@ -70,7 +65,7 @@ namespace s4d_biomedicina.Apresentacao
             if (this.comando.Equals("editar"))
             {
                 DAL.dalUsuario dalUsuario = new DAL.dalUsuario();
-                dalUsuario.BuscarUsuario(this.idUsuario);
+                dalUsuario.GetEditarUsuario(this.idUsuario);
                 while(dalUsuario.dr.Read())
                 {
                     txbID.Text = this.idUsuario.ToString();
@@ -81,19 +76,6 @@ namespace s4d_biomedicina.Apresentacao
                     txbCurso.Text = dalUsuario.dr.GetValue(4).ToString();
                     cmbTipo.Text = dalUsuario.dr.GetValue(5).ToString();
                     cmbEstado.Text = dalUsuario.dr.GetValue(6).ToString();
-
-
-
-
-                    /*
-                          DataTable dt = new DataTable()
-                        txtID.text=dt.Rows[0]["EmpID"].ToString();
-                        txtName.text=dt.Rows[0]["EmpName"].ToString();
-                        txtDept.text=dt.Rows[0]["Dept"].ToString();
-                        txtSalary.text=dt.Rows[0]["Dept"].ToString();
-                        txtCity.text=dt.Rows[0]["City"].ToString();
-                                        
-                     */
                 }
             }
         }

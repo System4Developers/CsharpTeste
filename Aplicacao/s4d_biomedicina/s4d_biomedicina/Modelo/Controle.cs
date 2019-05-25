@@ -55,9 +55,7 @@ namespace s4d_biomedicina.Modelo
         {
             this.mensagem = "";
             DAL.dalUsuario usuario = new DAL.dalUsuario();
-
             usuario.AtualizarUsuario(login, senha, ra, registro, curso, estado, tipo, idPessoa,idUsuario);
-
             if (!usuario.ToString().Equals(""))
             {
                 this.mensagem = usuario.ToString();
@@ -69,6 +67,14 @@ namespace s4d_biomedicina.Modelo
             DataTable dt = new DataTable();
             DAL.dalUsuario usuario = new DAL.dalUsuario();
             dt = usuario.GetListaUsuario();
+            return dt;
+        }
+
+        public DataTable PequisarUsuario(int idUsuario, string dslogin)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalUsuario usuario = new DAL.dalUsuario();
+            dt = usuario.GetPesquisaUsuario(idUsuario, dslogin);
             return dt;
         }
         #endregion

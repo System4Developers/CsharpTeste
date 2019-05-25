@@ -22,13 +22,6 @@ namespace s4d_biomedicina.Apresentacao
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'unipBiomedicinaDataSet.usuarios'. Você pode movê-la ou removê-la conforme necessário.
-            // this.usuariosTableAdapter.Fill(this.unipBiomedicinaDataSet.usuarios);
-            /*DAL.Conexao con = new DAL.Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select * from usuarios", con.Conectar());
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dgvUsuarios.DataSource = dt;*/
             AtualizarTabela();                      
         }
 
@@ -47,19 +40,21 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.comando = "editar";
             int idUsuario;
-
+            this.comando = "editar";
             idUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
-        //MessageBox.Show(dgvUsuarios.CurrentRow.ToString());
-        //MessageBox.Show(dgvUsuarios.CurrentRow.Cells[0].Value.ToString());
-        //foreach (DataGridViewRow row in dgvUsuarios.SelectedCells)
-        //{
-        //   MessageBox.Show(row.Cells[0].Value.ToString());
+            frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this, this.comando, idUsuario);
+            frmNovoUsuario.Show();
+        }
 
-        //}
-        frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this, this.comando, idUsuario);
-        frmNovoUsuario.ShowDialog();
-    }
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (txbID.Text.Equals(""))
+            {
+                txbID.Text = "0";
+            }
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvUsuarios.DataSource = controle.PequisarUsuario(Convert.ToInt32(txbID.Text), txbLogin.Text);
+        }
     }
 }

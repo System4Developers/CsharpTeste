@@ -11,13 +11,14 @@ namespace s4d_biomedicina.DAL
 {
     public class dalUsuario : baseUsuario
     {
-        SqlCommand cmd = new SqlCommand();
-        Conexao con = new Conexao();
+        
         public SqlDataReader dr;
 
         public String VerificarLogin(string login, string senha)
         {
-            
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
             this.mensagem = "";
             this.login = login;
             this.senha = senha;
@@ -53,6 +54,9 @@ namespace s4d_biomedicina.DAL
 
         public string AdicionarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
         {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
             this.mensagem = "";
             this.login = login;
             this.senha = senha;
@@ -87,6 +91,9 @@ namespace s4d_biomedicina.DAL
 
         public string AtualizarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa, int idUsuario)
         {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
             this.mensagem = "";
             this.login = login;
             this.senha = senha;
@@ -121,8 +128,11 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
         }
 
-        public void BuscarUsuario(int idUsuario)
+        public void GetEditarUsuario(int idUsuario)
         {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
             cmd.CommandText = "select dslogin,senha,ra,registroFuncional,curso,tipoUsuario,estadoUsuario from usuarios where idUsuario=@idUsuario";
             cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
             try
@@ -132,10 +142,32 @@ namespace s4d_biomedicina.DAL
             }
             catch (SqlException)
             {
-
                 this.mensagem = "Erro com Banco!";
             }
-      
+        }
+
+        public DataTable GetPesquisaUsuario(int idUsuario,string dslogin)
+        {
+            Conexao con = new Conexao();
+
+            string strSQL = "";
+            SqlDataAdapter sda;
+
+            if (idUsuario > 0)
+            {
+                strSQL = "select idUsuario as [ID], dslogin as [LOGIN], ra as [RA],registroFuncional as [REGISTRO], curso as [CURSO], estadoUsuario as [ESTADO],tipoUsuario as [TIPO]  from usuarios where idUsuario = @idUsuario";
+                sda = new SqlDataAdapter(strSQL, con.Conectar());
+                sda.SelectCommand.Parameters.AddWithValue("@idUsuario", idUsuario);
+            }
+            else
+            {
+                strSQL = "select idUsuario as [ID], dslogin as [LOGIN], ra as [RA],registroFuncional as [REGISTRO], curso as [CURSO], estadoUsuario as [ESTADO],tipoUsuario as [TIPO]  from usuarios where dslogin like @login";
+                sda = new SqlDataAdapter(strSQL, con.Conectar());
+                sda.SelectCommand.Parameters.AddWithValue("@login", string.Format("%{0}%",dslogin));
+            }
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            return dt;
         }
 
         public DataTable GetListaUsuario()
@@ -145,7 +177,6 @@ namespace s4d_biomedicina.DAL
             sda.Fill(dt);
             return dt;
         }
-
 
     }
 }
