@@ -45,5 +45,11 @@ namespace s4d_biomedicina.Apresentacao
             frmPacientesManter frmPacientesManter = new frmPacientesManter(this, this.comando, idPaciente);
             frmPacientesManter.Show();
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvPacientes.DataSource = controle.PesquisarPaciente(txbNome.Text,txbCpf.Text);
+        }
     }
 }

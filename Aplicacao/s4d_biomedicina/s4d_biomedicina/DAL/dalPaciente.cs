@@ -108,7 +108,6 @@ namespace s4d_biomedicina.DAL
                 this.mensagem = "Erro com Banco!";
             }
         }
-        
     
         public string AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado,int idPaciente)
         {
@@ -162,16 +161,15 @@ namespace s4d_biomedicina.DAL
             cmd.Parameters.AddWithValue("@grupoSanguineo", this.grupoSanguineo);
             cmd.Parameters.AddWithValue("@estadoPaciente", this.estadoPaciente);
             cmd.Parameters.AddWithValue("@idPaciente", this.idPaciente);
-
             try
             {
                 cmd.Connection = con.Conectar();
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+                return this.mensagem;
             }
 
             cmd.Parameters.Clear();
@@ -192,9 +190,9 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+                return this.mensagem;
             }
 
             cmd.Parameters.Clear();
@@ -213,46 +211,36 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
-            {
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
-            }
-
-
-            /*
             catch (SqlException)
             {
-
-                this.mensagem = "Erro com Banco";
-            }*/
+                return this.mensagem;
+            }
 
             return this.mensagem;
         }
-
-        /*
-        public DataTable GetPesquisaUsuario(int idUsuario, string dslogin)
+        
+        public DataTable GetPesquisaPaciente(string nome, string cpf)
         {
             Conexao con = new Conexao();
-
-            string strSQL = "";
             SqlDataAdapter sda;
-
-            if (idUsuario > 0)
+            string strSQL = "";
+            
+            if (!cpf.Equals(""))
             {
-                strSQL = "select idUsuario as [ID], dslogin as [LOGIN], ra as [RA],registroFuncional as [REGISTRO], curso as [CURSO], estadoUsuario as [ESTADO],tipoUsuario as [TIPO]  from usuarios where idUsuario = @idUsuario";
+                strSQL = "select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas where cpf = @cpf";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
-                sda.SelectCommand.Parameters.AddWithValue("@idUsuario", idUsuario);
+                sda.SelectCommand.Parameters.AddWithValue("@cpf", cpf);
             }
             else
             {
-                strSQL = "select idUsuario as [ID], dslogin as [LOGIN], ra as [RA],registroFuncional as [REGISTRO], curso as [CURSO], estadoUsuario as [ESTADO],tipoUsuario as [TIPO]  from usuarios where dslogin like @login";
+                strSQL = "select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas where nome like @nome";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
-                sda.SelectCommand.Parameters.AddWithValue("@login", string.Format("%{0}%", dslogin));
+                sda.SelectCommand.Parameters.AddWithValue("@nome", string.Format("%{0}%", nome));
             }
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;
         }
-        */
+        
     }
 }

@@ -21,8 +21,10 @@ namespace s4d_biomedicina.Modelo
         }
 
         #region Verificar Operacoes Usuario
+
         public void verCadastroUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa)
         {
+            this.mensagem = "";
             if (login.Equals("") || senha.Equals("") || ra.Equals("") || tipo.Equals("") ) 
             {
                 this.mensagem = "Necessario Informar Login, Senha, RA, e o Tipo de Usuario!";

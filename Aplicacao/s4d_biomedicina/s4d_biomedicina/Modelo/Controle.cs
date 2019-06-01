@@ -114,6 +114,14 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
+        public DataTable PesquisarPaciente(string nome, string cpf)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalPaciente dalPaciente = new DAL.dalPaciente();
+            dt = dalPaciente.GetPesquisaPaciente(nome, cpf);
+            return dt;
+        }
+
         public DataTable ListaPaciente()
         {
             DataTable dt = new DataTable();

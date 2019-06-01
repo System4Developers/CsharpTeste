@@ -14,6 +14,8 @@ namespace s4d_biomedicina.Modelo
         protected string prontuario;
         protected string grupoSanguineo;
         protected Double peso;
+
+
         
     }
 }
