@@ -11,6 +11,7 @@ namespace s4d_biomedicina.Modelo
 {
     public class Controle : absPropriedades
     {
+
         #region Login
         public void acessar(string login, string senha)
         {
@@ -102,6 +103,16 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
+        public void AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado, int idPaciente)
+        {
+            this.mensagem = "";
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            paciente.AtualizarPaciente(nome,rg,cpf,dtNascimento,profissao,grauInstrucao,prontuario,peso,altura,grupoSanguineo,estadoPaciente,logradouro,bairro,numero,cidade,estado,idPaciente);
+            if (!paciente.ToString().Equals(""))
+            {
+                this.mensagem = paciente.ToString();
+            }
+        }
 
         public DataTable ListaPaciente()
         {
@@ -112,5 +123,6 @@ namespace s4d_biomedicina.Modelo
         }
         #endregion
 
+        
     }
 }

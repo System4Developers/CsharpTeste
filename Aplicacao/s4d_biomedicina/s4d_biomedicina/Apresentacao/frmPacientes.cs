@@ -36,5 +36,14 @@ namespace s4d_biomedicina.Apresentacao
             frmPacientesManter frmPacientesManter = new frmPacientesManter(this, this.comando, 0);
             frmPacientesManter.ShowDialog();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int idPaciente;
+            this.comando = "editar";
+            idPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value);
+            frmPacientesManter frmPacientesManter = new frmPacientesManter(this, this.comando, idPaciente);
+            frmPacientesManter.Show();
+        }
     }
 }

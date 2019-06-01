@@ -12,35 +12,7 @@ namespace s4d_biomedicina.DAL
     public class dalPaciente : basePacientes
     {
 
-
-        /*
-            insert into pessoas
-            values
-            ('lucas','302518787','30685794655','20190525','analista','superior')
-            declare @idPessoa int = @@identity
-            insert into pacientes
-            values
-            ('1',98.5,1.85,'ab-',@idPessoa,'ATIVADO')
-
-            select idPaciente,nome,rg,cpf,dtNascimento,profissao,grauInstrucao,prontuario,peso,altura,grupoSanguineo
-            from pacientes
-            join pessoas 
-            on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa
-          
-
-            select idPaciente as [ID]
-	,nome as [NOME], rg as [RG]
-	,cpf as [CPF]
-	,dtNascimento as [NASCIMENTO]
-	,prontuario as [PRONTUARIO]
-	,profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO]
-from pacientes 
-join pessoas 
-on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas
-
-         */
-
-
+        public SqlDataReader dr;
 
         public DataTable GetListaPacientes()
         {
@@ -107,66 +79,25 @@ on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pesso
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
-            {
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
-                //this.mensagem = "Erro com Banco";
-                //this.mensagem = ;
-            }
-
-            return this.mensagem;
-        }
-        //public SqlDataReader dr;
-
-        /*
-        
-
-        public string AtualizarUsuario(string login, string senha, string ra, string registro, string curso, string estado, string tipo, int idPessoa, int idUsuario)
-        {
-            SqlCommand cmd = new SqlCommand();
-            Conexao con = new Conexao();
-
-            this.mensagem = "";
-            this.login = login;
-            this.senha = senha;
-            this.ra = ra;
-            this.registro = registro;
-            this.curso = curso;
-            this.estado = estado;
-            this.tipo = tipo;
-            this.idUsuario = idUsuario;
-
-            cmd.CommandText = "update usuarios set dslogin = @login, senha = @senha, ra = @ra, registroFuncional = @registro, curso = @curso , estadoUsuario = @estado, tipoUsuario = @tipo where idUsuario = @idUsuario";
-            cmd.Parameters.AddWithValue("@login", this.login);
-            cmd.Parameters.AddWithValue("@senha", this.senha);
-            cmd.Parameters.AddWithValue("@ra", this.ra);
-            cmd.Parameters.AddWithValue("@registro", this.registro);
-            cmd.Parameters.AddWithValue("@curso", this.curso);
-            cmd.Parameters.AddWithValue("@estado", this.estado);
-            cmd.Parameters.AddWithValue("@tipo", this.tipo);
-            cmd.Parameters.AddWithValue("@idUsuario", this.idUsuario);
-            try
-            {
-                cmd.Connection = con.Conectar();
-                cmd.ExecuteNonQuery();
-                con.desconectar();
-            }
             catch (SqlException)
             {
-
                 this.mensagem = "Erro com Banco";
             }
-
             return this.mensagem;
         }
 
-        public void GetEditarUsuario(int idUsuario)
+        public void GetEditarPaciente(int idPaciente)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
-            cmd.CommandText = "select dslogin,senha,ra,registroFuncional,curso,tipoUsuario,estadoUsuario from usuarios where idUsuario=@idUsuario";
-            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            cmd.CommandText = "select prontuario,nome,rg,cpf,dtNascimento,grauInstrucao,profissao,estadoPaciente,cidade,estado,logradouro,bairro,numero,peso,altura,grupoSanguineo,idPessoa " +
+            "from pacientes " +
+            "join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa " +
+            "left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas " +
+            "where idPaciente = @idPaciente";
+         
+            cmd.Parameters.AddWithValue("@idPaciente", idPaciente);
             try
             {
                 cmd.Connection = con.Conectar();
@@ -177,7 +108,128 @@ on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pesso
                 this.mensagem = "Erro com Banco!";
             }
         }
+        
+    
+        public string AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado,int idPaciente)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
 
+            this.mensagem = "";
+            this.nome = nome;
+            this.rg = rg;
+            this.cpf = cpf;
+            this.dtNascimento = dtNascimento;
+            this.profissao = profissao;
+            this.grauInstrucao = grauInstrucao;
+            this.prontuario = prontuario;
+            this.peso = peso;
+            this.altura = altura;
+            this.grupoSanguineo = grupoSanguineo;
+            this.estadoPaciente = estadoPaciente;
+            this.logradouro = logradouro;
+            this.bairro = bairro;
+            this.numero = numero;
+            this.cidade = cidade;
+            this.estado = estado;
+            this.idPaciente = idPaciente;
+
+            
+            cmd.CommandText = "select fk_idPessoa_pessoas from pacientes where idPaciente = @idPaciente";
+            cmd.Parameters.AddWithValue("@idPaciente", this.idPaciente);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.idPessoa = Convert.ToInt32(dr["fk_idPessoa_pessoas"]);
+                }
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+                return this.mensagem;
+            }
+
+            cmd.Parameters.Clear();
+            cmd.CommandText = "update pacientes " +
+                "set prontuario = @prontuario,peso=@peso,altura=@altura,grupoSanguineo=@grupoSanguineo,estadoPaciente=@estadoPaciente " +
+                "where idPaciente= @idPaciente";
+            cmd.Parameters.AddWithValue("@prontuario", this.prontuario);
+            cmd.Parameters.AddWithValue("@peso", this.peso);
+            cmd.Parameters.AddWithValue("@altura", this.altura);
+            cmd.Parameters.AddWithValue("@grupoSanguineo", this.grupoSanguineo);
+            cmd.Parameters.AddWithValue("@estadoPaciente", this.estadoPaciente);
+            cmd.Parameters.AddWithValue("@idPaciente", this.idPaciente);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+            }
+
+            cmd.Parameters.Clear();
+            cmd.CommandText = "update pessoas " +
+                "set nome=@nome,rg=@rg,cpf=@cpf,dtNascimento=@dtNascimento,profissao=@profissao,grauInstrucao=@grauInstrucao " +
+                "where idPessoa = @idPessoa ";
+            cmd.Parameters.AddWithValue("@nome", this.nome);
+            cmd.Parameters.AddWithValue("@rg", this.rg);
+            cmd.Parameters.AddWithValue("@cpf", this.cpf);
+            cmd.Parameters.AddWithValue("@dtNascimento", this.dtNascimento);
+            cmd.Parameters.AddWithValue("@grauInstrucao", this.grauInstrucao);
+            cmd.Parameters.AddWithValue("@profissao", this.profissao);
+            cmd.Parameters.AddWithValue("@idPessoa", this.idPessoa);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+            }
+
+            cmd.Parameters.Clear();
+            cmd.CommandText = "update enderecos " +
+                "set cidade=@cidade,estado=@estado,logradouro=@logradouro,bairro=@bairro,numero=@numero " +
+                "where fk_idPessoa_pessoas=@idPessoa";
+            cmd.Parameters.AddWithValue("@cidade", this.cidade);
+            cmd.Parameters.AddWithValue("@estado", this.estado);
+            cmd.Parameters.AddWithValue("@logradouro", this.logradouro);
+            cmd.Parameters.AddWithValue("@bairro", this.bairro);
+            cmd.Parameters.AddWithValue("@numero", this.numero);
+            cmd.Parameters.AddWithValue("@idPessoa", this.idPessoa);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+            }
+
+
+            /*
+            catch (SqlException)
+            {
+
+                this.mensagem = "Erro com Banco";
+            }*/
+
+            return this.mensagem;
+        }
+
+        /*
         public DataTable GetPesquisaUsuario(int idUsuario, string dslogin)
         {
             Conexao con = new Conexao();
@@ -201,8 +253,6 @@ on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pesso
             sda.Fill(dt);
             return dt;
         }
-
-        
         */
     }
 }

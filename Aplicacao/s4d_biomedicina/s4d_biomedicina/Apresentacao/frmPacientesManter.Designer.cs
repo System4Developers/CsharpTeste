@@ -309,7 +309,7 @@
             // 
             this.txbLogradouro.Location = new System.Drawing.Point(77, 54);
             this.txbLogradouro.Name = "txbLogradouro";
-            this.txbLogradouro.Size = new System.Drawing.Size(283, 20);
+            this.txbLogradouro.Size = new System.Drawing.Size(571, 20);
             this.txbLogradouro.TabIndex = 41;
             // 
             // lblLogradouro
@@ -325,7 +325,7 @@
             // 
             this.txbBairro.Location = new System.Drawing.Point(77, 84);
             this.txbBairro.Name = "txbBairro";
-            this.txbBairro.Size = new System.Drawing.Size(112, 20);
+            this.txbBairro.Size = new System.Drawing.Size(283, 20);
             this.txbBairro.TabIndex = 43;
             // 
             // lblBairro
@@ -339,15 +339,15 @@
             // 
             // txbNumero
             // 
-            this.txbNumero.Location = new System.Drawing.Point(247, 84);
+            this.txbNumero.Location = new System.Drawing.Point(432, 84);
             this.txbNumero.Name = "txbNumero";
-            this.txbNumero.Size = new System.Drawing.Size(113, 20);
+            this.txbNumero.Size = new System.Drawing.Size(216, 20);
             this.txbNumero.TabIndex = 45;
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(201, 87);
+            this.lblNumero.Location = new System.Drawing.Point(382, 87);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 44;
@@ -355,15 +355,15 @@
             // 
             // txbEstado
             // 
-            this.txbEstado.Location = new System.Drawing.Point(247, 23);
+            this.txbEstado.Location = new System.Drawing.Point(432, 28);
             this.txbEstado.Name = "txbEstado";
-            this.txbEstado.Size = new System.Drawing.Size(113, 20);
+            this.txbEstado.Size = new System.Drawing.Size(216, 20);
             this.txbEstado.TabIndex = 49;
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(201, 26);
+            this.lblEstado.Location = new System.Drawing.Point(382, 31);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 48;
@@ -373,7 +373,7 @@
             // 
             this.txbCidade.Location = new System.Drawing.Point(77, 23);
             this.txbCidade.Name = "txbCidade";
-            this.txbCidade.Size = new System.Drawing.Size(112, 20);
+            this.txbCidade.Size = new System.Drawing.Size(283, 20);
             this.txbCidade.TabIndex = 47;
             // 
             // lblCidade
@@ -399,7 +399,7 @@
             this.gpbLocalidade.Controls.Add(this.lblNumero);
             this.gpbLocalidade.Location = new System.Drawing.Point(12, 207);
             this.gpbLocalidade.Name = "gpbLocalidade";
-            this.gpbLocalidade.Size = new System.Drawing.Size(384, 133);
+            this.gpbLocalidade.Size = new System.Drawing.Size(718, 133);
             this.gpbLocalidade.TabIndex = 50;
             this.gpbLocalidade.TabStop = false;
             this.gpbLocalidade.Text = "Localidade";
@@ -458,6 +458,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPacientesManter";
             this.Text = "frmPacientesManter";
+            this.Load += new System.EventHandler(this.frmPacientesManter_Load);
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();
             this.gpbInfoAdicional.ResumeLayout(false);
