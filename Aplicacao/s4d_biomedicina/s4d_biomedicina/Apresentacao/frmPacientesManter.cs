@@ -29,7 +29,7 @@ namespace s4d_biomedicina.Apresentacao
             Modelo.Controle controle = new Modelo.Controle();
             if (this.comando.Equals("inserir"))
             {
-                controle.cadastrarPaciente(txbNome.Text, txbRg.Text, txbCpf.Text, txbDtNascimento.Text, txbProfissao.Text, txbGrauInstrucao.Text, txbProntuario.Text, Convert.ToDouble(txbPeso.Text), Convert.ToDouble(txbAltura.Text), txbGrupoSanguineo.Text, cmbEstado.Text);
+                controle.cadastrarPaciente(txbNome.Text, txbRg.Text, txbCpf.Text, txbDtNascimento.Text, txbProfissao.Text, txbGrauInstrucao.Text, txbProntuario.Text, Convert.ToDouble(txbPeso.Text), Convert.ToDouble(txbAltura.Text), txbGrupoSanguineo.Text, cmbEstado.Text,txbLogradouro.Text,txbBairro.Text,txbNumero.Text,txbCidade.Text,txbEstado.Text);
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Cadastro OK");

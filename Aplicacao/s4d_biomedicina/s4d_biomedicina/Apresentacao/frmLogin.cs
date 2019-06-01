@@ -35,7 +35,6 @@ namespace s4d_biomedicina.Apresentacao
         {
             Modelo.Estaticos.logado = false;
             this.Close();
-            
         }
     }
 }

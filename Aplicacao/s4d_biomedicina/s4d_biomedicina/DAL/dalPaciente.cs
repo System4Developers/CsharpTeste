@@ -27,18 +27,31 @@ namespace s4d_biomedicina.DAL
             join pessoas 
             on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa
           
+
+            select idPaciente as [ID]
+	,nome as [NOME], rg as [RG]
+	,cpf as [CPF]
+	,dtNascimento as [NASCIMENTO]
+	,prontuario as [PRONTUARIO]
+	,profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO]
+from pacientes 
+join pessoas 
+on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas
+
          */
+
+
 
         public DataTable GetListaPacientes()
         {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas", con.Conectar());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;
         }
 
-        public string AdicionarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso,double altura,string grupoSanguineo,string estadoPaciente)
+        public string AdicionarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso,double altura,string grupoSanguineo,string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
@@ -55,12 +68,20 @@ namespace s4d_biomedicina.DAL
             this.altura = altura;
             this.grupoSanguineo = grupoSanguineo;
             this.estadoPaciente = estadoPaciente;
+            this.logradouro = logradouro;
+            this.bairro = bairro;
+            this.numero = numero;
+            this.cidade = cidade;
+            this.estado = estado;
 
             cmd.CommandText = "insert into pessoas (nome,rg,cpf,dtNascimento,profissao,grauInstrucao) " +
                 "values (@nome,@rg,@cpf,@dtNascimento,@profissao,@grauInstrucao) " +
                 "declare @idPessoa int = @@identity " +
                 "insert into pacientes (prontuario,peso,altura,grupoSanguineo,fk_idPessoa_pessoas,estadoPaciente) " +
-                "values (@prontuario,@peso,@altura,@grupoSanguineo,@idPessoa,@estadoPaciente)";
+                "values (@prontuario,@peso,@altura,@grupoSanguineo,@idPessoa,@estadoPaciente)" +
+                "insert into enderecos (logradouro,bairro,numero,cidade,estado,fk_idPessoa_pessoas) " +
+                "values (@logradouro,@bairro,@numero,@cidade,@estado,@idPessoa)"; 
+                
             cmd.Parameters.AddWithValue("@nome", this.nome);
             cmd.Parameters.AddWithValue("@rg", this.rg);
             cmd.Parameters.AddWithValue("@cpf", this.cpf);
@@ -73,6 +94,12 @@ namespace s4d_biomedicina.DAL
             cmd.Parameters.AddWithValue("@altura", this.altura);
             cmd.Parameters.AddWithValue("@grupoSanguineo", this.grupoSanguineo);
             cmd.Parameters.AddWithValue("@estadoPaciente", this.estadoPaciente);
+
+            cmd.Parameters.AddWithValue("@logradouro", this.logradouro);
+            cmd.Parameters.AddWithValue("@bairro", this.bairro);
+            cmd.Parameters.AddWithValue("@numero", this.numero);
+            cmd.Parameters.AddWithValue("@cidade", this.cidade);
+            cmd.Parameters.AddWithValue("@estado", this.estado);
 
             try
             {

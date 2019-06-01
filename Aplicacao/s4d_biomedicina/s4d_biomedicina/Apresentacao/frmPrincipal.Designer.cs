@@ -32,10 +32,10 @@
             this.tsmArquivo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTrocarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlForms = new System.Windows.Forms.Panel();
             this.tsmConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiPacientes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlForms = new System.Windows.Forms.Panel();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,8 +47,7 @@
             this.tsmConsulta});
             this.mnsMenu.Location = new System.Drawing.Point(0, 0);
             this.mnsMenu.Name = "mnsMenu";
-            this.mnsMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.mnsMenu.Size = new System.Drawing.Size(1185, 28);
+            this.mnsMenu.Size = new System.Drawing.Size(1301, 24);
             this.mnsMenu.TabIndex = 0;
             this.mnsMenu.Text = "menuStrip1";
             // 
@@ -58,30 +57,22 @@
             this.tsmTrocarUsuario,
             this.tsmSair});
             this.tsmArquivo.Name = "tsmArquivo";
-            this.tsmArquivo.Size = new System.Drawing.Size(73, 24);
+            this.tsmArquivo.Size = new System.Drawing.Size(61, 20);
             this.tsmArquivo.Text = "Arquivo";
             // 
             // tsmTrocarUsuario
             // 
             this.tsmTrocarUsuario.Name = "tsmTrocarUsuario";
-            this.tsmTrocarUsuario.Size = new System.Drawing.Size(216, 26);
+            this.tsmTrocarUsuario.Size = new System.Drawing.Size(149, 22);
             this.tsmTrocarUsuario.Text = "Trocar Usuario";
             this.tsmTrocarUsuario.Click += new System.EventHandler(this.tsmTrocarUsuario_Click);
             // 
             // tsmSair
             // 
             this.tsmSair.Name = "tsmSair";
-            this.tsmSair.Size = new System.Drawing.Size(216, 26);
+            this.tsmSair.Size = new System.Drawing.Size(149, 22);
             this.tsmSair.Text = "Sair";
             this.tsmSair.Click += new System.EventHandler(this.tsmSair_Click);
-            // 
-            // pnlForms
-            // 
-            this.pnlForms.AutoSize = true;
-            this.pnlForms.Location = new System.Drawing.Point(112, 112);
-            this.pnlForms.Name = "pnlForms";
-            this.pnlForms.Size = new System.Drawing.Size(999, 348);
-            this.pnlForms.TabIndex = 1;
             // 
             // tsmConsulta
             // 
@@ -89,37 +80,44 @@
             this.tsiPacientes,
             this.tsiUsuarios});
             this.tsmConsulta.Name = "tsmConsulta";
-            this.tsmConsulta.Size = new System.Drawing.Size(78, 24);
+            this.tsmConsulta.Size = new System.Drawing.Size(66, 20);
             this.tsmConsulta.Text = "Consulta";
             // 
             // tsiPacientes
             // 
             this.tsiPacientes.Name = "tsiPacientes";
-            this.tsiPacientes.Size = new System.Drawing.Size(216, 26);
+            this.tsiPacientes.Size = new System.Drawing.Size(124, 22);
             this.tsiPacientes.Text = "Pacientes";
             this.tsiPacientes.Click += new System.EventHandler(this.tsiPacientes_Click);
             // 
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(216, 26);
+            this.tsiUsuarios.Size = new System.Drawing.Size(124, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
+            // pnlForms
+            // 
+            this.pnlForms.AutoSize = true;
+            this.pnlForms.Location = new System.Drawing.Point(84, 91);
+            this.pnlForms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlForms.Name = "pnlForms";
+            this.pnlForms.Size = new System.Drawing.Size(749, 283);
+            this.pnlForms.TabIndex = 1;
+            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 472);
+            this.ClientSize = new System.Drawing.Size(1301, 599);
             this.Controls.Add(this.pnlForms);
             this.Controls.Add(this.mnsMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.mnsMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.Text = "Inicio";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.mnsMenu.ResumeLayout(false);
             this.mnsMenu.PerformLayout();

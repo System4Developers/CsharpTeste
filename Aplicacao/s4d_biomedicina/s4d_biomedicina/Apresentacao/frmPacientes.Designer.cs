@@ -42,17 +42,19 @@
             // dgvPacientes
             // 
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientes.Location = new System.Drawing.Point(20, 150);
+            this.dgvPacientes.Location = new System.Drawing.Point(15, 122);
+            this.dgvPacientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.RowTemplate.Height = 24;
-            this.dgvPacientes.Size = new System.Drawing.Size(1110, 326);
+            this.dgvPacientes.Size = new System.Drawing.Size(1167, 340);
             this.dgvPacientes.TabIndex = 0;
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(20, 82);
+            this.btnNovo.Location = new System.Drawing.Point(15, 67);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(100, 23);
+            this.btnNovo.Size = new System.Drawing.Size(75, 19);
             this.btnNovo.TabIndex = 1;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -60,60 +62,66 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(20, 111);
+            this.btnEditar.Location = new System.Drawing.Point(15, 90);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(100, 23);
+            this.btnEditar.Size = new System.Drawing.Size(75, 19);
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(410, 41);
+            this.btnPesquisar.Location = new System.Drawing.Point(308, 33);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(84, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(63, 19);
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // txbCpf
             // 
-            this.txbCpf.Location = new System.Drawing.Point(304, 42);
+            this.txbCpf.Location = new System.Drawing.Point(228, 34);
+            this.txbCpf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbCpf.Name = "txbCpf";
-            this.txbCpf.Size = new System.Drawing.Size(100, 22);
+            this.txbCpf.Size = new System.Drawing.Size(76, 20);
             this.txbCpf.TabIndex = 3;
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(20, 42);
+            this.txbNome.Location = new System.Drawing.Point(15, 34);
+            this.txbNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(278, 22);
+            this.txbNome.Size = new System.Drawing.Size(210, 20);
             this.txbNome.TabIndex = 3;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(17, 22);
+            this.lblNome.Location = new System.Drawing.Point(13, 18);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(45, 17);
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 4;
             this.lblNome.Text = "Nome";
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(301, 22);
+            this.lblCpf.Location = new System.Drawing.Point(226, 18);
+            this.lblCpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(34, 17);
+            this.lblCpf.Size = new System.Drawing.Size(27, 13);
             this.lblCpf.TabIndex = 4;
             this.lblCpf.Text = "CPF";
             // 
             // frmPacientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1144, 511);
+            this.ClientSize = new System.Drawing.Size(1193, 484);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txbNome);
@@ -123,6 +131,7 @@
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvPacientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPacientes";
             this.Text = "frmPacientes";
             this.Load += new System.EventHandler(this.frmPacientes_Load);
