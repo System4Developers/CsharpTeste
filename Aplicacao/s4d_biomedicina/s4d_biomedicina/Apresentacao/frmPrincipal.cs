@@ -52,6 +52,12 @@ namespace s4d_biomedicina.Apresentacao
             AbrirFormulario(frmUsuarios);
         }
 
+        private void tsiExamesAreas_Click(object sender, EventArgs e)
+        {
+            Apresentacao.frmExamesAreas frmExamesAreas = new frmExamesAreas();
+            AbrirFormulario(frmExamesAreas);
+        }
+
         #region Operacoes de formularios
         private void AbrirFormulario(Form frm)
         {
@@ -86,5 +92,7 @@ namespace s4d_biomedicina.Apresentacao
             pnlForms.Controls.Clear();
         }
         #endregion
+
+        
     }
 }

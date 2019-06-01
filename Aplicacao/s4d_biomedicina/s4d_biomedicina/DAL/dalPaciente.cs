@@ -9,7 +9,7 @@ using System.Data;
 
 namespace s4d_biomedicina.DAL
 {
-    public class dalPaciente : basePacientes
+    public class dalPaciente : Pacientes
     {
 
         public SqlDataReader dr;

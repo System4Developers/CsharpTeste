@@ -9,7 +9,7 @@ using s4d_biomedicina.Modelo;
 
 namespace s4d_biomedicina.DAL
 {
-    public class dalUsuario : baseUsuario
+    public class dalUsuario : Usuario
     {
         
         public SqlDataReader dr;

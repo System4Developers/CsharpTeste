@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace s4d_biomedicina.Modelo
 {
-    public abstract class baseUsuario
+    public abstract class Usuario
     {
         protected Int32 idUsuario;
         protected String login;

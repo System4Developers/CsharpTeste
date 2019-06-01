@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace s4d_biomedicina.Modelo
 {
-    public abstract class basePacientes:basePessoas
+    public abstract class Pacientes:Pessoas
     {
         protected Int32 idPaciente;
         protected string estadoPaciente;

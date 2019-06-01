@@ -131,6 +131,15 @@ namespace s4d_biomedicina.Modelo
         }
         #endregion
 
-        
+        #region Manter Exames Areas
+        public DataTable ListaExamesAreas()
+        {
+            DataTable dt = new DataTable();
+            DAL.dalExameArea dalExameArea = new DAL.dalExameArea();
+            dt = dalExameArea.GetListaExamesAreas();
+            return dt;
+        }
+        #endregion
+
     }
 }
