@@ -132,7 +132,7 @@ namespace s4d_biomedicina.Modelo
         #endregion
 
         #region Manter Exames Areas
-        public void cadastrarExame(string dsExameArea)
+        public void CadastrarExameArea(string dsExameArea)
         {
             this.mensagem = "";
 
@@ -144,7 +144,7 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
-        public void AtualizarArea(string dsExameArea, int idExameArea)
+        public void AtualizarExameArea(string dsExameArea, int idExameArea)
         {
             this.mensagem = "";
             DAL.dalExameArea exame = new DAL.dalExameArea();
@@ -163,7 +163,7 @@ namespace s4d_biomedicina.Modelo
             return dt;
         }
 
-        public DataTable PesquisarArea(int idExameArea, string dsExameArea)
+        public DataTable PesquisarExameArea(int idExameArea, string dsExameArea)
         {
             DataTable dt = new DataTable();
             DAL.dalExameArea exame = new DAL.dalExameArea();
@@ -185,11 +185,11 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
-        public void AtualizarExamesTipos(string dsExameArea, string estadoExameTipo, int idExameArea, int idExameTipo)
+        public void AtualizarExamesTipos(string dsExameTipo, string estadoExameTipo,int idExameTipo,int idExameArea)
         {
             this.mensagem = "";
             DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
-            exametipo.AtualizarExamesTipos(dsExameArea, idExameArea);
+            exametipo.AtualizarExamesTipos(dsExameTipo, estadoExameTipo, idExameTipo,idExameArea);
             if (!exametipo.ToString().Equals(""))
             {
                 this.mensagem = exametipo.ToString();

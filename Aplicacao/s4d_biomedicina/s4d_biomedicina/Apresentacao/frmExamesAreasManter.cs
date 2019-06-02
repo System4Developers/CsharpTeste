@@ -46,7 +46,7 @@ namespace s4d_biomedicina.Apresentacao
             Modelo.Controle controle = new Modelo.Controle();
             if (this.comando.Equals("inserir"))
             {
-                controle.cadastrarExame(txbArea.Text);
+                controle.CadastrarExameArea(txbArea.Text);
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Cadastro OK");
@@ -61,7 +61,7 @@ namespace s4d_biomedicina.Apresentacao
 
             if (this.comando.Equals("editar"))
             {
-                controle.AtualizarArea(txbArea.Text, Convert.ToInt32(txbID.Text));
+                controle.AtualizarExameArea(txbArea.Text, Convert.ToInt32(txbID.Text));
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Atualizado com Sucesso!");

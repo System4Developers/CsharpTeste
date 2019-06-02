@@ -21,9 +21,7 @@ namespace s4d_biomedicina.Apresentacao
 
         private void frmExamesTipos_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'unipBiomedicinaDataSet3.examesTipos'. Você pode movê-la ou removê-la conforme necessário.
-            this.examesTiposTableAdapter.Fill(this.unipBiomedicinaDataSet3.examesTipos);
-
+            AtualizarTabela();
         }
 
         public void AtualizarTabela()
@@ -44,14 +42,14 @@ namespace s4d_biomedicina.Apresentacao
             int idExameTipo;
             this.comando = "editar";
             idExameTipo = Convert.ToInt32(dgvExamesTipos.CurrentRow.Cells[0].Value);
-            frmExamesTiposManter frmExamesTipos = new frmExamesTiposManter(this, this.comando, idExameTipo);
-            frmExamesTipos.Show();
+            frmExamesTiposManter frmExamesTiposManter = new frmExamesTiposManter(this, this.comando, idExameTipo);
+            frmExamesTiposManter.Show();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             Modelo.Controle controle = new Modelo.Controle();
-            dgvExamesTipos.DataSource = controle.PesquisarArea(Convert.ToInt32(txbID.Text), txbDS.Text);
+            dgvExamesTipos.DataSource = controle.PesquisarExamesTipos(Convert.ToInt32(txbID.Text), txbDS.Text);
         }
     }
 }

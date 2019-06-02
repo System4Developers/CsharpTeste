@@ -16,7 +16,7 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaExamesTipos()
         {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select * from examesTipos", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status], dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea", con.Conectar());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;
@@ -53,19 +53,23 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
         }
 
-        public string AtualizarExamesTipos(string dsExameArea, int idExameArea)
+        public string AtualizarExamesTipos(string dsExameTipo, string estadoExameTipo, int idExameTipo,int idExameArea)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
             this.mensagem = "";
-            this.dsExameArea = dsExameArea;
+            this.dsExameTipo = dsExameTipo;
+            this.estadoExameTipo = estadoExameTipo;
+            this.idExameTipo = idExameTipo;
             this.idExameArea = idExameArea;
 
-
-            cmd.CommandText = "update examesTipos set dsExameArea = @dsExameArea where idExameArea = @idExameArea";
+            cmd.CommandText = "update examesTipos set dsExameTipo = @dsExameTipo, estadoExameTipo = @estadoExameTipo, fk_idExameArea_examesAreas = @idExameArea where idExameTipo = @idExameTipo";
+            cmd.Parameters.AddWithValue("@dsExameTipo", this.dsExameTipo);
+            cmd.Parameters.AddWithValue("@estadoExameTipo", this.estadoExameTipo);
+            cmd.Parameters.AddWithValue("@idExameTipo", this.idExameTipo);
             cmd.Parameters.AddWithValue("@idExameArea", this.idExameArea);
-            cmd.Parameters.AddWithValue("@dsExameArea", this.dsExameArea);
+
             try
             {
                 cmd.Connection = con.Conectar();
@@ -81,14 +85,14 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
         }
 
-        public void GetEditarArea(int idExameArea)
+        public void GetEditarExamesTipos(int idExameTipo)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
-            cmd.CommandText = "select * from examesTipos where idExameArea = @idExameArea";
+            cmd.CommandText = "select dsExameTipo,estadoExameTipo, dsExameArea from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas=examesAreas.idExameArea where idExameTipo = @idExameTipo";
 
-            cmd.Parameters.AddWithValue("@idExameArea", idExameArea);
+            cmd.Parameters.AddWithValue("@idExameTipo", idExameTipo);
             try
             {
                 cmd.Connection = con.Conectar();
@@ -107,15 +111,16 @@ namespace s4d_biomedicina.DAL
             string strSQL = "";
             SqlDataAdapter sda;
 
+         
             if (idExameArea > 0)
             {
-                strSQL = "select * from examesTipos where idExameTipo = @idExameTipo";
+                strSQL = "select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status],dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea where idExameTipo = @idExameTipo";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
-                sda.SelectCommand.Parameters.AddWithValue("@idExameArea", idExameArea);
+                sda.SelectCommand.Parameters.AddWithValue("@idExameTipo", idExameTipo);
             }
             else
             {
-                strSQL = "select * from examesTipos where dsExameTipo like @dsExameTipo";
+                strSQL = "select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status],dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea where dsExameTipo like @dsExameTipo";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
                 sda.SelectCommand.Parameters.AddWithValue("@dsExameTipo", string.Format("%{0}%", dsExameTipo));
             }

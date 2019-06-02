@@ -117,6 +117,11 @@
     <Compile Include="DAL\dalExameTipo.cs" />
     <Compile Include="DAL\dalPaciente.cs" />
     <Compile Include="DAL\dalUsuario.cs" />
+    <Compile Include="dstExamesAreas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstExamesAreas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\absPropriedades.cs" />
     <Compile Include="Modelo\Pacientes.cs" />
     <Compile Include="Modelo\Pessoas.cs" />
@@ -127,29 +132,6 @@
     <Compile Include="Modelo\Validacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="unipBiomedicinaDataSet1.cs">
-      <DependentUpon>unipBiomedicinaDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="unipBiomedicinaDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>unipBiomedicinaDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="unipBiomedicinaDataSet11.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>unipBiomedicinaDataSet11.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="unipBiomedicinaDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>unipBiomedicinaDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="unipBiomedicinaDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>unipBiomedicinaDataSet3.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Apresentacao\frmAgendamento.resx">
       <DependentUpon>frmAgendamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +174,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="dstExamesAreas.xsc">
+      <DependentUpon>dstExamesAreas.xsd</DependentUpon>
+    </None>
+    <None Include="dstExamesAreas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstExamesAreas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstExamesAreas.xss">
+      <DependentUpon>dstExamesAreas.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -201,50 +194,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="unipBiomedicinaDataSet1.xsc">
-      <DependentUpon>unipBiomedicinaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="unipBiomedicinaDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>unipBiomedicinaDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="unipBiomedicinaDataSet1.xss">
-      <DependentUpon>unipBiomedicinaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="unipBiomedicinaDataSet11.xsc">
-      <DependentUpon>unipBiomedicinaDataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="unipBiomedicinaDataSet11.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>unipBiomedicinaDataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="unipBiomedicinaDataSet11.xss">
-      <DependentUpon>unipBiomedicinaDataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="unipBiomedicinaDataSet2.xsc">
-      <DependentUpon>unipBiomedicinaDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="unipBiomedicinaDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>unipBiomedicinaDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="unipBiomedicinaDataSet2.xss">
-      <DependentUpon>unipBiomedicinaDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="unipBiomedicinaDataSet3.xsc">
-      <DependentUpon>unipBiomedicinaDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="unipBiomedicinaDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>unipBiomedicinaDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="unipBiomedicinaDataSet3.xss">
-      <DependentUpon>unipBiomedicinaDataSet3.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

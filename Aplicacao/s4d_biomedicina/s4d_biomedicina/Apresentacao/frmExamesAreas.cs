@@ -22,7 +22,7 @@ namespace s4d_biomedicina.Apresentacao
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             Modelo.Controle controle = new Modelo.Controle();
-            dgvExamesAreas.DataSource = controle.PesquisarArea(Convert.ToInt32(txbID.Text), txbDS.Text);
+            dgvExamesAreas.DataSource = controle.PesquisarExameArea(Convert.ToInt32(txbID.Text), txbDS.Text);
         }
 
         private void frmExamesAreas_Load(object sender, EventArgs e)

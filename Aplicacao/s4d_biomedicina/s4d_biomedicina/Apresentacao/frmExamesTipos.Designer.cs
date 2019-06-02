@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.txbDS = new System.Windows.Forms.TextBox();
@@ -37,20 +36,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.dgvExamesTipos = new System.Windows.Forms.DataGridView();
-            this.idExameTipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsExameTipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoExameTipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkidExameAreaexamesAreasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.examesTiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unipBiomedicinaDataSet3 = new s4d_biomedicina.unipBiomedicinaDataSet3();
-            this.unipBiomedicinaDataSet1 = new s4d_biomedicina.unipBiomedicinaDataSet1();
-            this.unipBiomedicinaDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.examesTiposTableAdapter = new s4d_biomedicina.unipBiomedicinaDataSet3TableAdapters.examesTiposTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamesTipos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examesTiposBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDescricao
@@ -86,6 +72,7 @@
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(100, 22);
             this.txbID.TabIndex = 9;
+            this.txbID.Text = "0";
             // 
             // btnPesquisar
             // 
@@ -124,14 +111,7 @@
             // 
             this.dgvExamesTipos.AllowUserToAddRows = false;
             this.dgvExamesTipos.AllowUserToDeleteRows = false;
-            this.dgvExamesTipos.AutoGenerateColumns = false;
             this.dgvExamesTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExamesTipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idExameTipoDataGridViewTextBoxColumn,
-            this.dsExameTipoDataGridViewTextBoxColumn,
-            this.estadoExameTipoDataGridViewTextBoxColumn,
-            this.fkidExameAreaexamesAreasDataGridViewTextBoxColumn});
-            this.dgvExamesTipos.DataSource = this.examesTiposBindingSource;
             this.dgvExamesTipos.Location = new System.Drawing.Point(75, 167);
             this.dgvExamesTipos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvExamesTipos.Name = "dgvExamesTipos";
@@ -139,58 +119,6 @@
             this.dgvExamesTipos.RowTemplate.Height = 24;
             this.dgvExamesTipos.Size = new System.Drawing.Size(921, 332);
             this.dgvExamesTipos.TabIndex = 4;
-            // 
-            // idExameTipoDataGridViewTextBoxColumn
-            // 
-            this.idExameTipoDataGridViewTextBoxColumn.DataPropertyName = "idExameTipo";
-            this.idExameTipoDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idExameTipoDataGridViewTextBoxColumn.Name = "idExameTipoDataGridViewTextBoxColumn";
-            this.idExameTipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dsExameTipoDataGridViewTextBoxColumn
-            // 
-            this.dsExameTipoDataGridViewTextBoxColumn.DataPropertyName = "dsExameTipo";
-            this.dsExameTipoDataGridViewTextBoxColumn.HeaderText = "Tipo do Exame";
-            this.dsExameTipoDataGridViewTextBoxColumn.Name = "dsExameTipoDataGridViewTextBoxColumn";
-            this.dsExameTipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoExameTipoDataGridViewTextBoxColumn
-            // 
-            this.estadoExameTipoDataGridViewTextBoxColumn.DataPropertyName = "estadoExameTipo";
-            this.estadoExameTipoDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.estadoExameTipoDataGridViewTextBoxColumn.Name = "estadoExameTipoDataGridViewTextBoxColumn";
-            this.estadoExameTipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fkidExameAreaexamesAreasDataGridViewTextBoxColumn
-            // 
-            this.fkidExameAreaexamesAreasDataGridViewTextBoxColumn.DataPropertyName = "fk_idExameArea_examesAreas";
-            this.fkidExameAreaexamesAreasDataGridViewTextBoxColumn.HeaderText = "Área da Biomedicina";
-            this.fkidExameAreaexamesAreasDataGridViewTextBoxColumn.Name = "fkidExameAreaexamesAreasDataGridViewTextBoxColumn";
-            this.fkidExameAreaexamesAreasDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // examesTiposBindingSource
-            // 
-            this.examesTiposBindingSource.DataMember = "examesTipos";
-            this.examesTiposBindingSource.DataSource = this.unipBiomedicinaDataSet3;
-            // 
-            // unipBiomedicinaDataSet3
-            // 
-            this.unipBiomedicinaDataSet3.DataSetName = "unipBiomedicinaDataSet3";
-            this.unipBiomedicinaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // unipBiomedicinaDataSet1
-            // 
-            this.unipBiomedicinaDataSet1.DataSetName = "unipBiomedicinaDataSet1";
-            this.unipBiomedicinaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // unipBiomedicinaDataSet1BindingSource
-            // 
-            this.unipBiomedicinaDataSet1BindingSource.DataSource = this.unipBiomedicinaDataSet1;
-            this.unipBiomedicinaDataSet1BindingSource.Position = 0;
-            // 
-            // examesTiposTableAdapter
-            // 
-            this.examesTiposTableAdapter.ClearBeforeFill = true;
             // 
             // frmExamesTipos
             // 
@@ -206,15 +134,11 @@
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvExamesTipos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmExamesTipos";
             this.Text = "frmExamesTipos";
             this.Load += new System.EventHandler(this.frmExamesTipos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamesTipos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examesTiposBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,14 +154,5 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.DataGridView dgvExamesTipos;
-        private unipBiomedicinaDataSet1 unipBiomedicinaDataSet1;
-        private System.Windows.Forms.BindingSource unipBiomedicinaDataSet1BindingSource;
-        private unipBiomedicinaDataSet3 unipBiomedicinaDataSet3;
-        private System.Windows.Forms.BindingSource examesTiposBindingSource;
-        private unipBiomedicinaDataSet3TableAdapters.examesTiposTableAdapter examesTiposTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idExameTipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dsExameTipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoExameTipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkidExameAreaexamesAreasDataGridViewTextBoxColumn;
     }
 }

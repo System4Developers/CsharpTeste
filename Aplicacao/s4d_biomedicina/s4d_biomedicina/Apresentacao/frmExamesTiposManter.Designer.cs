@@ -36,12 +36,12 @@
             this.txbTipo = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.unipBiomedicinaDataSet1 = new s4d_biomedicina.unipBiomedicinaDataSet1();
-            this.examesAreasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.examesAreasTableAdapter = new s4d_biomedicina.unipBiomedicinaDataSet1TableAdapters.examesAreasTableAdapter();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbArea = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet1)).BeginInit();
+            this.dstExamesAreas = new s4d_biomedicina.dstExamesAreas();
+            this.examesAreasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.examesAreasTableAdapter = new s4d_biomedicina.dstExamesAreasTableAdapters.examesAreasTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dstExamesAreas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.examesAreasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // 
             this.txbID.Enabled = false;
             this.txbID.Location = new System.Drawing.Point(192, 32);
-            this.txbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbID.Margin = new System.Windows.Forms.Padding(4);
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(229, 22);
             this.txbID.TabIndex = 44;
@@ -67,7 +67,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(323, 278);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 28);
             this.btnSalvar.TabIndex = 43;
@@ -88,7 +88,7 @@
             // txbTipo
             // 
             this.txbTipo.Location = new System.Drawing.Point(192, 153);
-            this.txbTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbTipo.Margin = new System.Windows.Forms.Padding(4);
             this.txbTipo.Name = "txbTipo";
             this.txbTipo.Size = new System.Drawing.Size(229, 22);
             this.txbTipo.TabIndex = 46;
@@ -113,20 +113,6 @@
             this.lblTipo.TabIndex = 49;
             this.lblTipo.Text = "TIPO DE EXAME";
             // 
-            // unipBiomedicinaDataSet1
-            // 
-            this.unipBiomedicinaDataSet1.DataSetName = "unipBiomedicinaDataSet1";
-            this.unipBiomedicinaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // examesAreasBindingSource
-            // 
-            this.examesAreasBindingSource.DataMember = "examesAreas";
-            this.examesAreasBindingSource.DataSource = this.unipBiomedicinaDataSet1;
-            // 
-            // examesAreasTableAdapter
-            // 
-            this.examesAreasTableAdapter.ClearBeforeFill = true;
-            // 
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
@@ -134,7 +120,7 @@
             "Habilitado",
             "Desabilitado"});
             this.cmbStatus.Location = new System.Drawing.Point(192, 220);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(229, 24);
             this.cmbStatus.TabIndex = 51;
@@ -145,11 +131,25 @@
             this.cmbArea.DisplayMember = "dsExameArea";
             this.cmbArea.FormattingEnabled = true;
             this.cmbArea.Location = new System.Drawing.Point(192, 100);
-            this.cmbArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbArea.Margin = new System.Windows.Forms.Padding(4);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(229, 24);
             this.cmbArea.TabIndex = 52;
             this.cmbArea.ValueMember = "idExameArea";
+            // 
+            // dstExamesAreas
+            // 
+            this.dstExamesAreas.DataSetName = "dstExamesAreas";
+            this.dstExamesAreas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // examesAreasBindingSource
+            // 
+            this.examesAreasBindingSource.DataMember = "examesAreas";
+            this.examesAreasBindingSource.DataSource = this.dstExamesAreas;
+            // 
+            // examesAreasTableAdapter
+            // 
+            this.examesAreasTableAdapter.ClearBeforeFill = true;
             // 
             // frmExamesTiposManter
             // 
@@ -165,12 +165,12 @@
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblArea);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmExamesTiposManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExamesTiposManter";
             this.Load += new System.EventHandler(this.frmExamesTiposManter_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dstExamesAreas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.examesAreasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,10 +186,10 @@
         private System.Windows.Forms.TextBox txbTipo;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblTipo;
-        private unipBiomedicinaDataSet1 unipBiomedicinaDataSet1;
-        private System.Windows.Forms.BindingSource examesAreasBindingSource;
-        private unipBiomedicinaDataSet1TableAdapters.examesAreasTableAdapter examesAreasTableAdapter;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ComboBox cmbArea;
+        private dstExamesAreas dstExamesAreas;
+        private System.Windows.Forms.BindingSource examesAreasBindingSource;
+        private dstExamesAreasTableAdapters.examesAreasTableAdapter examesAreasTableAdapter;
     }
 }
