@@ -9,7 +9,7 @@ using System.Data;
 
 namespace s4d_biomedicina.DAL
 {
-    public class dalExameArea : ExamesAreas
+    public class dalExameArea : Exames
     {
         public SqlDataReader dr;
 

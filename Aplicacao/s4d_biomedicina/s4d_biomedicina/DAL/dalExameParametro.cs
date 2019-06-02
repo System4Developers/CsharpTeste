@@ -1,42 +1,52 @@
-﻿using s4d_biomedicina.Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using s4d_biomedicina.Modelo;
 
 namespace s4d_biomedicina.DAL
 {
-    public class dalExameTipo : Exames
+    public class dalExameParametro :  Exames
     {
         public SqlDataReader dr;
+        public DataTable dt;
 
-        public DataTable GetListaExamesTipos()
+        public void GetExameTipoCombo()
         {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status], dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idExameTipo as [ID],dsExameTipo as [Tipo] from examesTipos", con.Conectar());
+            this.dt = new DataTable();
+            sda.Fill(dt);
+         }
+
+        public DataTable GetListaExamesParametros()
+        {
+            Conexao con = new Conexao();
+            SqlDataAdapter sda = new SqlDataAdapter("select idExameParametro as [ID],dsExameTipo as [Tipo],dsExameParametro as [Parametro],valorMin as [Limite Min], valorMax as [Limite Max] from examesParametros join examesTipos on examesParametros.fk_idExameTipo_examesTipos = examesTipos.idExameTipo", con.Conectar());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;
         }
 
-        public string AdicionarExameTipo(string dsExameTipo, string estadoExameTipo, int idExameArea)
+        public string AdicionarExamesParametros(string dsExameParametro, double valorMax, double valorMin, int idExameTipo)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
             this.mensagem = "";
-            this.dsExameTipo = dsExameTipo;
-            this.estadoExameTipo = estadoExameTipo;
-            this.idExameArea = idExameArea;
+            this.dsExameParametro = dsExameParametro;
+            this.valorMax = valorMax;
+            this.valorMin = valorMin;
+            this.idExameTipo = idExameTipo;
 
-
-            cmd.CommandText = "insert into examesTipos (dsExameTipo,estadoExameTipo,fk_idExameArea_examesAreas) values (@dsExameTipo,@estadoExameTipo,@idExameArea)";
-            cmd.Parameters.AddWithValue("@dsExameTipo", this.dsExameTipo);
-            cmd.Parameters.AddWithValue("@estadoExameTipo", this.estadoExameTipo);
-            cmd.Parameters.AddWithValue("@idExameArea", this.idExameArea);
+            cmd.CommandText = "insert into examesParametros (dsExameParametro,valorMax,valorMin,fk_idExameTipo_examesTipos) values (@dsExameParametro,@valorMax,@valorMin,@idExameTipo)";
+            cmd.Parameters.AddWithValue("@dsExameParametro", this.dsExameParametro);
+            cmd.Parameters.AddWithValue("@valorMax", this.valorMax);
+            cmd.Parameters.AddWithValue("@valorMin", this.valorMin);
+            cmd.Parameters.AddWithValue("@idExameTipo", this.idExameTipo);
 
             try
             {
@@ -44,16 +54,22 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
+            catch (SqlException ex)
+            {
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+                //this.mensagem = "Erro com Banco";
+                //this.mensagem = ;
+            }/*
             catch (SqlException)
             {
 
                 this.mensagem = "Erro com Banco";
-            }
+            }*/
 
             return this.mensagem;
         }
-
-        public string AtualizarExamesTipos(string dsExameTipo, string estadoExameTipo, int idExameTipo,int idExameArea)
+        /*
+        public string AtualizarExamesTipos(string dsExameTipo, string estadoExameTipo, int idExameTipo, int idExameArea)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
@@ -111,7 +127,7 @@ namespace s4d_biomedicina.DAL
             string strSQL = "";
             SqlDataAdapter sda;
 
-         
+
             if (idExameArea > 0)
             {
                 strSQL = "select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status],dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea where idExameTipo = @idExameTipo";
@@ -128,8 +144,6 @@ namespace s4d_biomedicina.DAL
             sda.Fill(dt);
             return dt;
         }
-
-
-
+        */
     }
 }

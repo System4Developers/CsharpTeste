@@ -64,6 +64,18 @@
     <Compile Include="Apresentacao\frmExamesAreas.Designer.cs">
       <DependentUpon>frmExamesAreas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\frmExamesParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmExamesParametros.Designer.cs">
+      <DependentUpon>frmExamesParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\frmExamesParametrosManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmExamesParametrosManter.Designer.cs">
+      <DependentUpon>frmExamesParametrosManter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\frmExamesTipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,7 @@
     </Compile>
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\dalExameArea.cs" />
+    <Compile Include="DAL\dalExameParametro.cs" />
     <Compile Include="DAL\dalExameTipo.cs" />
     <Compile Include="DAL\dalPaciente.cs" />
     <Compile Include="DAL\dalUsuario.cs" />
@@ -128,7 +141,7 @@
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Controle.cs" />
     <Compile Include="Modelo\Estaticos.cs" />
-    <Compile Include="Modelo\ExamesAreas.cs" />
+    <Compile Include="Modelo\Exames.cs" />
     <Compile Include="Modelo\Validacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmExamesAreas.resx">
       <DependentUpon>frmExamesAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmExamesParametros.resx">
+      <DependentUpon>frmExamesParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmExamesParametrosManter.resx">
+      <DependentUpon>frmExamesParametrosManter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmExamesTipos.resx">
       <DependentUpon>frmExamesTipos.cs</DependentUpon>

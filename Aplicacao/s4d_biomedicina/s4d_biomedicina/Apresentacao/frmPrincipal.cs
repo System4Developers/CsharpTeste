@@ -105,5 +105,11 @@ namespace s4d_biomedicina.Apresentacao
             Apresentacao.frmExamesTipos frmExamesTipos = new frmExamesTipos();
             AbrirFormulario(frmExamesTipos);
         }
+
+        private void tsiExamesParametros_Click(object sender, EventArgs e)
+        {
+            Apresentacao.frmExamesParametros frmExamesParametros = new frmExamesParametros();
+            AbrirFormulario(frmExamesParametros);
+        }
     }
 }
