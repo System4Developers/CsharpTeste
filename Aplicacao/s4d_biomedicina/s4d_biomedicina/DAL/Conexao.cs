@@ -14,6 +14,7 @@ namespace s4d_biomedicina.DAL
 
         public Conexao()
         {
+            //con.ConnectionString = @"Data Source=DESKTOP-62JOGHE\SQLEXPRESS;Initial Catalog=unipBiomedicina;Integrated Security=True";
             con.ConnectionString = @"Data Source=RUKANOTE\SQLEXPRESS;Initial Catalog=unipBiomedicina;User ID=sa;Password=admin01";
         }
 

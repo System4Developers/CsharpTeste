@@ -194,6 +194,7 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(229, 24);
             this.cmbTipo.TabIndex = 33;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             // 
             // lblID
             // 
@@ -238,6 +239,7 @@
             this.Controls.Add(this.txbLogin);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUsuariosManter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsuarioNovo";
             this.Load += new System.EventHandler(this.frmUsuariosManter_Load);
             this.ResumeLayout(false);

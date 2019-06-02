@@ -10,6 +10,11 @@ namespace s4d_biomedicina.Modelo
     {
         protected int idExameArea;
         protected string dsExameArea;
+        protected int idExameTipo;
+        protected string dsExameTipo;
+        protected string estadoExameTipo;
+
+
 
     }
 }

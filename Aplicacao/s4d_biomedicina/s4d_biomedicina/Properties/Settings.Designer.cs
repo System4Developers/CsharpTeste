@@ -33,5 +33,16 @@ namespace s4d_biomedicina.Properties {
                 return ((string)(this["unipBiomedicinaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-62JOGHE\\SQLEXPRESS;Initial Catalog=unipBiomedicina;Integrated" +
+            " Security=True")]
+        public string unipBiomedicinaConnectionString1 {
+            get {
+                return ((string)(this["unipBiomedicinaConnectionString1"]));
+            }
+        }
     }
 }

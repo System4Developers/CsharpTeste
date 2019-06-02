@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -39,7 +37,6 @@
             this.lblID = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsuarios
@@ -140,7 +137,6 @@
             this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +145,6 @@
         #endregion
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.BindingSource usuariosBindingSource;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txbID;

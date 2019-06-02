@@ -79,5 +79,10 @@ namespace s4d_biomedicina.Apresentacao
                 }
             }
         }
+
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

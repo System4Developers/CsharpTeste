@@ -32,8 +32,8 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbID = new System.Windows.Forms.TextBox();
+            this.txbDS = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamesAreas)).BeginInit();
@@ -45,6 +45,7 @@
             this.dgvExamesAreas.AllowUserToDeleteRows = false;
             this.dgvExamesAreas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExamesAreas.Location = new System.Drawing.Point(36, 146);
+            this.dgvExamesAreas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvExamesAreas.Name = "dgvExamesAreas";
             this.dgvExamesAreas.ReadOnly = true;
             this.dgvExamesAreas.RowTemplate.Height = 24;
@@ -54,15 +55,18 @@
             // btnNovo
             // 
             this.btnNovo.Location = new System.Drawing.Point(36, 91);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(97, 34);
             this.btnNovo.TabIndex = 1;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(452, 47);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(97, 34);
             this.btnPesquisar.TabIndex = 1;
@@ -73,25 +77,30 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(149, 91);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(97, 34);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // textBox1
+            // txbID
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
+            this.txbID.Location = new System.Drawing.Point(36, 53);
+            this.txbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbID.Name = "txbID";
+            this.txbID.Size = new System.Drawing.Size(100, 22);
+            this.txbID.TabIndex = 2;
+            this.txbID.Text = "0";
             // 
-            // textBox2
+            // txbDS
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 22);
-            this.textBox2.TabIndex = 2;
+            this.txbDS.Location = new System.Drawing.Point(149, 53);
+            this.txbDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbDS.Name = "txbDS";
+            this.txbDS.Size = new System.Drawing.Size(279, 22);
+            this.txbDS.TabIndex = 2;
             // 
             // lblID
             // 
@@ -105,26 +114,27 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(146, 33);
+            this.lblDescricao.Location = new System.Drawing.Point(147, 33);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(71, 17);
+            this.lblDescricao.Size = new System.Drawing.Size(138, 17);
             this.lblDescricao.TabIndex = 3;
-            this.lblDescricao.Text = "Descricao";
+            this.lblDescricao.Text = "Área da Biomedicina";
             // 
             // frmExamesAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 536);
+            this.ClientSize = new System.Drawing.Size(975, 537);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblID);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbDS);
+            this.Controls.Add(this.txbID);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvExamesAreas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmExamesAreas";
             this.Text = "Exames Areas";
             this.Load += new System.EventHandler(this.frmExamesAreas_Load);
@@ -140,8 +150,8 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.TextBox txbDS;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblDescricao;
     }

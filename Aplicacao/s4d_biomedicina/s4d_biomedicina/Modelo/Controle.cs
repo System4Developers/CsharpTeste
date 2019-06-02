@@ -132,11 +132,83 @@ namespace s4d_biomedicina.Modelo
         #endregion
 
         #region Manter Exames Areas
+        public void cadastrarExame(string dsExameArea)
+        {
+            this.mensagem = "";
+
+            DAL.dalExameArea exame = new DAL.dalExameArea();
+            exame.AdicionarArea(dsExameArea);
+            if (!exame.ToString().Equals(""))
+            {
+                this.mensagem = exame.ToString();
+            }
+        }
+
+        public void AtualizarArea(string dsExameArea, int idExameArea)
+        {
+            this.mensagem = "";
+            DAL.dalExameArea exame = new DAL.dalExameArea();
+            exame.AtualizarArea(dsExameArea, idExameArea);
+                if (!exame.ToString().Equals(""))
+            {
+                this.mensagem = exame.ToString();
+            }
+        }
+
         public DataTable ListaExamesAreas()
         {
             DataTable dt = new DataTable();
-            DAL.dalExameArea dalExameArea = new DAL.dalExameArea();
-            dt = dalExameArea.GetListaExamesAreas();
+            DAL.dalExameArea exame = new DAL.dalExameArea();
+            dt = exame.GetListaExamesAreas();
+            return dt;
+        }
+
+        public DataTable PesquisarArea(int idExameArea, string dsExameArea)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalExameArea exame = new DAL.dalExameArea();
+            dt = exame.GetPesquisaAreas(idExameArea,dsExameArea);
+            return dt;
+        }
+        #endregion
+
+        #region Manter Exames Tipos
+        public void cadastrarExameTipo(string dsExameArea, string estadoExameTipo, int idExameArea)
+        {
+            this.mensagem = "";
+
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            exametipo.AdicionarExameTipo(dsExameArea, estadoExameTipo, idExameArea);
+            if (!exametipo.ToString().Equals(""))
+            {
+                this.mensagem = exametipo.ToString();
+            }
+        }
+
+        public void AtualizarExamesTipos(string dsExameArea, string estadoExameTipo, int idExameArea, int idExameTipo)
+        {
+            this.mensagem = "";
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            exametipo.AtualizarExamesTipos(dsExameArea, idExameArea);
+            if (!exametipo.ToString().Equals(""))
+            {
+                this.mensagem = exametipo.ToString();
+            }
+        }
+
+        public DataTable ListaExamesTipos()
+        {
+            DataTable dt = new DataTable();
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            dt = exametipo.GetListaExamesTipos();
+            return dt;
+        }
+
+        public DataTable PesquisarExamesTipos(int idExameTipo, string dsExameTipo)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            dt = exametipo.GetPesquisaExamesTipos(idExameTipo, dsExameTipo);
             return dt;
         }
         #endregion

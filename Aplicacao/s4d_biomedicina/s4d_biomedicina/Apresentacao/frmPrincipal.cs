@@ -91,8 +91,19 @@ namespace s4d_biomedicina.Apresentacao
             }
             pnlForms.Controls.Clear();
         }
+
         #endregion
 
-        
+        private void agendamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentacao.frmAgendamento frmAgendamentos = new frmAgendamento();
+            AbrirFormulario(frmAgendamentos);
+        }
+
+        private void tsiExamesTipos_Click(object sender, EventArgs e)
+        {
+            Apresentacao.frmExamesTipos frmExamesTipos = new frmExamesTipos();
+            AbrirFormulario(frmExamesTipos);
+        }
     }
 }
