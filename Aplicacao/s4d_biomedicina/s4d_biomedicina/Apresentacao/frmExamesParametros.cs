@@ -46,5 +46,11 @@ namespace s4d_biomedicina.Apresentacao
             frmExamesParametrosManter frmExamesParametrosManter = new frmExamesParametrosManter(this, this.comando, idExameParametro);
             frmExamesParametrosManter.Show();
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvExamesParametros.DataSource = controle.PesquisarExamesParametros(Convert.ToInt32(txbID.Text), txbTipo.Text);
+        }
     }
 }

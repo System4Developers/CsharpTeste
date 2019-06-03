@@ -104,7 +104,7 @@ namespace s4d_biomedicina.DAL
 
             if (idExameArea > 0)
             {
-                strSQL = "select * from examesAreas where idExameArea = @idExameArea";
+                strSQL = "select idExameArea as [id Area] from examesAreas where idExameArea = @idExameArea";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
                 sda.SelectCommand.Parameters.AddWithValue("@idExameArea", idExameArea);
             }

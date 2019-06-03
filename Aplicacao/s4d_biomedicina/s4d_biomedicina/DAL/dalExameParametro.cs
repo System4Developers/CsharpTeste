@@ -18,7 +18,7 @@ namespace s4d_biomedicina.DAL
         {
             
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idExameTipo as [ID],dsExameTipo as [Tipo] from examesTipos", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idExameTipo as [ID],dsExameTipo as [Tipo] from examesTipos where estadoExameTipo = 'Habilitado'", con.Conectar());
             this.dt = new DataTable();
             sda.Fill(dt);
          }
@@ -120,8 +120,8 @@ namespace s4d_biomedicina.DAL
         }
 
 
-        /*
-        public DataTable GetPesquisaExamesTipos(int idExameTipo, string dsExameTipo)
+       
+        public DataTable GetPesquisaExamesParametros(int idExameParametro, string dsExameParametro)
         {
             Conexao con = new Conexao();
 
@@ -129,22 +129,24 @@ namespace s4d_biomedicina.DAL
             SqlDataAdapter sda;
 
 
-            if (idExameArea > 0)
+            if (idExameParametro > 0)
             {
-                strSQL = "select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status],dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea where idExameTipo = @idExameTipo";
+
+                strSQL = "select idExameParametro as [ID],dsExameTipo as [Tipo],dsExameParametro as [Parametro],valorMin as [Limite Min], valorMax as [Limite Max] from examesParametros join examesTipos on examesParametros.fk_idExameTipo_examesTipos = examesTipos.idExameTipo where idExameParametro = @idExameParametro";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
-                sda.SelectCommand.Parameters.AddWithValue("@idExameTipo", idExameTipo);
+
+                sda.SelectCommand.Parameters.AddWithValue("@idExameParametro", idExameParametro);
             }
             else
             {
-                strSQL = "select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status],dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea where dsExameTipo like @dsExameTipo";
+                strSQL = "select idExameParametro as [ID],dsExameTipo as [Tipo],dsExameParametro as [Parametro],valorMin as [Limite Min], valorMax as [Limite Max] from examesParametros join examesTipos on examesParametros.fk_idExameTipo_examesTipos = examesTipos.idExameTipo where dsExameParametro like @dsExameParametro";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
-                sda.SelectCommand.Parameters.AddWithValue("@dsExameTipo", string.Format("%{0}%", dsExameTipo));
+                sda.SelectCommand.Parameters.AddWithValue("@dsExameParametro", string.Format("%{0}%", dsExameParametro));
             }
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;
         }
-        */
+      
     }
 }

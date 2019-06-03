@@ -259,14 +259,14 @@ namespace s4d_biomedicina.Modelo
             dt = dalExameParametro.GetListaExamesParametros();
             return dt;
         }
-        /*
-        public DataTable PesquisarExamesTipos(int idExameTipo, string dsExameTipo)
+
+        public DataTable PesquisarExamesParametros(int idExameParametro, string dsExameParametro)
         {
             DataTable dt = new DataTable();
-            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
-            dt = exametipo.GetPesquisaExamesTipos(idExameTipo, dsExameTipo);
+            DAL.dalExameParametro dalExameParametro = new DAL.dalExameParametro();
+            dt = dalExameParametro.GetPesquisaExamesParametros(idExameParametro, dsExameParametro);
             return dt;
-        }*/
+        }
         #endregion
 
     }

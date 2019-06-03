@@ -65,6 +65,7 @@
             this.btnPesquisar.TabIndex = 7;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnEditar
             // 
@@ -99,6 +100,7 @@
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(75, 20);
             this.txbID.TabIndex = 6;
+            this.txbID.Text = "0";
             // 
             // dgvExamesParametros
             // 
