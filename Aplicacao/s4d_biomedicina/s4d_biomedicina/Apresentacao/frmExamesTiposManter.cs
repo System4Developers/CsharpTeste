@@ -28,19 +28,23 @@ namespace s4d_biomedicina.Apresentacao
 
         private void frmExamesTiposManter_Load(object sender, EventArgs e)
         {
-            this.examesAreasTableAdapter.Fill(this.dstExamesAreas.examesAreas);
+            Modelo.Controle controle = new Modelo.Controle();
+            cmbDsArea.DataSource = controle.GetExameAreaCombo(); 
+            cmbDsArea.DisplayMember = "dsArea";
+            cmbDsArea.ValueMember = "ID";
+
             if (this.comando.Equals("editar"))
-            {
-                DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
-                dalExameTipo.GetEditarExamesTipos(this.idExameTipo);
-                while (dalExameTipo.dr.Read())
-                {
-                    txbID.Text = this.idExameTipo.ToString();
-                    cmbArea.Text = dalExameTipo.dr["dsExameArea"].ToString();
-                    cmbStatus.Text = dalExameTipo.dr["estadoExameTipo"].ToString();
-                    txbTipo.Text = dalExameTipo.dr["dsExameTipo"].ToString();
-                }
-            }
+             {
+                 DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
+                 dalExameTipo.GetEditarExamesTipos(this.idExameTipo);
+                 while (dalExameTipo.dr.Read())
+                 {
+                     txbID.Text = this.idExameTipo.ToString();
+                     cmbDsArea.Text = dalExameTipo.dr["dsExameArea"].ToString();
+                     cmbStatus.Text = dalExameTipo.dr["estadoExameTipo"].ToString();
+                     txbTipo.Text = dalExameTipo.dr["dsExameTipo"].ToString();
+                 }
+             }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -48,7 +52,7 @@ namespace s4d_biomedicina.Apresentacao
             Modelo.Controle controle = new Modelo.Controle();
             if (this.comando.Equals("inserir"))
             {
-               controle.cadastrarExameTipo(txbTipo.Text, cmbStatus.Text, Convert.ToInt32(cmbArea.SelectedValue.ToString()));
+               controle.cadastrarExameTipo(txbTipo.Text, cmbStatus.Text, Convert.ToInt32(cmbDsArea.SelectedValue.ToString()));
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Cadastro OK");
@@ -64,7 +68,7 @@ namespace s4d_biomedicina.Apresentacao
 
             if (this.comando.Equals("editar"))
             {
-                controle.AtualizarExamesTipos(txbTipo.Text,cmbStatus.Text, Convert.ToInt32(txbID.Text), Convert.ToInt32(cmbArea.SelectedValue.ToString()));
+                controle.AtualizarExamesTipos(txbTipo.Text,cmbStatus.Text, Convert.ToInt32(txbID.Text), Convert.ToInt32(cmbDsArea.SelectedValue.ToString()));
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Atualizado com Sucesso!");

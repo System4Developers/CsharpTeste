@@ -130,11 +130,6 @@
     <Compile Include="DAL\dalExameTipo.cs" />
     <Compile Include="DAL\dalPaciente.cs" />
     <Compile Include="DAL\dalUsuario.cs" />
-    <Compile Include="dstExamesAreas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dstExamesAreas.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\absPropriedades.cs" />
     <Compile Include="Modelo\Pacientes.cs" />
     <Compile Include="Modelo\Pessoas.cs" />
@@ -193,17 +188,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="dstExamesAreas.xsc">
-      <DependentUpon>dstExamesAreas.xsd</DependentUpon>
-    </None>
-    <None Include="dstExamesAreas.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dstExamesAreas.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dstExamesAreas.xss">
-      <DependentUpon>dstExamesAreas.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -196,6 +196,13 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
+        public DataTable GetExameAreaCombo()
+        {
+            DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
+            dalExameTipo.GetExameAreaCombo();
+            return dalExameTipo.dt;
+        }
+        
         public DataTable ListaExamesTipos()
         {
             DataTable dt = new DataTable();
@@ -214,6 +221,7 @@ namespace s4d_biomedicina.Modelo
         #endregion
 
         #region Manter Exames Parametros
+
         public void cadastarExameParametro(string dsExameParametro, double valorMax, double valorMin, int idExameTipo)
         {
             this.mensagem = "";
@@ -232,17 +240,17 @@ namespace s4d_biomedicina.Modelo
             dalExameParametro.GetExameTipoCombo();
             return dalExameParametro.dt;
         }
-        /*
-        public void AtualizarExamesTipos(string dsExameTipo, string estadoExameTipo, int idExameTipo, int idExameArea)
+        
+        public void AtualizarExamesParametros(string dsExameParametro, double valorMax, double valorMin, int idExameTipo,int idExameParametro)
         {
             this.mensagem = "";
-            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
-            exametipo.AtualizarExamesTipos(dsExameTipo, estadoExameTipo, idExameTipo, idExameArea);
-            if (!exametipo.ToString().Equals(""))
+            DAL.dalExameParametro dalExameParametro = new DAL.dalExameParametro();
+            dalExameParametro.AtualizarExamesParametros(dsExameParametro,valorMax, valorMin, idExameTipo, idExameParametro);
+            if (!dalExameParametro.ToString().Equals(""))
             {
-                this.mensagem = exametipo.ToString();
+                this.mensagem = dalExameParametro.ToString();
             }
-        }*/
+        }
 
         public DataTable ListaExamesParametros()
         {

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblID = new System.Windows.Forms.Label();
             this.txbID = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -37,12 +36,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.cmbArea = new System.Windows.Forms.ComboBox();
-            this.examesAreasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dstExamesAreas = new s4d_biomedicina.dstExamesAreas();
-            this.examesAreasTableAdapter = new s4d_biomedicina.dstExamesAreasTableAdapters.examesAreasTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.examesAreasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dstExamesAreas)).BeginInit();
+            this.cmbDsArea = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblID
@@ -117,37 +111,20 @@
             this.cmbStatus.Size = new System.Drawing.Size(173, 21);
             this.cmbStatus.TabIndex = 51;
             // 
-            // cmbArea
+            // cmbDsArea
             // 
-            this.cmbArea.DataSource = this.examesAreasBindingSource;
-            this.cmbArea.DisplayMember = "dsExameArea";
-            this.cmbArea.FormattingEnabled = true;
-            this.cmbArea.Location = new System.Drawing.Point(144, 81);
-            this.cmbArea.Name = "cmbArea";
-            this.cmbArea.Size = new System.Drawing.Size(173, 21);
-            this.cmbArea.TabIndex = 52;
-            this.cmbArea.ValueMember = "idExameArea";
-            // 
-            // examesAreasBindingSource
-            // 
-            this.examesAreasBindingSource.DataMember = "examesAreas";
-            this.examesAreasBindingSource.DataSource = this.dstExamesAreas;
-            // 
-            // dstExamesAreas
-            // 
-            this.dstExamesAreas.DataSetName = "dstExamesAreas";
-            this.dstExamesAreas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // examesAreasTableAdapter
-            // 
-            this.examesAreasTableAdapter.ClearBeforeFill = true;
+            this.cmbDsArea.FormattingEnabled = true;
+            this.cmbDsArea.Location = new System.Drawing.Point(144, 78);
+            this.cmbDsArea.Name = "cmbDsArea";
+            this.cmbDsArea.Size = new System.Drawing.Size(173, 21);
+            this.cmbDsArea.TabIndex = 52;
             // 
             // frmExamesTiposManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 272);
-            this.Controls.Add(this.cmbArea);
+            this.ClientSize = new System.Drawing.Size(406, 353);
+            this.Controls.Add(this.cmbDsArea);
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblStatus);
@@ -160,8 +137,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExamesTiposManter";
             this.Load += new System.EventHandler(this.frmExamesTiposManter_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.examesAreasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dstExamesAreas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,9 +152,6 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.ComboBox cmbArea;
-        private dstExamesAreas dstExamesAreas;
-        private System.Windows.Forms.BindingSource examesAreasBindingSource;
-        private dstExamesAreasTableAdapters.examesAreasTableAdapter examesAreasTableAdapter;
+        private System.Windows.Forms.ComboBox cmbDsArea;
     }
 }

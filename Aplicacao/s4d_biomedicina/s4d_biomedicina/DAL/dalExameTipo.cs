@@ -12,12 +12,21 @@ namespace s4d_biomedicina.DAL
     public class dalExameTipo : Exames
     {
         public SqlDataReader dr;
+        public DataTable dt;
+
+        public void GetExameAreaCombo()
+        {
+            Conexao con = new Conexao();
+            SqlDataAdapter sda = new SqlDataAdapter("select idExameArea as [ID], dsExameArea as [dsArea] from examesAreas", con.Conectar());
+            this.dt = new DataTable();
+            sda.Fill(this.dt);
+        }
 
         public DataTable GetListaExamesTipos()
         {
             Conexao con = new Conexao();
             SqlDataAdapter sda = new SqlDataAdapter("select idExameTipo as [ID],dsExameTipo as [Tipo do Exame],estadoExameTipo as [Status], dsExameArea as [Area da Biomedicina] from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas = examesAreas.idExameArea", con.Conectar());
-            DataTable dt = new DataTable();
+            this.dt = new DataTable();
             sda.Fill(dt);
             return dt;
         }

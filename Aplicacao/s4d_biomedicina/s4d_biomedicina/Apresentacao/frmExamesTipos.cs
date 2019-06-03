@@ -33,6 +33,7 @@ namespace s4d_biomedicina.Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
+
             frmExamesTiposManter frmExamesTipos = new frmExamesTiposManter(this, this.comando, 0);
             frmExamesTipos.ShowDialog(); 
         }
@@ -42,6 +43,7 @@ namespace s4d_biomedicina.Apresentacao
             int idExameTipo;
             this.comando = "editar";
             idExameTipo = Convert.ToInt32(dgvExamesTipos.CurrentRow.Cells[0].Value);
+
             frmExamesTiposManter frmExamesTiposManter = new frmExamesTiposManter(this, this.comando, idExameTipo);
             frmExamesTiposManter.Show();
         }

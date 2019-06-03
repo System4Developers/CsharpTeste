@@ -16,6 +16,7 @@ namespace s4d_biomedicina.DAL
 
         public void GetExameTipoCombo()
         {
+            
             Conexao con = new Conexao();
             SqlDataAdapter sda = new SqlDataAdapter("select idExameTipo as [ID],dsExameTipo as [Tipo] from examesTipos", con.Conectar());
             this.dt = new DataTable();
@@ -54,37 +55,54 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
-            {
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
-                //this.mensagem = "Erro com Banco";
-                //this.mensagem = ;
-            }/*
             catch (SqlException)
             {
 
                 this.mensagem = "Erro com Banco";
-            }*/
+            }
 
             return this.mensagem;
         }
-        /*
-        public string AtualizarExamesTipos(string dsExameTipo, string estadoExameTipo, int idExameTipo, int idExameArea)
+
+
+        public void GetEditarExamesParametros(int idExameParametro)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
+            cmd.CommandText = "select idExameParametro,dsExameParametro,valorMax,valorMin,dsExameTipo from examesParametros join examesTipos on examesParametros.fk_idExameTipo_examesTipos = examesTipos.idExameTipo where idExameParametro = @idExameParametro";
+            cmd.Parameters.AddWithValue("@idExameParametro", idExameParametro);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                this.mensagem = "Erro com Banco!";
+            }
+        }
+
+        
+        public string AtualizarExamesParametros(string dsExameParametro, double valorMax, double valorMin, int idExameTipo,int idExameParametro)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
             this.mensagem = "";
-            this.dsExameTipo = dsExameTipo;
-            this.estadoExameTipo = estadoExameTipo;
+            this.dsExameParametro = dsExameParametro;
+            this.valorMax = valorMax;
+            this.valorMin = valorMin;
             this.idExameTipo = idExameTipo;
-            this.idExameArea = idExameArea;
+            this.idExameParametro = idExameParametro;
 
-            cmd.CommandText = "update examesTipos set dsExameTipo = @dsExameTipo, estadoExameTipo = @estadoExameTipo, fk_idExameArea_examesAreas = @idExameArea where idExameTipo = @idExameTipo";
-            cmd.Parameters.AddWithValue("@dsExameTipo", this.dsExameTipo);
-            cmd.Parameters.AddWithValue("@estadoExameTipo", this.estadoExameTipo);
+            cmd.CommandText = "update examesParametros set dsExameParametro = @dsExameParametro, valorMax = @valorMax, valorMin = @valorMin,fk_idExameTipo_examesTipos = @idExameTipo where idExameParametro = @idExameParametro";
+            cmd.Parameters.AddWithValue("@dsExameParametro", this.dsExameParametro);
+            cmd.Parameters.AddWithValue("@valorMax", this.valorMax);
+            cmd.Parameters.AddWithValue("@valorMin", this.valorMin);
             cmd.Parameters.AddWithValue("@idExameTipo", this.idExameTipo);
-            cmd.Parameters.AddWithValue("@idExameArea", this.idExameArea);
+            cmd.Parameters.AddWithValue("@idExameParametro", this.idExameParametro);
 
             try
             {
@@ -101,25 +119,8 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
         }
 
-        public void GetEditarExamesTipos(int idExameTipo)
-        {
-            SqlCommand cmd = new SqlCommand();
-            Conexao con = new Conexao();
 
-            cmd.CommandText = "select dsExameTipo,estadoExameTipo, dsExameArea from examesTipos join examesAreas on examesTipos.fk_idExameArea_examesAreas=examesAreas.idExameArea where idExameTipo = @idExameTipo";
-
-            cmd.Parameters.AddWithValue("@idExameTipo", idExameTipo);
-            try
-            {
-                cmd.Connection = con.Conectar();
-                dr = cmd.ExecuteReader();
-            }
-            catch (SqlException)
-            {
-                this.mensagem = "Erro com Banco!";
-            }
-        }
-
+        /*
         public DataTable GetPesquisaExamesTipos(int idExameTipo, string dsExameTipo)
         {
             Conexao con = new Conexao();

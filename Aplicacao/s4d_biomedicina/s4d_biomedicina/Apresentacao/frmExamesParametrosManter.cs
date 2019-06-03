@@ -42,33 +42,43 @@ namespace s4d_biomedicina.Apresentacao
                 }
 
             }
-            /*
+            
             if (this.comando.Equals("editar"))
             {
-                controle.AtualizarExamesTipos(txbTipo.Text, cmbStatus.Text, Convert.ToInt32(txbID.Text), Convert.ToInt32(cmbArea.SelectedValue.ToString()));
+                controle.AtualizarExamesParametros(txbParametro.Text,Convert.ToDouble(txbLimiteMax.Text), Convert.ToDouble(txbLimiteMin.Text), Convert.ToInt32(cmbTipo.SelectedValue.ToString()),Convert.ToInt32(txbID.Text));
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Atualizado com Sucesso!");
-                    this.frmExamesTipos.AtualizarTabela();
+                    this.frmExamesParametros.AtualizarTabela();
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show(controle.ToString());
                 }
-            }*/
+            }
         }
 
         private void frmExamesParametrosManter_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             Modelo.Controle controle = new Modelo.Controle();
-
-            dt = controle.GetExameTipoCombo();
-            cmbTipo.DataSource = dt;
+            cmbTipo.DataSource = controle.GetExameTipoCombo();
             cmbTipo.DisplayMember = "Tipo";
             cmbTipo.ValueMember = "ID";
 
+            if (this.comando.Equals("editar"))
+            {
+                DAL.dalExameParametro dalExameParametro = new DAL.dalExameParametro();
+                dalExameParametro.GetEditarExamesParametros(this.idExameParametro);
+                while (dalExameParametro.dr.Read())
+                {
+                    txbID.Text = this.idExameParametro.ToString();
+                    cmbTipo.Text = dalExameParametro.dr["dsExameTipo"].ToString();
+                    txbParametro.Text = dalExameParametro.dr["dsExameParametro"].ToString();
+                    txbLimiteMin.Text = dalExameParametro.dr["valorMin"].ToString();
+                    txbLimiteMax.Text = dalExameParametro.dr["valorMax"].ToString();
+                }
+            }
 
         }
     }
