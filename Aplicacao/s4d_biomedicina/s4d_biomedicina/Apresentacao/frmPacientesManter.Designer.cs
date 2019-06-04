@@ -459,7 +459,6 @@
             this.Name = "frmPacientesManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPacientesManter";
-            this.Load += new System.EventHandler(this.frmPacientesManter_Load);
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();
             this.gpbInfoAdicional.ResumeLayout(false);

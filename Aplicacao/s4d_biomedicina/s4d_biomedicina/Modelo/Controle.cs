@@ -103,6 +103,17 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
+        public void cadastrarPacienteEndereco(string Cep, string Rua, string Numero, string Complemento, string Bairro, string Estado, string Cidade,int idPaciente)        {
+            this.mensagem = "";
+
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            paciente.AdicionarPacienteEndereco(Cep, Rua, Numero, Complemento, Bairro, Estado, Cidade,idPaciente);
+            if (!paciente.ToString().Equals(""))
+            {
+                this.mensagem = paciente.ToString();
+            }
+        }
+                    
         public void AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado, int idPaciente)
         {
             this.mensagem = "";
@@ -114,6 +125,7 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
+      
         public DataTable PesquisarPaciente(string nome, string cpf)
         {
             DataTable dt = new DataTable();
@@ -127,6 +139,30 @@ namespace s4d_biomedicina.Modelo
             DataTable dt = new DataTable();
             DAL.dalPaciente paciente = new DAL.dalPaciente();
             dt = paciente.GetListaPacientes();
+            return dt;
+        }
+
+        public DataTable ListaPacienteEnderecos(int idPaciente)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            dt = paciente.GetListaPacienteEnderecos(idPaciente);
+            return dt;
+        }
+
+        public DataTable ListaPacienteExames(int idPaciente)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            dt = paciente.GetListaPacienteExames(idPaciente);
+            return dt;
+        }
+
+        public DataTable ListaPacienteAgendamentos(int idPaciente)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            dt = paciente.GetListaPacienteAgendamentos(idPaciente);
             return dt;
         }
         #endregion

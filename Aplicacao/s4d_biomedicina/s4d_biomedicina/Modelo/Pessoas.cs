@@ -15,11 +15,13 @@ namespace s4d_biomedicina.Modelo
         protected String dtNascimento;
         protected String profissao;
         protected String grauInstrucao;
-        protected String logradouro;
-        protected String bairro;
-        protected String numero;
-        protected String cidade;
-        protected String estado;
+        protected String Cep;
+        protected String Rua;
+        protected String Numero;
+        protected String Complemento;
+        protected String Bairro;
+        protected String Estado;
+        protected String Cidade;
 
         protected string mensagem;
 

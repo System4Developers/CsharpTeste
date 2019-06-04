@@ -33,8 +33,8 @@ namespace s4d_biomedicina.Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmPacientesManter frmPacientesManter = new frmPacientesManter(this, this.comando, 0);
-            frmPacientesManter.ShowDialog();
+            frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, 0);
+            frmPacientesMain.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -42,8 +42,9 @@ namespace s4d_biomedicina.Apresentacao
             int idPaciente;
             this.comando = "editar";
             idPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value);
-            frmPacientesManter frmPacientesManter = new frmPacientesManter(this, this.comando, idPaciente);
-            frmPacientesManter.Show();
+            
+            frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, idPaciente);
+            frmPacientesMain.ShowDialog();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

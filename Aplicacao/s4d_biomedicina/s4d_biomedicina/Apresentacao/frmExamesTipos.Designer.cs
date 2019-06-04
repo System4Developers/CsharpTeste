@@ -42,44 +42,46 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(185, 54);
+            this.lblDescricao.Location = new System.Drawing.Point(139, 44);
+            this.lblDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(102, 17);
+            this.lblDescricao.Size = new System.Drawing.Size(78, 13);
             this.lblDescricao.TabIndex = 10;
             this.lblDescricao.Text = "Tipo do Exame";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(72, 54);
+            this.lblID.Location = new System.Drawing.Point(54, 44);
+            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 17);
+            this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 11;
             this.lblID.Text = "ID";
             // 
             // txbDS
             // 
-            this.txbDS.Location = new System.Drawing.Point(188, 74);
-            this.txbDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbDS.Location = new System.Drawing.Point(141, 60);
+            this.txbDS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbDS.Name = "txbDS";
-            this.txbDS.Size = new System.Drawing.Size(279, 22);
+            this.txbDS.Size = new System.Drawing.Size(210, 20);
             this.txbDS.TabIndex = 8;
             // 
             // txbID
             // 
-            this.txbID.Location = new System.Drawing.Point(75, 74);
-            this.txbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbID.Location = new System.Drawing.Point(56, 60);
+            this.txbID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(100, 22);
+            this.txbID.Size = new System.Drawing.Size(76, 20);
             this.txbID.TabIndex = 9;
             this.txbID.Text = "0";
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(491, 68);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPesquisar.Location = new System.Drawing.Point(368, 55);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(97, 34);
+            this.btnPesquisar.Size = new System.Drawing.Size(73, 28);
             this.btnPesquisar.TabIndex = 5;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -87,10 +89,10 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(188, 112);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Location = new System.Drawing.Point(141, 91);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(97, 34);
+            this.btnEditar.Size = new System.Drawing.Size(73, 28);
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -98,10 +100,10 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(75, 112);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNovo.Location = new System.Drawing.Point(56, 91);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(97, 34);
+            this.btnNovo.Size = new System.Drawing.Size(73, 28);
             this.btnNovo.TabIndex = 7;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -112,19 +114,20 @@
             this.dgvExamesTipos.AllowUserToAddRows = false;
             this.dgvExamesTipos.AllowUserToDeleteRows = false;
             this.dgvExamesTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExamesTipos.Location = new System.Drawing.Point(75, 167);
-            this.dgvExamesTipos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvExamesTipos.Location = new System.Drawing.Point(56, 136);
+            this.dgvExamesTipos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvExamesTipos.Name = "dgvExamesTipos";
             this.dgvExamesTipos.ReadOnly = true;
             this.dgvExamesTipos.RowTemplate.Height = 24;
-            this.dgvExamesTipos.Size = new System.Drawing.Size(921, 332);
+            this.dgvExamesTipos.Size = new System.Drawing.Size(691, 270);
             this.dgvExamesTipos.TabIndex = 4;
+            this.dgvExamesTipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExamesTipos_CellContentClick);
             // 
             // frmExamesTipos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txbDS);
@@ -134,7 +137,6 @@
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvExamesTipos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmExamesTipos";
             this.Text = "frmExamesTipos";
             this.Load += new System.EventHandler(this.frmExamesTipos_Load);

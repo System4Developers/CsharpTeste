@@ -53,5 +53,10 @@ namespace s4d_biomedicina.Apresentacao
             Modelo.Controle controle = new Modelo.Controle();
             dgvExamesTipos.DataSource = controle.PesquisarExamesTipos(Convert.ToInt32(txbID.Text), txbDS.Text);
         }
+
+        private void dgvExamesTipos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
