@@ -68,14 +68,14 @@
             // tsmTrocarUsuario
             // 
             this.tsmTrocarUsuario.Name = "tsmTrocarUsuario";
-            this.tsmTrocarUsuario.Size = new System.Drawing.Size(149, 22);
+            this.tsmTrocarUsuario.Size = new System.Drawing.Size(180, 22);
             this.tsmTrocarUsuario.Text = "Trocar Usuario";
             this.tsmTrocarUsuario.Click += new System.EventHandler(this.tsmTrocarUsuario_Click);
             // 
             // tsmSair
             // 
             this.tsmSair.Name = "tsmSair";
-            this.tsmSair.Size = new System.Drawing.Size(149, 22);
+            this.tsmSair.Size = new System.Drawing.Size(180, 22);
             this.tsmSair.Text = "Sair";
             this.tsmSair.Click += new System.EventHandler(this.tsmSair_Click);
             // 
@@ -93,14 +93,14 @@
             // tsiPacientes
             // 
             this.tsiPacientes.Name = "tsiPacientes";
-            this.tsiPacientes.Size = new System.Drawing.Size(180, 22);
+            this.tsiPacientes.Size = new System.Drawing.Size(155, 22);
             this.tsiPacientes.Text = "Pacientes";
             this.tsiPacientes.Click += new System.EventHandler(this.tsiPacientes_Click);
             // 
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsiUsuarios.Size = new System.Drawing.Size(155, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
@@ -111,34 +111,34 @@
             this.tsiExamesTipos,
             this.tsiExamesParametros});
             this.tsmExames.Name = "tsmExames";
-            this.tsmExames.Size = new System.Drawing.Size(180, 22);
+            this.tsmExames.Size = new System.Drawing.Size(155, 22);
             this.tsmExames.Text = "Exames";
             // 
             // tsiExamesAreas
             // 
             this.tsiExamesAreas.Name = "tsiExamesAreas";
-            this.tsiExamesAreas.Size = new System.Drawing.Size(180, 22);
+            this.tsiExamesAreas.Size = new System.Drawing.Size(134, 22);
             this.tsiExamesAreas.Text = "Areas";
             this.tsiExamesAreas.Click += new System.EventHandler(this.tsiExamesAreas_Click);
             // 
             // tsiExamesTipos
             // 
             this.tsiExamesTipos.Name = "tsiExamesTipos";
-            this.tsiExamesTipos.Size = new System.Drawing.Size(180, 22);
+            this.tsiExamesTipos.Size = new System.Drawing.Size(134, 22);
             this.tsiExamesTipos.Text = "Tipos";
             this.tsiExamesTipos.Click += new System.EventHandler(this.tsiExamesTipos_Click);
             // 
             // tsiExamesParametros
             // 
             this.tsiExamesParametros.Name = "tsiExamesParametros";
-            this.tsiExamesParametros.Size = new System.Drawing.Size(180, 22);
+            this.tsiExamesParametros.Size = new System.Drawing.Size(134, 22);
             this.tsiExamesParametros.Text = "Parametros";
             this.tsiExamesParametros.Click += new System.EventHandler(this.tsiExamesParametros_Click);
             // 
             // agendamentosToolStripMenuItem
             // 
             this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.agendamentosToolStripMenuItem.Text = "Agendamentos";
             this.agendamentosToolStripMenuItem.Click += new System.EventHandler(this.agendamentosToolStripMenuItem_Click);
             // 

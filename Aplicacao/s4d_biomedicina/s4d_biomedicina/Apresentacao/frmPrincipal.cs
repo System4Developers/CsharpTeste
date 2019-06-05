@@ -37,7 +37,7 @@ namespace s4d_biomedicina.Apresentacao
         private void tsmTrocarUsuario_Click(object sender, EventArgs e)
         {
             Apresentacao.frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
+            frmLogin.ShowDialog();
         }
 
         private void tsiPacientes_Click(object sender, EventArgs e)

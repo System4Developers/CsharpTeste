@@ -14,10 +14,15 @@ namespace s4d_biomedicina.DAL
 
         public Conexao()
         {
-            //con.ConnectionString = @"Data Source=DESKTOP-62JOGHE\SQLEXPRESS;Initial Catalog=unipBiomedicina;Integrated Security=True";
-            //Data Source=RUKANOTE\SQLEXPRESS;Initial Catalog=unipBiomedicina;User ID=sa;Password=admin01
-
-            con.ConnectionString = @"Data Source=DESKTOP-62JOGHE\SQLEXPRESS;Initial Catalog=unipBiomedicina;Integrated Security=True";
+            try
+            {
+                con.ConnectionString = @"Data Source=RUKANOTE\SQLEXPRESS;Initial Catalog=unipBiomedicina;User ID=sa;Password=admin01";
+            }
+            catch (Exception)
+            {
+                con.ConnectionString = @"Data Source=DESKTOP-62JOGHE\SQLEXPRESS;Initial Catalog=unipBiomedicina;Integrated Security=True";
+            }
+            
         }
 
         public SqlConnection Conectar()
