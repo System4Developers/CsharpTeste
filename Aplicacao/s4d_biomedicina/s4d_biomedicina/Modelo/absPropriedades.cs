@@ -9,7 +9,7 @@ namespace s4d_biomedicina.Modelo
     public abstract class absPropriedades
     {
         protected string mensagem;
-        int vai;
+
         public override string ToString()
         {
             return this.mensagem;

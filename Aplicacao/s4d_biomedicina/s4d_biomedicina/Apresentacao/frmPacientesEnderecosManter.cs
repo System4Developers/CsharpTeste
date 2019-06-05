@@ -97,7 +97,17 @@ namespace s4d_biomedicina.Apresentacao
             }
             if (this.comando == "editar")
             {
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.AtualizarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text, this.idPacienteouEndereco);
 
+                if (controle.ToString().Equals(""))
+                {
+                    MessageBox.Show("Atualização ok");
+                    //consulta sql que retorna o iD conforme o txbCPF
+                    this.comando = "editar";
+                    this.frmPacientesEnderecos.AtualizarTabela();
+                    this.Close();
+                }
             }
         }
     }

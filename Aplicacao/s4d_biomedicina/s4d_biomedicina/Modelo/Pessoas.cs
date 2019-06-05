@@ -22,6 +22,7 @@ namespace s4d_biomedicina.Modelo
         protected String Bairro;
         protected String Estado;
         protected String Cidade;
+        protected int idEndereco;
 
         protected string mensagem;
 

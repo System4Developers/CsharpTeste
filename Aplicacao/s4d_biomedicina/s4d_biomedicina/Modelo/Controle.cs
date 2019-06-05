@@ -113,7 +113,19 @@ namespace s4d_biomedicina.Modelo
                 this.mensagem = paciente.ToString();
             }
         }
-                    
+
+        public void AtualizarPacienteEndereco(string Cep, string Rua, string Numero, string Complemento, string Bairro, string Estado, string Cidade, int idEndereco)
+        {
+            this.mensagem = "";
+
+            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            paciente.AtualizarPacienteEndereco(Cep, Rua, Numero, Complemento, Bairro, Estado, Cidade, idEndereco);
+            if (!paciente.ToString().Equals(""))
+            {
+                this.mensagem = paciente.ToString();
+            }
+        }
+
         public void AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado, int idPaciente)
         {
             this.mensagem = "";

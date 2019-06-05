@@ -315,7 +315,48 @@ namespace s4d_biomedicina.DAL
 
             return this.mensagem;
         }
-        
+
+
+        public string AtualizarPacienteEndereco(string Cep, string Rua, string Numero, string Complemento, string Bairro, string Estado, string Cidade, int idEndereco)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
+            this.mensagem = "";
+            this.mensagem = "";
+            this.Cep = Cep;
+            this.Rua = Rua;
+            this.Numero = Numero;
+            this.Complemento = Complemento;
+            this.Bairro = Bairro;
+            this.Estado = Estado;
+            this.Cidade = Cidade;
+            this.idEndereco = idEndereco;
+
+
+
+            cmd.CommandText = "update enderecos set logradouro = @rua, cep=@cep,bairro=@bairro, numero = @numero, complemento = @complemento,cidade=@cidade, estado=@estado where idEndereco = @idEndereco";
+            cmd.Parameters.AddWithValue("@idEndereco", this.idEndereco);
+            cmd.Parameters.AddWithValue("@bairro", this.Bairro);
+            cmd.Parameters.AddWithValue("@estado", this.Estado);
+            cmd.Parameters.AddWithValue("@cidade", this.Cidade);
+            cmd.Parameters.AddWithValue("@complemento", this.Complemento);
+            cmd.Parameters.AddWithValue("@numero", this.Numero);
+            cmd.Parameters.AddWithValue("@rua", this.Rua);
+            cmd.Parameters.AddWithValue("@cep", this.Cep);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException)
+            {
+                return this.mensagem;
+            }
+
+            return this.mensagem;
+        }
         public DataTable GetPesquisaPaciente(string nome, string cpf)
         {
             Conexao con = new Conexao();
