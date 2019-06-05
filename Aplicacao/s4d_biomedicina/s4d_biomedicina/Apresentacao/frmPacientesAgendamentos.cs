@@ -13,6 +13,8 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientesAgendamentos : Form
     {
         private int idPaciente;
+        private string comando;
+
 
         public frmPacientesAgendamentos(int idPaciente)
         {
@@ -29,6 +31,13 @@ namespace s4d_biomedicina.Apresentacao
         {
             Modelo.Controle controle = new Modelo.Controle();
             dgvPacientesAgendamentos.DataSource = controle.ListaPacienteAgendamentos(this.idPaciente);
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            this.comando = "inserir";
+            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter();
+            frmPacientesAgendamentosManter.ShowDialog();
         }
     }
     

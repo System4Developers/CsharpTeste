@@ -19,6 +19,7 @@ namespace s4d_biomedicina.Apresentacao
         {
             InitializeComponent();
             this.idPaciente = idPaciente;
+
         }
 
         private void frmPacientesEnderecos_Load(object sender, EventArgs e)
