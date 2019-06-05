@@ -53,7 +53,7 @@ namespace s4d_biomedicina.DAL
             return dt;
         }
 
-        public string AdicionarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso,double altura,string grupoSanguineo,string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado)
+        public string AdicionarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso,double altura,string grupoSanguineo,string estadoPaciente)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
@@ -70,14 +70,12 @@ namespace s4d_biomedicina.DAL
             this.altura = altura;
             this.grupoSanguineo = grupoSanguineo;
             this.estadoPaciente = estadoPaciente;
-  
+
             cmd.CommandText = "insert into pessoas (nome,rg,cpf,dtNascimento,profissao,grauInstrucao) " +
                 "values (@nome,@rg,@cpf,@dtNascimento,@profissao,@grauInstrucao) " +
                 "declare @idPessoa int = @@identity " +
                 "insert into pacientes (prontuario,peso,altura,grupoSanguineo,fk_idPessoa_pessoas,estadoPaciente) " +
-                "values (@prontuario,@peso,@altura,@grupoSanguineo,@idPessoa,@estadoPaciente)" +
-                "insert into enderecos (logradouro,bairro,numero,cidade,estado,fk_idPessoa_pessoas) " +
-                "values (@logradouro,@bairro,@numero,@cidade,@estado,@idPessoa)"; 
+                "values (@prontuario,@peso,@altura,@grupoSanguineo,@idPessoa,@estadoPaciente)";
                 
             cmd.Parameters.AddWithValue("@nome", this.nome);
             cmd.Parameters.AddWithValue("@rg", this.rg);
@@ -91,8 +89,6 @@ namespace s4d_biomedicina.DAL
             cmd.Parameters.AddWithValue("@altura", this.altura);
             cmd.Parameters.AddWithValue("@grupoSanguineo", this.grupoSanguineo);
             cmd.Parameters.AddWithValue("@estadoPaciente", this.estadoPaciente);
-
-
 
             try
             {

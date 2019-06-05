@@ -91,12 +91,12 @@ namespace s4d_biomedicina.Modelo
         #endregion
 
         #region Manter Paciente
-        public void cadastrarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado)
+        public void cadastrarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente)
         {
             this.mensagem = "";
 
             DAL.dalPaciente paciente = new DAL.dalPaciente();
-            paciente.AdicionarPaciente(nome,rg,cpf,dtNascimento,profissao,grauInstrucao,prontuario,peso,altura,grupoSanguineo,estadoPaciente,logradouro,bairro,numero,cidade,estado);
+            paciente.AdicionarPaciente(nome,rg,cpf,dtNascimento,profissao,grauInstrucao,prontuario,peso,altura,grupoSanguineo,estadoPaciente);
             if (!paciente.ToString().Equals(""))
             {
                 this.mensagem = paciente.ToString();

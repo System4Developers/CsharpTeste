@@ -33,8 +33,8 @@ namespace s4d_biomedicina.Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, 0);
-            frmPacientesMain.ShowDialog();
+            frmPacientesManter frmPacientesManter = new frmPacientesManter(this, this.comando, 0);
+            frmPacientesManter.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

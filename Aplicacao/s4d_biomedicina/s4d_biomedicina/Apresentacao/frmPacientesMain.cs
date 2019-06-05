@@ -66,16 +66,8 @@ namespace s4d_biomedicina.Apresentacao
 
         private void frmPacientesMain_Load(object sender, EventArgs e)
         {
-            if(this.comando == "inserir")
-            {
-                Apresentacao.frmPacientesManter frmPacientesManter = new frmPacientesManter(this, this.comando, 0);
-                AbrirFormulario(frmPacientesManter);
-            }
-            else
-            { 
             Apresentacao.frmPacientesDadosCadastrais frmPacienteDadosCadastrais = new frmPacientesDadosCadastrais(this, this.comando, idPaciente);
             AbrirFormulario(frmPacienteDadosCadastrais);
-            }
         }
 
         private void label5_Click(object sender, EventArgs e)
