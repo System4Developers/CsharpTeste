@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace s4d_biomedicina.Apresentacao
 {
     public partial class frmPacientesDadosCadastrais : Form
     {
-
         private readonly frmPacientesMain frmPacientesMain;
         private string comando;
         private int idPaciente;
-
+        private SqlDataReader dr;
 
         public frmPacientesDadosCadastrais(frmPacientesMain frm, string comando, int idPaciente)
         {
@@ -28,31 +28,29 @@ namespace s4d_biomedicina.Apresentacao
 
         private void frmPacienteDadosCadastrais_Load(object sender, EventArgs e)
         {
-
-            DAL.dalPaciente dalPaciente = new DAL.dalPaciente();
-            dalPaciente.GetEditarPaciente(this.idPaciente);
-            while (dalPaciente.dr.Read())
+            Modelo.Controle controle = new Modelo.Controle();
+            this.dr = controle.GetPacienteDadosCadastrais(this.idPaciente);
+            while (this.dr.Read())
             {
-
                 txbID.Text = this.idPaciente.ToString();
-                txbProntuario.Text = dalPaciente.dr.GetValue(0).ToString();
-                txbNome.Text = dalPaciente.dr.GetValue(1).ToString();
-                txbRg.Text = dalPaciente.dr.GetValue(2).ToString();
-                txbCpf.Text = dalPaciente.dr.GetValue(3).ToString();
-                txbDtNascimento.Text = dalPaciente.dr.GetValue(4).ToString();
-                txbGrauInstrucao.Text = dalPaciente.dr.GetValue(5).ToString();
-                txbProfissao.Text = dalPaciente.dr.GetValue(6).ToString();
-                cmbEstado.Text = dalPaciente.dr.GetValue(7).ToString();
-              
-                txbPeso.Text = dalPaciente.dr.GetValue(13).ToString();
-                txbAltura.Text = dalPaciente.dr.GetValue(14).ToString();
-                txbGrupoSanguineo.Text = dalPaciente.dr.GetValue(15).ToString();
+                txbProntuario.Text = this.dr["prontuario"].ToString();
+                txbPeso.Text = this.dr["peso"].ToString();
+                txbAltura.Text = this.dr["altura"].ToString();
+                txbGrupoSanguineo.Text = this.dr["grupoSanguineo"].ToString();
+                cmbEstado.Text = this.dr["estadoPaciente"].ToString();
+                txbNome.Text = this.dr["nome"].ToString();
+                txbRg.Text = this.dr["rg"].ToString();
+                txbCpf.Text = this.dr["cpf"].ToString();
+                txbDtNascimento.Text = this.dr["dtNascimento"].ToString();
+                txbProfissao.Text = this.dr["profissao"].ToString();
+                txbGrauInstrucao.Text = this.dr["grauInstrucao"].ToString();
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-           
+            frmPacientesManter frmPacientesManter = new frmPacientesManter(this, "editar", Convert.ToInt32(txbID.Text));
+            frmPacientesManter.ShowDialog();
         }
     }
 }

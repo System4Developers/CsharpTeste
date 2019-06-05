@@ -54,7 +54,7 @@
             this.lblAltura = new System.Windows.Forms.Label();
             this.txbGrupoSanguineo = new System.Windows.Forms.TextBox();
             this.lblGrupoSanguineo = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.gpbPaciente.SuspendLayout();
             this.gpbInfoAdicional.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.gpbPaciente.Controls.Add(this.label4);
             this.gpbPaciente.Location = new System.Drawing.Point(23, 31);
             this.gpbPaciente.Name = "gpbPaciente";
-            this.gpbPaciente.Size = new System.Drawing.Size(718, 179);
+            this.gpbPaciente.Size = new System.Drawing.Size(671, 179);
             this.gpbPaciente.TabIndex = 56;
             this.gpbPaciente.TabStop = false;
             this.gpbPaciente.Text = "Paciente";
@@ -273,7 +273,7 @@
             this.gpbInfoAdicional.Controls.Add(this.lblGrupoSanguineo);
             this.gpbInfoAdicional.Location = new System.Drawing.Point(23, 234);
             this.gpbInfoAdicional.Name = "gpbInfoAdicional";
-            this.gpbInfoAdicional.Size = new System.Drawing.Size(282, 100);
+            this.gpbInfoAdicional.Size = new System.Drawing.Size(671, 71);
             this.gpbInfoAdicional.TabIndex = 55;
             this.gpbInfoAdicional.TabStop = false;
             this.gpbInfoAdicional.Text = "Informacoes Adicionais";
@@ -281,7 +281,7 @@
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(13, 29);
+            this.lblPeso.Location = new System.Drawing.Point(13, 33);
             this.lblPeso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
@@ -290,7 +290,7 @@
             // 
             // txbPeso
             // 
-            this.txbPeso.Location = new System.Drawing.Point(48, 26);
+            this.txbPeso.Location = new System.Drawing.Point(52, 29);
             this.txbPeso.Margin = new System.Windows.Forms.Padding(2);
             this.txbPeso.Name = "txbPeso";
             this.txbPeso.ReadOnly = true;
@@ -299,7 +299,7 @@
             // 
             // txbAltura
             // 
-            this.txbAltura.Location = new System.Drawing.Point(161, 29);
+            this.txbAltura.Location = new System.Drawing.Point(262, 30);
             this.txbAltura.Margin = new System.Windows.Forms.Padding(2);
             this.txbAltura.Name = "txbAltura";
             this.txbAltura.ReadOnly = true;
@@ -309,7 +309,7 @@
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(123, 32);
+            this.lblAltura.Location = new System.Drawing.Point(224, 33);
             this.lblAltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(34, 13);
@@ -318,7 +318,7 @@
             // 
             // txbGrupoSanguineo
             // 
-            this.txbGrupoSanguineo.Location = new System.Drawing.Point(115, 60);
+            this.txbGrupoSanguineo.Location = new System.Drawing.Point(519, 29);
             this.txbGrupoSanguineo.Margin = new System.Windows.Forms.Padding(2);
             this.txbGrupoSanguineo.Name = "txbGrupoSanguineo";
             this.txbGrupoSanguineo.ReadOnly = true;
@@ -328,33 +328,33 @@
             // lblGrupoSanguineo
             // 
             this.lblGrupoSanguineo.AutoSize = true;
-            this.lblGrupoSanguineo.Location = new System.Drawing.Point(13, 62);
+            this.lblGrupoSanguineo.Location = new System.Drawing.Point(417, 31);
             this.lblGrupoSanguineo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrupoSanguineo.Name = "lblGrupoSanguineo";
             this.lblGrupoSanguineo.Size = new System.Drawing.Size(90, 13);
             this.lblGrupoSanguineo.TabIndex = 33;
             this.lblGrupoSanguineo.Text = "Grupo Sanguineo";
             // 
-            // btnSalvar
+            // btnEditar
             // 
-            this.btnSalvar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSalvar.Location = new System.Drawing.Point(551, 415);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(148, 38);
-            this.btnSalvar.TabIndex = 53;
-            this.btnSalvar.Text = "Editar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnEditar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEditar.Location = new System.Drawing.Point(546, 325);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(148, 38);
+            this.btnEditar.TabIndex = 53;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmPacientesDadosCadastrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 479);
+            this.ClientSize = new System.Drawing.Size(722, 390);
             this.Controls.Add(this.gpbPaciente);
             this.Controls.Add(this.gpbInfoAdicional);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnEditar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPacientesDadosCadastrais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -396,6 +396,6 @@
         private System.Windows.Forms.Label lblAltura;
         private System.Windows.Forms.TextBox txbGrupoSanguineo;
         private System.Windows.Forms.Label lblGrupoSanguineo;
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

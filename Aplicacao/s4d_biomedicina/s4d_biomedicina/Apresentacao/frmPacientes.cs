@@ -13,6 +13,7 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientes : Form
     {
         private string comando;
+        private int idPaciente;
 
         public frmPacientes()
         {
@@ -24,12 +25,6 @@ namespace s4d_biomedicina.Apresentacao
             AtualizarTabela();
         }
 
-        public void AtualizarTabela()
-        {
-            Modelo.Controle controle = new Modelo.Controle();
-            dgvPacientes.DataSource = controle.ListaPaciente();
-        }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
@@ -39,11 +34,9 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int idPaciente;
             this.comando = "editar";
-            idPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value);
-            
-            frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, idPaciente);
+            this.idPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value);
+            frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, this.idPaciente);
             frmPacientesMain.ShowDialog();
         }
 
@@ -51,6 +44,12 @@ namespace s4d_biomedicina.Apresentacao
         {
             Modelo.Controle controle = new Modelo.Controle();
             dgvPacientes.DataSource = controle.PesquisarPaciente(txbNome.Text,txbCpf.Text);
+        }
+
+        public void AtualizarTabela()
+        {
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvPacientes.DataSource = controle.ListaPaciente();
         }
     }
 }

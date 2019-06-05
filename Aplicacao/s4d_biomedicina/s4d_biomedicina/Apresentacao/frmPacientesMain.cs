@@ -40,6 +40,10 @@ namespace s4d_biomedicina.Apresentacao
                 {
                     frmStatus = "aberto";
                 }
+                else
+                {
+                    frmStatus = "";
+                }
             }
             if (frmStatus.Equals(""))
             {
@@ -56,7 +60,7 @@ namespace s4d_biomedicina.Apresentacao
         {
             for (int i = 0; i < Application.OpenForms.Count; i++)
             {
-                if (Application.OpenForms[i].Name != "frmPrincipal" && Application.OpenForms[i].Name != "frmPacientesMain" )
+                if (Application.OpenForms[i].Name != "frmPrincipal" && Application.OpenForms[i].Name != "frmPacientesMain" && Application.OpenForms[i].Name != "frmPacientes" )
                 {
                     Application.OpenForms[i].Close();
                 }

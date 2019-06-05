@@ -36,7 +36,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(610, 364);
+            this.btnEditar.Location = new System.Drawing.Point(580, 316);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(136, 28);
@@ -46,7 +46,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(456, 364);
+            this.btnNovo.Location = new System.Drawing.Point(426, 316);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(150, 28);
@@ -59,7 +59,7 @@
             this.dgvPacientesExames.AllowUserToAddRows = false;
             this.dgvPacientesExames.AllowUserToDeleteRows = false;
             this.dgvPacientesExames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientesExames.Location = new System.Drawing.Point(55, 58);
+            this.dgvPacientesExames.Location = new System.Drawing.Point(25, 21);
             this.dgvPacientesExames.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPacientesExames.Name = "dgvPacientesExames";
             this.dgvPacientesExames.ReadOnly = true;
@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(759, 397);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvPacientesExames);

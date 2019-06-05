@@ -191,7 +191,7 @@
             // lblGrupoSanguineo
             // 
             this.lblGrupoSanguineo.AutoSize = true;
-            this.lblGrupoSanguineo.Location = new System.Drawing.Point(13, 62);
+            this.lblGrupoSanguineo.Location = new System.Drawing.Point(425, 32);
             this.lblGrupoSanguineo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrupoSanguineo.Name = "lblGrupoSanguineo";
             this.lblGrupoSanguineo.Size = new System.Drawing.Size(90, 13);
@@ -200,7 +200,7 @@
             // 
             // txbGrupoSanguineo
             // 
-            this.txbGrupoSanguineo.Location = new System.Drawing.Point(115, 60);
+            this.txbGrupoSanguineo.Location = new System.Drawing.Point(519, 29);
             this.txbGrupoSanguineo.Margin = new System.Windows.Forms.Padding(2);
             this.txbGrupoSanguineo.Name = "txbGrupoSanguineo";
             this.txbGrupoSanguineo.Size = new System.Drawing.Size(129, 20);
@@ -209,7 +209,7 @@
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(123, 32);
+            this.lblAltura.Location = new System.Drawing.Point(227, 32);
             this.lblAltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(34, 13);
@@ -218,7 +218,7 @@
             // 
             // txbAltura
             // 
-            this.txbAltura.Location = new System.Drawing.Point(161, 29);
+            this.txbAltura.Location = new System.Drawing.Point(265, 29);
             this.txbAltura.Margin = new System.Windows.Forms.Padding(2);
             this.txbAltura.Name = "txbAltura";
             this.txbAltura.Size = new System.Drawing.Size(83, 20);
@@ -227,7 +227,7 @@
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(13, 29);
+            this.lblPeso.Location = new System.Drawing.Point(13, 32);
             this.lblPeso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
@@ -236,7 +236,7 @@
             // 
             // txbPeso
             // 
-            this.txbPeso.Location = new System.Drawing.Point(48, 26);
+            this.txbPeso.Location = new System.Drawing.Point(48, 29);
             this.txbPeso.Margin = new System.Windows.Forms.Padding(2);
             this.txbPeso.Name = "txbPeso";
             this.txbPeso.Size = new System.Drawing.Size(69, 20);
@@ -275,10 +275,10 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(12, 339);
+            this.btnSalvar.Location = new System.Drawing.Point(12, 297);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(66, 22);
+            this.btnSalvar.Size = new System.Drawing.Size(74, 27);
             this.btnSalvar.TabIndex = 39;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -301,9 +301,9 @@
             this.gpbInfoAdicional.Controls.Add(this.lblAltura);
             this.gpbInfoAdicional.Controls.Add(this.txbGrupoSanguineo);
             this.gpbInfoAdicional.Controls.Add(this.lblGrupoSanguineo);
-            this.gpbInfoAdicional.Location = new System.Drawing.Point(12, 224);
+            this.gpbInfoAdicional.Location = new System.Drawing.Point(12, 217);
             this.gpbInfoAdicional.Name = "gpbInfoAdicional";
-            this.gpbInfoAdicional.Size = new System.Drawing.Size(282, 100);
+            this.gpbInfoAdicional.Size = new System.Drawing.Size(666, 65);
             this.gpbInfoAdicional.TabIndex = 51;
             this.gpbInfoAdicional.TabStop = false;
             this.gpbInfoAdicional.Text = "Informacoes Adicionais";
@@ -330,7 +330,7 @@
             this.gpbPaciente.Controls.Add(this.label4);
             this.gpbPaciente.Location = new System.Drawing.Point(12, 3);
             this.gpbPaciente.Name = "gpbPaciente";
-            this.gpbPaciente.Size = new System.Drawing.Size(718, 198);
+            this.gpbPaciente.Size = new System.Drawing.Size(666, 198);
             this.gpbPaciente.TabIndex = 52;
             this.gpbPaciente.TabStop = false;
             this.gpbPaciente.Text = "Paciente";
@@ -339,7 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 390);
+            this.ClientSize = new System.Drawing.Size(697, 352);
             this.Controls.Add(this.gpbPaciente);
             this.Controls.Add(this.gpbInfoAdicional);
             this.Controls.Add(this.btnSalvar);
@@ -347,6 +347,7 @@
             this.Name = "frmPacientesManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPacientesManter";
+            this.Load += new System.EventHandler(this.frmPacientesManter_Load);
             this.gpbInfoAdicional.ResumeLayout(false);
             this.gpbInfoAdicional.PerformLayout();
             this.gpbPaciente.ResumeLayout(false);

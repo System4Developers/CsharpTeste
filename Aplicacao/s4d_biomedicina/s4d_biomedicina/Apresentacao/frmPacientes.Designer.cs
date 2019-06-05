@@ -81,7 +81,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(450, 33);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(72, 19);
+            this.btnPesquisar.Size = new System.Drawing.Size(77, 21);
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
