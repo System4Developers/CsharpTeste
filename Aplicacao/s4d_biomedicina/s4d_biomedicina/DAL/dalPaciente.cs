@@ -36,7 +36,14 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaPacienteExames(int idPaciente)
         {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select dsExameTipo,estadoExame,dtExame,solicitante,idPaciente " +
+             "from examesAgendados " +
+             "join pacientes on examesAgendados.fk_idPaciente_pacientes = pacientes.idPaciente " +
+             "join consultas on examesAgendados.fk_idConsulta_consultas = consultas.idConsulta " +
+             "join ExamesResultados on examesAgendados.idExameAgendado = ExamesResultados.fk_idExameAgendado_examesAgendados " +
+             "join examesParametros on ExamesResultados.fk_idExameParametro_examesParametros = examesParametros.idExameParametro " +
+             "join examesTipos on examesParametros.fk_idExameTipo_examesTipos = examesTipos.idExameTipo " +
+             "where idPaciente = @idPaciente", con.Conectar());
             sda.SelectCommand.Parameters.AddWithValue("@idPaciente", idPaciente);
             DataTable dt = new DataTable();
             sda.Fill(dt);

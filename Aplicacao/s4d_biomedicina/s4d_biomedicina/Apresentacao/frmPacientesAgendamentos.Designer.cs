@@ -72,12 +72,12 @@
             // 
             // btnNovoExame
             // 
-            this.btnNovoExame.Location = new System.Drawing.Point(443, 346);
+            this.btnNovoExame.Location = new System.Drawing.Point(439, 346);
             this.btnNovoExame.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovoExame.Name = "btnNovoExame";
             this.btnNovoExame.Size = new System.Drawing.Size(150, 28);
             this.btnNovoExame.TabIndex = 19;
-            this.btnNovoExame.Text = "Novo Exame";
+            this.btnNovoExame.Text = "Atribuir Exames";
             this.btnNovoExame.UseVisualStyleBackColor = true;
             this.btnNovoExame.Click += new System.EventHandler(this.btnNovoExame_Click);
             // 
