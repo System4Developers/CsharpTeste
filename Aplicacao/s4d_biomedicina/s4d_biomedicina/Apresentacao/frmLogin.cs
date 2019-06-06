@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace s4d_biomedicina.Apresentacao
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : MaterialSkin.Controls.MaterialForm 
     {
         public frmLogin()
         {
@@ -18,6 +18,22 @@ namespace s4d_biomedicina.Apresentacao
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Modelo.Estaticos.logado = false;
+            this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
             Modelo.Controle controle = new Modelo.Controle();
             controle.acessar(txbLogin.Text, txbSenha.Text);
@@ -29,12 +45,6 @@ namespace s4d_biomedicina.Apresentacao
             {
                 MessageBox.Show(controle.ToString());
             }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Modelo.Estaticos.logado = false;
-            this.Close();
         }
     }
 }
