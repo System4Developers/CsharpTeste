@@ -15,15 +15,13 @@ namespace s4d_biomedicina.Apresentacao
     {
         private string comando;
         private int idPacienteouExame;
-        private readonly frmPacientesExames frmPacientesExames;
         private SqlDataReader dr;
 
-        public frmPacientesExamesManter(string comando, int idPacienteouExame, frmPacientesExames frm)
+        public frmPacientesExamesManter(string comando, int idPacienteouExame)
         {
             InitializeComponent();
             this.idPacienteouExame = idPacienteouExame;
             this.comando = comando;
-            this.frmPacientesExames = frm;
         }
 
         private void frmPacientesExamesManter_Load(object sender, EventArgs e)

@@ -35,8 +35,9 @@ namespace s4d_biomedicina.Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmPacientesExamesManter frmPacientesExamesManter = new frmPacientesExamesManter(this.comando, idPaciente, this);
+            frmPacientesExamesManter frmPacientesExamesManter = new frmPacientesExamesManter(this.comando, idPaciente);
             frmPacientesExamesManter.ShowDialog();
+            AtualizarTabela();
         }
     }
 }

@@ -41,7 +41,7 @@
             // 
             // bntMover1
             // 
-            this.bntMover1.Location = new System.Drawing.Point(298, 100);
+            this.bntMover1.Location = new System.Drawing.Point(268, 88);
             this.bntMover1.Name = "bntMover1";
             this.bntMover1.Size = new System.Drawing.Size(115, 23);
             this.bntMover1.TabIndex = 2;
@@ -51,7 +51,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(298, 145);
+            this.btnRemover.Location = new System.Drawing.Point(268, 133);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(115, 23);
             this.btnRemover.TabIndex = 3;
@@ -61,7 +61,7 @@
             // 
             // btnMoverTodos
             // 
-            this.btnMoverTodos.Location = new System.Drawing.Point(298, 188);
+            this.btnMoverTodos.Location = new System.Drawing.Point(268, 176);
             this.btnMoverTodos.Name = "btnMoverTodos";
             this.btnMoverTodos.Size = new System.Drawing.Size(115, 23);
             this.btnMoverTodos.TabIndex = 4;
@@ -71,7 +71,7 @@
             // 
             // btnRemoverTodos
             // 
-            this.btnRemoverTodos.Location = new System.Drawing.Point(298, 231);
+            this.btnRemoverTodos.Location = new System.Drawing.Point(268, 219);
             this.btnRemoverTodos.Name = "btnRemoverTodos";
             this.btnRemoverTodos.Size = new System.Drawing.Size(115, 23);
             this.btnRemoverTodos.TabIndex = 5;
@@ -81,7 +81,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(510, 415);
+            this.btnSalvar.Location = new System.Drawing.Point(497, 339);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(115, 23);
             this.btnSalvar.TabIndex = 6;
@@ -91,7 +91,7 @@
             // lblDisponiveis
             // 
             this.lblDisponiveis.AutoSize = true;
-            this.lblDisponiveis.Location = new System.Drawing.Point(72, 56);
+            this.lblDisponiveis.Location = new System.Drawing.Point(42, 44);
             this.lblDisponiveis.Name = "lblDisponiveis";
             this.lblDisponiveis.Size = new System.Drawing.Size(102, 13);
             this.lblDisponiveis.TabIndex = 7;
@@ -100,7 +100,7 @@
             // lblSolicitados
             // 
             this.lblSolicitados.AutoSize = true;
-            this.lblSolicitados.Location = new System.Drawing.Point(445, 56);
+            this.lblSolicitados.Location = new System.Drawing.Point(415, 44);
             this.lblSolicitados.Name = "lblSolicitados";
             this.lblSolicitados.Size = new System.Drawing.Size(69, 13);
             this.lblSolicitados.TabIndex = 8;
@@ -110,7 +110,7 @@
             // 
             this.ltvExames.FullRowSelect = true;
             this.ltvExames.HideSelection = false;
-            this.ltvExames.Location = new System.Drawing.Point(75, 84);
+            this.ltvExames.Location = new System.Drawing.Point(45, 72);
             this.ltvExames.MultiSelect = false;
             this.ltvExames.Name = "ltvExames";
             this.ltvExames.Size = new System.Drawing.Size(191, 227);
@@ -123,7 +123,7 @@
             // 
             this.ltvExamesSelecionados.FullRowSelect = true;
             this.ltvExamesSelecionados.HideSelection = false;
-            this.ltvExamesSelecionados.Location = new System.Drawing.Point(448, 84);
+            this.ltvExamesSelecionados.Location = new System.Drawing.Point(418, 72);
             this.ltvExamesSelecionados.MultiSelect = false;
             this.ltvExamesSelecionados.Name = "ltvExamesSelecionados";
             this.ltvExamesSelecionados.Size = new System.Drawing.Size(194, 227);
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 516);
+            this.ClientSize = new System.Drawing.Size(652, 397);
             this.Controls.Add(this.ltvExamesSelecionados);
             this.Controls.Add(this.ltvExames);
             this.Controls.Add(this.lblSolicitados);
