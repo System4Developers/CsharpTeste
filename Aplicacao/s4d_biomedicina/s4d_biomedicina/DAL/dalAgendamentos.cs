@@ -65,7 +65,7 @@ namespace s4d_biomedicina.DAL
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
-            cmd.CommandText = "select dtConsulta as [Data],CONVERT(VARCHAR(11),dtConsulta,114) AS hora,solicitante as [solicitante], estadoConsulta as [estadoConsulta] from consultas where idConsulta = @idConsulta";
+            cmd.CommandText = "select dtConsulta as [Data],CONVERT(VARCHAR(5),dtConsulta,114) AS hora,solicitante as [solicitante], estadoConsulta as [estadoConsulta] from consultas where idConsulta = @idConsulta";
 
             cmd.Parameters.AddWithValue("@idConsulta", id);
             try
@@ -77,6 +77,48 @@ namespace s4d_biomedicina.DAL
             {
                 this.mensagem = "Erro com Banco!";
             }
+        }
+
+        public string AtualizarPacienteAgendamento(string Data, string Horario, string Status, int id, string solicitante)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
+            this.mensagem = "";
+            int idUsuario;
+            idUsuario = Modelo.Estaticos.idUsuario;
+            this.mensagem = "";
+            this.Data = Data;
+            this.Horario = Horario;
+            this.Status = Status;
+            this.idAgendamento = id;
+            this.Solicitante = solicitante;
+            string dtConsulta = this.Data + " " + this.Horario;
+
+            cmd.CommandText = "update consultas " +
+                "set dtConsulta=@dtConsulta,solicitante=@Solicitante,estadoConsulta=@Status,fk_idUsuario_usuarios=@idUsuario " +
+                "where idConsulta = @idAgendamento ";
+
+            cmd.Parameters.AddWithValue("@dtConsulta", dtConsulta);
+            cmd.Parameters.AddWithValue("@Solicitante", this.Solicitante);
+            cmd.Parameters.AddWithValue("@Status", this.Status);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            cmd.Parameters.AddWithValue("@idAgendamento", this.idAgendamento);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException ex)
+            {
+                //return this.mensagem;
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+            }
+
+            return this.mensagem;
+
         }
     }
 }

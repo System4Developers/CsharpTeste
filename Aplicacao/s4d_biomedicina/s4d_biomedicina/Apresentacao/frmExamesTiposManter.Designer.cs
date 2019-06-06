@@ -102,6 +102,7 @@
             // 
             // cmbStatus
             // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "HABILITADO",
@@ -113,6 +114,7 @@
             // 
             // cmbDsArea
             // 
+            this.cmbDsArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDsArea.FormattingEnabled = true;
             this.cmbDsArea.Location = new System.Drawing.Point(144, 78);
             this.cmbDsArea.Name = "cmbDsArea";
