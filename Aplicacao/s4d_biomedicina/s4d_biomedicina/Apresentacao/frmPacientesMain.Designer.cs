@@ -104,6 +104,7 @@
             this.Controls.Add(this.lblAgendamentos);
             this.Controls.Add(this.lblEnderecos);
             this.Controls.Add(this.lblDadosCadastrais);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPacientesMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPacienteMain";
