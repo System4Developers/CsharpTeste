@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.mnsMenu = new System.Windows.Forms.MenuStrip();
-            this.tsmArquivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTrocarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmConsulta = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiPacientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmExames = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiExamesAreas = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +40,9 @@
             this.tsiExamesParametros = new System.Windows.Forms.ToolStripMenuItem();
             this.agendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlForms = new System.Windows.Forms.Panel();
+            this.tsmPesquisa = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,22 +50,25 @@
             // 
             this.mnsMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmArquivo,
-            this.tsmConsulta});
+            this.tsmAdmin,
+            this.tsmPesquisa,
+            this.tsmLogin});
             this.mnsMenu.Location = new System.Drawing.Point(0, 0);
             this.mnsMenu.Name = "mnsMenu";
             this.mnsMenu.Size = new System.Drawing.Size(1301, 24);
             this.mnsMenu.TabIndex = 0;
             this.mnsMenu.Text = "menuStrip1";
             // 
-            // tsmArquivo
+            // tsmLogin
             // 
-            this.tsmArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmLogin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmTrocarUsuario,
+            this.alterarSenhaToolStripMenuItem,
             this.tsmSair});
-            this.tsmArquivo.Name = "tsmArquivo";
-            this.tsmArquivo.Size = new System.Drawing.Size(61, 20);
-            this.tsmArquivo.Text = "Arquivo";
+            this.tsmLogin.Name = "tsmLogin";
+            this.tsmLogin.Size = new System.Drawing.Size(49, 20);
+            this.tsmLogin.Text = "Login";
+            this.tsmLogin.Click += new System.EventHandler(this.tsmArquivo_Click);
             // 
             // tsmTrocarUsuario
             // 
@@ -79,28 +84,20 @@
             this.tsmSair.Text = "Sair";
             this.tsmSair.Click += new System.EventHandler(this.tsmSair_Click);
             // 
-            // tsmConsulta
+            // tsmAdmin
             // 
-            this.tsmConsulta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiPacientes,
+            this.tsmAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiUsuarios,
             this.tsmExames,
             this.agendamentosToolStripMenuItem});
-            this.tsmConsulta.Name = "tsmConsulta";
-            this.tsmConsulta.Size = new System.Drawing.Size(66, 20);
-            this.tsmConsulta.Text = "Consulta";
-            // 
-            // tsiPacientes
-            // 
-            this.tsiPacientes.Name = "tsiPacientes";
-            this.tsiPacientes.Size = new System.Drawing.Size(155, 22);
-            this.tsiPacientes.Text = "Pacientes";
-            this.tsiPacientes.Click += new System.EventHandler(this.tsiPacientes_Click);
+            this.tsmAdmin.Name = "tsmAdmin";
+            this.tsmAdmin.Size = new System.Drawing.Size(95, 20);
+            this.tsmAdmin.Text = "Administrador";
             // 
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(155, 22);
+            this.tsiUsuarios.Size = new System.Drawing.Size(180, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
@@ -111,34 +108,34 @@
             this.tsiExamesTipos,
             this.tsiExamesParametros});
             this.tsmExames.Name = "tsmExames";
-            this.tsmExames.Size = new System.Drawing.Size(155, 22);
+            this.tsmExames.Size = new System.Drawing.Size(180, 22);
             this.tsmExames.Text = "Exames";
             // 
             // tsiExamesAreas
             // 
             this.tsiExamesAreas.Name = "tsiExamesAreas";
-            this.tsiExamesAreas.Size = new System.Drawing.Size(134, 22);
+            this.tsiExamesAreas.Size = new System.Drawing.Size(180, 22);
             this.tsiExamesAreas.Text = "Areas";
             this.tsiExamesAreas.Click += new System.EventHandler(this.tsiExamesAreas_Click);
             // 
             // tsiExamesTipos
             // 
             this.tsiExamesTipos.Name = "tsiExamesTipos";
-            this.tsiExamesTipos.Size = new System.Drawing.Size(134, 22);
+            this.tsiExamesTipos.Size = new System.Drawing.Size(180, 22);
             this.tsiExamesTipos.Text = "Tipos";
             this.tsiExamesTipos.Click += new System.EventHandler(this.tsiExamesTipos_Click);
             // 
             // tsiExamesParametros
             // 
             this.tsiExamesParametros.Name = "tsiExamesParametros";
-            this.tsiExamesParametros.Size = new System.Drawing.Size(134, 22);
+            this.tsiExamesParametros.Size = new System.Drawing.Size(180, 22);
             this.tsiExamesParametros.Text = "Parametros";
             this.tsiExamesParametros.Click += new System.EventHandler(this.tsiExamesParametros_Click);
             // 
             // agendamentosToolStripMenuItem
             // 
             this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agendamentosToolStripMenuItem.Text = "Agendamentos";
             this.agendamentosToolStripMenuItem.Click += new System.EventHandler(this.agendamentosToolStripMenuItem_Click);
             // 
@@ -150,6 +147,28 @@
             this.pnlForms.Name = "pnlForms";
             this.pnlForms.Size = new System.Drawing.Size(749, 283);
             this.pnlForms.TabIndex = 1;
+            // 
+            // tsmPesquisa
+            // 
+            this.tsmPesquisa.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pacientesToolStripMenuItem});
+            this.tsmPesquisa.Name = "tsmPesquisa";
+            this.tsmPesquisa.Size = new System.Drawing.Size(65, 20);
+            this.tsmPesquisa.Text = "Localizar";
+            this.tsmPesquisa.Click += new System.EventHandler(this.administradorToolStripMenuItem_Click);
+            // 
+            // pacientesToolStripMenuItem
+            // 
+            this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pacientesToolStripMenuItem.Text = "Pacientes";
+            this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
+            // 
+            // alterarSenhaToolStripMenuItem
+            // 
+            this.alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
+            this.alterarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarSenhaToolStripMenuItem.Text = "Alterar senha";
             // 
             // frmPrincipal
             // 
@@ -176,17 +195,19 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mnsMenu;
-        private System.Windows.Forms.ToolStripMenuItem tsmArquivo;
+        private System.Windows.Forms.ToolStripMenuItem tsmLogin;
         private System.Windows.Forms.ToolStripMenuItem tsmTrocarUsuario;
         private System.Windows.Forms.ToolStripMenuItem tsmSair;
         private System.Windows.Forms.Panel pnlForms;
-        private System.Windows.Forms.ToolStripMenuItem tsmConsulta;
-        private System.Windows.Forms.ToolStripMenuItem tsiPacientes;
+        private System.Windows.Forms.ToolStripMenuItem tsmAdmin;
         private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
         private System.Windows.Forms.ToolStripMenuItem tsmExames;
         private System.Windows.Forms.ToolStripMenuItem tsiExamesAreas;
         private System.Windows.Forms.ToolStripMenuItem tsiExamesTipos;
         private System.Windows.Forms.ToolStripMenuItem tsiExamesParametros;
         private System.Windows.Forms.ToolStripMenuItem agendamentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmPesquisa;
+        private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarSenhaToolStripMenuItem;
     }
 }
