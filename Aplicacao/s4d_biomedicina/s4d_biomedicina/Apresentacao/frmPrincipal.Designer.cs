@@ -41,7 +41,7 @@
             this.agendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlForms = new System.Windows.Forms.Panel();
             this.tsmPesquisa = new System.Windows.Forms.ToolStripMenuItem();
-            this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiPacientes = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
@@ -151,18 +151,18 @@
             // tsmPesquisa
             // 
             this.tsmPesquisa.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pacientesToolStripMenuItem});
+            this.tsiPacientes});
             this.tsmPesquisa.Name = "tsmPesquisa";
             this.tsmPesquisa.Size = new System.Drawing.Size(65, 20);
             this.tsmPesquisa.Text = "Localizar";
             this.tsmPesquisa.Click += new System.EventHandler(this.administradorToolStripMenuItem_Click);
             // 
-            // pacientesToolStripMenuItem
+            // tsiPacientes
             // 
-            this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pacientesToolStripMenuItem.Text = "Pacientes";
-            this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
+            this.tsiPacientes.Name = "tsiPacientes";
+            this.tsiPacientes.Size = new System.Drawing.Size(180, 22);
+            this.tsiPacientes.Text = "Pacientes";
+            this.tsiPacientes.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
             // alterarSenhaToolStripMenuItem
             // 
@@ -207,7 +207,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsiExamesParametros;
         private System.Windows.Forms.ToolStripMenuItem agendamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmPesquisa;
-        private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsiPacientes;
         private System.Windows.Forms.ToolStripMenuItem alterarSenhaToolStripMenuItem;
     }
 }

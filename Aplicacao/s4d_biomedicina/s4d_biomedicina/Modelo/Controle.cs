@@ -350,5 +350,52 @@ namespace s4d_biomedicina.Modelo
 
         #endregion
 
+        #region Manter Paciente Exames
+        /*public void cadastrarExameTipo(string dsExameArea, string estadoExameTipo, int idExameArea)
+        {
+            this.mensagem = "";
+
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            exametipo.AdicionarExameTipo(dsExameArea, estadoExameTipo, idExameArea);
+            if (!exametipo.ToString().Equals(""))
+            {
+                this.mensagem = exametipo.ToString();
+            }
+        }
+
+        public void AtualizarExamesTipos(string dsExameTipo, string estadoExameTipo, int idExameTipo, int idExameArea)
+        {
+            this.mensagem = "";
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            exametipo.AtualizarExamesTipos(dsExameTipo, estadoExameTipo, idExameTipo, idExameArea);
+            if (!exametipo.ToString().Equals(""))
+            {
+                this.mensagem = exametipo.ToString();
+            }
+        }
+        */
+        public DataTable GetListaExames()
+        {
+            DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
+            dalExameTipo.GetListaExamesDisponiveis();
+            return dalExameTipo.dt;
+        }
+        /*
+        public DataTable ListaExamesTipos()
+        {
+            DataTable dt = new DataTable();
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            dt = exametipo.GetListaExamesTipos();
+            return dt;
+        }
+
+        public DataTable PesquisarExamesTipos(int idExameTipo, string dsExameTipo)
+        {
+            DataTable dt = new DataTable();
+            DAL.dalExameTipo exametipo = new DAL.dalExameTipo();
+            dt = exametipo.GetPesquisaExamesTipos(idExameTipo, dsExameTipo);
+            return dt;
+        } */
+        #endregion
     }
 }

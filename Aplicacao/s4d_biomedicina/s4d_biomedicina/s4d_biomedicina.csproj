@@ -194,6 +194,11 @@
     <Compile Include="Modelo\Validacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="unipBiomedicinaDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>unipBiomedicinaDataSet4.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Apresentacao\frmPacientesAgendamentosManter.resx">
       <DependentUpon>frmPacientesAgendamentosManter.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +417,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="unipBiomedicinaDataSet4.xsc">
+      <DependentUpon>unipBiomedicinaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="unipBiomedicinaDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>unipBiomedicinaDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="unipBiomedicinaDataSet4.xss">
+      <DependentUpon>unipBiomedicinaDataSet4.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -120,6 +120,7 @@
             this.cmbDsArea.Name = "cmbDsArea";
             this.cmbDsArea.Size = new System.Drawing.Size(173, 21);
             this.cmbDsArea.TabIndex = 52;
+            this.cmbDsArea.SelectedIndexChanged += new System.EventHandler(this.cmbDsArea_SelectedIndexChanged);
             // 
             // frmExamesTiposManter
             // 

@@ -51,7 +51,7 @@ namespace s4d_biomedicina.DAL
 
                 this.mensagem = "Erro com banco de Dados";
             }
-
+            dr.Close();
             return this.mensagem;
         }
 
