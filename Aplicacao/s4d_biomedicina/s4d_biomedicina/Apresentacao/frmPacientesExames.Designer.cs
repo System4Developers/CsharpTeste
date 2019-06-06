@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.dgvPacientesExames = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesExames)).BeginInit();
             this.SuspendLayout();
@@ -43,17 +42,6 @@
             this.btnEditar.TabIndex = 17;
             this.btnEditar.Text = "Editar Exames";
             this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(426, 316);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(150, 28);
-            this.btnNovo.TabIndex = 18;
-            this.btnNovo.Text = "Novo Exame";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // dgvPacientesExames
             // 
@@ -73,9 +61,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(759, 397);
+            this.ClientSize = new System.Drawing.Size(741, 372);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvPacientesExames);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPacientesExames";
@@ -90,7 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.DataGridView dgvPacientesExames;
     }
 }

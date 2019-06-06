@@ -76,9 +76,9 @@ namespace s4d_biomedicina.Apresentacao
             }
         }
 
-        private void cmbDsArea_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

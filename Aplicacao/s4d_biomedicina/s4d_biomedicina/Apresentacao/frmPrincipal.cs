@@ -27,7 +27,11 @@ namespace s4d_biomedicina.Apresentacao
             {
                 this.Close();
             }
-            tsbLogin.Text ="Bem-Vindo : " + Modelo.Estaticos.userName.ToString();
+            else
+            {
+                tsbLogin.Text = "Bem-Vindo : " + Modelo.Estaticos.userName.ToString();
+            }
+            
         }
 
         private void tsmSair_Click(object sender, EventArgs e)

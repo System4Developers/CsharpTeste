@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gpbLocalidade = new System.Windows.Forms.GroupBox();
+            this.lblInformacao = new System.Windows.Forms.Label();
             this.txbCep = new System.Windows.Forms.MaskedTextBox();
             this.lblCEP = new System.Windows.Forms.Label();
             this.txbComplemento = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
             this.txbBairro = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.lblInformacao = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gpbLocalidade.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,10 +68,20 @@
             this.gpbLocalidade.Controls.Add(this.lblNumero);
             this.gpbLocalidade.Location = new System.Drawing.Point(12, 12);
             this.gpbLocalidade.Name = "gpbLocalidade";
-            this.gpbLocalidade.Size = new System.Drawing.Size(718, 164);
+            this.gpbLocalidade.Size = new System.Drawing.Size(665, 164);
             this.gpbLocalidade.TabIndex = 51;
             this.gpbLocalidade.TabStop = false;
             this.gpbLocalidade.Text = "Localidade";
+            // 
+            // lblInformacao
+            // 
+            this.lblInformacao.AutoSize = true;
+            this.lblInformacao.BackColor = System.Drawing.SystemColors.Control;
+            this.lblInformacao.ForeColor = System.Drawing.Color.Red;
+            this.lblInformacao.Location = new System.Drawing.Point(210, 29);
+            this.lblInformacao.Name = "lblInformacao";
+            this.lblInformacao.Size = new System.Drawing.Size(0, 13);
+            this.lblInformacao.TabIndex = 54;
             // 
             // txbCep
             // 
@@ -189,7 +200,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSalvar.Location = new System.Drawing.Point(566, 191);
+            this.btnSalvar.Location = new System.Drawing.Point(340, 191);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(148, 38);
@@ -198,29 +209,31 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // lblInformacao
+            // btnCancelar
             // 
-            this.lblInformacao.AutoSize = true;
-            this.lblInformacao.BackColor = System.Drawing.SystemColors.Control;
-            this.lblInformacao.ForeColor = System.Drawing.Color.Red;
-            this.lblInformacao.Location = new System.Drawing.Point(210, 29);
-            this.lblInformacao.Name = "lblInformacao";
-            this.lblInformacao.Size = new System.Drawing.Size(0, 13);
-            this.lblInformacao.TabIndex = 54;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCancelar.Location = new System.Drawing.Point(512, 191);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(148, 38);
+            this.btnCancelar.TabIndex = 54;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmPacientesEnderecosManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 240);
+            this.ClientSize = new System.Drawing.Size(698, 254);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gpbLocalidade);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPacientesEnderecosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPacientesEnderecosManter";
             this.Load += new System.EventHandler(this.frmPacientesEnderecosManter_Load);
-            this.Leave += new System.EventHandler(this.frmPacientesEnderecosManter_Leave);
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();
             this.ResumeLayout(false);
@@ -246,5 +259,6 @@
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblInformacao;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

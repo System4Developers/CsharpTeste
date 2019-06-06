@@ -69,6 +69,11 @@ namespace s4d_biomedicina.Apresentacao
                 }
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
     }
 

@@ -99,5 +99,15 @@ namespace s4d_biomedicina.Apresentacao
             ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

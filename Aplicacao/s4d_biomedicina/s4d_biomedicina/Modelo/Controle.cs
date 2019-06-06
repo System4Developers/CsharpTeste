@@ -175,7 +175,7 @@ namespace s4d_biomedicina.Modelo
             dt = paciente.GetListaPacienteExames(idPaciente);
             return dt;
         }
-
+        
         public DataTable ListaPacienteAgendamentos(int idPaciente)
         {
             DataTable dt = new DataTable();

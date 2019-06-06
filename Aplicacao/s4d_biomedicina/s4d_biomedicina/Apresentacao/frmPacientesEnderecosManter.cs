@@ -42,11 +42,6 @@ namespace s4d_biomedicina.Apresentacao
                 }
             }
         }
-
-        private void frmPacientesEnderecosManter_Leave(object sender, EventArgs e)
-        {
-
-        }
         private void LocalizarCEP()
         {
             try
@@ -107,6 +102,11 @@ namespace s4d_biomedicina.Apresentacao
                 }
 
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

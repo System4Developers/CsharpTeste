@@ -55,6 +55,7 @@
             this.txbDtNascimento = new System.Windows.Forms.MaskedTextBox();
             this.gpbInfoAdicional = new System.Windows.Forms.GroupBox();
             this.gpbPaciente = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gpbInfoAdicional.SuspendLayout();
             this.gpbPaciente.SuspendLayout();
             this.SuspendLayout();
@@ -275,7 +276,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(12, 297);
+            this.btnSalvar.Location = new System.Drawing.Point(510, 298);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(74, 27);
@@ -335,6 +336,17 @@
             this.gpbPaciente.TabStop = false;
             this.gpbPaciente.Text = "Paciente";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(604, 298);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(74, 27);
+            this.btnCancelar.TabIndex = 39;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmPacientesManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,7 +354,9 @@
             this.ClientSize = new System.Drawing.Size(697, 352);
             this.Controls.Add(this.gpbPaciente);
             this.Controls.Add(this.gpbInfoAdicional);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPacientesManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -385,5 +399,6 @@
         private System.Windows.Forms.MaskedTextBox txbDtNascimento;
         private System.Windows.Forms.GroupBox gpbInfoAdicional;
         private System.Windows.Forms.GroupBox gpbPaciente;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
