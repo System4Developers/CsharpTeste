@@ -83,7 +83,7 @@ namespace s4d_biomedicina.Apresentacao
             if (this.comando == "inserir")
             {
                 Modelo.Controle controle = new Modelo.Controle();
-                controle.cadastrarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text,this.idPacienteouEndereco);
+                controle.AdicionarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text,this.idPacienteouEndereco);
 
                 if (controle.ToString().Equals(""))
                 {

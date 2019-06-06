@@ -17,7 +17,7 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaPacientes()
         {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa", con.Conectar());
              DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;
@@ -127,17 +127,18 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
-                //this.mensagem = "Erro com Banco";
-                //this.mensagem = ;
+                this.mensagem = "Erro com Banco";
             }
             return this.mensagem;
         }
 
+<<<<<<< HEAD
        
 
+=======
+>>>>>>> 1227b2822c8e410377c5a0fdefc67e1d26349704
         public string ConsultaCpfPaciente(string cpf)
         {
             SqlCommand cmd = new SqlCommand();
@@ -160,22 +161,21 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
         }
 
-        public void GetEditarPaciente(int idPaciente)
+        public void GetPacienteDadosCadastrais(int idPaciente)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
-            cmd.CommandText = "select prontuario,nome,rg,cpf,dtNascimento,grauInstrucao,profissao,estadoPaciente,cidade,estado,logradouro,bairro,numero,peso,altura,grupoSanguineo,idPessoa " +
+            cmd.CommandText = "select prontuario,peso,altura,grupoSanguineo,estadoPaciente,nome,rg,cpf,dtNascimento,profissao,grauInstrucao " +
             "from pacientes " +
             "join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa " +
-            "left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas " +
             "where idPaciente = @idPaciente";
-         
             cmd.Parameters.AddWithValue("@idPaciente", idPaciente);
+
             try
             {
                 cmd.Connection = con.Conectar();
-                dr = cmd.ExecuteReader();
+                this.dr = cmd.ExecuteReader();
             }
             catch (SqlException)
             {
@@ -202,7 +202,7 @@ namespace s4d_biomedicina.DAL
             }
         }
 
-        public string AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado,int idPaciente)
+        public string AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente,int idPaciente)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
@@ -219,51 +219,17 @@ namespace s4d_biomedicina.DAL
             this.altura = altura;
             this.grupoSanguineo = grupoSanguineo;
             this.estadoPaciente = estadoPaciente;
+            this.idPaciente = idPaciente;
 
-
-            
-            cmd.CommandText = "select fk_idPessoa_pessoas from pacientes where idPaciente = @idPaciente";
-            cmd.Parameters.AddWithValue("@idPaciente", this.idPaciente);
-            try
-            {
-                cmd.Connection = con.Conectar();
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    this.idPessoa = Convert.ToInt32(dr["fk_idPessoa_pessoas"]);
-                }
-                dr.Close();
-            }
-            catch (SqlException)
-            {
-                return this.mensagem;
-            }
-
-            cmd.Parameters.Clear();
-            cmd.CommandText = "update pacientes " +
+            cmd.CommandText = "declare @TempId int " +
+                "select @TempId = idPessoa from pessoas join pacientes on pessoas.idPessoa = pacientes.fk_idPessoa_pessoas where idPaciente = @idPaciente " +
+                "update pessoas " +
+                "set nome=@nome,rg=@rg,cpf=@cpf,dtNascimento=@dtNascimento,profissao=@profissao,grauInstrucao=@grauInstrucao " +
+                "where idPessoa = @TempId " +
+                "update pacientes " +
                 "set prontuario = @prontuario,peso=@peso,altura=@altura,grupoSanguineo=@grupoSanguineo,estadoPaciente=@estadoPaciente " +
                 "where idPaciente= @idPaciente";
-            cmd.Parameters.AddWithValue("@prontuario", this.prontuario);
-            cmd.Parameters.AddWithValue("@peso", this.peso);
-            cmd.Parameters.AddWithValue("@altura", this.altura);
-            cmd.Parameters.AddWithValue("@grupoSanguineo", this.grupoSanguineo);
-            cmd.Parameters.AddWithValue("@estadoPaciente", this.estadoPaciente);
-            cmd.Parameters.AddWithValue("@idPaciente", this.idPaciente);
-            try
-            {
-                cmd.Connection = con.Conectar();
-                cmd.ExecuteNonQuery();
-                con.desconectar();
-            }
-            catch (SqlException)
-            {
-                return this.mensagem;
-            }
 
-            cmd.Parameters.Clear();
-            cmd.CommandText = "update pessoas " +
-                "set nome=@nome,rg=@rg,cpf=@cpf,dtNascimento=@dtNascimento,profissao=@profissao,grauInstrucao=@grauInstrucao " +
-                "where idPessoa = @idPessoa ";
             cmd.Parameters.AddWithValue("@nome", this.nome);
             cmd.Parameters.AddWithValue("@rg", this.rg);
             cmd.Parameters.AddWithValue("@cpf", this.cpf);
@@ -271,6 +237,12 @@ namespace s4d_biomedicina.DAL
             cmd.Parameters.AddWithValue("@grauInstrucao", this.grauInstrucao);
             cmd.Parameters.AddWithValue("@profissao", this.profissao);
             cmd.Parameters.AddWithValue("@idPessoa", this.idPessoa);
+            cmd.Parameters.AddWithValue("@prontuario", this.prontuario);
+            cmd.Parameters.AddWithValue("@peso", this.peso);
+            cmd.Parameters.AddWithValue("@altura", this.altura);
+            cmd.Parameters.AddWithValue("@grupoSanguineo", this.grupoSanguineo);
+            cmd.Parameters.AddWithValue("@estadoPaciente", this.estadoPaciente);
+            cmd.Parameters.AddWithValue("@idPaciente", this.idPaciente);
 
             try
             {
@@ -278,29 +250,14 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return this.mensagem;
-            }
-
-            cmd.Parameters.Clear();
-            cmd.CommandText = "update enderecos " +
-                "set cidade=@cidade,estado=@estado,logradouro=@logradouro,bairro=@bairro,numero=@numero " +
-                "where fk_idPessoa_pessoas=@idPessoa";
-
-            cmd.Parameters.AddWithValue("@idPessoa", this.idPessoa);
-            try
-            {
-                cmd.Connection = con.Conectar();
-                cmd.ExecuteNonQuery();
-                con.desconectar();
-            }
-            catch (SqlException)
-            {
-                return this.mensagem;
+                //return this.mensagem;
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
             }
 
             return this.mensagem;
+
         }
 
 
@@ -319,7 +276,6 @@ namespace s4d_biomedicina.DAL
             this.Estado = Estado;
             this.Cidade = Cidade;
             this.idEndereco = idEndereco;
-
 
 
             cmd.CommandText = "update enderecos set logradouro = @rua, cep=@cep,bairro=@bairro, numero = @numero, complemento = @complemento,cidade=@cidade, estado=@estado where idEndereco = @idEndereco";

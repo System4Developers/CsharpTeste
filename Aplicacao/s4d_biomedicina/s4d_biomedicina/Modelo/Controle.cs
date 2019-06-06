@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace s4d_biomedicina.Modelo
 
@@ -91,7 +92,7 @@ namespace s4d_biomedicina.Modelo
         #endregion
 
         #region Manter Paciente
-        public void cadastrarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente)
+        public void AdicionarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente)
         {
             this.mensagem = "";
 
@@ -103,7 +104,7 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
-        public void cadastrarPacienteEndereco(string Cep, string Rua, string Numero, string Complemento, string Bairro, string Estado, string Cidade,int idPaciente)        {
+        public void AdicionarPacienteEndereco(string Cep, string Rua, string Numero, string Complemento, string Bairro, string Estado, string Cidade,int idPaciente)        {
             this.mensagem = "";
 
             DAL.dalPaciente paciente = new DAL.dalPaciente();
@@ -117,7 +118,6 @@ namespace s4d_biomedicina.Modelo
         public void AtualizarPacienteEndereco(string Cep, string Rua, string Numero, string Complemento, string Bairro, string Estado, string Cidade, int idEndereco)
         {
             this.mensagem = "";
-
             DAL.dalPaciente paciente = new DAL.dalPaciente();
             paciente.AtualizarPacienteEndereco(Cep, Rua, Numero, Complemento, Bairro, Estado, Cidade, idEndereco);
             if (!paciente.ToString().Equals(""))
@@ -126,17 +126,23 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
-        public void AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, string logradouro, string bairro, string numero, string cidade, string estado, int idPaciente)
+        public void AtualizarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso, double altura, string grupoSanguineo, string estadoPaciente, int idPaciente)
         {
             this.mensagem = "";
             DAL.dalPaciente paciente = new DAL.dalPaciente();
-            paciente.AtualizarPaciente(nome,rg,cpf,dtNascimento,profissao,grauInstrucao,prontuario,peso,altura,grupoSanguineo,estadoPaciente,logradouro,bairro,numero,cidade,estado,idPaciente);
+            paciente.AtualizarPaciente(nome,rg,cpf,dtNascimento,profissao,grauInstrucao,prontuario,peso,altura,grupoSanguineo,estadoPaciente,idPaciente);
             if (!paciente.ToString().Equals(""))
             {
                 this.mensagem = paciente.ToString();
             }
         }
 
+        public SqlDataReader GetPacienteDadosCadastrais(int idPaciente)
+        {
+            DAL.dalPaciente dalPaciente = new DAL.dalPaciente();
+            dalPaciente.GetPacienteDadosCadastrais(idPaciente);
+            return dalPaciente.dr;
+        }
       
         public DataTable PesquisarPaciente(string nome, string cpf)
         {
@@ -317,6 +323,7 @@ namespace s4d_biomedicina.Modelo
         }
         #endregion
 
+<<<<<<< HEAD
         #region Manter Agendamentos
         public void adicionarPacienteAgendamento(string Data, string Horario, string Status,int id,string solicitante)
         {
@@ -331,6 +338,9 @@ namespace s4d_biomedicina.Modelo
         }
 
         #endregion
+=======
+
+>>>>>>> 1227b2822c8e410377c5a0fdefc67e1d26349704
 
     }
 }
