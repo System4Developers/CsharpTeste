@@ -37,6 +37,7 @@
             this.lblSolicitados = new System.Windows.Forms.Label();
             this.ltvExames = new System.Windows.Forms.ListView();
             this.ltvExamesSelecionados = new System.Windows.Forms.ListView();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bntMover1
@@ -81,7 +82,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(497, 339);
+            this.btnSalvar.Location = new System.Drawing.Point(369, 344);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(115, 23);
             this.btnSalvar.TabIndex = 6;
@@ -132,11 +133,22 @@
             this.ltvExamesSelecionados.UseCompatibleStateImageBehavior = false;
             this.ltvExamesSelecionados.View = System.Windows.Forms.View.Details;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(497, 344);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(115, 23);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmPacientesExamesManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 397);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.ltvExamesSelecionados);
             this.Controls.Add(this.ltvExames);
             this.Controls.Add(this.lblSolicitados);
@@ -146,7 +158,9 @@
             this.Controls.Add(this.btnMoverTodos);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.bntMover1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPacientesExamesManter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPacientesExamesManter";
             this.Load += new System.EventHandler(this.frmPacientesExamesManter_Load);
             this.ResumeLayout(false);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.Label lblSolicitados;
         private System.Windows.Forms.ListView ltvExames;
         private System.Windows.Forms.ListView ltvExamesSelecionados;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

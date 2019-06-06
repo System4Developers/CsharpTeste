@@ -31,12 +31,13 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.dgvPacientesAgendamentos = new System.Windows.Forms.DataGridView();
+            this.btnNovoExame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesAgendamentos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(610, 364);
+            this.btnEditar.Location = new System.Drawing.Point(610, 346);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(136, 28);
@@ -47,7 +48,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(456, 364);
+            this.btnNovo.Location = new System.Drawing.Point(268, 346);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(150, 28);
@@ -69,11 +70,23 @@
             this.dgvPacientesAgendamentos.Size = new System.Drawing.Size(691, 270);
             this.dgvPacientesAgendamentos.TabIndex = 16;
             // 
+            // btnNovoExame
+            // 
+            this.btnNovoExame.Location = new System.Drawing.Point(443, 346);
+            this.btnNovoExame.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovoExame.Name = "btnNovoExame";
+            this.btnNovoExame.Size = new System.Drawing.Size(150, 28);
+            this.btnNovoExame.TabIndex = 19;
+            this.btnNovoExame.Text = "Novo Exame";
+            this.btnNovoExame.UseVisualStyleBackColor = true;
+            this.btnNovoExame.Click += new System.EventHandler(this.btnNovoExame_Click);
+            // 
             // frmPacientesAgendamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(779, 404);
+            this.Controls.Add(this.btnNovoExame);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvPacientesAgendamentos);
@@ -92,5 +105,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.DataGridView dgvPacientesAgendamentos;
+        private System.Windows.Forms.Button btnNovoExame;
     }
 }

@@ -45,124 +45,112 @@
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
             this.txbID = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbCurso
             // 
-            this.txbCurso.Location = new System.Drawing.Point(207, 327);
-            this.txbCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCurso.Location = new System.Drawing.Point(167, 274);
             this.txbCurso.Name = "txbCurso";
-            this.txbCurso.Size = new System.Drawing.Size(229, 22);
+            this.txbCurso.Size = new System.Drawing.Size(173, 20);
             this.txbCurso.TabIndex = 29;
             // 
             // txbRegistro
             // 
-            this.txbRegistro.Location = new System.Drawing.Point(207, 273);
-            this.txbRegistro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbRegistro.Location = new System.Drawing.Point(167, 230);
             this.txbRegistro.Name = "txbRegistro";
-            this.txbRegistro.Size = new System.Drawing.Size(229, 22);
+            this.txbRegistro.Size = new System.Drawing.Size(173, 20);
             this.txbRegistro.TabIndex = 28;
             // 
             // txbRA
             // 
-            this.txbRA.Location = new System.Drawing.Point(207, 219);
-            this.txbRA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbRA.Location = new System.Drawing.Point(167, 186);
             this.txbRA.Name = "txbRA";
-            this.txbRA.Size = new System.Drawing.Size(229, 22);
+            this.txbRA.Size = new System.Drawing.Size(173, 20);
             this.txbRA.TabIndex = 27;
             // 
             // txbSenha
             // 
-            this.txbSenha.Location = new System.Drawing.Point(207, 160);
-            this.txbSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbSenha.Location = new System.Drawing.Point(167, 138);
             this.txbSenha.Name = "txbSenha";
-            this.txbSenha.Size = new System.Drawing.Size(229, 22);
+            this.txbSenha.Size = new System.Drawing.Size(173, 20);
             this.txbSenha.TabIndex = 26;
             // 
             // lblEstadoUsuario
             // 
             this.lblEstadoUsuario.AutoSize = true;
-            this.lblEstadoUsuario.Location = new System.Drawing.Point(61, 455);
-            this.lblEstadoUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEstadoUsuario.Location = new System.Drawing.Point(58, 378);
             this.lblEstadoUsuario.Name = "lblEstadoUsuario";
-            this.lblEstadoUsuario.Size = new System.Drawing.Size(131, 17);
+            this.lblEstadoUsuario.Size = new System.Drawing.Size(103, 13);
             this.lblEstadoUsuario.TabIndex = 25;
             this.lblEstadoUsuario.Text = "ESTADO USUARIO";
             // 
             // lblTipoUsuario
             // 
             this.lblTipoUsuario.AutoSize = true;
-            this.lblTipoUsuario.Location = new System.Drawing.Point(61, 395);
-            this.lblTipoUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoUsuario.Location = new System.Drawing.Point(58, 329);
             this.lblTipoUsuario.Name = "lblTipoUsuario";
-            this.lblTipoUsuario.Size = new System.Drawing.Size(129, 17);
+            this.lblTipoUsuario.Size = new System.Drawing.Size(102, 13);
             this.lblTipoUsuario.TabIndex = 24;
             this.lblTipoUsuario.Text = "TIPO DE USUARIO";
             // 
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(61, 335);
-            this.lblCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCurso.Location = new System.Drawing.Point(58, 280);
             this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(57, 17);
+            this.lblCurso.Size = new System.Drawing.Size(45, 13);
             this.lblCurso.TabIndex = 23;
             this.lblCurso.Text = "CURSO";
             // 
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Location = new System.Drawing.Point(61, 282);
-            this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistro.Location = new System.Drawing.Point(58, 237);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(80, 17);
+            this.lblRegistro.Size = new System.Drawing.Size(63, 13);
             this.lblRegistro.TabIndex = 22;
             this.lblRegistro.Text = "REGISTRO";
             // 
             // lblRA
             // 
             this.lblRA.AutoSize = true;
-            this.lblRA.Location = new System.Drawing.Point(60, 228);
-            this.lblRA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRA.Location = new System.Drawing.Point(57, 193);
             this.lblRA.Name = "lblRA";
-            this.lblRA.Size = new System.Drawing.Size(27, 17);
+            this.lblRA.Size = new System.Drawing.Size(22, 13);
             this.lblRA.TabIndex = 21;
             this.lblRA.Text = "RA";
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(60, 167);
-            this.lblSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSenha.Location = new System.Drawing.Point(57, 144);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(55, 17);
+            this.lblSenha.Size = new System.Drawing.Size(44, 13);
             this.lblSenha.TabIndex = 20;
             this.lblSenha.Text = "SENHA";
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(60, 107);
-            this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLogin.Location = new System.Drawing.Point(57, 95);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(51, 17);
+            this.lblLogin.Size = new System.Drawing.Size(40, 13);
             this.lblLogin.TabIndex = 19;
             this.lblLogin.Text = "LOGIN";
             // 
             // txbLogin
             // 
-            this.txbLogin.Location = new System.Drawing.Point(207, 101);
-            this.txbLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbLogin.Location = new System.Drawing.Point(167, 90);
             this.txbLogin.Name = "txbLogin";
-            this.txbLogin.Size = new System.Drawing.Size(229, 22);
+            this.txbLogin.Size = new System.Drawing.Size(173, 20);
             this.txbLogin.TabIndex = 17;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(65, 501);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Location = new System.Drawing.Point(167, 413);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 28);
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 32;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -175,10 +163,9 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "ATIVADO",
             "DESATIVADO"});
-            this.cmbEstado.Location = new System.Drawing.Point(207, 452);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstado.Location = new System.Drawing.Point(167, 375);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(229, 24);
+            this.cmbEstado.Size = new System.Drawing.Size(173, 21);
             this.cmbEstado.TabIndex = 33;
             // 
             // cmbTipo
@@ -189,41 +176,48 @@
             "ALUNO",
             "PROFESSOR",
             "ADMIN"});
-            this.cmbTipo.Location = new System.Drawing.Point(207, 391);
-            this.cmbTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipo.Location = new System.Drawing.Point(167, 326);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(229, 24);
+            this.cmbTipo.Size = new System.Drawing.Size(173, 21);
             this.cmbTipo.TabIndex = 33;
-            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(60, 46);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Location = new System.Drawing.Point(57, 45);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 17);
+            this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 35;
             this.lblID.Text = "ID";
             // 
             // txbID
             // 
             this.txbID.Enabled = false;
-            this.txbID.Location = new System.Drawing.Point(207, 39);
-            this.txbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbID.Location = new System.Drawing.Point(167, 40);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(229, 22);
+            this.txbID.Size = new System.Drawing.Size(173, 20);
             this.txbID.TabIndex = 34;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(265, 413);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmUsuariosManter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 602);
+            this.ClientSize = new System.Drawing.Size(446, 477);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txbCurso);
             this.Controls.Add(this.txbRegistro);
@@ -237,7 +231,7 @@
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txbLogin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsuariosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsuarioNovo";
@@ -265,5 +259,6 @@
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

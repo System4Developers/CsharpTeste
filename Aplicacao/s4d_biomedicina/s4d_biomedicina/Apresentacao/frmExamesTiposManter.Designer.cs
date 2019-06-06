@@ -37,6 +37,7 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbDsArea = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblID
@@ -58,7 +59,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(242, 226);
+            this.btnSalvar.Location = new System.Drawing.Point(144, 225);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 43;
@@ -120,13 +121,22 @@
             this.cmbDsArea.Name = "cmbDsArea";
             this.cmbDsArea.Size = new System.Drawing.Size(173, 21);
             this.cmbDsArea.TabIndex = 52;
-            this.cmbDsArea.SelectedIndexChanged += new System.EventHandler(this.cmbDsArea_SelectedIndexChanged);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(242, 225);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 43;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmExamesTiposManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 353);
+            this.ClientSize = new System.Drawing.Size(402, 284);
             this.Controls.Add(this.cmbDsArea);
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.lblTipo);
@@ -134,8 +144,10 @@
             this.Controls.Add(this.txbTipo);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txbID);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblArea);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmExamesTiposManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmExamesTiposManter";
@@ -156,5 +168,6 @@
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ComboBox cmbDsArea;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
