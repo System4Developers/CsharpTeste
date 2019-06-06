@@ -374,11 +374,11 @@ namespace s4d_biomedicina.Modelo
             }
         }
         */
-        public DataTable GetListaExames()
+        public SqlDataReader GetListaExames()
         {
             DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
             dalExameTipo.GetListaExamesDisponiveis();
-            return dalExameTipo.dt;
+            return dalExameTipo.dr;
         }
         /*
         public DataTable ListaExamesTipos()

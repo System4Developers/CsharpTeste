@@ -28,38 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lbExames = new System.Windows.Forms.ListBox();
-            this.lbExames2 = new System.Windows.Forms.ListBox();
             this.bntMover1 = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnMoverTodos = new System.Windows.Forms.Button();
             this.btnRemoverTodos = new System.Windows.Forms.Button();
-            this.unipBiomedicinaDataSet = new s4d_biomedicina.unipBiomedicinaDataSet();
-            this.examesTiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.examesTiposTableAdapter = new s4d_biomedicina.unipBiomedicinaDataSetTableAdapters.examesTiposTableAdapter();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblDisponiveis = new System.Windows.Forms.Label();
             this.lblSolicitados = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examesTiposBindingSource)).BeginInit();
+            this.ltvExames = new System.Windows.Forms.ListView();
+            this.ltvExamesSelecionados = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // lbExames
-            // 
-            this.lbExames.FormattingEnabled = true;
-            this.lbExames.Location = new System.Drawing.Point(63, 75);
-            this.lbExames.Name = "lbExames";
-            this.lbExames.Size = new System.Drawing.Size(202, 212);
-            this.lbExames.TabIndex = 0;
-            // 
-            // lbExames2
-            // 
-            this.lbExames2.FormattingEnabled = true;
-            this.lbExames2.Location = new System.Drawing.Point(448, 75);
-            this.lbExames2.Name = "lbExames2";
-            this.lbExames2.Size = new System.Drawing.Size(186, 212);
-            this.lbExames2.TabIndex = 1;
             // 
             // bntMover1
             // 
@@ -101,20 +79,6 @@
             this.btnRemoverTodos.UseVisualStyleBackColor = true;
             this.btnRemoverTodos.Click += new System.EventHandler(this.btnRemoverTodos_Click);
             // 
-            // unipBiomedicinaDataSet
-            // 
-            this.unipBiomedicinaDataSet.DataSetName = "unipBiomedicinaDataSet";
-            this.unipBiomedicinaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // examesTiposBindingSource
-            // 
-            this.examesTiposBindingSource.DataMember = "examesTipos";
-            this.examesTiposBindingSource.DataSource = this.unipBiomedicinaDataSet;
-            // 
-            // examesTiposTableAdapter
-            // 
-            this.examesTiposTableAdapter.ClearBeforeFill = true;
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(510, 415);
@@ -142,11 +106,39 @@
             this.lblSolicitados.TabIndex = 8;
             this.lblSolicitados.Text = "Selecionado:";
             // 
+            // ltvExames
+            // 
+            this.ltvExames.FullRowSelect = true;
+            this.ltvExames.HideSelection = false;
+            this.ltvExames.Location = new System.Drawing.Point(75, 84);
+            this.ltvExames.MultiSelect = false;
+            this.ltvExames.Name = "ltvExames";
+            this.ltvExames.Size = new System.Drawing.Size(191, 227);
+            this.ltvExames.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.ltvExames.TabIndex = 9;
+            this.ltvExames.UseCompatibleStateImageBehavior = false;
+            this.ltvExames.View = System.Windows.Forms.View.Details;
+            // 
+            // ltvExamesSelecionados
+            // 
+            this.ltvExamesSelecionados.FullRowSelect = true;
+            this.ltvExamesSelecionados.HideSelection = false;
+            this.ltvExamesSelecionados.Location = new System.Drawing.Point(448, 84);
+            this.ltvExamesSelecionados.MultiSelect = false;
+            this.ltvExamesSelecionados.Name = "ltvExamesSelecionados";
+            this.ltvExamesSelecionados.Size = new System.Drawing.Size(194, 227);
+            this.ltvExamesSelecionados.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.ltvExamesSelecionados.TabIndex = 10;
+            this.ltvExamesSelecionados.UseCompatibleStateImageBehavior = false;
+            this.ltvExamesSelecionados.View = System.Windows.Forms.View.Details;
+            // 
             // frmPacientesExamesManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 450);
+            this.ClientSize = new System.Drawing.Size(756, 516);
+            this.Controls.Add(this.ltvExamesSelecionados);
+            this.Controls.Add(this.ltvExames);
             this.Controls.Add(this.lblSolicitados);
             this.Controls.Add(this.lblDisponiveis);
             this.Controls.Add(this.btnSalvar);
@@ -154,31 +146,23 @@
             this.Controls.Add(this.btnMoverTodos);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.bntMover1);
-            this.Controls.Add(this.lbExames2);
-            this.Controls.Add(this.lbExames);
             this.Name = "frmPacientesExamesManter";
             this.Text = "frmPacientesExamesManter";
             this.Load += new System.EventHandler(this.frmPacientesExamesManter_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.unipBiomedicinaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examesTiposBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbExames;
-        private System.Windows.Forms.ListBox lbExames2;
         private System.Windows.Forms.Button bntMover1;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnMoverTodos;
         private System.Windows.Forms.Button btnRemoverTodos;
-        private unipBiomedicinaDataSet unipBiomedicinaDataSet;
-        private System.Windows.Forms.BindingSource examesTiposBindingSource;
-        private unipBiomedicinaDataSetTableAdapters.examesTiposTableAdapter examesTiposTableAdapter;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblDisponiveis;
         private System.Windows.Forms.Label lblSolicitados;
+        private System.Windows.Forms.ListView ltvExames;
+        private System.Windows.Forms.ListView ltvExamesSelecionados;
     }
 }

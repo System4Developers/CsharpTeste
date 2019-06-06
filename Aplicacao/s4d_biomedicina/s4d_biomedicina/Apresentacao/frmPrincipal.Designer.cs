@@ -37,13 +37,9 @@
             this.tsiExamesParametros = new System.Windows.Forms.ToolStripMenuItem();
             this.agendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPesquisa = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
             this.tsiPacientes = new System.Windows.Forms.ToolStripMenuItem();
-=======
-            this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTrocarUsuario = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> 3a15ff034d3bc824dcb347ab16b40d890261eb71
             this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSair = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlForms = new System.Windows.Forms.Panel();
@@ -129,17 +125,10 @@
             // 
             // tsiPacientes
             // 
-<<<<<<< HEAD
             this.tsiPacientes.Name = "tsiPacientes";
             this.tsiPacientes.Size = new System.Drawing.Size(180, 22);
             this.tsiPacientes.Text = "Pacientes";
             this.tsiPacientes.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
-=======
-            this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.pacientesToolStripMenuItem.Text = "Pacientes";
-            this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
->>>>>>> 3a15ff034d3bc824dcb347ab16b40d890261eb71
             // 
             // tsmLogin
             // 

@@ -42,13 +42,12 @@ namespace s4d_biomedicina.DAL
             {
                 cmd.Connection = con.Conectar();
                 dr = cmd.ExecuteReader();
-                
             }
             catch (Exception)
             {
                 this.mensagem = "Erro com Banco";
             }
-            con.desconectar();
+        
         }
 
         public string AdicionarExameTipo(string dsExameTipo, string estadoExameTipo, int idExameArea)

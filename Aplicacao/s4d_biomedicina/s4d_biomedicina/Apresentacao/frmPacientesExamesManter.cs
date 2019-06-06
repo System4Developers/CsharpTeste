@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace s4d_biomedicina.Apresentacao
         private string comando;
         private int idPacienteouExame;
         private readonly frmPacientesExames frmPacientesExames;
+        private SqlDataReader dr;
 
         public frmPacientesExamesManter(string comando, int idPacienteouExame, frmPacientesExames frm)
         {
@@ -27,57 +29,77 @@ namespace s4d_biomedicina.Apresentacao
         private void frmPacientesExamesManter_Load(object sender, EventArgs e)
         {
             CarregaListBox();
+            AjustarColunas(ltvExames);
         }
 
         private void bntMover1_Click(object sender, EventArgs e)
         {
-            if(lbExames.SelectedIndex == -1)
+            if (ltvExames.SelectedItems.Count < 1)
             {
                 MessageBox.Show("selecione um item");
             }
             else
             {
-                lbExames2.Items.Add(lbExames.SelectedItem);
-                lbExames.Items.Remove(lbExames.SelectedItem);
+                ltvExamesSelecionados.Items.Add(new ListViewItem(new string[] { ltvExames.SelectedItems[0].Text, ltvExames.SelectedItems[0].SubItems[1].Text }));
+                ltvExames.SelectedItems[0].Remove();
             }
+            AjustarColunas(ltvExamesSelecionados);
         }
-
-        private void CarregaListBox()
-        {
-            Modelo.Controle controle = new Modelo.Controle();
-            lbExames.DataSource = controle.GetListaExames();
-            lbExames.DisplayMember = "Tipo";
-            lbExames.ValueMember = "ID";
-        }
-
+        
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (lbExames2.SelectedIndex == -1)
+
+            if (ltvExamesSelecionados.SelectedItems.Count < 1)
             {
                 MessageBox.Show("selecione um item");
             }
             else
-            { 
-                lbExames.Items.Add(lbExames2.SelectedItem);
-                lbExames2.Items.Remove(lbExames2.SelectedItem);
+            {
+                ltvExames.Items.Add(new ListViewItem(new string[] { ltvExamesSelecionados.SelectedItems[0].Text, ltvExamesSelecionados.SelectedItems[0].SubItems[1].Text }));
+                ltvExamesSelecionados.SelectedItems[0].Remove();
             }
+            AjustarColunas(ltvExames);
         }
 
         private void btnMoverTodos_Click(object sender, EventArgs e)
         {
-            lbExames2.Items.AddRange(lbExames.Items);
-
-            lbExames.Items.Clear();
-          
+            foreach (ListViewItem item in ltvExames.Items)
+            {
+                ltvExamesSelecionados.Items.Add((ListViewItem)item.Clone());
+            }
+            ltvExames.Items.Clear();
+            AjustarColunas(ltvExamesSelecionados);
         }
 
         private void btnRemoverTodos_Click(object sender, EventArgs e)
         {
-            while (lbExames2.SelectedItems.Count != 0)
+            foreach (ListViewItem item in ltvExamesSelecionados.Items)
             {
-                lbExames.Items.Add(lbExames2.SelectedItem);
-                lbExames2.Items.Remove(lbExames2.SelectedItem);
+                ltvExames.Items.Add((ListViewItem)item.Clone());
             }
+            ltvExamesSelecionados.Items.Clear();
+            AjustarColunas(ltvExames);
+        }
+
+
+        private void CarregaListBox()
+        {
+            Modelo.Controle controle = new Modelo.Controle();
+            dr = controle.GetListaExames();
+            ltvExames.Columns.Add("ID");
+            ltvExames.Columns.Add("Tipo");
+            ltvExamesSelecionados.Columns.Add("ID");
+            ltvExamesSelecionados.Columns.Add("Tipo");
+            while (dr.Read())
+            {
+                ltvExames.Items.Add(new ListViewItem(new string[] { dr["ID"].ToString(), dr["Tipo"].ToString() }));
+            }
+        }
+
+        private void AjustarColunas(ListView ltv)
+        {
+            ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
     }
 }
