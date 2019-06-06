@@ -29,7 +29,7 @@ namespace s4d_biomedicina.DAL
             cmd.CommandText = "insert into consultas (dtConsulta, solicitante, estadoConsulta,fk_idUsuario_usuarios,fk_idPaciente_pacientes) values (@dtConsulta," +
                 "@Solicitante,@Status,@idUsuario,@idPaciente)";
 
-            cmd.Parameters.AddWithValue("@dtConsulta", this.Data);
+            cmd.Parameters.AddWithValue("@dtConsulta", dtConsulta);
             cmd.Parameters.AddWithValue("@Solicitante", this.Solicitante);
             cmd.Parameters.AddWithValue("@Status", this.Status);
             cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
@@ -53,12 +53,30 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaPacienteAgendamentos(int idPaciente)
             {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select * from consultas join pacientes on pacientes.idPaciente = consultas.fk_idPaciente_pacientes where pacientes.idPaciente=@idPaciente", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select consultas.idConsulta, consultas.dtConsulta as [Data do Agendamento], consultas.solicitante as [Solicitante], consultas.estadoConsulta as [Estado do Agendamento], pessoas.nome as [Criado por] from consultas join usuarios on consultas.fk_idUsuario_usuarios = usuarios.fk_idPessoa_pessoas join pessoas on usuarios.fk_idPessoa_pessoas = pessoas.idPessoa where consultas.fk_idPaciente_pacientes = @idPaciente", con.Conectar());
             sda.SelectCommand.Parameters.AddWithValue("@idPaciente", idPaciente);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;
             }
 
+        public void GetEditarPacienteAgendamentos(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
+            cmd.CommandText = "select dtConsulta as [Data],CONVERT(VARCHAR(11),dtConsulta,114) AS hora,solicitante as [solicitante], estadoConsulta as [estadoConsulta] from consultas where idConsulta = @idConsulta";
+
+            cmd.Parameters.AddWithValue("@idConsulta", id);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                this.mensagem = "Erro com Banco!";
+            }
+        }
     }
 }

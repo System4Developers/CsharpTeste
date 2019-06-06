@@ -47,5 +47,22 @@ namespace s4d_biomedicina.Apresentacao
         {
 
         }
+
+        private void frmPacientesAgendamentosManter_Load(object sender, EventArgs e)
+        {
+            if (this.comando == "editar")
+            {
+                DAL.dalAgendamentos dalAgendamentos = new DAL.dalAgendamentos();
+                dalAgendamentos.GetEditarPacienteAgendamentos(this.idPacientesouAgendamento);
+                while (dalAgendamentos.dr.Read())
+                {
+                    dtpAgendamento.Text = dalAgendamentos.dr.GetValue(0).ToString();
+                    cmbHorario.Text = dalAgendamentos.dr.GetValue(1).ToString();
+                    cmbStatus.Text =  dalAgendamentos.dr.GetValue(3).ToString();
+                    txbSolicitante.Text =  dalAgendamentos.dr.GetValue(2).ToString();
+
+                }
+            }
+        }
     }
 }
