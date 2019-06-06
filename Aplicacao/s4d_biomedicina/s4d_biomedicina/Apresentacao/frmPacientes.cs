@@ -37,7 +37,7 @@ namespace s4d_biomedicina.Apresentacao
         {
             this.comando = "editar";
             this.idPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value);
-            frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, this.idPaciente);
+            frmPacientesMain frmPacientesMain = new frmPacientesMain(this.comando, this.idPaciente);
             frmPacientesMain.ShowDialog();
             AtualizarTabela();
         }

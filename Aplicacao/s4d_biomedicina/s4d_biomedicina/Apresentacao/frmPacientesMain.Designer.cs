@@ -31,9 +31,9 @@
             this.lblDadosCadastrais = new System.Windows.Forms.Label();
             this.lblEnderecos = new System.Windows.Forms.Label();
             this.lblAgendamentos = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblExames = new System.Windows.Forms.Label();
             this.pnlForms = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblFechar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDadosCadastrais
@@ -44,7 +44,7 @@
             this.lblDadosCadastrais.Size = new System.Drawing.Size(116, 13);
             this.lblDadosCadastrais.TabIndex = 0;
             this.lblDadosCadastrais.Text = "DADOS CADASTRAIS";
-            this.lblDadosCadastrais.Click += new System.EventHandler(this.label1_Click);
+            this.lblDadosCadastrais.Click += new System.EventHandler(this.lblDados_Click);
             // 
             // lblEnderecos
             // 
@@ -54,7 +54,7 @@
             this.lblEnderecos.Size = new System.Drawing.Size(74, 13);
             this.lblEnderecos.TabIndex = 1;
             this.lblEnderecos.Text = "ENDEREÇOS";
-            this.lblEnderecos.Click += new System.EventHandler(this.label2_Click);
+            this.lblEnderecos.Click += new System.EventHandler(this.lblEnderecos_Click);
             // 
             // lblAgendamentos
             // 
@@ -66,15 +66,15 @@
             this.lblAgendamentos.Text = "AGENDAMENTOS";
             this.lblAgendamentos.Click += new System.EventHandler(this.lblAgendamentos_Click);
             // 
-            // label4
+            // lblExames
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(941, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "EXAMES";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblExames.AutoSize = true;
+            this.lblExames.Location = new System.Drawing.Point(941, 31);
+            this.lblExames.Name = "lblExames";
+            this.lblExames.Size = new System.Drawing.Size(51, 13);
+            this.lblExames.TabIndex = 3;
+            this.lblExames.Text = "EXAMES";
+            this.lblExames.Click += new System.EventHandler(this.lblExames_Click);
             // 
             // pnlForms
             // 
@@ -82,26 +82,25 @@
             this.pnlForms.Name = "pnlForms";
             this.pnlForms.Size = new System.Drawing.Size(1313, 639);
             this.pnlForms.TabIndex = 4;
-            this.pnlForms.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlForms_Paint);
             // 
-            // label5
+            // lblFechar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1112, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "FECHAR PRONTUÁRIO";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lblFechar.AutoSize = true;
+            this.lblFechar.Location = new System.Drawing.Point(1112, 31);
+            this.lblFechar.Name = "lblFechar";
+            this.lblFechar.Size = new System.Drawing.Size(125, 13);
+            this.lblFechar.TabIndex = 5;
+            this.lblFechar.Text = "FECHAR PRONTUÁRIO";
+            this.lblFechar.Click += new System.EventHandler(this.lblFechar_Click);
             // 
             // frmPacientesMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 716);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblFechar);
             this.Controls.Add(this.pnlForms);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblExames);
             this.Controls.Add(this.lblAgendamentos);
             this.Controls.Add(this.lblEnderecos);
             this.Controls.Add(this.lblDadosCadastrais);
@@ -119,8 +118,8 @@
         private System.Windows.Forms.Label lblDadosCadastrais;
         private System.Windows.Forms.Label lblEnderecos;
         private System.Windows.Forms.Label lblAgendamentos;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblExames;
         private System.Windows.Forms.Panel pnlForms;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFechar;
     }
 }

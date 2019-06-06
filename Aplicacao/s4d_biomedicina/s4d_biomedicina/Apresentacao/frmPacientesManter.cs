@@ -23,7 +23,6 @@ namespace s4d_biomedicina.Apresentacao
             InitializeComponent();
             this.comando = comando;
             this.idPaciente = idPaciente;
-           
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -34,7 +33,7 @@ namespace s4d_biomedicina.Apresentacao
                 controle.AtualizarPaciente(txbNome.Text, txbRg.Text, txbCpf.Text, txbDtNascimento.Text, txbProfissao.Text, txbGrauInstrucao.Text, txbProntuario.Text, Convert.ToDouble(txbPeso.Text), Convert.ToDouble(txbAltura.Text), txbGrupoSanguineo.Text, cmbEstado.Text, Convert.ToInt32(txbID.Text));
                 if (controle.ToString().Equals(""))
                 {
-                    MessageBox.Show("OK");
+                    MessageBox.Show("Atualizado com Sucesso!");
                     this.Close();
                 }
                 else
@@ -54,12 +53,11 @@ namespace s4d_biomedicina.Apresentacao
                     {
                         this.idPaciente = Convert.ToInt32(dalPaciente.dr["idPaciente"].ToString());
                     }
-                    frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, this.idPaciente);
+                    frmPacientesMain frmPacientesMain = new frmPacientesMain(this.comando, this.idPaciente);
                     frmPacientesMain.ShowDialog();
                     this.Close();
                 }
             }
-            
         }
 
         private void frmPacientesManter_Load(object sender, EventArgs e)
@@ -84,7 +82,6 @@ namespace s4d_biomedicina.Apresentacao
                     txbGrauInstrucao.Text = this.dr["grauInstrucao"].ToString();
                 }
             }
-           
         }
     }
 }
