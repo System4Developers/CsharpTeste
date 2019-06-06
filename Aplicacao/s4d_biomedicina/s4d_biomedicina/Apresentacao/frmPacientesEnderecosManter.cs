@@ -80,21 +80,7 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (this.comando == "inserir")
-            {
-                Modelo.Controle controle = new Modelo.Controle();
-                controle.AdicionarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text,this.idPacienteouEndereco);
-
-                if (controle.ToString().Equals(""))
-                {
-                    MessageBox.Show("Cadastro OK");
-                    //consulta sql que retorna o iD conforme o txbCPF
-                    this.comando = "editar";
-                    this.frmPacientesEnderecos.AtualizarTabela();
-                    this.Close();
-                }
-                               
-            }
+            
             if (this.comando == "editar")
             {
                 Modelo.Controle controle = new Modelo.Controle();
@@ -103,11 +89,23 @@ namespace s4d_biomedicina.Apresentacao
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Atualização ok");
-                    //consulta sql que retorna o iD conforme o txbCPF
+                    this.frmPacientesEnderecos.AtualizarTabela();
+                    this.Close();
+                }
+            }
+            if (this.comando == "inserir")
+            {
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.AdicionarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text, this.idPacienteouEndereco);
+
+                if (controle.ToString().Equals(""))
+                {
+                    MessageBox.Show("Cadastro OK");
                     this.comando = "editar";
                     this.frmPacientesEnderecos.AtualizarTabela();
                     this.Close();
                 }
+
             }
         }
     }

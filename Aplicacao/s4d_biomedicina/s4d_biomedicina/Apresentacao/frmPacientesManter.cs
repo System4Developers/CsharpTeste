@@ -13,17 +13,17 @@ namespace s4d_biomedicina.Apresentacao
 {
     public partial class frmPacientesManter : Form
     {
-        private Form frm;
+        
         private string comando;
         private int idPaciente;
         private SqlDataReader dr;
 
-        public frmPacientesManter(Form frm, string comando, int idPaciente)
+        public frmPacientesManter(string comando, int idPaciente)
         {
             InitializeComponent();
             this.comando = comando;
             this.idPaciente = idPaciente;
-            this.frm = frm;
+           
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -34,11 +34,12 @@ namespace s4d_biomedicina.Apresentacao
                 controle.AtualizarPaciente(txbNome.Text, txbRg.Text, txbCpf.Text, txbDtNascimento.Text, txbProfissao.Text, txbGrauInstrucao.Text, txbProntuario.Text, Convert.ToDouble(txbPeso.Text), Convert.ToDouble(txbAltura.Text), txbGrupoSanguineo.Text, cmbEstado.Text, Convert.ToInt32(txbID.Text));
                 if (controle.ToString().Equals(""))
                 {
-                    MessageBox.Show(controle.ToString());
+                    MessageBox.Show("OK");
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("OK");
+                    MessageBox.Show(controle.ToString());
                 }
             }
             else
@@ -54,7 +55,9 @@ namespace s4d_biomedicina.Apresentacao
                         this.idPaciente = Convert.ToInt32(dalPaciente.dr["idPaciente"].ToString());
                     }
                     frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, this.idPaciente);
+                    this.Close();
                     frmPacientesMain.ShowDialog();
+                    
                 }
             }
             

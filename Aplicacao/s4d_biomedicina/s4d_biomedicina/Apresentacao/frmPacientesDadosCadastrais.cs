@@ -28,6 +28,18 @@ namespace s4d_biomedicina.Apresentacao
 
         private void frmPacienteDadosCadastrais_Load(object sender, EventArgs e)
         {
+            AtualizarCampos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmPacientesManter frmPacientesManter = new frmPacientesManter("editar", Convert.ToInt32(txbID.Text));
+            frmPacientesManter.ShowDialog();
+            AtualizarCampos();
+        }
+
+        private void AtualizarCampos()
+        {
             Modelo.Controle controle = new Modelo.Controle();
             this.dr = controle.GetPacienteDadosCadastrais(this.idPaciente);
             while (this.dr.Read())
@@ -45,12 +57,6 @@ namespace s4d_biomedicina.Apresentacao
                 txbProfissao.Text = this.dr["profissao"].ToString();
                 txbGrauInstrucao.Text = this.dr["grauInstrucao"].ToString();
             }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            frmPacientesManter frmPacientesManter = new frmPacientesManter(this, "editar", Convert.ToInt32(txbID.Text));
-            frmPacientesManter.ShowDialog();
         }
     }
 }
