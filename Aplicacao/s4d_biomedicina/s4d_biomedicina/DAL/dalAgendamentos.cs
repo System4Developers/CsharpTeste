@@ -41,11 +41,9 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
-                //this.mensagem = "Erro com Banco";
-                //this.mensagem = ;
+                this.mensagem = "Erro com Banco";
             }
             return this.mensagem;
         }
@@ -53,7 +51,7 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaPacienteAgendamentos(int idPaciente)
             {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select consultas.idConsulta, consultas.dtConsulta as [Data do Agendamento], consultas.solicitante as [Solicitante], consultas.estadoConsulta as [Estado do Agendamento], pessoas.nome as [Criado por] from consultas join usuarios on consultas.fk_idUsuario_usuarios = usuarios.fk_idPessoa_pessoas join pessoas on usuarios.fk_idPessoa_pessoas = pessoas.idPessoa where consultas.fk_idPaciente_pacientes = @idPaciente", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idConsulta as [ID], dtConsulta as [Data do Agendamento], solicitante as [Solicitante], estadoConsulta as [Estado do Agendamento], nome as [Criado por] from consultas join usuarios on consultas.fk_idUsuario_usuarios = usuarios.idUsuario join pacientes on consultas.fk_idPaciente_pacientes = pacientes.idPaciente join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa where idPaciente = @idPaciente", con.Conectar());
             sda.SelectCommand.Parameters.AddWithValue("@idPaciente", idPaciente);
             DataTable dt = new DataTable();
             sda.Fill(dt);

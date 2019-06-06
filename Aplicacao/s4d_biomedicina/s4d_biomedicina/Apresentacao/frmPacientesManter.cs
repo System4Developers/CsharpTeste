@@ -55,9 +55,8 @@ namespace s4d_biomedicina.Apresentacao
                         this.idPaciente = Convert.ToInt32(dalPaciente.dr["idPaciente"].ToString());
                     }
                     frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, this.idPaciente);
-                    this.Close();
                     frmPacientesMain.ShowDialog();
-                    
+                    this.Close();
                 }
             }
             
