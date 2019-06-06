@@ -12,12 +12,12 @@ namespace s4d_biomedicina.Apresentacao
 {
     public partial class frmExamesAreas : Form
     {
+        private string comando;
+
         public frmExamesAreas()
         {
             InitializeComponent();
         }
-
-        private string comando;
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -30,17 +30,12 @@ namespace s4d_biomedicina.Apresentacao
           AtualizarTabela();
         }
 
-        public void AtualizarTabela()
-        {
-            Modelo.Controle controle = new Modelo.Controle();
-            dgvExamesAreas.DataSource = controle.ListaExamesAreas();
-        }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmExamesAreasManter frmAreas = new frmExamesAreasManter(this, this.comando, 0);
+            frmExamesAreasManter frmAreas = new frmExamesAreasManter(this.comando, 0);
             frmAreas.ShowDialog();
+            AtualizarTabela();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -48,8 +43,15 @@ namespace s4d_biomedicina.Apresentacao
             int idArea;
             this.comando = "editar";
             idArea = Convert.ToInt32(dgvExamesAreas.CurrentRow.Cells[0].Value);
-            frmExamesAreasManter frmAreas = new frmExamesAreasManter(this, this.comando, idArea);
-            frmAreas.Show();
+            frmExamesAreasManter frmAreas = new frmExamesAreasManter(this.comando, idArea);
+            frmAreas.ShowDialog();
+            AtualizarTabela();
+        }
+
+        private void AtualizarTabela()
+        {
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvExamesAreas.DataSource = controle.ListaExamesAreas();
         }
     }
 }

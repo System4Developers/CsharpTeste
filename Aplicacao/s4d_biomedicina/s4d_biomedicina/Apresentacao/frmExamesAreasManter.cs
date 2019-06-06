@@ -13,18 +13,15 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmExamesAreasManter : Form
     {
  
-            private readonly frmExamesAreas frmExamesAreas;
             private string comando;
             private int idExameArea;
 
-            public frmExamesAreasManter(frmExamesAreas frm, string comando, int idExameArea)
+            public frmExamesAreasManter(string comando, int idExameArea)
             {
                 InitializeComponent();
                 this.comando = comando;
                 this.idExameArea = idExameArea;
-                this.frmExamesAreas = frm;
             }
-
            
             private void frmAreas_Load(object sender, EventArgs e)
             {
@@ -49,8 +46,7 @@ namespace s4d_biomedicina.Apresentacao
                 controle.CadastrarExameArea(txbArea.Text);
                 if (controle.ToString().Equals(""))
                 {
-                    MessageBox.Show("Cadastro OK");
-                    this.frmExamesAreas.AtualizarTabela();
+                    MessageBox.Show("Cadastrado com Sucesso!");
                     this.Close();
                 }
                 else
@@ -65,7 +61,6 @@ namespace s4d_biomedicina.Apresentacao
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Atualizado com Sucesso!");
-                    this.frmExamesAreas.AtualizarTabela();
                     this.Close();
                 }
                 else

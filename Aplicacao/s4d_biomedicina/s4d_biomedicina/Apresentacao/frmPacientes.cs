@@ -39,6 +39,7 @@ namespace s4d_biomedicina.Apresentacao
             this.idPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value);
             frmPacientesMain frmPacientesMain = new frmPacientesMain(this, this.comando, this.idPaciente);
             frmPacientesMain.ShowDialog();
+            AtualizarTabela();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace s4d_biomedicina.Apresentacao
             dgvPacientes.DataSource = controle.PesquisarPaciente(txbNome.Text,txbCpf.Text);
         }
 
-        public void AtualizarTabela()
+        private void AtualizarTabela()
         {
             Modelo.Controle controle = new Modelo.Controle();
             dgvPacientes.DataSource = controle.ListaPaciente();

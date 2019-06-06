@@ -24,17 +24,12 @@ namespace s4d_biomedicina.Apresentacao
             AtualizarTabela();
         }
 
-        public void AtualizarTabela()
-        {
-            Modelo.Controle controle = new Modelo.Controle();
-            dgvExamesParametros.DataSource = controle.ListaExamesParametros();
-        }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmExamesParametrosManter frmExamesParametrosManter = new frmExamesParametrosManter(this, this.comando, 0);
+            frmExamesParametrosManter frmExamesParametrosManter = new frmExamesParametrosManter(this.comando, 0);
             frmExamesParametrosManter.ShowDialog();
+            AtualizarTabela();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -43,14 +38,21 @@ namespace s4d_biomedicina.Apresentacao
             this.comando = "editar";
             idExameParametro = Convert.ToInt32(dgvExamesParametros.CurrentRow.Cells[0].Value);
 
-            frmExamesParametrosManter frmExamesParametrosManter = new frmExamesParametrosManter(this, this.comando, idExameParametro);
+            frmExamesParametrosManter frmExamesParametrosManter = new frmExamesParametrosManter(this.comando, idExameParametro);
             frmExamesParametrosManter.Show();
+            AtualizarTabela();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             Modelo.Controle controle = new Modelo.Controle();
             dgvExamesParametros.DataSource = controle.PesquisarExamesParametros(Convert.ToInt32(txbID.Text), txbTipo.Text);
+        }
+
+        private void AtualizarTabela()
+        {
+            Modelo.Controle controle = new Modelo.Controle();
+            dgvExamesParametros.DataSource = controle.ListaExamesParametros();
         }
     }
 }

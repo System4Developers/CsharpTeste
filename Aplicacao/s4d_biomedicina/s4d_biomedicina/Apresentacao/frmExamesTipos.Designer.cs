@@ -62,7 +62,7 @@
             // txbDS
             // 
             this.txbDS.Location = new System.Drawing.Point(141, 60);
-            this.txbDS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDS.Margin = new System.Windows.Forms.Padding(2);
             this.txbDS.Name = "txbDS";
             this.txbDS.Size = new System.Drawing.Size(210, 20);
             this.txbDS.TabIndex = 8;
@@ -70,7 +70,7 @@
             // txbID
             // 
             this.txbID.Location = new System.Drawing.Point(56, 60);
-            this.txbID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbID.Margin = new System.Windows.Forms.Padding(2);
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(76, 20);
             this.txbID.TabIndex = 9;
@@ -79,7 +79,7 @@
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(368, 55);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(73, 28);
             this.btnPesquisar.TabIndex = 5;
@@ -90,7 +90,7 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(141, 91);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(73, 28);
             this.btnEditar.TabIndex = 6;
@@ -101,7 +101,7 @@
             // btnNovo
             // 
             this.btnNovo.Location = new System.Drawing.Point(56, 91);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(73, 28);
             this.btnNovo.TabIndex = 7;
@@ -115,13 +115,12 @@
             this.dgvExamesTipos.AllowUserToDeleteRows = false;
             this.dgvExamesTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExamesTipos.Location = new System.Drawing.Point(56, 136);
-            this.dgvExamesTipos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvExamesTipos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExamesTipos.Name = "dgvExamesTipos";
             this.dgvExamesTipos.ReadOnly = true;
             this.dgvExamesTipos.RowTemplate.Height = 24;
             this.dgvExamesTipos.Size = new System.Drawing.Size(691, 270);
             this.dgvExamesTipos.TabIndex = 4;
-            this.dgvExamesTipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExamesTipos_CellContentClick);
             // 
             // frmExamesTipos
             // 
