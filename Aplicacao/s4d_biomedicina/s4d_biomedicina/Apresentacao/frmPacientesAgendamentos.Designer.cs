@@ -43,6 +43,7 @@
             this.btnEditar.TabIndex = 17;
             this.btnEditar.Text = "Editar Agendamento";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNovo
             // 

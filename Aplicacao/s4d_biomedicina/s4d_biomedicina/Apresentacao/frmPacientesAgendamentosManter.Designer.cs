@@ -144,6 +144,7 @@
             this.Name = "frmPacientesAgendamentosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgendamentoManter";
+            this.Load += new System.EventHandler(this.frmPacientesAgendamentosManter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
