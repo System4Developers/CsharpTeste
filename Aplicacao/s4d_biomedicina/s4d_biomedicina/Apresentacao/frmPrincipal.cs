@@ -42,8 +42,7 @@ namespace s4d_biomedicina.Apresentacao
 
         private void tsiPacientes_Click(object sender, EventArgs e)
         {
-            Apresentacao.frmPacientes frmPacientes = new frmPacientes();
-            AbrirFormulario(frmPacientes);
+            
         }
 
         private void tsiUsuarios_Click(object sender, EventArgs e)
@@ -109,6 +108,22 @@ namespace s4d_biomedicina.Apresentacao
         {
             Apresentacao.frmExamesParametros frmExamesParametros = new frmExamesParametros();
             AbrirFormulario(frmExamesParametros);
+        }
+
+        private void tsmArquivo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void administradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentacao.frmPacientes frmPacientes = new frmPacientes();
+            AbrirFormulario(frmPacientes);
         }
     }
 }

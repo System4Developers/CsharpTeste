@@ -129,6 +129,12 @@
     <Compile Include="Apresentacao\frmPacientesExames.Designer.cs">
       <DependentUpon>frmPacientesExames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\frmPacientesExamesManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmPacientesExamesManter.Designer.cs">
+      <DependentUpon>frmPacientesExamesManter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\frmPacientesMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmPacientesExames.resx">
       <DependentUpon>frmPacientesExames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmPacientesExamesManter.resx">
+      <DependentUpon>frmPacientesExamesManter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmPacientesMain.resx">
       <DependentUpon>frmPacientesMain.cs</DependentUpon>
