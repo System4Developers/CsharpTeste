@@ -53,6 +53,7 @@
             this.btnNovo.TabIndex = 18;
             this.btnNovo.Text = "Novo Agendamento";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // dgvPacientesAgendamentos
             // 

@@ -96,7 +96,7 @@ namespace s4d_biomedicina.Apresentacao
 
         private void agendamentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Apresentacao.frmAgendamento frmAgendamentos = new frmAgendamento();
+            Apresentacao.frmPacientesAgendamentosManter frmAgendamentos = new frmPacientesAgendamentosManter();
             AbrirFormulario(frmAgendamentos);
         }
 

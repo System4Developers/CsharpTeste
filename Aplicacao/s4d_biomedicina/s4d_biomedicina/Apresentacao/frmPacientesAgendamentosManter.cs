@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace s4d_biomedicina.Apresentacao
 {
-    public partial class frmAgendamento : Form
+    public partial class frmPacientesAgendamentosManter : Form
     {
-        public frmAgendamento()
+        public frmPacientesAgendamentosManter()
         {
             InitializeComponent();
         }
