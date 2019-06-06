@@ -134,11 +134,7 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
         }
 
-<<<<<<< HEAD
-       
 
-=======
->>>>>>> 1227b2822c8e410377c5a0fdefc67e1d26349704
         public string ConsultaCpfPaciente(string cpf)
         {
             SqlCommand cmd = new SqlCommand();

@@ -323,7 +323,6 @@ namespace s4d_biomedicina.Modelo
         }
         #endregion
 
-<<<<<<< HEAD
         #region Manter Agendamentos
         public void adicionarPacienteAgendamento(string Data, string Horario, string Status,int id,string solicitante)
         {
@@ -338,9 +337,6 @@ namespace s4d_biomedicina.Modelo
         }
 
         #endregion
-=======
-
->>>>>>> 1227b2822c8e410377c5a0fdefc67e1d26349704
 
     }
 }
