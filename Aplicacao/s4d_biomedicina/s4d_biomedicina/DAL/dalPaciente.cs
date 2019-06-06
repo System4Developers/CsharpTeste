@@ -43,16 +43,6 @@ namespace s4d_biomedicina.DAL
             return dt;
         }
 
-        public DataTable GetListaPacienteAgendamentos(int idPaciente)
-        {
-            Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas", con.Conectar());
-            sda.SelectCommand.Parameters.AddWithValue("@idPaciente", idPaciente);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            return dt;
-        }
-
         public string AdicionarPaciente(string nome, string rg, string cpf, string dtNascimento, string profissao, string grauInstrucao, string prontuario, double peso,double altura,string grupoSanguineo,string estadoPaciente)
         {
             SqlCommand cmd = new SqlCommand();
@@ -146,6 +136,7 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
         }
 
+       
 
         public string ConsultaCpfPaciente(string cpf)
         {

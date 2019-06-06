@@ -23,7 +23,7 @@ namespace s4d_biomedicina.DAL
             this.login = login;
             this.senha = senha;
             
-            cmd.CommandText = "select * from usuarios where dslogin = @login and senha = @senha";
+            cmd.CommandText = "select idUsuario from usuarios where dslogin = @login and senha = @senha";
             cmd.Parameters.AddWithValue("@login",this.login);
             cmd.Parameters.AddWithValue("@senha",this.senha);
 
@@ -35,6 +35,9 @@ namespace s4d_biomedicina.DAL
                 if (dr.HasRows)
                 {
                     this.mensagem = "";
+                    while (dr.Read()) { 
+                    Modelo.Estaticos.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                    }
                 }
                 else
                 {

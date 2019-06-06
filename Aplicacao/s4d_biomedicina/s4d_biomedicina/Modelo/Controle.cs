@@ -173,7 +173,7 @@ namespace s4d_biomedicina.Modelo
         public DataTable ListaPacienteAgendamentos(int idPaciente)
         {
             DataTable dt = new DataTable();
-            DAL.dalPaciente paciente = new DAL.dalPaciente();
+            DAL.dalAgendamentos paciente = new DAL.dalAgendamentos();
             dt = paciente.GetListaPacienteAgendamentos(idPaciente);
             return dt;
         }
@@ -315,6 +315,21 @@ namespace s4d_biomedicina.Modelo
             dt = dalExameParametro.GetPesquisaExamesParametros(idExameParametro, dsExameParametro);
             return dt;
         }
+        #endregion
+
+        #region Manter Agendamentos
+        public void adicionarPacienteAgendamento(string Data, string Horario, string Status,int id,string solicitante)
+        {
+            this.mensagem = "";
+            
+            DAL.dalAgendamentos paciente = new DAL.dalAgendamentos();
+            paciente.AdicionarPacienteAgendamento(Data,Horario,Status,id,solicitante);
+            if (!paciente.ToString().Equals(""))
+            {
+                this.mensagem = paciente.ToString();
+            }
+        }
+
         #endregion
 
     }
