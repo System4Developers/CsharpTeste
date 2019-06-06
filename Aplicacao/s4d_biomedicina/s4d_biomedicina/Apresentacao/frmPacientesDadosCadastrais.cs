@@ -13,17 +13,15 @@ namespace s4d_biomedicina.Apresentacao
 {
     public partial class frmPacientesDadosCadastrais : Form
     {
-        private readonly frmPacientesMain frmPacientesMain;
         private string comando;
         private int idPaciente;
         private SqlDataReader dr;
 
-        public frmPacientesDadosCadastrais(frmPacientesMain frm, string comando, int idPaciente)
+        public frmPacientesDadosCadastrais(string comando, int idPaciente)
         {
             InitializeComponent();
             this.comando = comando;
             this.idPaciente = idPaciente;
-            this.frmPacientesMain = frm;
         }
 
         private void frmPacienteDadosCadastrais_Load(object sender, EventArgs e)
@@ -33,7 +31,8 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmPacientesManter frmPacientesManter = new frmPacientesManter("editar", Convert.ToInt32(txbID.Text));
+            this.comando = "editar";
+            frmPacientesManter frmPacientesManter = new frmPacientesManter(this.comando, Convert.ToInt32(txbID.Text));
             frmPacientesManter.ShowDialog();
             AtualizarCampos();
         }

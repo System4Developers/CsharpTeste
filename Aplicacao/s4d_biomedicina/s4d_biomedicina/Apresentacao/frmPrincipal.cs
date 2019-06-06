@@ -27,6 +27,7 @@ namespace s4d_biomedicina.Apresentacao
             {
                 this.Close();
             }
+            tsbLogin.Text ="Bem-Vindo : " + Modelo.Estaticos.userName.ToString();
         }
 
         private void tsmSair_Click(object sender, EventArgs e)
@@ -38,11 +39,7 @@ namespace s4d_biomedicina.Apresentacao
         {
             Apresentacao.frmLogin frmLogin = new frmLogin();
             frmLogin.ShowDialog();
-        }
-
-        private void tsiPacientes_Click(object sender, EventArgs e)
-        {
-            
+            tsbLogin.Text = "Bem-Vindo : " + Modelo.Estaticos.userName.ToString();
         }
 
         private void tsiUsuarios_Click(object sender, EventArgs e)
@@ -93,11 +90,6 @@ namespace s4d_biomedicina.Apresentacao
 
         #endregion
 
-        private void agendamentosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          
-        }
-
         private void tsiExamesTipos_Click(object sender, EventArgs e)
         {
             Apresentacao.frmExamesTipos frmExamesTipos = new frmExamesTipos();
@@ -108,16 +100,6 @@ namespace s4d_biomedicina.Apresentacao
         {
             Apresentacao.frmExamesParametros frmExamesParametros = new frmExamesParametros();
             AbrirFormulario(frmExamesParametros);
-        }
-
-        private void tsmArquivo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void administradorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
