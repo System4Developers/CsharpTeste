@@ -29,8 +29,24 @@ namespace s4d_biomedicina.Apresentacao
             if (this.comando == "inserir")
             {
                 Modelo.Controle controle = new Modelo.Controle();
-                controle.adicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text,this.idPacientesouAgendamento,txbSolicitante.Text);
+                controle.AdicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text,this.idPacientesouAgendamento,txbSolicitante.Text);
                 
+
+                if (controle.ToString().Equals(""))
+                {
+                    MessageBox.Show("Cadastro OK");
+                    //consulta sql que retorna o iD conforme o txbCPF
+                    this.comando = "editar";
+                    this.frmPacientesAgendamentos.AtualizarTabela();
+                    this.Close();
+                }
+            }
+
+            if (this.comando == "editar")
+            {
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.AtualizarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, this.idPacientesouAgendamento, txbSolicitante.Text);
+
 
                 if (controle.ToString().Equals(""))
                 {

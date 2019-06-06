@@ -50,6 +50,7 @@
             // 
             // cmbHorario
             // 
+            this.cmbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHorario.FormattingEnabled = true;
             this.cmbHorario.Items.AddRange(new object[] {
             "08:00",
@@ -75,6 +76,7 @@
             // 
             // cmbStatus
             // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Pendente",
