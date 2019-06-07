@@ -14,13 +14,15 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientesExamesManter : Form
     {
         private string comando;
-        private int idPacienteouExame;
+        private int idPaciente;
+        private int idExame;
         private SqlDataReader dr;
 
-        public frmPacientesExamesManter(string comando, int idPacienteouExame)
+        public frmPacientesExamesManter(string comando, int idPaciente,int idExame)
         {
             InitializeComponent();
-            this.idPacienteouExame = idPacienteouExame;
+            this.idPaciente = idPaciente;
+            this.idExame = idExame;
             this.comando = comando;
         }
 
@@ -107,7 +109,13 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            Modelo.Controle controle = new Modelo.Controle();
+            int idExameParametro;
+            for (int i = 0; i < ltvExamesSelecionados.Items.Count; i++)
+            {
+                idExameParametro = Convert.ToInt32(ltvExamesSelecionados.Items[i].Text);
+            }
+            controle.AdicionarExameAgendado("PENDENTE", dtpAgendamento.Text,this.idExame,this.idPaciente,this.idPaciente);
         }
     }
 }

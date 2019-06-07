@@ -52,8 +52,11 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnNovoExame_Click(object sender, EventArgs e)
         {
+            int idConsulta;
             this.comando = "inserir";
-            frmPacientesExamesManter frmPacientesExamesManter = new frmPacientesExamesManter(this.comando, idPaciente);
+            idConsulta = Convert.ToInt32(dgvPacientesAgendamentos.CurrentRow.Cells[0].Value);
+
+            frmPacientesExamesManter frmPacientesExamesManter = new frmPacientesExamesManter(this.comando, idPaciente, idConsulta);
             frmPacientesExamesManter.ShowDialog();
             AtualizarTabela();
         }

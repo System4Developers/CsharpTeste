@@ -118,5 +118,45 @@ namespace s4d_biomedicina.DAL
             return this.mensagem;
 
         }
+
+        public string AdicionarExameAgendado(string estadoExame,string dtExame,int idConsulta,int idPaciente,int idExameParametro)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
+            this.mensagem = "";
+
+            this.estadoExame = estadoExame;
+            this.dataExame = dtExame;
+            this.idConsulta = idConsulta;
+            this.idPaciente = idPaciente;
+            this.idExameParametro = idExameParametro;
+
+            cmd.CommandText = "insert into examesAgendados (estadoExame, dtExame, fk_idConsulta_consultas,fk_idPaciente_pacientes) " +
+                "values (@estadoExame,@dtExame,@idConsulta,@idPaciente) " +
+                "declare @idExAg int = @@identity " +
+                "insert into ExamesResultados(valorMedidoC,valorMedidoB,valorMedidoA,fk_idExameParametro_examesParametros,fk_idExameAgendado_examesAgendados) " +
+                "values (0,0,0,@idExameParametro,@idExAg)";
+
+            cmd.Parameters.AddWithValue("@estadoExame", this.estadoExame);
+            cmd.Parameters.AddWithValue("@dtExame", this.dataExame);
+            cmd.Parameters.AddWithValue("@idConsulta", this.idConsulta);
+            cmd.Parameters.AddWithValue("@idExameParametro", idExameParametro);
+            cmd.Parameters.AddWithValue("@idPaciente", idPaciente);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                con.desconectar();
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+                //this.mensagem = "Erro com Banco";
+                //this.mensagem = ;
+            }
+            return this.mensagem;
+        }
     }
 }

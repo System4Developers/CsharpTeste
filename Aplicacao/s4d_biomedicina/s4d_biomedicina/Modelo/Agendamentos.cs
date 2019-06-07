@@ -13,6 +13,13 @@ namespace s4d_biomedicina.Modelo
         protected string Horario;
         protected string Status;
         protected string Solicitante;
+        protected string estadoExame;
+        protected string dataExame;
+        protected int idConsulta;
+        protected int idExameParametro;
+        protected int idExameAgendado;
+
+
 
         public int IdAgendamento { get => idAgendamento; }
 

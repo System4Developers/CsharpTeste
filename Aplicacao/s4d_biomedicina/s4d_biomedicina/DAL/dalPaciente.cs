@@ -36,7 +36,7 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaPacienteExames(int idPaciente)
         {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select dsExameTipo,estadoExame,dtExame,solicitante,idPaciente " +
+            SqlDataAdapter sda = new SqlDataAdapter("select idExameAgendado as [ID],dsExameTipo as [Exame],estadoExame as [Status],dtExame as [Data do Exame],solicitante as [Solicitante] " +
              "from examesAgendados " +
              "join pacientes on examesAgendados.fk_idPaciente_pacientes = pacientes.idPaciente " +
              "join consultas on examesAgendados.fk_idConsulta_consultas = consultas.idConsulta " +
