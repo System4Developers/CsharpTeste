@@ -38,7 +38,6 @@
             this.tsiExamesAreas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiExamesTipos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiExamesParametros = new System.Windows.Forms.ToolStripMenuItem();
-            this.agendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPesquisa = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiPacientes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmLogin = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,8 +87,7 @@
             // 
             this.tsmAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiUsuarios,
-            this.tsmExames,
-            this.agendamentosToolStripMenuItem});
+            this.tsmExames});
             this.tsmAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmAdmin.Name = "tsmAdmin";
             this.tsmAdmin.Size = new System.Drawing.Size(98, 23);
@@ -98,7 +96,7 @@
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(158, 22);
+            this.tsiUsuarios.Size = new System.Drawing.Size(180, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
@@ -109,7 +107,7 @@
             this.tsiExamesTipos,
             this.tsiExamesParametros});
             this.tsmExames.Name = "tsmExames";
-            this.tsmExames.Size = new System.Drawing.Size(158, 22);
+            this.tsmExames.Size = new System.Drawing.Size(180, 22);
             this.tsmExames.Text = "Exames";
             // 
             // tsiExamesAreas
@@ -132,12 +130,6 @@
             this.tsiExamesParametros.Size = new System.Drawing.Size(138, 22);
             this.tsiExamesParametros.Text = "Parametros";
             this.tsiExamesParametros.Click += new System.EventHandler(this.tsiExamesParametros_Click);
-            // 
-            // agendamentosToolStripMenuItem
-            // 
-            this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.agendamentosToolStripMenuItem.Text = "Agendamentos";
             // 
             // tsmPesquisa
             // 
@@ -256,7 +248,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsiExamesAreas;
         private System.Windows.Forms.ToolStripMenuItem tsiExamesTipos;
         private System.Windows.Forms.ToolStripMenuItem tsiExamesParametros;
-        private System.Windows.Forms.ToolStripMenuItem agendamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmPesquisa;
         private System.Windows.Forms.ToolStripMenuItem tsiPacientes;
         private System.Windows.Forms.ToolStripMenuItem tsmLogin;

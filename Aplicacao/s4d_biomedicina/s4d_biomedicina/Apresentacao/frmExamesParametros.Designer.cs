@@ -28,75 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.txbTipo = new System.Windows.Forms.TextBox();
             this.txbID = new System.Windows.Forms.TextBox();
             this.dgvExamesParametros = new System.Windows.Forms.DataGridView();
+            this.lbTipo = new MaterialSkin.Controls.MaterialLabel();
+            this.lblID = new MaterialSkin.Controls.MaterialLabel();
+            this.btnPesquisar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnNovo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
+            this.mDividir = new MaterialSkin.Controls.MaterialDivider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamesParametros)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(127, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Tipo";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "ID";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(272, 35);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisar.TabIndex = 7;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(130, 72);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 8;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(37, 72);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 23);
-            this.btnNovo.TabIndex = 9;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
             // txbTipo
             // 
-            this.txbTipo.Location = new System.Drawing.Point(127, 37);
+            this.txbTipo.Location = new System.Drawing.Point(150, 164);
             this.txbTipo.Name = "txbTipo";
-            this.txbTipo.Size = new System.Drawing.Size(126, 20);
+            this.txbTipo.Size = new System.Drawing.Size(218, 20);
             this.txbTipo.TabIndex = 5;
             // 
             // txbID
             // 
-            this.txbID.Location = new System.Drawing.Point(37, 37);
+            this.txbID.Location = new System.Drawing.Point(48, 164);
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(75, 20);
             this.txbID.TabIndex = 6;
@@ -105,21 +59,113 @@
             // dgvExamesParametros
             // 
             this.dgvExamesParametros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExamesParametros.Location = new System.Drawing.Point(37, 125);
+            this.dgvExamesParametros.Location = new System.Drawing.Point(47, 206);
             this.dgvExamesParametros.Name = "dgvExamesParametros";
-            this.dgvExamesParametros.Size = new System.Drawing.Size(727, 297);
+            this.dgvExamesParametros.Size = new System.Drawing.Size(769, 335);
             this.dgvExamesParametros.TabIndex = 4;
+            // 
+            // lbTipo
+            // 
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Depth = 0;
+            this.lbTipo.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbTipo.Location = new System.Drawing.Point(146, 142);
+            this.lbTipo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(156, 19);
+            this.lbTipo.TabIndex = 36;
+            this.lbTipo.Text = "TIPO DE PARÂMETRO";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Depth = 0;
+            this.lblID.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblID.Location = new System.Drawing.Point(52, 141);
+            this.lblID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(23, 19);
+            this.lblID.TabIndex = 35;
+            this.lblID.Text = "ID";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Depth = 0;
+            this.btnPesquisar.Location = new System.Drawing.Point(405, 159);
+            this.btnPesquisar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Primary = true;
+            this.btnPesquisar.Size = new System.Drawing.Size(102, 29);
+            this.btnPesquisar.TabIndex = 39;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Depth = 0;
+            this.btnEditar.Location = new System.Drawing.Point(164, 92);
+            this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Primary = true;
+            this.btnEditar.Size = new System.Drawing.Size(102, 29);
+            this.btnEditar.TabIndex = 38;
+            this.btnEditar.Text = "editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Depth = 0;
+            this.btnNovo.Location = new System.Drawing.Point(47, 92);
+            this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Primary = true;
+            this.btnNovo.Size = new System.Drawing.Size(102, 29);
+            this.btnNovo.TabIndex = 37;
+            this.btnNovo.Text = "NOVO";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // lblGeral
+            // 
+            this.lblGeral.AutoSize = true;
+            this.lblGeral.Depth = 0;
+            this.lblGeral.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblGeral.Location = new System.Drawing.Point(28, 27);
+            this.lblGeral.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGeral.Name = "lblGeral";
+            this.lblGeral.Size = new System.Drawing.Size(363, 19);
+            this.lblGeral.TabIndex = 41;
+            this.lblGeral.Text = "GERENCIAMENTO DOS PARÂMETROS DOS EXAMES";
+            // 
+            // mDividir
+            // 
+            this.mDividir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mDividir.Depth = 0;
+            this.mDividir.Location = new System.Drawing.Point(16, 61);
+            this.mDividir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mDividir.Name = "mDividir";
+            this.mDividir.Size = new System.Drawing.Size(800, 2);
+            this.mDividir.TabIndex = 40;
+            this.mDividir.Text = "mDividir";
             // 
             // frmExamesParametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(839, 570);
+            this.Controls.Add(this.lblGeral);
+            this.Controls.Add(this.mDividir);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
+            this.Controls.Add(this.lbTipo);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.txbTipo);
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.dgvExamesParametros);
@@ -134,14 +180,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.TextBox txbTipo;
         private System.Windows.Forms.TextBox txbID;
         private System.Windows.Forms.DataGridView dgvExamesParametros;
+        private MaterialSkin.Controls.MaterialLabel lbTipo;
+        private MaterialSkin.Controls.MaterialLabel lblID;
+        private MaterialSkin.Controls.MaterialRaisedButton btnPesquisar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEditar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNovo;
+        private MaterialSkin.Controls.MaterialLabel lblGeral;
+        private MaterialSkin.Controls.MaterialDivider mDividir;
     }
 }
