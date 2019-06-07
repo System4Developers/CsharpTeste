@@ -29,6 +29,19 @@ namespace s4d_biomedicina.Apresentacao
         {
             Modelo.Controle controle = new Modelo.Controle();
             dgvPacientesExames.DataSource = controle.ListaPacienteExames(this.idPaciente);
+            dgvPacientesExames.Columns["idExameResultado"].Visible = false;
+            dgvPacientesExames.Columns["idExameParametro"].Visible = false;
+            dgvPacientesExames.Columns["idExameTipo"].Visible = false;
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int idExameResultado;
+            idExameResultado = Convert.ToInt32(dgvPacientesExames.CurrentRow.Cells[12].Value);
+            frmPacientesExamesResultados frmPacientesExamesResultados = new frmPacientesExamesResultados(idExameResultado, "editar");
+            frmPacientesExamesResultados.ShowDialog();
+            
         }
     }
 }

@@ -35,13 +35,14 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(580, 316);
+            this.btnEditar.Location = new System.Drawing.Point(937, 328);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(136, 28);
             this.btnEditar.TabIndex = 17;
             this.btnEditar.Text = "Editar Exames";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // dgvPacientesExames
             // 
@@ -53,7 +54,7 @@
             this.dgvPacientesExames.Name = "dgvPacientesExames";
             this.dgvPacientesExames.ReadOnly = true;
             this.dgvPacientesExames.RowTemplate.Height = 24;
-            this.dgvPacientesExames.Size = new System.Drawing.Size(691, 270);
+            this.dgvPacientesExames.Size = new System.Drawing.Size(1048, 291);
             this.dgvPacientesExames.TabIndex = 16;
             // 
             // frmPacientesExames
@@ -61,7 +62,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(741, 372);
+            this.ClientSize = new System.Drawing.Size(1112, 388);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvPacientesExames);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

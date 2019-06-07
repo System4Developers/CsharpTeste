@@ -19,6 +19,11 @@ namespace s4d_biomedicina.Modelo
         protected double valorMin;
         protected double valorMax;
         protected string dsExameParametro;
-        
+
+        protected int idExameResultado;
+        protected double valorMedidoA;
+        protected double valorMedidoB;
+        protected double valorMedidoC;
+
     }
 }

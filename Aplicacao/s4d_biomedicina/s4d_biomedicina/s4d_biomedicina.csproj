@@ -138,6 +138,12 @@
     <Compile Include="Apresentacao\frmPacientesExamesManter.Designer.cs">
       <DependentUpon>frmPacientesExamesManter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\frmPacientesExamesResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmPacientesExamesResultados.Designer.cs">
+      <DependentUpon>frmPacientesExamesResultados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\frmPacientesMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,7 @@
     <Compile Include="DAL\dalAgendamentos.cs" />
     <Compile Include="DAL\dalExameArea.cs" />
     <Compile Include="DAL\dalExameParametro.cs" />
+    <Compile Include="DAL\dalExameResultado.cs" />
     <Compile Include="DAL\dalExameTipo.cs" />
     <Compile Include="DAL\dalPaciente.cs" />
     <Compile Include="DAL\dalUsuario.cs" />
@@ -238,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmPacientesExamesManter.resx">
       <DependentUpon>frmPacientesExamesManter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmPacientesExamesResultados.resx">
+      <DependentUpon>frmPacientesExamesResultados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmPacientesMain.resx">
       <DependentUpon>frmPacientesMain.cs</DependentUpon>
