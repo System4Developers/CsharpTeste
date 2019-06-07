@@ -164,10 +164,10 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.lblArea);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmExamesParametrosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmExamesParametrosManter";
+            this.Text = "Parâmetros da Biomedicina";
             this.Load += new System.EventHandler(this.frmExamesParametrosManter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

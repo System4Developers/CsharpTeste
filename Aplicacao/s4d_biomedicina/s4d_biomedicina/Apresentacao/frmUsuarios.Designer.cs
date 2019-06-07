@@ -57,7 +57,7 @@
             // txbID
             // 
             this.txbID.Location = new System.Drawing.Point(34, 147);
-            this.txbID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbID.Margin = new System.Windows.Forms.Padding(2);
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(93, 20);
             this.txbID.TabIndex = 20;
@@ -66,7 +66,7 @@
             // txbLogin
             // 
             this.txbLogin.Location = new System.Drawing.Point(148, 147);
-            this.txbLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbLogin.Margin = new System.Windows.Forms.Padding(2);
             this.txbLogin.Name = "txbLogin";
             this.txbLogin.Size = new System.Drawing.Size(220, 20);
             this.txbLogin.TabIndex = 21;
@@ -84,6 +84,7 @@
             // 
             // btnNovo
             // 
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovo.Depth = 0;
             this.btnNovo.Location = new System.Drawing.Point(31, 87);
             this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -97,6 +98,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Depth = 0;
             this.btnEditar.Location = new System.Drawing.Point(148, 87);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -110,6 +112,7 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPesquisar.Depth = 0;
             this.btnPesquisar.Location = new System.Drawing.Point(388, 141);
             this.btnPesquisar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -125,12 +128,12 @@
             // 
             this.lblGeral.AutoSize = true;
             this.lblGeral.Depth = 0;
-            this.lblGeral.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeral.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblGeral.Location = new System.Drawing.Point(24, 25);
             this.lblGeral.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(491, 39);
+            this.lblGeral.Size = new System.Drawing.Size(231, 19);
             this.lblGeral.TabIndex = 27;
             this.lblGeral.Text = "GERENCIAMENTO DE USUÁRIOS";
             // 

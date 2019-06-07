@@ -54,7 +54,9 @@
             this.lblAltura = new System.Windows.Forms.Label();
             this.txbGrupoSanguineo = new System.Windows.Forms.TextBox();
             this.lblGrupoSanguineo = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
             this.gpbPaciente.SuspendLayout();
             this.gpbInfoAdicional.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +81,7 @@
             this.gpbPaciente.Controls.Add(this.txbGrauInstrucao);
             this.gpbPaciente.Controls.Add(this.txbProntuario);
             this.gpbPaciente.Controls.Add(this.label4);
-            this.gpbPaciente.Location = new System.Drawing.Point(23, 31);
+            this.gpbPaciente.Location = new System.Drawing.Point(16, 106);
             this.gpbPaciente.Name = "gpbPaciente";
             this.gpbPaciente.Size = new System.Drawing.Size(671, 179);
             this.gpbPaciente.TabIndex = 56;
@@ -271,7 +273,7 @@
             this.gpbInfoAdicional.Controls.Add(this.lblAltura);
             this.gpbInfoAdicional.Controls.Add(this.txbGrupoSanguineo);
             this.gpbInfoAdicional.Controls.Add(this.lblGrupoSanguineo);
-            this.gpbInfoAdicional.Location = new System.Drawing.Point(23, 234);
+            this.gpbInfoAdicional.Location = new System.Drawing.Point(16, 309);
             this.gpbInfoAdicional.Name = "gpbInfoAdicional";
             this.gpbInfoAdicional.Size = new System.Drawing.Size(671, 71);
             this.gpbInfoAdicional.TabIndex = 55;
@@ -337,24 +339,53 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnEditar.Location = new System.Drawing.Point(546, 325);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Depth = 0;
+            this.btnEditar.Location = new System.Drawing.Point(562, 412);
+            this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(148, 38);
-            this.btnEditar.TabIndex = 53;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Primary = true;
+            this.btnEditar.Size = new System.Drawing.Size(102, 29);
+            this.btnEditar.TabIndex = 57;
+            this.btnEditar.Text = "editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(4, 69);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(700, 2);
+            this.materialDivider1.TabIndex = 59;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // lblGeral
+            // 
+            this.lblGeral.AutoSize = true;
+            this.lblGeral.Depth = 0;
+            this.lblGeral.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblGeral.Location = new System.Drawing.Point(12, 35);
+            this.lblGeral.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGeral.Name = "lblGeral";
+            this.lblGeral.Size = new System.Drawing.Size(152, 19);
+            this.lblGeral.TabIndex = 58;
+            this.lblGeral.Text = "DADOS CADASTRAIS";
             // 
             // frmPacientesDadosCadastrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 390);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(722, 469);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.lblGeral);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.gpbPaciente);
             this.Controls.Add(this.gpbInfoAdicional);
-            this.Controls.Add(this.btnEditar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPacientesDadosCadastrais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -365,6 +396,7 @@
             this.gpbInfoAdicional.ResumeLayout(false);
             this.gpbInfoAdicional.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -396,6 +428,8 @@
         private System.Windows.Forms.Label lblAltura;
         private System.Windows.Forms.TextBox txbGrupoSanguineo;
         private System.Windows.Forms.Label lblGrupoSanguineo;
-        private System.Windows.Forms.Button btnEditar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEditar;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialLabel lblGeral;
     }
 }

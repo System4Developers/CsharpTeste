@@ -28,41 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.dgvPacientesAgendamentos = new System.Windows.Forms.DataGridView();
-            this.btnNovoExame = new System.Windows.Forms.Button();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
+            this.btnNovo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnNovoExame = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesAgendamentos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(610, 346);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(136, 28);
-            this.btnEditar.TabIndex = 17;
-            this.btnEditar.Text = "Editar Agendamento";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(268, 346);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(150, 28);
-            this.btnNovo.TabIndex = 18;
-            this.btnNovo.Text = "Novo Agendamento";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // dgvPacientesAgendamentos
             // 
             this.dgvPacientesAgendamentos.AllowUserToAddRows = false;
             this.dgvPacientesAgendamentos.AllowUserToDeleteRows = false;
             this.dgvPacientesAgendamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientesAgendamentos.Location = new System.Drawing.Point(55, 58);
+            this.dgvPacientesAgendamentos.Location = new System.Drawing.Point(53, 108);
             this.dgvPacientesAgendamentos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPacientesAgendamentos.Name = "dgvPacientesAgendamentos";
             this.dgvPacientesAgendamentos.ReadOnly = true;
@@ -70,25 +50,83 @@
             this.dgvPacientesAgendamentos.Size = new System.Drawing.Size(691, 270);
             this.dgvPacientesAgendamentos.TabIndex = 16;
             // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(41, 74);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(724, 2);
+            this.materialDivider1.TabIndex = 54;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // lblGeral
+            // 
+            this.lblGeral.AutoSize = true;
+            this.lblGeral.Depth = 0;
+            this.lblGeral.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblGeral.Location = new System.Drawing.Point(49, 40);
+            this.lblGeral.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGeral.Name = "lblGeral";
+            this.lblGeral.Size = new System.Drawing.Size(130, 19);
+            this.lblGeral.TabIndex = 53;
+            this.lblGeral.Text = "AGENDAMENTOS";
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovo.Depth = 0;
+            this.btnNovo.Location = new System.Drawing.Point(228, 398);
+            this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Primary = true;
+            this.btnNovo.Size = new System.Drawing.Size(170, 29);
+            this.btnNovo.TabIndex = 55;
+            this.btnNovo.Text = "NOVO AGENDAMENTO";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
             // btnNovoExame
             // 
-            this.btnNovoExame.Location = new System.Drawing.Point(439, 346);
-            this.btnNovoExame.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovoExame.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoExame.Depth = 0;
+            this.btnNovoExame.Location = new System.Drawing.Point(417, 398);
+            this.btnNovoExame.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNovoExame.Name = "btnNovoExame";
-            this.btnNovoExame.Size = new System.Drawing.Size(150, 28);
-            this.btnNovoExame.TabIndex = 19;
-            this.btnNovoExame.Text = "Atribuir Exames";
+            this.btnNovoExame.Primary = true;
+            this.btnNovoExame.Size = new System.Drawing.Size(144, 29);
+            this.btnNovoExame.TabIndex = 56;
+            this.btnNovoExame.Text = "ATRIBUIR EXAME";
             this.btnNovoExame.UseVisualStyleBackColor = true;
             this.btnNovoExame.Click += new System.EventHandler(this.btnNovoExame_Click);
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(577, 398);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(167, 29);
+            this.materialRaisedButton1.TabIndex = 57;
+            this.materialRaisedButton1.Text = "EDITAR AGENDAMENTO";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmPacientesAgendamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 404);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(779, 471);
+            this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.btnNovoExame);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.lblGeral);
             this.Controls.Add(this.dgvPacientesAgendamentos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPacientesAgendamentos";
@@ -97,14 +135,16 @@
             this.Load += new System.EventHandler(this.frmPacientesAgendamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesAgendamentos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.DataGridView dgvPacientesAgendamentos;
-        private System.Windows.Forms.Button btnNovoExame;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialLabel lblGeral;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNovo;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNovoExame;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }

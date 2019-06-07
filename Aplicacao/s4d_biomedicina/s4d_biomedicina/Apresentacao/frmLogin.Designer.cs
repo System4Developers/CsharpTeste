@@ -66,6 +66,7 @@
             // 
             // btnConfirmar
             // 
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.Depth = 0;
             this.btnConfirmar.Location = new System.Drawing.Point(201, 257);
             this.btnConfirmar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -99,7 +100,7 @@
             this.Controls.Add(this.txbSenha);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LOGIN BIOMEDICINA";
+            this.Text = "ACESSO AO SISTEMA";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
 

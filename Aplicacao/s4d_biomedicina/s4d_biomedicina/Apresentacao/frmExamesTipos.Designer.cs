@@ -86,6 +86,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Depth = 0;
             this.btnEditar.Location = new System.Drawing.Point(153, 84);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -99,6 +100,7 @@
             // 
             // btnNovo
             // 
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovo.Depth = 0;
             this.btnNovo.Location = new System.Drawing.Point(36, 84);
             this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -123,6 +125,7 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPesquisar.Depth = 0;
             this.btnPesquisar.Location = new System.Drawing.Point(359, 156);
             this.btnPesquisar.MouseState = MaterialSkin.MouseState.HOVER;

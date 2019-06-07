@@ -229,10 +229,10 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gpbLocalidade);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPacientesEnderecosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPacientesEnderecosManter";
+            this.Text = "Endereço";
             this.Load += new System.EventHandler(this.frmPacientesEnderecosManter_Load);
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();

@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.txbCpf = new System.Windows.Forms.TextBox();
             this.txbNome = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblCpf = new System.Windows.Forms.Label();
+            this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnNovo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnPesquisar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lblNome = new MaterialSkin.Controls.MaterialLabel();
+            this.lblCPF = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,51 +47,18 @@
             this.dgvPacientes.AllowUserToDeleteRows = false;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.dgvPacientes.Location = new System.Drawing.Point(15, 96);
+            this.dgvPacientes.Location = new System.Drawing.Point(14, 195);
             this.dgvPacientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPacientes.MultiSelect = false;
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.RowTemplate.Height = 24;
-            this.dgvPacientes.Size = new System.Drawing.Size(1167, 340);
+            this.dgvPacientes.Size = new System.Drawing.Size(808, 363);
             this.dgvPacientes.TabIndex = 0;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(15, 64);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(142, 25);
-            this.btnNovo.TabIndex = 1;
-            this.btnNovo.Text = "Cadastrar Novo Paciente";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(161, 64);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(159, 25);
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.Text = "Abrir Dados Cadastrais";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(324, 33);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(77, 21);
-            this.btnPesquisar.TabIndex = 2;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txbCpf
             // 
-            this.txbCpf.Location = new System.Drawing.Point(161, 34);
+            this.txbCpf.Location = new System.Drawing.Point(172, 150);
             this.txbCpf.Margin = new System.Windows.Forms.Padding(2);
             this.txbCpf.Name = "txbCpf";
             this.txbCpf.Size = new System.Drawing.Size(159, 20);
@@ -97,45 +66,120 @@
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(15, 34);
+            this.txbNome.Location = new System.Drawing.Point(26, 150);
             this.txbNome.Margin = new System.Windows.Forms.Padding(2);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(142, 20);
             this.txbNome.TabIndex = 3;
             // 
+            // lblGeral
+            // 
+            this.lblGeral.AutoSize = true;
+            this.lblGeral.Depth = 0;
+            this.lblGeral.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblGeral.Location = new System.Drawing.Point(22, 20);
+            this.lblGeral.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGeral.Name = "lblGeral";
+            this.lblGeral.Size = new System.Drawing.Size(240, 19);
+            this.lblGeral.TabIndex = 46;
+            this.lblGeral.Text = "GERENCIAMENTO DE PACIENTES";
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(14, 56);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(800, 2);
+            this.materialDivider1.TabIndex = 50;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Depth = 0;
+            this.btnEditar.Location = new System.Drawing.Point(143, 76);
+            this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Primary = true;
+            this.btnEditar.Size = new System.Drawing.Size(102, 29);
+            this.btnEditar.TabIndex = 52;
+            this.btnEditar.Text = "editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovo.Depth = 0;
+            this.btnNovo.Location = new System.Drawing.Point(26, 76);
+            this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Primary = true;
+            this.btnNovo.Size = new System.Drawing.Size(102, 29);
+            this.btnNovo.TabIndex = 51;
+            this.btnNovo.Text = "NOVO";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisar.Depth = 0;
+            this.btnPesquisar.Location = new System.Drawing.Point(363, 145);
+            this.btnPesquisar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Primary = true;
+            this.btnPesquisar.Size = new System.Drawing.Size(102, 29);
+            this.btnPesquisar.TabIndex = 53;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(13, 18);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNome.Depth = 0;
+            this.lblNome.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNome.Location = new System.Drawing.Point(22, 129);
+            this.lblNome.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 4;
-            this.lblNome.Text = "Nome";
+            this.lblNome.Size = new System.Drawing.Size(52, 19);
+            this.lblNome.TabIndex = 55;
+            this.lblNome.Text = "NOME";
             // 
-            // lblCpf
+            // lblCPF
             // 
-            this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(158, 18);
-            this.lblCpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(27, 13);
-            this.lblCpf.TabIndex = 4;
-            this.lblCpf.Text = "CPF";
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Depth = 0;
+            this.lblCPF.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCPF.Location = new System.Drawing.Point(168, 129);
+            this.lblCPF.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(36, 19);
+            this.lblCPF.TabIndex = 54;
+            this.lblCPF.Text = "CPF";
             // 
             // frmPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1201, 458);
-            this.Controls.Add(this.lblCpf);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(846, 579);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txbNome);
-            this.Controls.Add(this.txbCpf);
+            this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.lblGeral);
+            this.Controls.Add(this.txbNome);
+            this.Controls.Add(this.txbCpf);
             this.Controls.Add(this.dgvPacientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -151,12 +195,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPacientes;
-        private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txbCpf;
         private System.Windows.Forms.TextBox txbNome;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblCpf;
+        private MaterialSkin.Controls.MaterialLabel lblGeral;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEditar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNovo;
+        private MaterialSkin.Controls.MaterialRaisedButton btnPesquisar;
+        private MaterialSkin.Controls.MaterialLabel lblNome;
+        private MaterialSkin.Controls.MaterialLabel lblCPF;
     }
 }

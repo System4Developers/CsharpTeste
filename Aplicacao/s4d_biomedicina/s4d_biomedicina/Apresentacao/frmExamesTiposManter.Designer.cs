@@ -147,10 +147,10 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblArea);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmExamesTiposManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmExamesTiposManter";
+            this.Text = "Tipos de Exames";
             this.Load += new System.EventHandler(this.frmExamesTiposManter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

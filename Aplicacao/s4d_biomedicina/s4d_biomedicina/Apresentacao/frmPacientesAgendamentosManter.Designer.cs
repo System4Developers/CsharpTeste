@@ -155,10 +155,10 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbHorario);
             this.Controls.Add(this.dtpAgendamento);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmPacientesAgendamentosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAgendamentoManter";
+            this.Text = "Agendamento";
             this.Load += new System.EventHandler(this.frmPacientesAgendamentosManter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

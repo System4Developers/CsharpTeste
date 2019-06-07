@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvExamesAreas = new System.Windows.Forms.DataGridView();
             this.txbID = new System.Windows.Forms.TextBox();
             this.txbDS = new System.Windows.Forms.TextBox();
             this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
@@ -38,21 +37,9 @@
             this.lbArea = new MaterialSkin.Controls.MaterialLabel();
             this.btnPesquisar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblID = new MaterialSkin.Controls.MaterialLabel();
+            this.dgvExamesAreas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamesAreas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvExamesAreas
-            // 
-            this.dgvExamesAreas.AllowUserToAddRows = false;
-            this.dgvExamesAreas.AllowUserToDeleteRows = false;
-            this.dgvExamesAreas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExamesAreas.Location = new System.Drawing.Point(51, 217);
-            this.dgvExamesAreas.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvExamesAreas.Name = "dgvExamesAreas";
-            this.dgvExamesAreas.ReadOnly = true;
-            this.dgvExamesAreas.RowTemplate.Height = 24;
-            this.dgvExamesAreas.Size = new System.Drawing.Size(740, 334);
-            this.dgvExamesAreas.TabIndex = 0;
             // 
             // txbID
             // 
@@ -75,12 +62,12 @@
             // 
             this.lblGeral.AutoSize = true;
             this.lblGeral.Depth = 0;
-            this.lblGeral.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeral.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblGeral.Location = new System.Drawing.Point(26, 28);
             this.lblGeral.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(506, 26);
+            this.lblGeral.Size = new System.Drawing.Size(363, 19);
             this.lblGeral.TabIndex = 45;
             this.lblGeral.Text = "GERENCIAMENTO DOS PARÂMETROS DOS EXAMES";
             // 
@@ -97,6 +84,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Depth = 0;
             this.btnEditar.Location = new System.Drawing.Point(162, 93);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -110,6 +98,7 @@
             // 
             // btnNovo
             // 
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovo.Depth = 0;
             this.btnNovo.Location = new System.Drawing.Point(45, 93);
             this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -136,6 +125,7 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPesquisar.Depth = 0;
             this.btnPesquisar.Location = new System.Drawing.Point(363, 168);
             this.btnPesquisar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -159,6 +149,19 @@
             this.lblID.Size = new System.Drawing.Size(23, 19);
             this.lblID.TabIndex = 48;
             this.lblID.Text = "ID";
+            // 
+            // dgvExamesAreas
+            // 
+            this.dgvExamesAreas.AllowUserToAddRows = false;
+            this.dgvExamesAreas.AllowUserToDeleteRows = false;
+            this.dgvExamesAreas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExamesAreas.Location = new System.Drawing.Point(51, 217);
+            this.dgvExamesAreas.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvExamesAreas.Name = "dgvExamesAreas";
+            this.dgvExamesAreas.ReadOnly = true;
+            this.dgvExamesAreas.RowTemplate.Height = 24;
+            this.dgvExamesAreas.Size = new System.Drawing.Size(740, 334);
+            this.dgvExamesAreas.TabIndex = 0;
             // 
             // frmExamesAreas
             // 
@@ -188,8 +191,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvExamesAreas;
         private System.Windows.Forms.TextBox txbID;
         private System.Windows.Forms.TextBox txbDS;
         private MaterialSkin.Controls.MaterialLabel lblGeral;
@@ -199,5 +200,6 @@
         private MaterialSkin.Controls.MaterialLabel lbArea;
         private MaterialSkin.Controls.MaterialRaisedButton btnPesquisar;
         private MaterialSkin.Controls.MaterialLabel lblID;
+        private System.Windows.Forms.DataGridView dgvExamesAreas;
     }
 }

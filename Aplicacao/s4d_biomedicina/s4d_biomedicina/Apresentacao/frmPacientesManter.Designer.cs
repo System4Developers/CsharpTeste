@@ -51,11 +51,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txbProntuario = new System.Windows.Forms.TextBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.txbDtNascimento = new System.Windows.Forms.MaskedTextBox();
             this.gpbInfoAdicional = new System.Windows.Forms.GroupBox();
             this.gpbPaciente = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.gpbInfoAdicional.SuspendLayout();
             this.gpbPaciente.SuspendLayout();
             this.SuspendLayout();
@@ -274,17 +273,6 @@
             this.cmbEstado.Size = new System.Drawing.Size(129, 21);
             this.cmbEstado.TabIndex = 9;
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(510, 298);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(74, 27);
-            this.btnSalvar.TabIndex = 39;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
             // txbDtNascimento
             // 
             this.txbDtNascimento.Location = new System.Drawing.Point(528, 95);
@@ -336,31 +324,33 @@
             this.gpbPaciente.TabStop = false;
             this.gpbPaciente.Text = "Paciente";
             // 
-            // btnCancelar
+            // btnSalvar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(604, 298);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(74, 27);
-            this.btnCancelar.TabIndex = 39;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.Location = new System.Drawing.Point(576, 302);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Primary = true;
+            this.btnSalvar.Size = new System.Drawing.Size(102, 29);
+            this.btnSalvar.TabIndex = 53;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // frmPacientesManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 352);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gpbPaciente);
             this.Controls.Add(this.gpbInfoAdicional);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSalvar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPacientesManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPacientesManter";
+            this.Text = "Paciente";
             this.Load += new System.EventHandler(this.frmPacientesManter_Load);
             this.gpbInfoAdicional.ResumeLayout(false);
             this.gpbInfoAdicional.PerformLayout();
@@ -395,10 +385,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txbProntuario;
         private System.Windows.Forms.ComboBox cmbEstado;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.MaskedTextBox txbDtNascimento;
         private System.Windows.Forms.GroupBox gpbInfoAdicional;
         private System.Windows.Forms.GroupBox gpbPaciente;
-        private System.Windows.Forms.Button btnCancelar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalvar;
     }
 }

@@ -50,5 +50,10 @@ namespace s4d_biomedicina.Apresentacao
             frmPacientesEnderecosManter frmPacientesEnderecosManter = new frmPacientesEnderecosManter(this.comando, idEndereco,this);
             frmPacientesEnderecosManter.ShowDialog();
         }
+
+        private void materialDivider1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
