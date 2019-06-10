@@ -155,7 +155,9 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbHorario);
             this.Controls.Add(this.dtpAgendamento);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPacientesAgendamentosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendamento";

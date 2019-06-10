@@ -311,13 +311,13 @@ namespace s4d_biomedicina.DAL
             
             if (!cpf.Equals(""))
             {
-                strSQL = "select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas where cpf = @cpf";
+                strSQL = "select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa where cpf = @cpf";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
                 sda.SelectCommand.Parameters.AddWithValue("@cpf", cpf);
             }
             else
             {
-                strSQL = "select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO],logradouro as [ENDERECO],bairro as [BAIRRO],cidade as [CIDADE] ,estado as [ESTADO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa left join enderecos on pessoas.idPessoa = enderecos.fk_idPessoa_pessoas where nome like @nome";
+                strSQL = "select idPaciente as [ID], nome as [NOME], rg as [RG],cpf as [CPF], dtNascimento as [NASCIMENTO], prontuario as [PRONTUARIO], profissao as [PROFISSAO] from pacientes join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa where nome like @nome";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
                 sda.SelectCommand.Parameters.AddWithValue("@nome", string.Format("%{0}%", nome));
             }

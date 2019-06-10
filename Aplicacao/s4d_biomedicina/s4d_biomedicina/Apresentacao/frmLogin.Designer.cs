@@ -98,6 +98,7 @@
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.txbLogin);
             this.Controls.Add(this.txbSenha);
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACESSO AO SISTEMA";

@@ -96,7 +96,7 @@
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsiUsuarios.Size = new System.Drawing.Size(121, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
@@ -107,7 +107,7 @@
             this.tsiExamesTipos,
             this.tsiExamesParametros});
             this.tsmExames.Name = "tsmExames";
-            this.tsmExames.Size = new System.Drawing.Size(180, 22);
+            this.tsmExames.Size = new System.Drawing.Size(121, 22);
             this.tsmExames.Text = "Exames";
             // 
             // tsiExamesAreas
@@ -220,7 +220,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlForms);
             this.Controls.Add(this.mnsMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.mnsMenu;
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";

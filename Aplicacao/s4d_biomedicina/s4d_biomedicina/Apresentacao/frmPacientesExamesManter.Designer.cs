@@ -180,7 +180,9 @@
             this.Controls.Add(this.btnMoverTodos);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.bntMover1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPacientesExamesManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPacientesExamesManter";
