@@ -65,6 +65,7 @@ namespace s4d_biomedicina.Apresentacao
             {
                 ltvExamesSelecionados.SelectedItems[0].Remove();
             }
+            CarregaListBox();
             AjustarColunas(ltvExames);
         }
 
@@ -82,6 +83,7 @@ namespace s4d_biomedicina.Apresentacao
         {
             ltvExamesSelecionados.Items.Clear();
             AjustarColunas(ltvExames);
+            CarregaListBox();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -105,6 +107,7 @@ namespace s4d_biomedicina.Apresentacao
             Modelo.Controle controle = new Modelo.Controle();
             int id = Convert.ToInt32(cmbExamesAreas.SelectedValue.ToString());
             controle.GetListaExames(id);
+            ltvExames.Clear();
             ltvExames.Columns.Add("ID");
             ltvExames.Columns.Add("Tipo");
 
@@ -125,7 +128,6 @@ namespace s4d_biomedicina.Apresentacao
         {
             try
             {
-                ltvExames.Clear();
                 CarregaListBox();
                 AjustarColunas(ltvExames);
             }

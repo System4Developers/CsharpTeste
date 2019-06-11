@@ -60,7 +60,7 @@
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(115, 23);
             this.btnRemover.TabIndex = 3;
-            this.btnRemover.Text = "<";
+            this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
