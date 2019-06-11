@@ -31,13 +31,15 @@ namespace s4d_biomedicina.DAL
             return dt;
         }
 
-        public void GetListaExamesDisponiveis()
+        public void GetListaExamesDisponiveis(int idExameArea)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
-            cmd.CommandText = "select idExameTipo as [ID],dsExameTipo as [Tipo] from examesTipos";
+            this.idExameArea = idExameArea;
 
+            cmd.CommandText = "select idExameTipo as [ID],dsExameTipo as [Tipo] from examesTipos where fk_idExameArea_examesAreas = @idExameArea";
+            cmd.Parameters.AddWithValue("@idExameArea",this.idExameArea);
             try
             {
                 cmd.Connection = con.Conectar();

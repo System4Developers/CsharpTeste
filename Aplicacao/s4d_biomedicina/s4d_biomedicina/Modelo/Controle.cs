@@ -419,10 +419,10 @@ namespace s4d_biomedicina.Modelo
             }
         }
     
-        public void GetListaExames()
+        public void GetListaExames(int idExameArea)
         {
             DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
-            dalExameTipo.GetListaExamesDisponiveis();
+            dalExameTipo.GetListaExamesDisponiveis(idExameArea);
             this.dr = dalExameTipo.dr;
         }
 

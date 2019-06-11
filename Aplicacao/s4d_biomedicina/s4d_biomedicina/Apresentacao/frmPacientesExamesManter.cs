@@ -27,8 +27,17 @@ namespace s4d_biomedicina.Apresentacao
 
         private void frmPacientesExamesManter_Load(object sender, EventArgs e)
         {
-            CarregaListBox();
-            AjustarColunas(ltvExames);
+            
+            Modelo.Controle controle = new Modelo.Controle();
+            cmbExamesAreas.DataSource = controle.GetExameAreaCombo();
+
+            cmbExamesAreas.DisplayMember = "dsArea";
+            cmbExamesAreas.ValueMember = "ID";
+            cmbExamesAreas.Text = "";
+
+            
+            ltvExamesSelecionados.Columns.Add("ID");
+            ltvExamesSelecionados.Columns.Add("Tipo");
         }
 
         private void bntMover1_Click(object sender, EventArgs e)
@@ -54,7 +63,6 @@ namespace s4d_biomedicina.Apresentacao
             }
             else
             {
-                ltvExames.Items.Add(new ListViewItem(new string[] { ltvExamesSelecionados.SelectedItems[0].Text, ltvExamesSelecionados.SelectedItems[0].SubItems[1].Text }));
                 ltvExamesSelecionados.SelectedItems[0].Remove();
             }
             AjustarColunas(ltvExames);
@@ -72,34 +80,8 @@ namespace s4d_biomedicina.Apresentacao
 
         private void btnRemoverTodos_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in ltvExamesSelecionados.Items)
-            {
-                ltvExames.Items.Add((ListViewItem)item.Clone());
-            }
             ltvExamesSelecionados.Items.Clear();
             AjustarColunas(ltvExames);
-        }
-
-        private void CarregaListBox()
-        {
-            Modelo.Controle controle = new Modelo.Controle();
-            controle.GetListaExames();
-
-            ltvExames.Columns.Add("ID");
-            ltvExames.Columns.Add("Tipo");
-            ltvExamesSelecionados.Columns.Add("ID");
-            ltvExamesSelecionados.Columns.Add("Tipo");
-
-            while (controle.Dr.Read())
-            {
-                ltvExames.Items.Add(new ListViewItem(new string[] { controle.Dr["ID"].ToString(), controle.Dr["Tipo"].ToString() }));
-            }
-        }
-
-        private void AjustarColunas(ListView ltv)
-        {
-            ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -115,7 +97,42 @@ namespace s4d_biomedicina.Apresentacao
             {
                 idExameParametro = Convert.ToInt32(ltvExamesSelecionados.Items[i].Text);
             }
-            controle.AdicionarExameAgendado("PENDENTE", dtpAgendamento.Text,this.idExame,this.idPaciente,this.idPaciente);
+            controle.AdicionarExameAgendado("PENDENTE", dtpAgendamento.Text, this.idExame, this.idPaciente, this.idPaciente);
+        }
+
+        private void CarregaListBox()
+        {
+            Modelo.Controle controle = new Modelo.Controle();
+            int id = Convert.ToInt32(cmbExamesAreas.SelectedValue.ToString());
+            controle.GetListaExames(id);
+            ltvExames.Columns.Add("ID");
+            ltvExames.Columns.Add("Tipo");
+
+
+            while (controle.Dr.Read())
+            {
+                ltvExames.Items.Add(new ListViewItem(new string[] { controle.Dr["ID"].ToString(), controle.Dr["Tipo"].ToString() }));
+            }
+        }
+
+        private void AjustarColunas(ListView ltv)
+        {
+            ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            ltv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void cmbExamesAreas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ltvExames.Clear();
+                CarregaListBox();
+                AjustarColunas(ltvExames);
+            }
+            catch (Exception)
+            {
+
+            }    
         }
     }
 }

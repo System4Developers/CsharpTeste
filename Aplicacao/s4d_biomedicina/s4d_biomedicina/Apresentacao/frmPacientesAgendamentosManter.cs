@@ -27,7 +27,7 @@ namespace s4d_biomedicina.Apresentacao
             if (this.comando == "editar")
             {
                 Modelo.Controle controle = new Modelo.Controle();
-                controle.AtualizarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, this.idAgendamento, txbSolicitante.Text);
+                controle.AtualizarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text,this.idAgendamento, txbSolicitante.Text);
 
                 if (controle.ToString().Equals(""))
                 {
@@ -38,7 +38,8 @@ namespace s4d_biomedicina.Apresentacao
             if (this.comando == "inserir")
             {
                 Modelo.Controle controle = new Modelo.Controle();
-                controle.AdicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, this.idAgendamento, txbSolicitante.Text);
+                int idUsuario = Modelo.Estaticos.idUsuario;
+                controle.AdicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, idUsuario, txbSolicitante.Text);
 
                 if (controle.ToString().Equals(""))
                 {

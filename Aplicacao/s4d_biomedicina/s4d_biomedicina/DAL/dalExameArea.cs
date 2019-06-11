@@ -12,12 +12,13 @@ namespace s4d_biomedicina.DAL
     public class dalExameArea : Exames
     {
         public SqlDataReader dr;
+        public DataTable dt;
 
         public DataTable GetListaExamesAreas()
         {
             Conexao con = new Conexao();
             SqlDataAdapter sda = new SqlDataAdapter("select idExameArea as [ID],dsExameArea as [Área da Biomedicina] from examesAreas", con.Conectar());
-            DataTable dt = new DataTable();
+            this.dt = new DataTable();
             sda.Fill(dt);
             return dt;
         }
@@ -114,7 +115,7 @@ namespace s4d_biomedicina.DAL
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
                 sda.SelectCommand.Parameters.AddWithValue("@dsExameArea", string.Format("%{0}%", dsExameArea));
             }
-            DataTable dt = new DataTable();
+            this.dt = new DataTable();
             sda.Fill(dt);
             return dt;
         }
