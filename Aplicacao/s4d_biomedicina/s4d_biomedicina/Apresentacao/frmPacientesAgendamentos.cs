@@ -13,6 +13,7 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientesAgendamentos : Form
     {
         private int idPaciente;
+        private int idAgendamento;
         private string comando;
 
 
@@ -36,18 +37,18 @@ namespace s4d_biomedicina.Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando, idPaciente);
+
+            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando, this.idPaciente,this.idAgendamento);
             frmPacientesAgendamentosManter.ShowDialog();
             AtualizarTabela();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int idAgendamento;
             this.comando = "editar";
-            idAgendamento = Convert.ToInt32(dgvPacientesAgendamentos.CurrentRow.Cells[0].Value);
+            this.idAgendamento = Convert.ToInt32(dgvPacientesAgendamentos.CurrentRow.Cells[0].Value);
 
-            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando, idAgendamento);
+            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando,this.idPaciente, this.idAgendamento);
             frmPacientesAgendamentosManter.ShowDialog();
             AtualizarTabela();
         }

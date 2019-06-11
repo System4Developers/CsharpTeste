@@ -13,11 +13,13 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientesAgendamentosManter : Form
     {
         private string comando;
+        private int idPaciente;
         private int idAgendamento;
 
-        public frmPacientesAgendamentosManter(string comando, int idAgendamento)
+        public frmPacientesAgendamentosManter(string comando, int idPaciente, int idAgendamento)
         {
             InitializeComponent();
+            this.idPaciente = idPaciente;
             this.idAgendamento = idAgendamento;
             this.comando = comando;
         }
@@ -39,7 +41,7 @@ namespace s4d_biomedicina.Apresentacao
             {
                 Modelo.Controle controle = new Modelo.Controle();
                 int idUsuario = Modelo.Estaticos.idUsuario;
-                controle.AdicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, idUsuario, txbSolicitante.Text);
+                controle.AdicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, this.idPaciente, txbSolicitante.Text);
 
                 if (controle.ToString().Equals(""))
                 {

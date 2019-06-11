@@ -372,12 +372,12 @@ namespace s4d_biomedicina.Modelo
         #endregion
 
         #region Manter Agendamentos
-        public void AdicionarPacienteAgendamento(string Data, string Horario, string Status,int id,string solicitante)
+        public void AdicionarPacienteAgendamento(string Data, string Horario, string Status,int idPaciente, string solicitante)
         {
             this.mensagem = "";
             
             DAL.dalAgendamentos paciente = new DAL.dalAgendamentos();
-            paciente.AdicionarPacienteAgendamento(Data,Horario,Status,id,solicitante);
+            paciente.AdicionarPacienteAgendamento(Data,Horario,Status, idPaciente, solicitante);
             if (!paciente.ToString().Equals(""))
             {
                 this.mensagem = paciente.ToString();

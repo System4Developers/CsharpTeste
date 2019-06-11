@@ -13,17 +13,18 @@ namespace s4d_biomedicina.DAL
         public SqlDataReader dr;
         public int modified;
 
-        public string AdicionarPacienteAgendamento(string Data, string Horario, string Status, int id,string solicitante)
+        public string AdicionarPacienteAgendamento(string Data, string Horario, string Status, int idPaciente,string solicitante)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
+
             int idUsuario;
             idUsuario = Modelo.Estaticos.idUsuario;
             this.mensagem = "";
             this.Data = Data;
             this.Horario = Horario;
             this.Status = Status;
-            this.idPaciente = id;
+            this.idPaciente = idPaciente;
             this.Solicitante = solicitante;
             string dtConsulta = this.Data + " " + this.Horario;
 
@@ -42,9 +43,10 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                this.mensagem = "Erro com Banco";
+                //this.mensagem = "Erro com Banco";
+                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
             }
             return this.mensagem;
         }
@@ -78,7 +80,7 @@ namespace s4d_biomedicina.DAL
             }
         }
 
-        public string AtualizarPacienteAgendamento(string Data, string Horario, string Status, int id, string solicitante)
+        public string AtualizarPacienteAgendamento(string Data, string Horario, string Status,int idAgendamento, string solicitante)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
@@ -90,7 +92,7 @@ namespace s4d_biomedicina.DAL
             this.Data = Data;
             this.Horario = Horario;
             this.Status = Status;
-            this.idAgendamento = id;
+            this.idAgendamento = idAgendamento;
             this.Solicitante = solicitante;
             string dtConsulta = this.Data + " " + this.Horario;
 
