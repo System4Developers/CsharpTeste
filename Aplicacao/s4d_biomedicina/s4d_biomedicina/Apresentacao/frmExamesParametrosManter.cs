@@ -63,15 +63,14 @@ namespace s4d_biomedicina.Apresentacao
 
             if (this.comando.Equals("editar"))
             {
-                DAL.dalExameParametro dalExameParametro = new DAL.dalExameParametro();
-                dalExameParametro.GetEditarExamesParametros(this.idExameParametro);
-                while (dalExameParametro.dr.Read())
+                controle.GetEditarExamesParametros(this.idExameParametro);
+                while (controle.dr.Read())
                 {
                     txbID.Text = this.idExameParametro.ToString();
-                    cmbTipo.Text = dalExameParametro.dr["dsExameTipo"].ToString();
-                    txbParametro.Text = dalExameParametro.dr["dsExameParametro"].ToString();
-                    txbLimiteMin.Text = dalExameParametro.dr["valorMin"].ToString();
-                    txbLimiteMax.Text = dalExameParametro.dr["valorMax"].ToString();
+                    cmbTipo.Text = controle.dr["dsExameTipo"].ToString();
+                    txbParametro.Text = controle.dr["dsExameParametro"].ToString();
+                    txbLimiteMin.Text = controle.dr["valorMin"].ToString();
+                    txbLimiteMax.Text = controle.dr["valorMax"].ToString();
                 }
             }
         }

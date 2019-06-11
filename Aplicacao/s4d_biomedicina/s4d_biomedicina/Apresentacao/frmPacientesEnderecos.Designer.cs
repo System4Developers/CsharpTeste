@@ -59,7 +59,6 @@
             this.materialDivider1.Size = new System.Drawing.Size(724, 2);
             this.materialDivider1.TabIndex = 52;
             this.materialDivider1.Text = "materialDivider1";
-            this.materialDivider1.Click += new System.EventHandler(this.materialDivider1_Click);
             // 
             // lblGeral
             // 

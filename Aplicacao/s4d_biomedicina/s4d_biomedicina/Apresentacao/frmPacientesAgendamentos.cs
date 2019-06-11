@@ -36,8 +36,9 @@ namespace s4d_biomedicina.Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando, idPaciente, this);
+            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando, idPaciente);
             frmPacientesAgendamentosManter.ShowDialog();
+            AtualizarTabela();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -46,8 +47,9 @@ namespace s4d_biomedicina.Apresentacao
             this.comando = "editar";
             idAgendamento = Convert.ToInt32(dgvPacientesAgendamentos.CurrentRow.Cells[0].Value);
 
-            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando, idAgendamento, this);
+            frmPacientesAgendamentosManter frmPacientesAgendamentosManter = new frmPacientesAgendamentosManter(this.comando, idAgendamento);
             frmPacientesAgendamentosManter.ShowDialog();
+            AtualizarTabela();
         }
 
         private void btnNovoExame_Click(object sender, EventArgs e)
@@ -61,10 +63,6 @@ namespace s4d_biomedicina.Apresentacao
             AtualizarTabela();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
     
 }

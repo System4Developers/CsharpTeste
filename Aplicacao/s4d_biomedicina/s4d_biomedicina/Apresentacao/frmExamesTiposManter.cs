@@ -32,14 +32,13 @@ namespace s4d_biomedicina.Apresentacao
 
             if (this.comando.Equals("editar"))
              {
-                 DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
-                 dalExameTipo.GetEditarExamesTipos(this.idExameTipo);
-                 while (dalExameTipo.dr.Read())
+                controle.GetEditarExameTipo(this.idExameTipo);
+                 while (controle.dr.Read())
                  {
                      txbID.Text = this.idExameTipo.ToString();
-                     cmbDsArea.Text = dalExameTipo.dr["dsExameArea"].ToString();
-                     cmbStatus.Text = dalExameTipo.dr["estadoExameTipo"].ToString();
-                     txbTipo.Text = dalExameTipo.dr["dsExameTipo"].ToString();
+                     cmbDsArea.Text = controle.dr["dsExameArea"].ToString();
+                     cmbStatus.Text = controle.dr["estadoExameTipo"].ToString();
+                     txbTipo.Text = controle.dr["dsExameTipo"].ToString();
                  }
              }
         }

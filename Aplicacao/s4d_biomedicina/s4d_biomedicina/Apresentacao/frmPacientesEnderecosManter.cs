@@ -14,34 +14,70 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientesEnderecosManter : Form
     {
         private string comando;
-        private int idPacienteouEndereco;
-        private readonly frmPacientesEnderecos frmPacientesEnderecos;
+        private int idPacienteEndereco;
 
-        public frmPacientesEnderecosManter(string comando, int idPacienteouEndereco, frmPacientesEnderecos frm)
+        public frmPacientesEnderecosManter(string comando, int idPacienteEndereco)
         {
             InitializeComponent();
-            this.idPacienteouEndereco = idPacienteouEndereco;
+            this.idPacienteEndereco = idPacienteEndereco;
             this.comando = comando;
-            this.frmPacientesEnderecos = frm;
         }
 
         private void frmPacientesEnderecosManter_Load(object sender, EventArgs e)
         {
             if (this.comando == "editar")
             {
-                DAL.dalPaciente dalPaciente = new DAL.dalPaciente();
-                dalPaciente.GetEditarPacienteEnderecos(this.idPacienteouEndereco);
-                while (dalPaciente.dr.Read())
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.GetEditarPacienteEndereco(this.idPacienteEndereco);
+                while (controle.dr.Read())
                 {
-                    txbRua.Text = dalPaciente.dr.GetValue(1).ToString();
-                    txbNumero.Text = dalPaciente.dr.GetValue(3).ToString();
-                    txbBairro.Text = dalPaciente.dr.GetValue(2).ToString();
-                    txbComplemento.Text = "precisa add no banco";
-                    txbCidade.Text = dalPaciente.dr.GetValue(4).ToString();
-                    txbEstado.Text = dalPaciente.dr.GetValue(5).ToString();
+                    txbRua.Text = controle.dr.GetValue(1).ToString();
+                    txbNumero.Text = controle.dr.GetValue(3).ToString();
+                    txbBairro.Text = controle.dr.GetValue(2).ToString();
+                    txbCidade.Text = controle.dr.GetValue(4).ToString();
+                    txbEstado.Text = controle.dr.GetValue(5).ToString();
                 }
             }
         }
+
+        private void txbCep_Leave(object sender, EventArgs e)
+        {
+            LocalizarCEP();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            
+            if (this.comando == "editar")
+            {
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.AtualizarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text, this.idPacienteEndereco);
+
+                if (controle.ToString().Equals(""))
+                {
+                    MessageBox.Show("Atualização ok");
+                    this.Close();
+                }
+            }
+            if (this.comando == "inserir")
+            {
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.AdicionarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text, this.idPacienteEndereco);
+
+                if (controle.ToString().Equals(""))
+                {
+                    MessageBox.Show("Cadastro OK");
+                    this.comando = "editar";
+                    this.Close();
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void LocalizarCEP()
         {
             try
@@ -64,49 +100,8 @@ namespace s4d_biomedicina.Apresentacao
             }
             catch (EndpointNotFoundException)
             {
-                lblInformacao.Text = "Verifique sua conexão com a internet";
+                lblInformacao.Text = "Sem conexão com a internet";
             }
-        }
-
-        private void txbCep_Leave(object sender, EventArgs e)
-        {
-            LocalizarCEP();
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            
-            if (this.comando == "editar")
-            {
-                Modelo.Controle controle = new Modelo.Controle();
-                controle.AtualizarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text, this.idPacienteouEndereco);
-
-                if (controle.ToString().Equals(""))
-                {
-                    MessageBox.Show("Atualização ok");
-                    this.frmPacientesEnderecos.AtualizarTabela();
-                    this.Close();
-                }
-            }
-            if (this.comando == "inserir")
-            {
-                Modelo.Controle controle = new Modelo.Controle();
-                controle.AdicionarPacienteEndereco(txbCep.Text, txbRua.Text, txbNumero.Text, txbComplemento.Text, txbBairro.Text, txbEstado.Text, txbCidade.Text, this.idPacienteouEndereco);
-
-                if (controle.ToString().Equals(""))
-                {
-                    MessageBox.Show("Cadastro OK");
-                    this.comando = "editar";
-                    this.frmPacientesEnderecos.AtualizarTabela();
-                    this.Close();
-                }
-
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

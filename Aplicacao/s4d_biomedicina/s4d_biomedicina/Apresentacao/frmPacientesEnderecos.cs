@@ -19,7 +19,6 @@ namespace s4d_biomedicina.Apresentacao
         {
             InitializeComponent();
             this.idPaciente = idPaciente;
-
         }
 
         private void frmPacientesEnderecos_Load(object sender, EventArgs e)
@@ -37,8 +36,9 @@ namespace s4d_biomedicina.Apresentacao
         {
             this.comando = "inserir";
 
-            frmPacientesEnderecosManter frmPacientesEnderecosManter = new frmPacientesEnderecosManter(this.comando, idPaciente,this);
+            frmPacientesEnderecosManter frmPacientesEnderecosManter = new frmPacientesEnderecosManter(this.comando, idPaciente);
             frmPacientesEnderecosManter.ShowDialog();
+            AtualizarTabela();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -47,13 +47,10 @@ namespace s4d_biomedicina.Apresentacao
             this.comando = "editar";
             idEndereco = Convert.ToInt32(dgvPacientesEnderecos.CurrentRow.Cells[0].Value);
 
-            frmPacientesEnderecosManter frmPacientesEnderecosManter = new frmPacientesEnderecosManter(this.comando, idEndereco,this);
+            frmPacientesEnderecosManter frmPacientesEnderecosManter = new frmPacientesEnderecosManter(this.comando, idEndereco);
             frmPacientesEnderecosManter.ShowDialog();
+            AtualizarTabela();
         }
 
-        private void materialDivider1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

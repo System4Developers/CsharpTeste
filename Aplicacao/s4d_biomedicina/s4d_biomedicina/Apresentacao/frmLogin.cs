@@ -28,11 +28,6 @@ namespace s4d_biomedicina.Apresentacao
             this.Close();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
             Modelo.Controle controle = new Modelo.Controle();

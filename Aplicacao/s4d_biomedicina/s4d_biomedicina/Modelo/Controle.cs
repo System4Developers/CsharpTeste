@@ -12,6 +12,7 @@ namespace s4d_biomedicina.Modelo
 {
     public class Controle : absPropriedades
     {
+        public SqlDataReader dr;
 
         #region Login
         public void acessar(string login, string senha)
@@ -137,11 +138,11 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
-        public SqlDataReader GetPacienteDadosCadastrais(int idPaciente)
+        public void GetPacienteDadosCadastrais(int idPaciente)
         {
             DAL.dalPaciente dalPaciente = new DAL.dalPaciente();
             dalPaciente.GetPacienteDadosCadastrais(idPaciente);
-            return dalPaciente.dr;
+            this.dr = dalPaciente.dr;
         }
       
         public DataTable PesquisarPaciente(string nome, string cpf)
@@ -183,6 +184,21 @@ namespace s4d_biomedicina.Modelo
             dt = paciente.GetListaPacienteAgendamentos(idPaciente);
             return dt;
         }
+
+        public void GetPacienteID(string cpf)
+        {
+            DAL.dalPaciente dalPaciente = new DAL.dalPaciente();
+            dalPaciente.ConsultaCpfPaciente(cpf);
+            this.dr = dalPaciente.dr;
+        }
+
+        public void GetEditarPacienteEndereco(int idPacienteEndereco)
+        {
+            DAL.dalPaciente dalPaciente = new DAL.dalPaciente();
+            dalPaciente.GetEditarPacienteEnderecos(idPacienteEndereco);
+            this.dr = dalPaciente.dr;
+        }
+
         #endregion
 
         #region Manter Exames Areas
@@ -223,6 +239,13 @@ namespace s4d_biomedicina.Modelo
             DAL.dalExameArea exame = new DAL.dalExameArea();
             dt = exame.GetPesquisaAreas(idExameArea,dsExameArea);
             return dt;
+        }
+
+        public void GetEditarExameArea(int idExameArea)
+        {
+            DAL.dalExameArea exame = new DAL.dalExameArea();
+            exame.GetEditarArea(idExameArea);
+            this.dr = exame.dr;
         }
         #endregion
 
@@ -272,6 +295,14 @@ namespace s4d_biomedicina.Modelo
             dt = exametipo.GetPesquisaExamesTipos(idExameTipo, dsExameTipo);
             return dt;
         }
+
+        public void GetEditarExameTipo(int idExameTipo)
+        {
+            DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();
+            dalExameTipo.GetEditarExamesTipos(idExameTipo);
+            this.dr = dalExameTipo.dr;
+        }
+
         #endregion
 
         #region Manter Exames Parametros
@@ -321,6 +352,14 @@ namespace s4d_biomedicina.Modelo
             dt = dalExameParametro.GetPesquisaExamesParametros(idExameParametro, dsExameParametro);
             return dt;
         }
+
+        public void GetEditarExamesParametros(int idExameParametro)
+        {
+            DAL.dalExameParametro dalExameParametro = new DAL.dalExameParametro();
+            dalExameParametro.GetEditarExamesParametros(idExameParametro);
+            this.dr = dalExameParametro.dr;
+        }
+
         #endregion
 
         #region Manter Agendamentos
@@ -346,6 +385,13 @@ namespace s4d_biomedicina.Modelo
             {
                 this.mensagem = paciente.ToString();
             }
+        }
+
+        public void GetEditarAgendamento(int idAgendamento)
+        {
+            DAL.dalAgendamentos dalAgendamentos = new DAL.dalAgendamentos();
+            dalAgendamentos.GetEditarPacienteAgendamentos(idAgendamento);
+            this.dr = dalAgendamentos.dr;
         }
 
         #endregion

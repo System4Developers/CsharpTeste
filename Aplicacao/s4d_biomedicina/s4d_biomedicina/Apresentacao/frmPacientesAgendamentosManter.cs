@@ -13,70 +13,54 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientesAgendamentosManter : Form
     {
         private string comando;
-        private int idPacientesouAgendamento;
-        private readonly frmPacientesAgendamentos frmPacientesAgendamentos;
+        private int idAgendamento;
 
-        public frmPacientesAgendamentosManter(string comando, int idPacientesouAgendamento, frmPacientesAgendamentos frm)
+        public frmPacientesAgendamentosManter(string comando, int idAgendamento)
         {
             InitializeComponent();
-            this.idPacientesouAgendamento = idPacientesouAgendamento;
+            this.idAgendamento = idAgendamento;
             this.comando = comando;
-            this.frmPacientesAgendamentos = frm;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (this.comando == "inserir")
-            {
-                Modelo.Controle controle = new Modelo.Controle();
-                controle.AdicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text,this.idPacientesouAgendamento,txbSolicitante.Text);
-                
-
-                if (controle.ToString().Equals(""))
-                {
-                    MessageBox.Show("Cadastro OK");
-                    //consulta sql que retorna o iD conforme o txbCPF
-                    this.comando = "editar";
-                    this.frmPacientesAgendamentos.AtualizarTabela();
-                    this.Close();
-                }
-            }
-
             if (this.comando == "editar")
             {
                 Modelo.Controle controle = new Modelo.Controle();
-                controle.AtualizarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, this.idPacientesouAgendamento, txbSolicitante.Text);
-
+                controle.AtualizarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, this.idAgendamento, txbSolicitante.Text);
 
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Cadastro OK");
-                    //consulta sql que retorna o iD conforme o txbCPF
-                    this.comando = "editar";
-                    this.frmPacientesAgendamentos.AtualizarTabela();
                     this.Close();
                 }
             }
-        }
+            if (this.comando == "inserir")
+            {
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.AdicionarPacienteAgendamento(dtpAgendamento.Text, cmbHorario.Text, cmbStatus.Text, this.idAgendamento, txbSolicitante.Text);
 
-        private void cmbHorario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+                if (controle.ToString().Equals(""))
+                {
+                    MessageBox.Show("Cadastro OK");
+                    this.comando = "editar";
+                    this.Close();
+                }
+            }
         }
 
         private void frmPacientesAgendamentosManter_Load(object sender, EventArgs e)
         {
             if (this.comando == "editar")
             {
-                DAL.dalAgendamentos dalAgendamentos = new DAL.dalAgendamentos();
-                dalAgendamentos.GetEditarPacienteAgendamentos(this.idPacientesouAgendamento);
-                while (dalAgendamentos.dr.Read())
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.GetEditarAgendamento(this.idAgendamento);
+                while (controle.dr.Read())
                 {
-                    dtpAgendamento.Text = dalAgendamentos.dr.GetValue(0).ToString();
-                    cmbHorario.Text = dalAgendamentos.dr.GetValue(1).ToString();
-                    cmbStatus.Text =  dalAgendamentos.dr.GetValue(3).ToString();
-                    txbSolicitante.Text =  dalAgendamentos.dr.GetValue(2).ToString();
-
+                    dtpAgendamento.Text = controle.dr.GetValue(0).ToString();
+                    cmbHorario.Text = controle.dr.GetValue(1).ToString();
+                    cmbStatus.Text = controle.dr.GetValue(3).ToString();
+                    txbSolicitante.Text = controle.dr.GetValue(2).ToString();
                 }
             }
         }

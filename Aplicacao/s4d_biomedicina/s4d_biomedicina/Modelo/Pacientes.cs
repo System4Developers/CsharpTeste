@@ -15,7 +15,6 @@ namespace s4d_biomedicina.Modelo
         protected string grupoSanguineo;
         protected Double peso;
      
-
         public int IdPaciente { get => idPaciente; }
     }
 }

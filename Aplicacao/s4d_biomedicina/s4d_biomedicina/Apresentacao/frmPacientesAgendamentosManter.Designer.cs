@@ -63,7 +63,6 @@
             this.cmbHorario.Name = "cmbHorario";
             this.cmbHorario.Size = new System.Drawing.Size(248, 21);
             this.cmbHorario.TabIndex = 1;
-            this.cmbHorario.SelectedIndexChanged += new System.EventHandler(this.cmbHorario_SelectedIndexChanged);
             // 
             // btnSalvar
             // 

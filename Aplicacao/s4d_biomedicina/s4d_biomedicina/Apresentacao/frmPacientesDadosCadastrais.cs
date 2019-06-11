@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace s4d_biomedicina.Apresentacao
 {
@@ -15,7 +14,6 @@ namespace s4d_biomedicina.Apresentacao
     {
         private string comando;
         private int idPaciente;
-        private SqlDataReader dr;
 
         public frmPacientesDadosCadastrais(string comando, int idPaciente)
         {
@@ -40,21 +38,21 @@ namespace s4d_biomedicina.Apresentacao
         private void AtualizarCampos()
         {
             Modelo.Controle controle = new Modelo.Controle();
-            this.dr = controle.GetPacienteDadosCadastrais(this.idPaciente);
-            while (this.dr.Read())
+            controle.GetPacienteDadosCadastrais(this.idPaciente);
+            while (controle.dr.Read())
             {
                 txbID.Text = this.idPaciente.ToString();
-                txbProntuario.Text = this.dr["prontuario"].ToString();
-                txbPeso.Text = this.dr["peso"].ToString();
-                txbAltura.Text = this.dr["altura"].ToString();
-                txbGrupoSanguineo.Text = this.dr["grupoSanguineo"].ToString();
-                cmbEstado.Text = this.dr["estadoPaciente"].ToString();
-                txbNome.Text = this.dr["nome"].ToString();
-                txbRg.Text = this.dr["rg"].ToString();
-                txbCpf.Text = this.dr["cpf"].ToString();
-                txbDtNascimento.Text = this.dr["dtNascimento"].ToString();
-                txbProfissao.Text = this.dr["profissao"].ToString();
-                txbGrauInstrucao.Text = this.dr["grauInstrucao"].ToString();
+                txbProntuario.Text = controle.dr["prontuario"].ToString();
+                txbPeso.Text = controle.dr["peso"].ToString();
+                txbAltura.Text = controle.dr["altura"].ToString();
+                txbGrupoSanguineo.Text = controle.dr["grupoSanguineo"].ToString();
+                cmbEstado.Text = controle.dr["estadoPaciente"].ToString();
+                txbNome.Text = controle.dr["nome"].ToString();
+                txbRg.Text = controle.dr["rg"].ToString();
+                txbCpf.Text = controle.dr["cpf"].ToString();
+                txbDtNascimento.Text = controle.dr["dtNascimento"].ToString();
+                txbProfissao.Text = controle.dr["profissao"].ToString();
+                txbGrauInstrucao.Text = controle.dr["grauInstrucao"].ToString();
             }
         }
     }

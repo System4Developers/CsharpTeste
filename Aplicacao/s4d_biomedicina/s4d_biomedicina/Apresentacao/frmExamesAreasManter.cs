@@ -12,31 +12,29 @@ namespace s4d_biomedicina.Apresentacao
 {
     public partial class frmExamesAreasManter : Form
     {
- 
             private string comando;
             private int idExameArea;
 
-            public frmExamesAreasManter(string comando, int idExameArea)
-            {
-                InitializeComponent();
-                this.comando = comando;
-                this.idExameArea = idExameArea;
-            }
+        public frmExamesAreasManter(string comando, int idExameArea)
+        {
+            InitializeComponent();
+            this.comando = comando;
+            this.idExameArea = idExameArea;
+        }
            
-            private void frmAreas_Load(object sender, EventArgs e)
+        private void frmAreas_Load(object sender, EventArgs e)
+        {
+            if (this.comando.Equals("editar"))
             {
-                if (this.comando.Equals("editar"))
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.GetEditarExameArea(this.idExameArea);
+                while (controle.dr.Read())
                 {
-                    DAL.dalExameArea exame = new DAL.dalExameArea();
-                    exame.GetEditarArea(this.idExameArea);
-                    while (exame.dr.Read())
-                    {                  
-                        txbID.Text = this.idExameArea.ToString();
-                        txbArea.Text = exame.dr.GetValue(1).ToString();
-                    }
-
+                    txbID.Text = this.idExameArea.ToString();
+                    txbArea.Text = controle.dr.GetValue(1).ToString();
                 }
             }
+        }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
