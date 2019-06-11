@@ -33,12 +33,12 @@ namespace s4d_biomedicina.Apresentacao
             if (this.comando.Equals("editar"))
              {
                 controle.GetEditarExameTipo(this.idExameTipo);
-                 while (controle.dr.Read())
+                 while (controle.Dr.Read())
                  {
                      txbID.Text = this.idExameTipo.ToString();
-                     cmbDsArea.Text = controle.dr["dsExameArea"].ToString();
-                     cmbStatus.Text = controle.dr["estadoExameTipo"].ToString();
-                     txbTipo.Text = controle.dr["dsExameTipo"].ToString();
+                     cmbDsArea.Text = controle.Dr["dsExameArea"].ToString();
+                     cmbStatus.Text = controle.Dr["estadoExameTipo"].ToString();
+                     txbTipo.Text = controle.Dr["dsExameTipo"].ToString();
                  }
              }
         }

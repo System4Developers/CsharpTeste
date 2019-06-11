@@ -47,9 +47,9 @@ namespace s4d_biomedicina.Apresentacao
                 if (controle.ToString().Equals(""))
                 {
                     controle.GetPacienteID(txbCpf.Text);
-                    while (controle.dr.Read())
+                    while (controle.Dr.Read())
                     {
-                        this.idPaciente = Convert.ToInt32(controle.dr["idPaciente"].ToString());
+                        this.idPaciente = Convert.ToInt32(controle.Dr["idPaciente"].ToString());
                     }
                     frmPacientesMain frmPacientesMain = new frmPacientesMain(this.comando, this.idPaciente);
                     frmPacientesMain.ShowDialog();
@@ -64,20 +64,20 @@ namespace s4d_biomedicina.Apresentacao
             {
                 Modelo.Controle controle = new Modelo.Controle();
                 controle.GetPacienteDadosCadastrais(this.idPaciente);
-                while (controle.dr.Read())
+                while (controle.Dr.Read())
                 {
                     txbID.Text = this.idPaciente.ToString();
-                    txbProntuario.Text = controle.dr["prontuario"].ToString();
-                    txbPeso.Text = controle.dr["peso"].ToString();
-                    txbAltura.Text = controle.dr["altura"].ToString();
-                    txbGrupoSanguineo.Text = controle.dr["grupoSanguineo"].ToString();
-                    cmbEstado.Text = controle.dr["estadoPaciente"].ToString();
-                    txbNome.Text = controle.dr["nome"].ToString();
-                    txbRg.Text = controle.dr["rg"].ToString();
-                    txbCpf.Text = controle.dr["cpf"].ToString();
-                    txbDtNascimento.Text = controle.dr["dtNascimento"].ToString();
-                    txbProfissao.Text = controle.dr["profissao"].ToString();
-                    txbGrauInstrucao.Text = controle.dr["grauInstrucao"].ToString();
+                    txbProntuario.Text = controle.Dr["prontuario"].ToString();
+                    txbPeso.Text = controle.Dr["peso"].ToString();
+                    txbAltura.Text = controle.Dr["altura"].ToString();
+                    txbGrupoSanguineo.Text = controle.Dr["grupoSanguineo"].ToString();
+                    cmbEstado.Text = controle.Dr["estadoPaciente"].ToString();
+                    txbNome.Text = controle.Dr["nome"].ToString();
+                    txbRg.Text = controle.Dr["rg"].ToString();
+                    txbCpf.Text = controle.Dr["cpf"].ToString();
+                    txbDtNascimento.Text = controle.Dr["dtNascimento"].ToString();
+                    txbProfissao.Text = controle.Dr["profissao"].ToString();
+                    txbGrauInstrucao.Text = controle.Dr["grauInstrucao"].ToString();
                 }
             }
         }

@@ -28,10 +28,10 @@ namespace s4d_biomedicina.Apresentacao
             {
                 Modelo.Controle controle = new Modelo.Controle();
                 controle.GetEditarExameArea(this.idExameArea);
-                while (controle.dr.Read())
+                while (controle.Dr.Read())
                 {
                     txbID.Text = this.idExameArea.ToString();
-                    txbArea.Text = controle.dr.GetValue(1).ToString();
+                    txbArea.Text = controle.Dr.GetValue(1).ToString();
                 }
             }
         }

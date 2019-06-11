@@ -29,13 +29,13 @@ namespace s4d_biomedicina.Apresentacao
             {
                 Modelo.Controle controle = new Modelo.Controle();
                 controle.GetEditarPacienteEndereco(this.idPacienteEndereco);
-                while (controle.dr.Read())
+                while (controle.Dr.Read())
                 {
-                    txbRua.Text = controle.dr.GetValue(1).ToString();
-                    txbNumero.Text = controle.dr.GetValue(3).ToString();
-                    txbBairro.Text = controle.dr.GetValue(2).ToString();
-                    txbCidade.Text = controle.dr.GetValue(4).ToString();
-                    txbEstado.Text = controle.dr.GetValue(5).ToString();
+                    txbRua.Text = controle.Dr.GetValue(1).ToString();
+                    txbNumero.Text = controle.Dr.GetValue(3).ToString();
+                    txbBairro.Text = controle.Dr.GetValue(2).ToString();
+                    txbCidade.Text = controle.Dr.GetValue(4).ToString();
+                    txbEstado.Text = controle.Dr.GetValue(5).ToString();
                 }
             }
         }

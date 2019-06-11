@@ -12,18 +12,14 @@ namespace s4d_biomedicina.Apresentacao
 {
     public partial class frmUsuariosManter : Form
     {
-
-        private readonly frmUsuarios frmUsuarios;
         private string comando;
         private int idUsuario;
 
-        public frmUsuariosManter(frmUsuarios frm,string comando,int idUsuario)
+        public frmUsuariosManter(string comando,int idUsuario)
         {
             InitializeComponent();
             this.comando = comando;
             this.idUsuario = idUsuario;
-            this.frmUsuarios = frm;
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -35,7 +31,6 @@ namespace s4d_biomedicina.Apresentacao
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Cadastro OK");
-                    this.frmUsuarios.AtualizarTabela();
                     this.Close();
                 }
                 else
@@ -50,7 +45,6 @@ namespace s4d_biomedicina.Apresentacao
                 if (controle.ToString().Equals(""))
                 {
                     MessageBox.Show("Atualizado com Sucesso!");
-                    this.frmUsuarios.AtualizarTabela();
                     this.Close();
                 }
                 else
@@ -64,22 +58,21 @@ namespace s4d_biomedicina.Apresentacao
         {
             if (this.comando.Equals("editar"))
             {
-                DAL.dalUsuario dalUsuario = new DAL.dalUsuario();
-                dalUsuario.GetEditarUsuario(this.idUsuario);
-                while(dalUsuario.dr.Read())
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.GetEditarUsuario(this.idUsuario);
+                while(controle.Dr.Read())
                 {
                     txbID.Text = this.idUsuario.ToString();
-                    txbLogin.Text = dalUsuario.dr.GetValue(0).ToString();
-                    txbSenha.Text = dalUsuario.dr.GetValue(1).ToString();
-                    txbRA.Text = dalUsuario.dr.GetValue(2).ToString();
-                    txbRegistro.Text = dalUsuario.dr.GetValue(3).ToString();
-                    txbCurso.Text = dalUsuario.dr.GetValue(4).ToString();
-                    cmbTipo.Text = dalUsuario.dr.GetValue(5).ToString();
-                    cmbEstado.Text = dalUsuario.dr.GetValue(6).ToString();
+                    txbLogin.Text = controle.Dr.GetValue(0).ToString();
+                    txbSenha.Text = controle.Dr.GetValue(1).ToString();
+                    txbRA.Text = controle.Dr.GetValue(2).ToString();
+                    txbRegistro.Text = controle.Dr.GetValue(3).ToString();
+                    txbCurso.Text = controle.Dr.GetValue(4).ToString();
+                    cmbTipo.Text = controle.Dr.GetValue(5).ToString();
+                    cmbEstado.Text = controle.Dr.GetValue(6).ToString();
                 }
             }
         }
-
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

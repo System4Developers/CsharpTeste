@@ -28,8 +28,9 @@ namespace s4d_biomedicina.Apresentacao
         private void btnNovo_Click(object sender, EventArgs e)
         {
             this.comando = "inserir";
-            frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this,this.comando,0);
+            frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this.comando,0);
             frmNovoUsuario.ShowDialog();
+            AtualizarTabela();
         }
 
         public void AtualizarTabela()
@@ -43,8 +44,9 @@ namespace s4d_biomedicina.Apresentacao
             int idUsuario;
             this.comando = "editar";
             idUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
-            frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this, this.comando, idUsuario);
+            frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this.comando, idUsuario);
             frmNovoUsuario.Show();
+            AtualizarTabela();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

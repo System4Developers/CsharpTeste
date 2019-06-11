@@ -55,12 +55,12 @@ namespace s4d_biomedicina.Apresentacao
             {
                 Modelo.Controle controle = new Modelo.Controle();
                 controle.GetEditarAgendamento(this.idAgendamento);
-                while (controle.dr.Read())
+                while (controle.Dr.Read())
                 {
-                    dtpAgendamento.Text = controle.dr.GetValue(0).ToString();
-                    cmbHorario.Text = controle.dr.GetValue(1).ToString();
-                    cmbStatus.Text = controle.dr.GetValue(3).ToString();
-                    txbSolicitante.Text = controle.dr.GetValue(2).ToString();
+                    dtpAgendamento.Text = controle.Dr.GetValue(0).ToString();
+                    cmbHorario.Text = controle.Dr.GetValue(1).ToString();
+                    cmbStatus.Text = controle.Dr.GetValue(3).ToString();
+                    txbSolicitante.Text = controle.Dr.GetValue(2).ToString();
                 }
             }
         }

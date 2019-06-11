@@ -27,15 +27,15 @@ namespace s4d_biomedicina.Apresentacao
         {
             if (this.comando == "editar")
             {
-                DAL.dalExameResultado dalExameResultado = new DAL.dalExameResultado();
-                dalExameResultado.GetEditarExameResultado(this.idExameResultado);
-                while (dalExameResultado.dr.Read())
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.GetPacienteExameResultado(this.idExameResultado);
+                while (controle.Dr.Read())
                 {
-                    txbExameTipo.Text = dalExameResultado.dr["dsExameTipo"].ToString();
-                    txbParametro.Text = dalExameResultado.dr["dsExameParametro"].ToString();
-                    txbValor1.Text = dalExameResultado.dr["valormedidoa"].ToString();
-                    txbValor2.Text = dalExameResultado.dr["valormedidob"].ToString();
-                    txbValor3.Text = dalExameResultado.dr["valormedidoc"].ToString();
+                    txbExameTipo.Text = controle.Dr["dsExameTipo"].ToString();
+                    txbParametro.Text = controle.Dr["dsExameParametro"].ToString();
+                    txbValor1.Text = controle.Dr["valormedidoa"].ToString();
+                    txbValor2.Text = controle.Dr["valormedidob"].ToString();
+                    txbValor3.Text = controle.Dr["valormedidoc"].ToString();
                 }
             }
         }

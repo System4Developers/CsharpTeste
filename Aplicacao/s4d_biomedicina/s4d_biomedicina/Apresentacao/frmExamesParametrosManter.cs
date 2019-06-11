@@ -64,13 +64,13 @@ namespace s4d_biomedicina.Apresentacao
             if (this.comando.Equals("editar"))
             {
                 controle.GetEditarExamesParametros(this.idExameParametro);
-                while (controle.dr.Read())
+                while (controle.Dr.Read())
                 {
                     txbID.Text = this.idExameParametro.ToString();
-                    cmbTipo.Text = controle.dr["dsExameTipo"].ToString();
-                    txbParametro.Text = controle.dr["dsExameParametro"].ToString();
-                    txbLimiteMin.Text = controle.dr["valorMin"].ToString();
-                    txbLimiteMax.Text = controle.dr["valorMax"].ToString();
+                    cmbTipo.Text = controle.Dr["dsExameTipo"].ToString();
+                    txbParametro.Text = controle.Dr["dsExameParametro"].ToString();
+                    txbLimiteMin.Text = controle.Dr["valorMin"].ToString();
+                    txbLimiteMax.Text = controle.Dr["valorMax"].ToString();
                 }
             }
         }

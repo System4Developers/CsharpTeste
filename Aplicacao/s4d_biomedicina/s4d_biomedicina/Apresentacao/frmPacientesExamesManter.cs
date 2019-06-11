@@ -16,7 +16,6 @@ namespace s4d_biomedicina.Apresentacao
         private string comando;
         private int idPaciente;
         private int idExame;
-        private SqlDataReader dr;
 
         public frmPacientesExamesManter(string comando, int idPaciente,int idExame)
         {
@@ -81,18 +80,19 @@ namespace s4d_biomedicina.Apresentacao
             AjustarColunas(ltvExames);
         }
 
-
         private void CarregaListBox()
         {
             Modelo.Controle controle = new Modelo.Controle();
-            dr = controle.GetListaExames();
+            controle.GetListaExames();
+
             ltvExames.Columns.Add("ID");
             ltvExames.Columns.Add("Tipo");
             ltvExamesSelecionados.Columns.Add("ID");
             ltvExamesSelecionados.Columns.Add("Tipo");
-            while (dr.Read())
+
+            while (controle.Dr.Read())
             {
-                ltvExames.Items.Add(new ListViewItem(new string[] { dr["ID"].ToString(), dr["Tipo"].ToString() }));
+                ltvExames.Items.Add(new ListViewItem(new string[] { controle.Dr["ID"].ToString(), controle.Dr["Tipo"].ToString() }));
             }
         }
 
