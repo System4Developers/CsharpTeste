@@ -11,6 +11,7 @@ namespace s4d_biomedicina.DAL
     public class dalAgendamentos : Modelo.Agendamentos
     {
         public SqlDataReader dr;
+        public int modified;
 
         public string AdicionarPacienteAgendamento(string Data, string Horario, string Status, int id,string solicitante)
         {
@@ -119,7 +120,7 @@ namespace s4d_biomedicina.DAL
 
         }
 
-        public string AdicionarExameAgendado(string estadoExame,string dtExame,int idConsulta,int idPaciente,int idExameParametro)
+        public string AdicionarExameAgendado(string estadoExame,string dtExame,int idConsulta,int idPaciente)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
@@ -130,20 +131,43 @@ namespace s4d_biomedicina.DAL
             this.dataExame = dtExame;
             this.idConsulta = idConsulta;
             this.idPaciente = idPaciente;
-            this.idExameParametro = idExameParametro;
+            this.modified = 0;
 
             cmd.CommandText = "insert into examesAgendados (estadoExame, dtExame, fk_idConsulta_consultas,fk_idPaciente_pacientes) " +
-                "values (@estadoExame,@dtExame,@idConsulta,@idPaciente) " +
-                "declare @idExAg int = @@identity " +
-                "insert into ExamesResultados(valorMedidoC,valorMedidoB,valorMedidoA,fk_idExameParametro_examesParametros,fk_idExameAgendado_examesAgendados) " +
-                "values (0,0,0,@idExameParametro,@idExAg)";
+                " output INSERTED.idExameAgendado values (@estadoExame,@dtExame,@idConsulta,@idPaciente) ";
 
             cmd.Parameters.AddWithValue("@estadoExame", this.estadoExame);
             cmd.Parameters.AddWithValue("@dtExame", this.dataExame);
             cmd.Parameters.AddWithValue("@idConsulta", this.idConsulta);
-            cmd.Parameters.AddWithValue("@idExameParametro", idExameParametro);
             cmd.Parameters.AddWithValue("@idPaciente", idPaciente);
 
+            try
+            {
+                cmd.Connection = con.Conectar();
+                this.modified = (int)cmd.ExecuteScalar();
+                con.desconectar();
+            }
+            catch (SqlException ex)
+            {
+               this.mensagem = "Erro com Banco";
+            }
+            return this.mensagem;
+        }
+
+        public string AdicionarExameResultado(int idExameAgendado, int idExameParametro)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+
+            this.mensagem = "";
+            this.idExameAgendado = idExameAgendado;
+            this.idExameParametro = idExameParametro;
+
+            cmd.CommandText = "insert into ExamesResultados(valorMedidoC,valorMedidoB,valorMedidoA,fk_idExameParametro_examesParametros,fk_idExameAgendado_examesAgendados) " +
+                "values (0,0,0,@idExameParametro,@idExameAgendado) ";
+
+            cmd.Parameters.AddWithValue("@idExameParametro", this.idExameParametro);
+            cmd.Parameters.AddWithValue("@idExameAgendado", this.idExameAgendado);
             try
             {
                 cmd.Connection = con.Conectar();

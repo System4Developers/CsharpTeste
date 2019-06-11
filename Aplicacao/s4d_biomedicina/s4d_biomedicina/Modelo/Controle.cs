@@ -407,18 +407,33 @@ namespace s4d_biomedicina.Modelo
 
         #region Manter Paciente Exames
 
-        public void AdicionarExameAgendado(string estadoExame, string dtExame, int idConsulta, int idPaciente, int idExameParametro)
+        public int AdicionarExameAgendado(string estadoExame, string dtExame, int idConsulta, int idPaciente)
         {
             this.mensagem = "";
 
             DAL.dalAgendamentos dalAgendamentos = new DAL.dalAgendamentos();
-            dalAgendamentos.AdicionarExameAgendado(estadoExame, dtExame, idConsulta, idPaciente, idExameParametro);
+            dalAgendamentos.AdicionarExameAgendado(estadoExame, dtExame, idConsulta, idPaciente);
+            if (!dalAgendamentos.ToString().Equals(""))
+            {
+                this.mensagem = dalAgendamentos.ToString();
+            }
+
+            return dalAgendamentos.modified;
+        }
+
+        public void AdicionarExameResultado(int idExameAgendado, int idExameParametro)
+        {
+            this.mensagem = "";
+
+            DAL.dalAgendamentos dalAgendamentos = new DAL.dalAgendamentos();
+            dalAgendamentos.AdicionarExameResultado(idExameAgendado, idExameParametro);
             if (!dalAgendamentos.ToString().Equals(""))
             {
                 this.mensagem = dalAgendamentos.ToString();
             }
         }
-    
+
+
         public void GetListaExames(int idExameArea)
         {
             DAL.dalExameTipo dalExameTipo = new DAL.dalExameTipo();

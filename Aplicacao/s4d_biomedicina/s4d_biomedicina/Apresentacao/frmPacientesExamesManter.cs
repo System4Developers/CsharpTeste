@@ -94,12 +94,20 @@ namespace s4d_biomedicina.Apresentacao
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Modelo.Controle controle = new Modelo.Controle();
-            int idExameParametro;
+
+            int idExameAgendado = 0;
+            int idExameParametro = 0;
+
+            idExameAgendado = controle.AdicionarExameAgendado("PENDENTE", dtpAgendamento.Text, this.idExame, this.idPaciente);
+
             for (int i = 0; i < ltvExamesSelecionados.Items.Count; i++)
             {
                 idExameParametro = Convert.ToInt32(ltvExamesSelecionados.Items[i].Text);
+                if (idExameParametro > 0)
+                {
+                    controle.AdicionarExameResultado(idExameAgendado, idExameParametro);
+                }
             }
-            controle.AdicionarExameAgendado("PENDENTE", dtpAgendamento.Text, this.idExame, this.idPaciente, this.idPaciente);
         }
 
         private void CarregaListBox()
