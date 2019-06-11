@@ -82,14 +82,15 @@
             // 
             // lblSair1
             // 
-            this.lblSair1.AutoSize = true;
             this.lblSair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSair1.ForeColor = System.Drawing.Color.White;
-            this.lblSair1.Location = new System.Drawing.Point(70, 9);
+            this.lblSair1.Location = new System.Drawing.Point(2, 1);
             this.lblSair1.Name = "lblSair1";
-            this.lblSair1.Size = new System.Drawing.Size(37, 20);
+            this.lblSair1.Size = new System.Drawing.Size(171, 38);
             this.lblSair1.TabIndex = 0;
             this.lblSair1.Text = "Sair";
+            this.lblSair1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSair1.Click += new System.EventHandler(this.lblSair1_Click);
             // 
             // panel5
             // 
@@ -220,7 +221,6 @@
             this.Load += new System.EventHandler(this.frmPacientesMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);

@@ -40,7 +40,12 @@ namespace s4d_biomedicina.Apresentacao
                      cmbStatus.Text = controle.Dr["estadoExameTipo"].ToString();
                      txbTipo.Text = controle.Dr["dsExameTipo"].ToString();
                  }
-             }
+            }
+            else
+            {
+                this.cmbStatus.SelectedIndex = 0;
+            }
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

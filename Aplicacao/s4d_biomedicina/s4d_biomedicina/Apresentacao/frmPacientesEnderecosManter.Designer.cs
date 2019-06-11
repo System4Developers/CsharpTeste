@@ -199,25 +199,25 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSalvar.Location = new System.Drawing.Point(340, 191);
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSalvar.Location = new System.Drawing.Point(410, 203);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(148, 38);
+            this.btnSalvar.Size = new System.Drawing.Size(109, 26);
             this.btnSalvar.TabIndex = 54;
-            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnCancelar.Location = new System.Drawing.Point(512, 191);
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelar.Location = new System.Drawing.Point(553, 203);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(148, 38);
+            this.btnCancelar.Size = new System.Drawing.Size(107, 26);
             this.btnCancelar.TabIndex = 54;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 

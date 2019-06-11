@@ -94,6 +94,9 @@ namespace s4d_biomedicina.Apresentacao
             pnlForms.Controls.Clear();
         }
 
-        
+        private void lblSair1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -80,6 +80,10 @@ namespace s4d_biomedicina.Apresentacao
                     txbGrauInstrucao.Text = controle.Dr["grauInstrucao"].ToString();
                 }
             }
+            else
+            {
+                cmbEstado.SelectedIndex = 0;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
