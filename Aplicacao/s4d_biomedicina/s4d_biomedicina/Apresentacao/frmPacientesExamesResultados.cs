@@ -39,5 +39,29 @@ namespace s4d_biomedicina.Apresentacao
                 }
             }
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (this.comando == "editar")
+            {
+                Modelo.Controle controle = new Modelo.Controle();
+                controle.AtualizarResultadoExame(this.idExameResultado, Convert.ToDouble(txbValor1.Text), Convert.ToDouble(txbValor2.Text), Convert.ToDouble(txbValor3.Text));
+                if (controle.ToString().Equals(""))
+                {
+                    MessageBox.Show("Valores Salvos com Sucesso!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(controle.ToString());
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

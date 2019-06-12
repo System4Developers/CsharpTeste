@@ -38,6 +38,8 @@
             this.txbParametro = new System.Windows.Forms.TextBox();
             this.lblExameTipo = new System.Windows.Forms.Label();
             this.lblParametro = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbValor1
@@ -46,6 +48,7 @@
             this.txbValor1.Name = "txbValor1";
             this.txbValor1.Size = new System.Drawing.Size(170, 20);
             this.txbValor1.TabIndex = 0;
+            this.txbValor1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbValor2
             // 
@@ -53,6 +56,7 @@
             this.txbValor2.Name = "txbValor2";
             this.txbValor2.Size = new System.Drawing.Size(170, 20);
             this.txbValor2.TabIndex = 1;
+            this.txbValor2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbValor3
             // 
@@ -60,6 +64,7 @@
             this.txbValor3.Name = "txbValor3";
             this.txbValor3.Size = new System.Drawing.Size(170, 20);
             this.txbValor3.TabIndex = 2;
+            this.txbValor3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblValor1
             // 
@@ -90,17 +95,21 @@
             // 
             // txbExameTipo
             // 
+            this.txbExameTipo.Enabled = false;
             this.txbExameTipo.Location = new System.Drawing.Point(174, 27);
             this.txbExameTipo.Name = "txbExameTipo";
             this.txbExameTipo.Size = new System.Drawing.Size(170, 20);
             this.txbExameTipo.TabIndex = 4;
+            this.txbExameTipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbParametro
             // 
+            this.txbParametro.Enabled = false;
             this.txbParametro.Location = new System.Drawing.Point(174, 67);
             this.txbParametro.Name = "txbParametro";
             this.txbParametro.Size = new System.Drawing.Size(170, 20);
             this.txbParametro.TabIndex = 4;
+            this.txbParametro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblExameTipo
             // 
@@ -120,11 +129,33 @@
             this.lblParametro.TabIndex = 3;
             this.lblParametro.Text = "Parametro";
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(174, 288);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(74, 23);
+            this.btnSalvar.TabIndex = 5;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(270, 288);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(74, 23);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmPacientesExamesResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 252);
+            this.ClientSize = new System.Drawing.Size(480, 352);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txbParametro);
             this.Controls.Add(this.txbExameTipo);
             this.Controls.Add(this.lblValor3);
@@ -157,5 +188,7 @@
         private System.Windows.Forms.TextBox txbParametro;
         private System.Windows.Forms.Label lblExameTipo;
         private System.Windows.Forms.Label lblParametro;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -58,7 +58,7 @@
             // 
             // txbCpf
             // 
-            this.txbCpf.Location = new System.Drawing.Point(172, 150);
+            this.txbCpf.Location = new System.Drawing.Point(174, 150);
             this.txbCpf.Margin = new System.Windows.Forms.Padding(2);
             this.txbCpf.Name = "txbCpf";
             this.txbCpf.Size = new System.Drawing.Size(159, 20);
@@ -100,13 +100,13 @@
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(143, 76);
+            this.btnEditar.Location = new System.Drawing.Point(187, 76);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
-            this.btnEditar.Size = new System.Drawing.Size(102, 29);
+            this.btnEditar.Size = new System.Drawing.Size(146, 29);
             this.btnEditar.TabIndex = 52;
-            this.btnEditar.Text = "editar";
+            this.btnEditar.Text = "DADOS CADASTRAIS";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -118,7 +118,7 @@
             this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Primary = true;
-            this.btnNovo.Size = new System.Drawing.Size(102, 29);
+            this.btnNovo.Size = new System.Drawing.Size(142, 29);
             this.btnNovo.TabIndex = 51;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             this.lblCPF.Depth = 0;
             this.lblCPF.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCPF.Location = new System.Drawing.Point(168, 129);
+            this.lblCPF.Location = new System.Drawing.Point(170, 129);
             this.lblCPF.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(36, 19);

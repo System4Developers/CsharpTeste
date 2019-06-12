@@ -433,6 +433,18 @@ namespace s4d_biomedicina.Modelo
             }
         }
 
+        public void AtualizarResultadoExame(int idExameResultado, double valor1, double valor2, double valor3)
+        {
+            this.mensagem = "";
+
+            DAL.dalExameResultado dalExameResultado = new DAL.dalExameResultado();
+            dalExameResultado.AtualizarExameResultado(idExameResultado,valor1,valor2,valor3);
+            if (!dalExameResultado.ToString().Equals(""))
+            {
+                this.mensagem = dalExameResultado.ToString();
+            }
+           
+        }
 
         public void GetListaExames(int idExameArea)
         {
@@ -448,5 +460,6 @@ namespace s4d_biomedicina.Modelo
             this.dr = dalExameResultado.dr;
         }
         #endregion
+
         }
 }

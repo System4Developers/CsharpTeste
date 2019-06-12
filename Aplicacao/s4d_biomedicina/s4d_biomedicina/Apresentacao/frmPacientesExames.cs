@@ -32,16 +32,15 @@ namespace s4d_biomedicina.Apresentacao
             dgvPacientesExames.Columns["idExameResultado"].Visible = false;
             dgvPacientesExames.Columns["idExameParametro"].Visible = false;
             dgvPacientesExames.Columns["idExameTipo"].Visible = false;
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int idExameResultado;
-            idExameResultado = Convert.ToInt32(dgvPacientesExames.CurrentRow.Cells[12].Value);
+            idExameResultado = Convert.ToInt32(dgvPacientesExames.CurrentRow.Cells["idExameResultado"].Value);
             frmPacientesExamesResultados frmPacientesExamesResultados = new frmPacientesExamesResultados(idExameResultado, "editar");
             frmPacientesExamesResultados.ShowDialog();
-            
+            AtualizarTabela();
         }
     }
 }
