@@ -46,7 +46,7 @@
             // 
             // bntMover1
             // 
-            this.bntMover1.Location = new System.Drawing.Point(295, 205);
+            this.bntMover1.Location = new System.Drawing.Point(379, 205);
             this.bntMover1.Name = "bntMover1";
             this.bntMover1.Size = new System.Drawing.Size(115, 23);
             this.bntMover1.TabIndex = 2;
@@ -56,7 +56,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(295, 250);
+            this.btnRemover.Location = new System.Drawing.Point(379, 250);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(115, 23);
             this.btnRemover.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             // btnMoverTodos
             // 
-            this.btnMoverTodos.Location = new System.Drawing.Point(295, 293);
+            this.btnMoverTodos.Location = new System.Drawing.Point(379, 293);
             this.btnMoverTodos.Name = "btnMoverTodos";
             this.btnMoverTodos.Size = new System.Drawing.Size(115, 23);
             this.btnMoverTodos.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             // btnRemoverTodos
             // 
-            this.btnRemoverTodos.Location = new System.Drawing.Point(295, 336);
+            this.btnRemoverTodos.Location = new System.Drawing.Point(379, 336);
             this.btnRemoverTodos.Name = "btnRemoverTodos";
             this.btnRemoverTodos.Size = new System.Drawing.Size(115, 23);
             this.btnRemoverTodos.TabIndex = 5;
@@ -86,7 +86,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(422, 444);
+            this.btnSalvar.Location = new System.Drawing.Point(609, 445);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(115, 23);
             this.btnSalvar.TabIndex = 6;
@@ -106,11 +106,11 @@
             // lblSolicitados
             // 
             this.lblSolicitados.AutoSize = true;
-            this.lblSolicitados.Location = new System.Drawing.Point(468, 142);
+            this.lblSolicitados.Location = new System.Drawing.Point(540, 142);
             this.lblSolicitados.Name = "lblSolicitados";
-            this.lblSolicitados.Size = new System.Drawing.Size(69, 13);
+            this.lblSolicitados.Size = new System.Drawing.Size(74, 13);
             this.lblSolicitados.TabIndex = 8;
-            this.lblSolicitados.Text = "Selecionado:";
+            this.lblSolicitados.Text = "Selecionados:";
             // 
             // ltvExames
             // 
@@ -119,7 +119,7 @@
             this.ltvExames.Location = new System.Drawing.Point(40, 170);
             this.ltvExames.MultiSelect = false;
             this.ltvExames.Name = "ltvExames";
-            this.ltvExames.Size = new System.Drawing.Size(191, 227);
+            this.ltvExames.Size = new System.Drawing.Size(309, 227);
             this.ltvExames.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.ltvExames.TabIndex = 9;
             this.ltvExames.UseCompatibleStateImageBehavior = false;
@@ -129,10 +129,10 @@
             // 
             this.ltvExamesSelecionados.FullRowSelect = true;
             this.ltvExamesSelecionados.HideSelection = false;
-            this.ltvExamesSelecionados.Location = new System.Drawing.Point(471, 170);
+            this.ltvExamesSelecionados.Location = new System.Drawing.Point(543, 170);
             this.ltvExamesSelecionados.MultiSelect = false;
             this.ltvExamesSelecionados.Name = "ltvExamesSelecionados";
-            this.ltvExamesSelecionados.Size = new System.Drawing.Size(194, 227);
+            this.ltvExamesSelecionados.Size = new System.Drawing.Size(309, 227);
             this.ltvExamesSelecionados.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.ltvExamesSelecionados.TabIndex = 10;
             this.ltvExamesSelecionados.UseCompatibleStateImageBehavior = false;
@@ -140,7 +140,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(550, 444);
+            this.btnCancelar.Location = new System.Drawing.Point(737, 445);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 23);
             this.btnCancelar.TabIndex = 11;
@@ -151,9 +151,9 @@
             // dtpAgendamento
             // 
             this.dtpAgendamento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAgendamento.Location = new System.Drawing.Point(37, 46);
+            this.dtpAgendamento.Location = new System.Drawing.Point(37, 47);
             this.dtpAgendamento.Name = "dtpAgendamento";
-            this.dtpAgendamento.Size = new System.Drawing.Size(194, 20);
+            this.dtpAgendamento.Size = new System.Drawing.Size(312, 20);
             this.dtpAgendamento.TabIndex = 12;
             // 
             // label1
@@ -170,7 +170,7 @@
             this.cmbExamesAreas.FormattingEnabled = true;
             this.cmbExamesAreas.Location = new System.Drawing.Point(37, 105);
             this.cmbExamesAreas.Name = "cmbExamesAreas";
-            this.cmbExamesAreas.Size = new System.Drawing.Size(194, 21);
+            this.cmbExamesAreas.Size = new System.Drawing.Size(312, 21);
             this.cmbExamesAreas.TabIndex = 15;
             this.cmbExamesAreas.SelectedIndexChanged += new System.EventHandler(this.cmbExamesAreas_SelectedIndexChanged);
             // 
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 508);
+            this.ClientSize = new System.Drawing.Size(871, 500);
             this.Controls.Add(this.cmbExamesAreas);
             this.Controls.Add(this.lblExamesAreas);
             this.Controls.Add(this.label1);

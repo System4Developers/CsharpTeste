@@ -38,6 +38,7 @@ namespace s4d_biomedicina.Apresentacao
             
             ltvExamesSelecionados.Columns.Add("ID");
             ltvExamesSelecionados.Columns.Add("Tipo");
+            ltvExamesSelecionados.Columns.Add("SubTipo");
         }
 
         private void bntMover1_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace s4d_biomedicina.Apresentacao
             }
             else
             {
-                ltvExamesSelecionados.Items.Add(new ListViewItem(new string[] { ltvExames.SelectedItems[0].Text, ltvExames.SelectedItems[0].SubItems[1].Text }));
+                ltvExamesSelecionados.Items.Add(new ListViewItem(new string[] { ltvExames.SelectedItems[0].Text, ltvExames.SelectedItems[0].SubItems[1].Text, ltvExames.SelectedItems[0].SubItems[2].Text }));
                 ltvExames.SelectedItems[0].Remove();
             }
             AjustarColunas(ltvExamesSelecionados);
@@ -108,6 +109,7 @@ namespace s4d_biomedicina.Apresentacao
                     controle.AdicionarExameResultado(idExameAgendado, idExameParametro);
                 }
             }
+            this.Close();
         }
 
         private void CarregaListBox()
@@ -118,11 +120,12 @@ namespace s4d_biomedicina.Apresentacao
             ltvExames.Clear();
             ltvExames.Columns.Add("ID");
             ltvExames.Columns.Add("Tipo");
+            ltvExames.Columns.Add("SubTipo"); 
 
 
             while (controle.Dr.Read())
             {
-                ltvExames.Items.Add(new ListViewItem(new string[] { controle.Dr["ID"].ToString(), controle.Dr["Tipo"].ToString() }));
+                ltvExames.Items.Add(new ListViewItem(new string[] { controle.Dr["ID"].ToString(), controle.Dr["Tipo"].ToString(), controle.Dr["SubTipo"].ToString() }));
             }
         }
 

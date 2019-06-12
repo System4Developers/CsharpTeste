@@ -54,7 +54,7 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaPacienteAgendamentos(int idPaciente)
             {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idConsulta as [ID], dtConsulta as [Data do Agendamento], solicitante as [Solicitante], estadoConsulta as [Estado do Agendamento], dslogin as [Criado por] from consultas join usuarios on consultas.fk_idUsuario_usuarios = usuarios.idUsuario join pacientes on consultas.fk_idPaciente_pacientes = pacientes.idPaciente join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa where idPaciente = @idPaciente", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idConsulta as [ID], dtConsulta as [Data do Agendamento], solicitante as [Solicitante], estadoConsulta as [Estado do Agendamento], dslogin as [Alterado por] from consultas join usuarios on consultas.fk_idUsuario_usuarios = usuarios.idUsuario join pacientes on consultas.fk_idPaciente_pacientes = pacientes.idPaciente join pessoas on pacientes.fk_idPessoa_pessoas = pessoas.idPessoa where idPaciente = @idPaciente", con.Conectar());
             sda.SelectCommand.Parameters.AddWithValue("@idPaciente", idPaciente);
             DataTable dt = new DataTable();
             sda.Fill(dt);

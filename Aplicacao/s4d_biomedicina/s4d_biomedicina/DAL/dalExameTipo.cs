@@ -37,8 +37,11 @@ namespace s4d_biomedicina.DAL
             Conexao con = new Conexao();
 
             this.idExameArea = idExameArea;
-
-            cmd.CommandText = "select idExameTipo as [ID],dsExameTipo as [Tipo] from examesTipos where fk_idExameArea_examesAreas = @idExameArea";
+            
+            cmd.CommandText = "select idExameTipo as [ID],dsExameTipo as [Tipo],dsExameParametro[SubTipo] " +
+                "from examesTipos " +
+                "join examesParametros on examesTipos.idExameTipo = examesParametros.fk_idExameTipo_examesTipos " +
+                "where fk_idExameArea_examesAreas = @idExameArea";
             cmd.Parameters.AddWithValue("@idExameArea",this.idExameArea);
             try
             {
