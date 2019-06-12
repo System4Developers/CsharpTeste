@@ -33,7 +33,7 @@ namespace s4d_biomedicina.DAL
             return dt;
         }
 
-        public DataTable GetListaPacienteExames(int idPaciente)
+        public DataTable GetListaPacienteExames(int idPaciente,int idConsulta)
         {
             Conexao con = new Conexao();
             SqlDataAdapter sda = new SqlDataAdapter("select idExameAgendado as [ID],dsExameTipo as [Exame],dtExame as [Data do Exame],solicitante as [Solicitante],valorMedidoA as [Resultado 1],valorMedidoB as [Resultado 2],valorMedidoC as [Resultado 3],valorMin as [Valor Min.],valorMax as [Valor Max.],idExameParametro,idExameTipo,idExameResultado " +
@@ -43,8 +43,9 @@ namespace s4d_biomedicina.DAL
              "join ExamesResultados on examesAgendados.idExameAgendado = ExamesResultados.fk_idExameAgendado_examesAgendados " +
              "join examesParametros on ExamesResultados.fk_idExameParametro_examesParametros = examesParametros.idExameParametro " +
              "join examesTipos on examesParametros.fk_idExameTipo_examesTipos = examesTipos.idExameTipo " +
-             "where idPaciente = @idPaciente", con.Conectar());
+             "where idPaciente = @idPaciente and idConsulta = @idconsulta", con.Conectar());
             sda.SelectCommand.Parameters.AddWithValue("@idPaciente", idPaciente);
+            sda.SelectCommand.Parameters.AddWithValue("@idconsulta", idConsulta);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;

@@ -178,11 +178,11 @@ namespace s4d_biomedicina.Modelo
             return dt;
         }
 
-        public DataTable ListaPacienteExames(int idPaciente)
+        public DataTable ListaPacienteExames(int idPaciente, int idConsulta)
         {
             DataTable dt = new DataTable();
             DAL.dalPaciente paciente = new DAL.dalPaciente();
-            dt = paciente.GetListaPacienteExames(idPaciente);
+            dt = paciente.GetListaPacienteExames(idPaciente, idConsulta);
             return dt;
         }
         

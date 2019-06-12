@@ -32,8 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblSair1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblExames = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -43,7 +41,6 @@
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,27 +51,26 @@
             this.pnlForms.BackColor = System.Drawing.Color.White;
             this.pnlForms.Location = new System.Drawing.Point(-1, 73);
             this.pnlForms.Name = "pnlForms";
-            this.pnlForms.Size = new System.Drawing.Size(1324, 631);
+            this.pnlForms.Size = new System.Drawing.Size(1058, 631);
             this.pnlForms.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1324, 65);
+            this.panel1.Size = new System.Drawing.Size(1058, 65);
             this.panel1.TabIndex = 6;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Maroon;
             this.panel6.Controls.Add(this.lblSair1);
-            this.panel6.Location = new System.Drawing.Point(1099, 26);
+            this.panel6.Location = new System.Drawing.Point(811, 24);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(177, 40);
             this.panel6.TabIndex = 7;
@@ -84,39 +80,13 @@
             // 
             this.lblSair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSair1.ForeColor = System.Drawing.Color.White;
-            this.lblSair1.Location = new System.Drawing.Point(2, 1);
+            this.lblSair1.Location = new System.Drawing.Point(3, 2);
             this.lblSair1.Name = "lblSair1";
             this.lblSair1.Size = new System.Drawing.Size(171, 38);
             this.lblSair1.TabIndex = 0;
             this.lblSair1.Text = "Sair";
             this.lblSair1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSair1.Click += new System.EventHandler(this.lblSair1_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel5.Controls.Add(this.lblExames);
-            this.panel5.Location = new System.Drawing.Point(819, 25);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(177, 40);
-            this.panel5.TabIndex = 7;
-            this.panel5.Click += new System.EventHandler(this.lblExames_Click);
-            // 
-            // lblExames
-            // 
-            this.lblExames.AutoSize = true;
-            this.lblExames.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.lblExames.Depth = 0;
-            this.lblExames.Location = new System.Drawing.Point(58, 3);
-            this.lblExames.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.lblExames.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblExames.Name = "lblExames";
-            this.lblExames.Primary = false;
-            this.lblExames.Size = new System.Drawing.Size(66, 36);
-            this.lblExames.TabIndex = 2;
-            this.lblExames.Text = "Exames";
-            this.lblExames.UseVisualStyleBackColor = true;
-            this.lblExames.Click += new System.EventHandler(this.lblExames_Click);
             // 
             // panel4
             // 
@@ -211,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1324, 716);
+            this.ClientSize = new System.Drawing.Size(1094, 716);
             this.Controls.Add(this.pnlForms);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -221,8 +191,6 @@
             this.Load += new System.EventHandler(this.frmPacientesMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -239,8 +207,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lblSair1;
-        private System.Windows.Forms.Panel panel5;
-        private MaterialSkin.Controls.MaterialFlatButton lblExames;
         private System.Windows.Forms.Panel panel4;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
         private System.Windows.Forms.Panel panel3;

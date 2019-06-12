@@ -42,8 +42,8 @@ namespace s4d_biomedicina.Apresentacao
 
         private void lblExames_Click(object sender, EventArgs e)
         {
-            Apresentacao.frmPacientesExames frmPacientesExames = new frmPacientesExames(idPaciente);
-            AbrirFormulario(frmPacientesExames);
+           // Apresentacao.frmPacientesExames frmPacientesExames = new frmPacientesExames(idPaciente);
+          //  AbrirFormulario(frmPacientesExames);
         }
        
         private void lblAgendamentos_Click(object sender, EventArgs e)

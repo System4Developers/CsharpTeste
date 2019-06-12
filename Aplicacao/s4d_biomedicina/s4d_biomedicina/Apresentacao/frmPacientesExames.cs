@@ -13,11 +13,13 @@ namespace s4d_biomedicina.Apresentacao
     public partial class frmPacientesExames : Form
     {
         private int idPaciente;
+        private int idConsulta;
 
-        public frmPacientesExames(int idPaciente)
+        public frmPacientesExames(int idPaciente, int idConsulta)
         {
             InitializeComponent();
             this.idPaciente = idPaciente;
+            this.idConsulta = idConsulta;
         }
 
         private void frmPacientesExames_Load(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace s4d_biomedicina.Apresentacao
         public void AtualizarTabela()
         {
             Modelo.Controle controle = new Modelo.Controle();
-            dgvPacientesExames.DataSource = controle.ListaPacienteExames(this.idPaciente);
+            dgvPacientesExames.DataSource = controle.ListaPacienteExames(this.idPaciente,this.idConsulta);
             dgvPacientesExames.Columns["idExameResultado"].Visible = false;
             dgvPacientesExames.Columns["idExameParametro"].Visible = false;
             dgvPacientesExames.Columns["idExameTipo"].Visible = false;
@@ -40,6 +42,18 @@ namespace s4d_biomedicina.Apresentacao
             idExameResultado = Convert.ToInt32(dgvPacientesExames.CurrentRow.Cells["idExameResultado"].Value);
             frmPacientesExamesResultados frmPacientesExamesResultados = new frmPacientesExamesResultados(idExameResultado, "editar");
             frmPacientesExamesResultados.ShowDialog();
+            AtualizarTabela();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnExames_Click(object sender, EventArgs e)
+        {
+            frmPacientesExamesManter frmPacientesExamesManter = new frmPacientesExamesManter("editar", this.idPaciente, this.idConsulta);
+            frmPacientesExamesManter.ShowDialog();
             AtualizarTabela();
         }
     }

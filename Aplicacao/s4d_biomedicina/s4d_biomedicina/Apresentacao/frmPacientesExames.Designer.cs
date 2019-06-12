@@ -32,6 +32,8 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
             this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnExames = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesExames)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(891, 427);
+            this.btnEditar.Location = new System.Drawing.Point(792, 434);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
@@ -86,18 +88,48 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Location = new System.Drawing.Point(983, 434);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Primary = true;
+            this.btnCancelar.Size = new System.Drawing.Size(99, 29);
+            this.btnCancelar.TabIndex = 57;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnExames
+            // 
+            this.btnExames.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExames.Depth = 0;
+            this.btnExames.Location = new System.Drawing.Point(597, 434);
+            this.btnExames.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnExames.Name = "btnExames";
+            this.btnExames.Primary = true;
+            this.btnExames.Size = new System.Drawing.Size(170, 29);
+            this.btnExames.TabIndex = 57;
+            this.btnExames.Text = "ATRIBUIR EXAMES";
+            this.btnExames.UseVisualStyleBackColor = true;
+            this.btnExames.Click += new System.EventHandler(this.btnExames_Click);
+            // 
             // frmPacientesExames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1112, 468);
+            this.ClientSize = new System.Drawing.Size(1111, 489);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnExames);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.lblGeral);
             this.Controls.Add(this.dgvPacientesExames);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPacientesExames";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPacientesExames";
@@ -113,5 +145,7 @@
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel lblGeral;
         private MaterialSkin.Controls.MaterialRaisedButton btnEditar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnExames;
     }
 }

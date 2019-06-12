@@ -32,8 +32,8 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
             this.btnNovo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnNovoExame = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnConsultarExames = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesAgendamentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             // 
             this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovo.Depth = 0;
-            this.btnNovo.Location = new System.Drawing.Point(228, 398);
+            this.btnNovo.Location = new System.Drawing.Point(53, 398);
             this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Primary = true;
@@ -88,25 +88,11 @@
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // btnNovoExame
-            // 
-            this.btnNovoExame.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoExame.Depth = 0;
-            this.btnNovoExame.Location = new System.Drawing.Point(417, 398);
-            this.btnNovoExame.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnNovoExame.Name = "btnNovoExame";
-            this.btnNovoExame.Primary = true;
-            this.btnNovoExame.Size = new System.Drawing.Size(144, 29);
-            this.btnNovoExame.TabIndex = 56;
-            this.btnNovoExame.Text = "ATRIBUIR EXAME";
-            this.btnNovoExame.UseVisualStyleBackColor = true;
-            this.btnNovoExame.Click += new System.EventHandler(this.btnNovoExame_Click);
-            // 
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(577, 398);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(242, 398);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -116,6 +102,20 @@
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnConsultarExames
+            // 
+            this.btnConsultarExames.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultarExames.Depth = 0;
+            this.btnConsultarExames.Location = new System.Drawing.Point(427, 398);
+            this.btnConsultarExames.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConsultarExames.Name = "btnConsultarExames";
+            this.btnConsultarExames.Primary = true;
+            this.btnConsultarExames.Size = new System.Drawing.Size(144, 29);
+            this.btnConsultarExames.TabIndex = 56;
+            this.btnConsultarExames.Text = "CONSULTAR EXAMES";
+            this.btnConsultarExames.UseVisualStyleBackColor = true;
+            this.btnConsultarExames.Click += new System.EventHandler(this.btnConsultarExames_Click);
+            // 
             // frmPacientesAgendamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,7 +123,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(779, 471);
             this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.btnNovoExame);
+            this.Controls.Add(this.btnConsultarExames);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.lblGeral);
@@ -144,7 +144,7 @@
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel lblGeral;
         private MaterialSkin.Controls.MaterialRaisedButton btnNovo;
-        private MaterialSkin.Controls.MaterialRaisedButton btnNovoExame;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnConsultarExames;
     }
 }
