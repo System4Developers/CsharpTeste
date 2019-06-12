@@ -46,91 +46,103 @@
             // 
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(153, 112);
+            this.cmbTipo.Location = new System.Drawing.Point(204, 138);
+            this.cmbTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(173, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(229, 24);
             this.cmbTipo.TabIndex = 60;
+            this.cmbTipo.TabStop = false;
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(43, 164);
+            this.lblTipo.Location = new System.Drawing.Point(57, 202);
+            this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(75, 13);
+            this.lblTipo.Size = new System.Drawing.Size(95, 17);
             this.lblTipo.TabIndex = 58;
             this.lblTipo.Text = "PARAMETRO";
             // 
             // txbParametro
             // 
-            this.txbParametro.Location = new System.Drawing.Point(153, 161);
+            this.txbParametro.Location = new System.Drawing.Point(204, 198);
+            this.txbParametro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbParametro.Name = "txbParametro";
-            this.txbParametro.Size = new System.Drawing.Size(173, 20);
-            this.txbParametro.TabIndex = 56;
+            this.txbParametro.Size = new System.Drawing.Size(229, 22);
+            this.txbParametro.TabIndex = 1;
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(43, 68);
+            this.lblID.Location = new System.Drawing.Point(57, 84);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.Size = new System.Drawing.Size(21, 17);
             this.lblID.TabIndex = 55;
             this.lblID.Text = "ID";
             // 
             // txbID
             // 
             this.txbID.Enabled = false;
-            this.txbID.Location = new System.Drawing.Point(153, 63);
+            this.txbID.Location = new System.Drawing.Point(204, 78);
+            this.txbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(173, 20);
+            this.txbID.Size = new System.Drawing.Size(229, 22);
             this.txbID.TabIndex = 54;
+            this.txbID.TabStop = false;
             // 
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(43, 112);
+            this.lblArea.Location = new System.Drawing.Point(57, 138);
+            this.lblArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(32, 13);
+            this.lblArea.Size = new System.Drawing.Size(40, 17);
             this.lblArea.TabIndex = 53;
             this.lblArea.Text = "TIPO";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 258);
+            this.label1.Location = new System.Drawing.Point(57, 318);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 62;
             this.label1.Text = "LIMITE MAXIMO";
             // 
             // txbLimiteMax
             // 
-            this.txbLimiteMax.Location = new System.Drawing.Point(153, 255);
+            this.txbLimiteMax.Location = new System.Drawing.Point(204, 314);
+            this.txbLimiteMax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbLimiteMax.Name = "txbLimiteMax";
-            this.txbLimiteMax.Size = new System.Drawing.Size(173, 20);
-            this.txbLimiteMax.TabIndex = 61;
+            this.txbLimiteMax.Size = new System.Drawing.Size(229, 22);
+            this.txbLimiteMax.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 209);
+            this.label2.Location = new System.Drawing.Point(57, 257);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 64;
             this.label2.Text = "LIMITE MINIMO";
             // 
             // txbLimiteMin
             // 
-            this.txbLimiteMin.Location = new System.Drawing.Point(153, 206);
+            this.txbLimiteMin.Location = new System.Drawing.Point(204, 254);
+            this.txbLimiteMin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbLimiteMin.Name = "txbLimiteMin";
-            this.txbLimiteMin.Size = new System.Drawing.Size(173, 20);
-            this.txbLimiteMin.TabIndex = 63;
+            this.txbLimiteMin.Size = new System.Drawing.Size(229, 22);
+            this.txbLimiteMin.TabIndex = 2;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(180, 310);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalvar.Location = new System.Drawing.Point(240, 382);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(66, 22);
+            this.btnSalvar.Size = new System.Drawing.Size(88, 27);
             this.btnSalvar.TabIndex = 65;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -138,10 +150,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(260, 310);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(347, 382);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(66, 22);
+            this.btnCancelar.Size = new System.Drawing.Size(88, 27);
             this.btnCancelar.TabIndex = 65;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -149,9 +161,9 @@
             // 
             // frmExamesParametrosManter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 375);
+            this.ClientSize = new System.Drawing.Size(519, 462);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label2);
@@ -165,6 +177,7 @@
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.lblArea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmExamesParametrosManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parâmetros da Biomedicina";

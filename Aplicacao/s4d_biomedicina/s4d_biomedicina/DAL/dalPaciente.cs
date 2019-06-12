@@ -26,7 +26,7 @@ namespace s4d_biomedicina.DAL
         {
             Conexao con = new Conexao();
 
-            SqlDataAdapter sda = new SqlDataAdapter("select idEndereco as [ID],logradouro as [Logradouro], bairro as [Bairro],numero as [Numero],cidade as [Cidade],estado as [Estado] from enderecos join pessoas on enderecos.fk_idPessoa_pessoas=pessoas.idPessoa join pacientes on pessoas.idPessoa = pacientes.fk_idPessoa_pessoas where idPaciente = @idPaciente", con.Conectar());
+            SqlDataAdapter sda = new SqlDataAdapter("select idEndereco as [ID],logradouro as [Logradouro], bairro as [Bairro],numero as [Numero],cidade as [Cidade],estado as [Estado],complemento as [Complemento] from enderecos join pessoas on enderecos.fk_idPessoa_pessoas=pessoas.idPessoa join pacientes on pessoas.idPessoa = pacientes.fk_idPessoa_pessoas where idPaciente = @idPaciente", con.Conectar());
             sda.SelectCommand.Parameters.AddWithValue("@idPaciente", idPaciente);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -36,7 +36,7 @@ namespace s4d_biomedicina.DAL
         public DataTable GetListaPacienteExames(int idPaciente,int idConsulta)
         {
             Conexao con = new Conexao();
-            SqlDataAdapter sda = new SqlDataAdapter("select idExameAgendado as [ID],dsExameTipo as [Exame],dsExameParametro as [Tipo],dtExame as [Data do Exame],solicitante as [Solicitante],valorMedidoA as [Resultado 1],valorMedidoB as [Resultado 2],valorMedidoC as [Resultado 3],valorMin as [Valor Min.],valorMax as [Valor Max.],idExameParametro,idExameTipo,idExameResultado " +
+            SqlDataAdapter sda = new SqlDataAdapter("select idExameAgendado as [ID],dsExameTipo as [Exame],dsExameParametro as [Tipo],solicitante as [Solicitante],valorMedidoA as [Resultado 1],valorMedidoB as [Resultado 2],valorMedidoC as [Resultado 3],valorMin as [Valor Min.],valorMax as [Valor Max.],idExameParametro,idExameTipo,idExameResultado " +
              "from examesAgendados " +
              "join pacientes on examesAgendados.fk_idPaciente_pacientes = pacientes.idPaciente " +
              "join consultas on examesAgendados.fk_idConsulta_consultas = consultas.idConsulta " +
@@ -192,7 +192,7 @@ namespace s4d_biomedicina.DAL
             SqlCommand cmd = new SqlCommand();
             Conexao con = new Conexao();
 
-            cmd.CommandText = "select idEndereco as [ID],logradouro as [Logradouro], bairro as [Bairro],numero as [Numero],cidade as [Cidade],estado as [Estado] from enderecos where idEndereco = @idEndereco";
+            cmd.CommandText = "select idEndereco as [ID],logradouro as [Logradouro], bairro as [Bairro],numero as [Numero],cidade as [Cidade],estado as [Estado],complemento as [Complemento] from enderecos where idEndereco = @idEndereco";
 
             cmd.Parameters.AddWithValue("@idEndereco", idEnderecos);
             try
@@ -254,10 +254,9 @@ namespace s4d_biomedicina.DAL
                 cmd.ExecuteNonQuery();
                 con.desconectar();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                //return this.mensagem;
-                throw new InvalidOperationException(ex.Message + " - " + cmd.CommandText, ex);
+                this.mensagem = "Erro com Banco";
             }
 
             return this.mensagem;

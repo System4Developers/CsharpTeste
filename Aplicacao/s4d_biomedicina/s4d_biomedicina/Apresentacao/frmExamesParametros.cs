@@ -36,11 +36,19 @@ namespace s4d_biomedicina.Apresentacao
         {
             int idExameParametro;
             this.comando = "editar";
-            idExameParametro = Convert.ToInt32(dgvExamesParametros.CurrentRow.Cells[0].Value);
+            try
+            {
+                idExameParametro = Convert.ToInt32(dgvExamesParametros.CurrentRow.Cells[0].Value);
 
-            frmExamesParametrosManter frmExamesParametrosManter = new frmExamesParametrosManter(this.comando, idExameParametro);
-            frmExamesParametrosManter.Show();
-            AtualizarTabela();
+                frmExamesParametrosManter frmExamesParametrosManter = new frmExamesParametrosManter(this.comando, idExameParametro);
+                frmExamesParametrosManter.Show();
+                AtualizarTabela();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Selecione um item da Tabela");
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

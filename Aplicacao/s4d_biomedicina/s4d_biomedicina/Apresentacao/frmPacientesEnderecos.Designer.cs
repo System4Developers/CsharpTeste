@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvPacientesEnderecos = new System.Windows.Forms.DataGridView();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.lblGeral = new MaterialSkin.Controls.MaterialLabel();
             this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNovo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesEnderecos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,24 +41,13 @@
             this.dgvPacientesEnderecos.AllowUserToAddRows = false;
             this.dgvPacientesEnderecos.AllowUserToDeleteRows = false;
             this.dgvPacientesEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientesEnderecos.Location = new System.Drawing.Point(41, 99);
+            this.dgvPacientesEnderecos.Location = new System.Drawing.Point(41, 98);
             this.dgvPacientesEnderecos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPacientesEnderecos.Name = "dgvPacientesEnderecos";
             this.dgvPacientesEnderecos.ReadOnly = true;
             this.dgvPacientesEnderecos.RowTemplate.Height = 24;
-            this.dgvPacientesEnderecos.Size = new System.Drawing.Size(691, 270);
+            this.dgvPacientesEnderecos.Size = new System.Drawing.Size(780, 270);
             this.dgvPacientesEnderecos.TabIndex = 12;
-            // 
-            // materialDivider1
-            // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(41, 71);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(724, 2);
-            this.materialDivider1.TabIndex = 52;
-            this.materialDivider1.Text = "materialDivider1";
             // 
             // lblGeral
             // 
@@ -76,7 +65,7 @@
             // btnEditar
             // 
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(580, 411);
+            this.btnEditar.Location = new System.Drawing.Point(677, 384);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
@@ -89,7 +78,7 @@
             // btnNovo
             // 
             this.btnNovo.Depth = 0;
-            this.btnNovo.Location = new System.Drawing.Point(415, 411);
+            this.btnNovo.Location = new System.Drawing.Point(506, 384);
             this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Primary = true;
@@ -99,12 +88,23 @@
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(41, 71);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(780, 2);
+            this.materialDivider1.TabIndex = 52;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
             // frmPacientesEnderecos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(787, 469);
+            this.ClientSize = new System.Drawing.Size(832, 469);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.materialDivider1);
@@ -123,9 +123,9 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvPacientesEnderecos;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel lblGeral;
         private MaterialSkin.Controls.MaterialRaisedButton btnEditar;
         private MaterialSkin.Controls.MaterialRaisedButton btnNovo;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
     }
 }

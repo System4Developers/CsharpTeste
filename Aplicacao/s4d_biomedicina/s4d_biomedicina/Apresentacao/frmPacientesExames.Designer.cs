@@ -132,7 +132,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPacientesExames";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPacientesExames";
+            this.Text = "Agendamento - Exames";
             this.Load += new System.EventHandler(this.frmPacientesExames_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientesExames)).EndInit();
             this.ResumeLayout(false);

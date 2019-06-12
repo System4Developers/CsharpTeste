@@ -181,13 +181,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 716);
+            this.ClientSize = new System.Drawing.Size(1055, 699);
             this.Controls.Add(this.pnlForms);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPacientesMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPacienteMain";
+            this.Text = "Dados do Paciente";
             this.Load += new System.EventHandler(this.frmPacientesMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

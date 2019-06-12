@@ -181,7 +181,7 @@
             this.Controls.Add(this.dgvExamesTipos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmExamesTipos";
-            this.Text = "frmExamesTipos";
+            this.Text = "Exames Tipos";
             this.Load += new System.EventHandler(this.frmExamesTipos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamesTipos)).EndInit();
             this.ResumeLayout(false);

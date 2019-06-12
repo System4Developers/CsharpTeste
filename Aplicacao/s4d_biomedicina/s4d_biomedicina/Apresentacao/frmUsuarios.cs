@@ -43,10 +43,18 @@ namespace s4d_biomedicina.Apresentacao
         {
             int idUsuario;
             this.comando = "editar";
-            idUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
-            frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this.comando, idUsuario);
-            frmNovoUsuario.Show();
-            AtualizarTabela();
+            try
+            {
+                idUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
+                frmUsuariosManter frmNovoUsuario = new frmUsuariosManter(this.comando, idUsuario);
+                frmNovoUsuario.Show();
+                AtualizarTabela();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Selecione um item da Tabela");
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

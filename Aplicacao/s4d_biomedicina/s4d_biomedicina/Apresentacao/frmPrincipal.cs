@@ -29,7 +29,7 @@ namespace s4d_biomedicina.Apresentacao
             }
             else
             {
-                tsbLogin.Text = "Bem-Vindo : " + Modelo.Estaticos.userName.ToString();
+                tsbLogin.Text = "Usuario Logado : " + Modelo.Estaticos.userName.ToString();
             }
             
         }
@@ -43,7 +43,7 @@ namespace s4d_biomedicina.Apresentacao
         {
             Apresentacao.frmLogin frmLogin = new frmLogin();
             frmLogin.ShowDialog();
-            tsbLogin.Text = "Bem-Vindo : " + Modelo.Estaticos.userName.ToString();
+            tsbLogin.Text = "Usuario Logado : " + Modelo.Estaticos.userName.ToString();
         }
 
         private void tsiUsuarios_Click(object sender, EventArgs e)

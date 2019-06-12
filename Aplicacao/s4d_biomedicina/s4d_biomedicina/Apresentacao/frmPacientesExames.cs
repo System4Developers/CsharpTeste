@@ -39,10 +39,18 @@ namespace s4d_biomedicina.Apresentacao
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int idExameResultado;
-            idExameResultado = Convert.ToInt32(dgvPacientesExames.CurrentRow.Cells["idExameResultado"].Value);
-            frmPacientesExamesResultados frmPacientesExamesResultados = new frmPacientesExamesResultados(idExameResultado, "editar");
-            frmPacientesExamesResultados.ShowDialog();
-            AtualizarTabela();
+            try
+            {
+                idExameResultado = Convert.ToInt32(dgvPacientesExames.CurrentRow.Cells["idExameResultado"].Value);
+                frmPacientesExamesResultados frmPacientesExamesResultados = new frmPacientesExamesResultados(idExameResultado, "editar");
+                frmPacientesExamesResultados.ShowDialog();
+                AtualizarTabela();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Selecione um item da Tabela");
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

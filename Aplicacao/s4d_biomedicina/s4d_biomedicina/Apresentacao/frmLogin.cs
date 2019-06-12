@@ -17,11 +17,6 @@ namespace s4d_biomedicina.Apresentacao
             InitializeComponent();
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Modelo.Estaticos.logado = false;

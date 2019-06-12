@@ -72,6 +72,10 @@ namespace s4d_biomedicina.Apresentacao
                     cmbEstado.Text = controle.Dr.GetValue(6).ToString();
                 }
             }
+            else
+            {
+                cmbEstado.SelectedIndex = 0;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

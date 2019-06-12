@@ -43,25 +43,28 @@
             // 
             // txbTipo
             // 
-            this.txbTipo.Location = new System.Drawing.Point(150, 164);
+            this.txbTipo.Location = new System.Drawing.Point(200, 202);
+            this.txbTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbTipo.Name = "txbTipo";
-            this.txbTipo.Size = new System.Drawing.Size(218, 20);
-            this.txbTipo.TabIndex = 5;
+            this.txbTipo.Size = new System.Drawing.Size(289, 22);
+            this.txbTipo.TabIndex = 2;
             // 
             // txbID
             // 
-            this.txbID.Location = new System.Drawing.Point(48, 164);
+            this.txbID.Location = new System.Drawing.Point(64, 202);
+            this.txbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(75, 20);
-            this.txbID.TabIndex = 6;
+            this.txbID.Size = new System.Drawing.Size(99, 22);
+            this.txbID.TabIndex = 1;
             this.txbID.Text = "0";
             // 
             // dgvExamesParametros
             // 
             this.dgvExamesParametros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExamesParametros.Location = new System.Drawing.Point(47, 206);
+            this.dgvExamesParametros.Location = new System.Drawing.Point(63, 254);
+            this.dgvExamesParametros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvExamesParametros.Name = "dgvExamesParametros";
-            this.dgvExamesParametros.Size = new System.Drawing.Size(769, 335);
+            this.dgvExamesParametros.Size = new System.Drawing.Size(1025, 412);
             this.dgvExamesParametros.TabIndex = 4;
             // 
             // lbTipo
@@ -70,10 +73,11 @@
             this.lbTipo.Depth = 0;
             this.lbTipo.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbTipo.Location = new System.Drawing.Point(146, 142);
+            this.lbTipo.Location = new System.Drawing.Point(195, 175);
+            this.lbTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTipo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(156, 19);
+            this.lbTipo.Size = new System.Drawing.Size(196, 24);
             this.lbTipo.TabIndex = 36;
             this.lbTipo.Text = "TIPO DE PARÂMETRO";
             // 
@@ -83,10 +87,11 @@
             this.lblID.Depth = 0;
             this.lblID.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblID.Location = new System.Drawing.Point(52, 141);
+            this.lblID.Location = new System.Drawing.Point(69, 174);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(23, 19);
+            this.lblID.Size = new System.Drawing.Size(27, 24);
             this.lblID.TabIndex = 35;
             this.lblID.Text = "ID";
             // 
@@ -94,11 +99,12 @@
             // 
             this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPesquisar.Depth = 0;
-            this.btnPesquisar.Location = new System.Drawing.Point(405, 159);
+            this.btnPesquisar.Location = new System.Drawing.Point(540, 196);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPesquisar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Primary = true;
-            this.btnPesquisar.Size = new System.Drawing.Size(102, 29);
+            this.btnPesquisar.Size = new System.Drawing.Size(136, 36);
             this.btnPesquisar.TabIndex = 39;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -108,11 +114,12 @@
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(164, 92);
+            this.btnEditar.Location = new System.Drawing.Point(219, 113);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
-            this.btnEditar.Size = new System.Drawing.Size(102, 29);
+            this.btnEditar.Size = new System.Drawing.Size(136, 36);
             this.btnEditar.TabIndex = 38;
             this.btnEditar.Text = "editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -122,11 +129,12 @@
             // 
             this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovo.Depth = 0;
-            this.btnNovo.Location = new System.Drawing.Point(47, 92);
+            this.btnNovo.Location = new System.Drawing.Point(63, 113);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNovo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Primary = true;
-            this.btnNovo.Size = new System.Drawing.Size(102, 29);
+            this.btnNovo.Size = new System.Drawing.Size(136, 36);
             this.btnNovo.TabIndex = 37;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -138,10 +146,11 @@
             this.lblGeral.Depth = 0;
             this.lblGeral.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblGeral.Location = new System.Drawing.Point(28, 27);
+            this.lblGeral.Location = new System.Drawing.Point(37, 33);
+            this.lblGeral.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGeral.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(363, 19);
+            this.lblGeral.Size = new System.Drawing.Size(455, 24);
             this.lblGeral.TabIndex = 41;
             this.lblGeral.Text = "GERENCIAMENTO DOS PARÂMETROS DOS EXAMES";
             // 
@@ -149,19 +158,20 @@
             // 
             this.mDividir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mDividir.Depth = 0;
-            this.mDividir.Location = new System.Drawing.Point(16, 61);
+            this.mDividir.Location = new System.Drawing.Point(21, 75);
+            this.mDividir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mDividir.MouseState = MaterialSkin.MouseState.HOVER;
             this.mDividir.Name = "mDividir";
-            this.mDividir.Size = new System.Drawing.Size(800, 2);
+            this.mDividir.Size = new System.Drawing.Size(1067, 2);
             this.mDividir.TabIndex = 40;
             this.mDividir.Text = "mDividir";
             // 
             // frmExamesParametros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(839, 570);
+            this.ClientSize = new System.Drawing.Size(1119, 702);
             this.Controls.Add(this.lblGeral);
             this.Controls.Add(this.mDividir);
             this.Controls.Add(this.btnPesquisar);
@@ -173,8 +183,9 @@
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.dgvExamesParametros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmExamesParametros";
-            this.Text = "frmExamesParametros";
+            this.Text = "Exame Parametros";
             this.Load += new System.EventHandler(this.frmExamesParametros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamesParametros)).EndInit();
             this.ResumeLayout(false);

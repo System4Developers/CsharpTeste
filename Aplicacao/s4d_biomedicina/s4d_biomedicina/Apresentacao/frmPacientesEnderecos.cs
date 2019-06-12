@@ -45,11 +45,19 @@ namespace s4d_biomedicina.Apresentacao
         {
             int idEndereco;
             this.comando = "editar";
-            idEndereco = Convert.ToInt32(dgvPacientesEnderecos.CurrentRow.Cells[0].Value);
+            try
+            {
+                idEndereco = Convert.ToInt32(dgvPacientesEnderecos.CurrentRow.Cells[0].Value);
 
-            frmPacientesEnderecosManter frmPacientesEnderecosManter = new frmPacientesEnderecosManter(this.comando, idEndereco);
-            frmPacientesEnderecosManter.ShowDialog();
-            AtualizarTabela();
+                frmPacientesEnderecosManter frmPacientesEnderecosManter = new frmPacientesEnderecosManter(this.comando, idEndereco);
+                frmPacientesEnderecosManter.ShowDialog();
+                AtualizarTabela();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Selecione um item da Tabela");
+            }
+            
         }
 
     }

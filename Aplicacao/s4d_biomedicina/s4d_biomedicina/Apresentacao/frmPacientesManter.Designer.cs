@@ -31,11 +31,8 @@
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblRg = new System.Windows.Forms.Label();
-            this.txbRg = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txbCpf = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbGrauInstrucao = new System.Windows.Forms.TextBox();
             this.lblProfissao = new System.Windows.Forms.Label();
             this.txbProfissao = new System.Windows.Forms.TextBox();
             this.lblDtNascimento = new System.Windows.Forms.Label();
@@ -43,17 +40,20 @@
             this.txbID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblGrupoSanguineo = new System.Windows.Forms.Label();
-            this.txbGrupoSanguineo = new System.Windows.Forms.TextBox();
             this.lblAltura = new System.Windows.Forms.Label();
-            this.txbAltura = new System.Windows.Forms.TextBox();
             this.lblPeso = new System.Windows.Forms.Label();
             this.txbPeso = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txbProntuario = new System.Windows.Forms.TextBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.txbDtNascimento = new System.Windows.Forms.MaskedTextBox();
             this.gpbInfoAdicional = new System.Windows.Forms.GroupBox();
+            this.txbGrupoSanguineo = new System.Windows.Forms.ComboBox();
+            this.txbAltura = new System.Windows.Forms.MaskedTextBox();
             this.gpbPaciente = new System.Windows.Forms.GroupBox();
+            this.txbRg = new System.Windows.Forms.MaskedTextBox();
+            this.txbCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txbDtNascimento = new System.Windows.Forms.DateTimePicker();
+            this.txbGrauInstrucao = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.gpbInfoAdicional.SuspendLayout();
             this.gpbPaciente.SuspendLayout();
@@ -61,204 +61,154 @@
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(52, 62);
-            this.txbNome.Margin = new System.Windows.Forms.Padding(2);
+            this.txbNome.Location = new System.Drawing.Point(69, 76);
+            this.txbNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(596, 20);
-            this.txbNome.TabIndex = 3;
+            this.txbNome.Size = new System.Drawing.Size(793, 22);
+            this.txbNome.TabIndex = 1;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(13, 62);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNome.Location = new System.Drawing.Point(17, 76);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.Size = new System.Drawing.Size(45, 17);
             this.lblNome.TabIndex = 15;
             this.lblNome.Text = "Nome";
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(13, 98);
-            this.lblRg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRg.Location = new System.Drawing.Point(17, 121);
             this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(23, 13);
+            this.lblRg.Size = new System.Drawing.Size(29, 17);
             this.lblRg.TabIndex = 17;
             this.lblRg.Text = "RG";
-            // 
-            // txbRg
-            // 
-            this.txbRg.Location = new System.Drawing.Point(52, 97);
-            this.txbRg.Margin = new System.Windows.Forms.Padding(2);
-            this.txbRg.Name = "txbRg";
-            this.txbRg.Size = new System.Drawing.Size(151, 20);
-            this.txbRg.TabIndex = 4;
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(207, 98);
-            this.lblCpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCpf.Location = new System.Drawing.Point(276, 124);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(27, 13);
+            this.lblCpf.Size = new System.Drawing.Size(34, 17);
             this.lblCpf.TabIndex = 19;
             this.lblCpf.Text = "CPF";
-            // 
-            // txbCpf
-            // 
-            this.txbCpf.Location = new System.Drawing.Point(238, 95);
-            this.txbCpf.Margin = new System.Windows.Forms.Padding(2);
-            this.txbCpf.Name = "txbCpf";
-            this.txbCpf.Size = new System.Drawing.Size(188, 20);
-            this.txbCpf.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 137);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(17, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.Size = new System.Drawing.Size(122, 17);
             this.label4.TabIndex = 25;
             this.label4.Text = "Grau de Instrucao";
-            // 
-            // txbGrauInstrucao
-            // 
-            this.txbGrauInstrucao.Location = new System.Drawing.Point(115, 134);
-            this.txbGrauInstrucao.Margin = new System.Windows.Forms.Padding(2);
-            this.txbGrauInstrucao.Name = "txbGrauInstrucao";
-            this.txbGrauInstrucao.Size = new System.Drawing.Size(119, 20);
-            this.txbGrauInstrucao.TabIndex = 7;
             // 
             // lblProfissao
             // 
             this.lblProfissao.AutoSize = true;
-            this.lblProfissao.Location = new System.Drawing.Point(252, 136);
-            this.lblProfissao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProfissao.Location = new System.Drawing.Point(336, 167);
             this.lblProfissao.Name = "lblProfissao";
-            this.lblProfissao.Size = new System.Drawing.Size(50, 13);
+            this.lblProfissao.Size = new System.Drawing.Size(67, 17);
             this.lblProfissao.TabIndex = 23;
             this.lblProfissao.Text = "Profissao";
             // 
             // txbProfissao
             // 
-            this.txbProfissao.Location = new System.Drawing.Point(306, 133);
-            this.txbProfissao.Margin = new System.Windows.Forms.Padding(2);
+            this.txbProfissao.Location = new System.Drawing.Point(408, 164);
+            this.txbProfissao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbProfissao.Name = "txbProfissao";
-            this.txbProfissao.Size = new System.Drawing.Size(120, 20);
-            this.txbProfissao.TabIndex = 8;
+            this.txbProfissao.Size = new System.Drawing.Size(159, 22);
+            this.txbProfissao.TabIndex = 6;
             // 
             // lblDtNascimento
             // 
             this.lblDtNascimento.AutoSize = true;
-            this.lblDtNascimento.Location = new System.Drawing.Point(437, 98);
-            this.lblDtNascimento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDtNascimento.Location = new System.Drawing.Point(583, 121);
             this.lblDtNascimento.Name = "lblDtNascimento";
-            this.lblDtNascimento.Size = new System.Drawing.Size(86, 13);
+            this.lblDtNascimento.Size = new System.Drawing.Size(112, 17);
             this.lblDtNascimento.TabIndex = 21;
             this.lblDtNascimento.Text = "Dat. Nascimento";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(13, 30);
-            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblID.Location = new System.Drawing.Point(17, 37);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.Size = new System.Drawing.Size(21, 17);
             this.lblID.TabIndex = 37;
             this.lblID.Text = "ID";
             // 
             // txbID
             // 
             this.txbID.Enabled = false;
-            this.txbID.Location = new System.Drawing.Point(52, 27);
-            this.txbID.Margin = new System.Windows.Forms.Padding(2);
+            this.txbID.Location = new System.Drawing.Point(69, 33);
+            this.txbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(68, 20);
+            this.txbID.Size = new System.Drawing.Size(89, 22);
             this.txbID.TabIndex = 1;
+            this.txbID.TabStop = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(475, 140);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(633, 172);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.Size = new System.Drawing.Size(52, 17);
             this.label8.TabIndex = 35;
             this.label8.Text = "Estado";
             // 
             // lblGrupoSanguineo
             // 
             this.lblGrupoSanguineo.AutoSize = true;
-            this.lblGrupoSanguineo.Location = new System.Drawing.Point(425, 32);
-            this.lblGrupoSanguineo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGrupoSanguineo.Location = new System.Drawing.Point(567, 39);
             this.lblGrupoSanguineo.Name = "lblGrupoSanguineo";
-            this.lblGrupoSanguineo.Size = new System.Drawing.Size(90, 13);
+            this.lblGrupoSanguineo.Size = new System.Drawing.Size(120, 17);
             this.lblGrupoSanguineo.TabIndex = 33;
             this.lblGrupoSanguineo.Text = "Grupo Sanguineo";
-            // 
-            // txbGrupoSanguineo
-            // 
-            this.txbGrupoSanguineo.Location = new System.Drawing.Point(519, 29);
-            this.txbGrupoSanguineo.Margin = new System.Windows.Forms.Padding(2);
-            this.txbGrupoSanguineo.Name = "txbGrupoSanguineo";
-            this.txbGrupoSanguineo.Size = new System.Drawing.Size(129, 20);
-            this.txbGrupoSanguineo.TabIndex = 18;
             // 
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(227, 32);
-            this.lblAltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAltura.Location = new System.Drawing.Point(303, 39);
             this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(34, 13);
+            this.lblAltura.Size = new System.Drawing.Size(45, 17);
             this.lblAltura.TabIndex = 31;
             this.lblAltura.Text = "Altura";
-            // 
-            // txbAltura
-            // 
-            this.txbAltura.Location = new System.Drawing.Point(265, 29);
-            this.txbAltura.Margin = new System.Windows.Forms.Padding(2);
-            this.txbAltura.Name = "txbAltura";
-            this.txbAltura.Size = new System.Drawing.Size(83, 20);
-            this.txbAltura.TabIndex = 17;
             // 
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(13, 32);
-            this.lblPeso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPeso.Location = new System.Drawing.Point(17, 39);
             this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Size = new System.Drawing.Size(31, 13);
+            this.lblPeso.Size = new System.Drawing.Size(40, 17);
             this.lblPeso.TabIndex = 29;
             this.lblPeso.Text = "Peso";
             // 
             // txbPeso
             // 
-            this.txbPeso.Location = new System.Drawing.Point(48, 29);
-            this.txbPeso.Margin = new System.Windows.Forms.Padding(2);
+            this.txbPeso.Location = new System.Drawing.Point(64, 36);
+            this.txbPeso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbPeso.Name = "txbPeso";
-            this.txbPeso.Size = new System.Drawing.Size(69, 20);
-            this.txbPeso.TabIndex = 16;
+            this.txbPeso.Size = new System.Drawing.Size(91, 22);
+            this.txbPeso.TabIndex = 8;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(126, 30);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(168, 37);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.Size = new System.Drawing.Size(79, 17);
             this.label12.TabIndex = 27;
             this.label12.Text = "Pronturario";
             // 
             // txbProntuario
             // 
-            this.txbProntuario.Location = new System.Drawing.Point(188, 27);
-            this.txbProntuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txbProntuario.Location = new System.Drawing.Point(251, 33);
+            this.txbProntuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbProntuario.Name = "txbProntuario";
-            this.txbProntuario.Size = new System.Drawing.Size(460, 20);
+            this.txbProntuario.Size = new System.Drawing.Size(612, 22);
             this.txbProntuario.TabIndex = 2;
+            this.txbProntuario.TabStop = false;
             // 
             // cmbEstado
             // 
@@ -267,44 +217,66 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "ATIVADO",
             "DESATIVADO"});
-            this.cmbEstado.Location = new System.Drawing.Point(519, 134);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEstado.Location = new System.Drawing.Point(692, 165);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(129, 21);
-            this.cmbEstado.TabIndex = 9;
-            // 
-            // txbDtNascimento
-            // 
-            this.txbDtNascimento.Location = new System.Drawing.Point(528, 95);
-            this.txbDtNascimento.Mask = "00/00/0000";
-            this.txbDtNascimento.Name = "txbDtNascimento";
-            this.txbDtNascimento.Size = new System.Drawing.Size(120, 20);
-            this.txbDtNascimento.TabIndex = 6;
-            this.txbDtNascimento.ValidatingType = typeof(System.DateTime);
+            this.cmbEstado.Size = new System.Drawing.Size(171, 24);
+            this.cmbEstado.TabIndex = 7;
             // 
             // gpbInfoAdicional
             // 
+            this.gpbInfoAdicional.Controls.Add(this.txbGrupoSanguineo);
+            this.gpbInfoAdicional.Controls.Add(this.txbAltura);
             this.gpbInfoAdicional.Controls.Add(this.lblPeso);
             this.gpbInfoAdicional.Controls.Add(this.txbPeso);
-            this.gpbInfoAdicional.Controls.Add(this.txbAltura);
             this.gpbInfoAdicional.Controls.Add(this.lblAltura);
-            this.gpbInfoAdicional.Controls.Add(this.txbGrupoSanguineo);
             this.gpbInfoAdicional.Controls.Add(this.lblGrupoSanguineo);
-            this.gpbInfoAdicional.Location = new System.Drawing.Point(12, 217);
+            this.gpbInfoAdicional.Location = new System.Drawing.Point(16, 267);
+            this.gpbInfoAdicional.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpbInfoAdicional.Name = "gpbInfoAdicional";
-            this.gpbInfoAdicional.Size = new System.Drawing.Size(666, 65);
+            this.gpbInfoAdicional.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInfoAdicional.Size = new System.Drawing.Size(888, 80);
             this.gpbInfoAdicional.TabIndex = 51;
             this.gpbInfoAdicional.TabStop = false;
             this.gpbInfoAdicional.Text = "Informacoes Adicionais";
             // 
+            // txbGrupoSanguineo
+            // 
+            this.txbGrupoSanguineo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txbGrupoSanguineo.FormattingEnabled = true;
+            this.txbGrupoSanguineo.Items.AddRange(new object[] {
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-",
+            "O+",
+            "O-"});
+            this.txbGrupoSanguineo.Location = new System.Drawing.Point(692, 36);
+            this.txbGrupoSanguineo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbGrupoSanguineo.Name = "txbGrupoSanguineo";
+            this.txbGrupoSanguineo.Size = new System.Drawing.Size(171, 24);
+            this.txbGrupoSanguineo.TabIndex = 10;
+            // 
+            // txbAltura
+            // 
+            this.txbAltura.Location = new System.Drawing.Point(355, 36);
+            this.txbAltura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbAltura.Mask = "0,00";
+            this.txbAltura.Name = "txbAltura";
+            this.txbAltura.Size = new System.Drawing.Size(123, 22);
+            this.txbAltura.TabIndex = 9;
+            // 
             // gpbPaciente
             // 
+            this.gpbPaciente.Controls.Add(this.txbRg);
+            this.gpbPaciente.Controls.Add(this.txbCpf);
+            this.gpbPaciente.Controls.Add(this.txbDtNascimento);
+            this.gpbPaciente.Controls.Add(this.txbGrauInstrucao);
             this.gpbPaciente.Controls.Add(this.txbNome);
             this.gpbPaciente.Controls.Add(this.lblNome);
-            this.gpbPaciente.Controls.Add(this.txbRg);
-            this.gpbPaciente.Controls.Add(this.txbDtNascimento);
             this.gpbPaciente.Controls.Add(this.lblRg);
-            this.gpbPaciente.Controls.Add(this.txbCpf);
             this.gpbPaciente.Controls.Add(this.cmbEstado);
             this.gpbPaciente.Controls.Add(this.lblCpf);
             this.gpbPaciente.Controls.Add(this.lblID);
@@ -314,25 +286,70 @@
             this.gpbPaciente.Controls.Add(this.label8);
             this.gpbPaciente.Controls.Add(this.lblProfissao);
             this.gpbPaciente.Controls.Add(this.label12);
-            this.gpbPaciente.Controls.Add(this.txbGrauInstrucao);
             this.gpbPaciente.Controls.Add(this.txbProntuario);
             this.gpbPaciente.Controls.Add(this.label4);
-            this.gpbPaciente.Location = new System.Drawing.Point(12, 3);
+            this.gpbPaciente.Location = new System.Drawing.Point(16, 4);
+            this.gpbPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpbPaciente.Name = "gpbPaciente";
-            this.gpbPaciente.Size = new System.Drawing.Size(666, 198);
+            this.gpbPaciente.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbPaciente.Size = new System.Drawing.Size(888, 244);
             this.gpbPaciente.TabIndex = 52;
             this.gpbPaciente.TabStop = false;
             this.gpbPaciente.Text = "Paciente";
+            // 
+            // txbRg
+            // 
+            this.txbRg.Location = new System.Drawing.Point(69, 121);
+            this.txbRg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbRg.Mask = "000000000";
+            this.txbRg.Name = "txbRg";
+            this.txbRg.Size = new System.Drawing.Size(199, 22);
+            this.txbRg.TabIndex = 2;
+            this.txbRg.ValidatingType = typeof(int);
+            // 
+            // txbCpf
+            // 
+            this.txbCpf.Location = new System.Drawing.Point(319, 119);
+            this.txbCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCpf.Mask = "00000000000";
+            this.txbCpf.Name = "txbCpf";
+            this.txbCpf.Size = new System.Drawing.Size(248, 22);
+            this.txbCpf.TabIndex = 3;
+            this.txbCpf.ValidatingType = typeof(int);
+            // 
+            // txbDtNascimento
+            // 
+            this.txbDtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txbDtNascimento.Location = new System.Drawing.Point(700, 119);
+            this.txbDtNascimento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbDtNascimento.Name = "txbDtNascimento";
+            this.txbDtNascimento.Size = new System.Drawing.Size(163, 22);
+            this.txbDtNascimento.TabIndex = 4;
+            // 
+            // txbGrauInstrucao
+            // 
+            this.txbGrauInstrucao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txbGrauInstrucao.FormattingEnabled = true;
+            this.txbGrauInstrucao.Items.AddRange(new object[] {
+            "SUPERIOR",
+            "FUNDAMENTAL",
+            "BASICO"});
+            this.txbGrauInstrucao.Location = new System.Drawing.Point(151, 164);
+            this.txbGrauInstrucao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbGrauInstrucao.Name = "txbGrauInstrucao";
+            this.txbGrauInstrucao.Size = new System.Drawing.Size(160, 24);
+            this.txbGrauInstrucao.TabIndex = 5;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.Depth = 0;
-            this.btnSalvar.Location = new System.Drawing.Point(576, 302);
+            this.btnSalvar.Location = new System.Drawing.Point(768, 372);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Primary = true;
-            this.btnSalvar.Size = new System.Drawing.Size(102, 29);
+            this.btnSalvar.Size = new System.Drawing.Size(136, 36);
             this.btnSalvar.TabIndex = 53;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -340,14 +357,14 @@
             // 
             // frmPacientesManter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 352);
+            this.ClientSize = new System.Drawing.Size(929, 433);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gpbPaciente);
             this.Controls.Add(this.gpbInfoAdicional);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPacientesManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paciente";
@@ -365,11 +382,8 @@
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblRg;
-        private System.Windows.Forms.TextBox txbRg;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.TextBox txbCpf;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbGrauInstrucao;
         private System.Windows.Forms.Label lblProfissao;
         private System.Windows.Forms.TextBox txbProfissao;
         private System.Windows.Forms.Label lblDtNascimento;
@@ -377,17 +391,20 @@
         private System.Windows.Forms.TextBox txbID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblGrupoSanguineo;
-        private System.Windows.Forms.TextBox txbGrupoSanguineo;
         private System.Windows.Forms.Label lblAltura;
-        private System.Windows.Forms.TextBox txbAltura;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.TextBox txbPeso;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txbProntuario;
         private System.Windows.Forms.ComboBox cmbEstado;
-        private System.Windows.Forms.MaskedTextBox txbDtNascimento;
         private System.Windows.Forms.GroupBox gpbInfoAdicional;
         private System.Windows.Forms.GroupBox gpbPaciente;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalvar;
+        private System.Windows.Forms.ComboBox txbGrupoSanguineo;
+        private System.Windows.Forms.MaskedTextBox txbAltura;
+        private System.Windows.Forms.MaskedTextBox txbRg;
+        private System.Windows.Forms.MaskedTextBox txbCpf;
+        private System.Windows.Forms.DateTimePicker txbDtNascimento;
+        private System.Windows.Forms.ComboBox txbGrauInstrucao;
     }
 }

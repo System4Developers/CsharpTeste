@@ -36,6 +36,7 @@ namespace s4d_biomedicina.Apresentacao
                     txbBairro.Text = controle.Dr.GetValue(2).ToString();
                     txbCidade.Text = controle.Dr.GetValue(4).ToString();
                     txbEstado.Text = controle.Dr.GetValue(5).ToString();
+                    txbComplemento.Text = controle.Dr.GetValue(6).ToString();
                 }
             }
         }

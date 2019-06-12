@@ -44,9 +44,10 @@
             // dtpAgendamento
             // 
             this.dtpAgendamento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAgendamento.Location = new System.Drawing.Point(74, 60);
+            this.dtpAgendamento.Location = new System.Drawing.Point(99, 74);
+            this.dtpAgendamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpAgendamento.Name = "dtpAgendamento";
-            this.dtpAgendamento.Size = new System.Drawing.Size(248, 20);
+            this.dtpAgendamento.Size = new System.Drawing.Size(329, 22);
             this.dtpAgendamento.TabIndex = 0;
             // 
             // cmbHorario
@@ -59,16 +60,18 @@
             "09:30",
             "10:15",
             "10:45"});
-            this.cmbHorario.Location = new System.Drawing.Point(74, 128);
+            this.cmbHorario.Location = new System.Drawing.Point(99, 158);
+            this.cmbHorario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbHorario.Name = "cmbHorario";
-            this.cmbHorario.Size = new System.Drawing.Size(248, 21);
+            this.cmbHorario.Size = new System.Drawing.Size(329, 24);
             this.cmbHorario.TabIndex = 1;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(74, 322);
+            this.btnSalvar.Location = new System.Drawing.Point(99, 396);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(101, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(135, 28);
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -81,59 +84,66 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "PENDENTE",
             "FINALIZADO"});
-            this.cmbStatus.Location = new System.Drawing.Point(74, 265);
+            this.cmbStatus.Location = new System.Drawing.Point(99, 326);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(248, 21);
+            this.cmbStatus.Size = new System.Drawing.Size(329, 24);
             this.cmbStatus.TabIndex = 3;
             // 
             // txbSolicitante
             // 
-            this.txbSolicitante.Location = new System.Drawing.Point(74, 198);
+            this.txbSolicitante.Location = new System.Drawing.Point(99, 244);
+            this.txbSolicitante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbSolicitante.Name = "txbSolicitante";
-            this.txbSolicitante.Size = new System.Drawing.Size(248, 20);
-            this.txbSolicitante.TabIndex = 4;
+            this.txbSolicitante.Size = new System.Drawing.Size(329, 22);
+            this.txbSolicitante.TabIndex = 2;
             // 
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(74, 41);
+            this.lblData.Location = new System.Drawing.Point(99, 50);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(30, 13);
+            this.lblData.Size = new System.Drawing.Size(38, 17);
             this.lblData.TabIndex = 5;
             this.lblData.Text = "Data";
             // 
             // lblHorario
             // 
             this.lblHorario.AutoSize = true;
-            this.lblHorario.Location = new System.Drawing.Point(74, 112);
+            this.lblHorario.Location = new System.Drawing.Point(99, 138);
+            this.lblHorario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(41, 13);
+            this.lblHorario.Size = new System.Drawing.Size(55, 17);
             this.lblHorario.TabIndex = 6;
             this.lblHorario.Text = "Horário";
             // 
             // lblSolicitante
             // 
             this.lblSolicitante.AutoSize = true;
-            this.lblSolicitante.Location = new System.Drawing.Point(74, 182);
+            this.lblSolicitante.Location = new System.Drawing.Point(99, 224);
+            this.lblSolicitante.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSolicitante.Name = "lblSolicitante";
-            this.lblSolicitante.Size = new System.Drawing.Size(59, 13);
+            this.lblSolicitante.Size = new System.Drawing.Size(77, 17);
             this.lblSolicitante.TabIndex = 7;
             this.lblSolicitante.Text = "Solicitante:";
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(74, 249);
+            this.lblStatus.Location = new System.Drawing.Point(99, 306);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(124, 13);
+            this.lblStatus.Size = new System.Drawing.Size(164, 17);
             this.lblStatus.TabIndex = 8;
             this.lblStatus.Text = "Estado do Agendamento";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(217, 322);
+            this.btnCancelar.Location = new System.Drawing.Point(289, 396);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(105, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(140, 28);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -141,9 +151,9 @@
             // 
             // frmPacientesAgendamentosManter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 416);
+            this.ClientSize = new System.Drawing.Size(536, 512);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblSolicitante);
             this.Controls.Add(this.lblHorario);
@@ -155,6 +165,7 @@
             this.Controls.Add(this.cmbHorario);
             this.Controls.Add(this.dtpAgendamento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPacientesAgendamentosManter";

@@ -41,13 +41,18 @@ namespace s4d_biomedicina.Apresentacao
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int idArea;
-
             this.comando = "editar";
-            idArea = Convert.ToInt32(dgvExamesAreas.CurrentRow.Cells[0].Value);
-
-            frmExamesAreasManter frmAreas = new frmExamesAreasManter(this.comando, idArea);
-            frmAreas.ShowDialog();
-            AtualizarTabela();
+            try
+            {
+                idArea = Convert.ToInt32(dgvExamesAreas.CurrentRow.Cells[0].Value);
+                frmExamesAreasManter frmAreas = new frmExamesAreasManter(this.comando, idArea);
+                frmAreas.ShowDialog();
+                AtualizarTabela();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Selecione um item da tabela");
+            }
         }
 
         private void AtualizarTabela()

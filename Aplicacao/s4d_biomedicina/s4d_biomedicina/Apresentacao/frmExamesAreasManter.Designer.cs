@@ -39,41 +39,47 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(37, 36);
+            this.lblID.Location = new System.Drawing.Point(49, 44);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.Size = new System.Drawing.Size(21, 17);
             this.lblID.TabIndex = 40;
             this.lblID.Text = "ID";
             // 
             // txbID
             // 
             this.txbID.Enabled = false;
-            this.txbID.Location = new System.Drawing.Point(147, 31);
+            this.txbID.Location = new System.Drawing.Point(196, 38);
+            this.txbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(173, 20);
+            this.txbID.Size = new System.Drawing.Size(229, 22);
             this.txbID.TabIndex = 39;
+            this.txbID.TabStop = false;
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(37, 86);
+            this.lblLogin.Location = new System.Drawing.Point(49, 106);
+            this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(36, 13);
+            this.lblLogin.Size = new System.Drawing.Size(45, 17);
             this.lblLogin.TabIndex = 37;
             this.lblLogin.Text = "AREA";
             // 
             // txbArea
             // 
-            this.txbArea.Location = new System.Drawing.Point(147, 81);
+            this.txbArea.Location = new System.Drawing.Point(196, 100);
+            this.txbArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbArea.Name = "txbArea";
-            this.txbArea.Size = new System.Drawing.Size(173, 20);
-            this.txbArea.TabIndex = 36;
+            this.txbArea.Size = new System.Drawing.Size(229, 22);
+            this.txbArea.TabIndex = 1;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(245, 129);
+            this.btnCancelar.Location = new System.Drawing.Point(327, 159);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 38;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -81,9 +87,10 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(147, 129);
+            this.btnSalvar.Location = new System.Drawing.Point(196, 159);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(100, 28);
             this.btnSalvar.TabIndex = 38;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -91,9 +98,9 @@
             // 
             // frmExamesAreasManter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 183);
+            this.ClientSize = new System.Drawing.Size(529, 225);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.btnCancelar);
@@ -101,6 +108,7 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txbArea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmExamesAreasManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Área de Biomedicina";

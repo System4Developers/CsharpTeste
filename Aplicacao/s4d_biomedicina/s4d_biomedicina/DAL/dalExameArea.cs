@@ -105,13 +105,13 @@ namespace s4d_biomedicina.DAL
 
             if (idExameArea > 0)
             {
-                strSQL = "select idExameArea as [id Area] from examesAreas where idExameArea = @idExameArea";
+                strSQL = "select idExameArea as [ID],dsExameArea as [Área da Biomedicina] from examesAreas where idExameArea = @idExameArea";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
                 sda.SelectCommand.Parameters.AddWithValue("@idExameArea", idExameArea);
             }
             else
             {
-                strSQL = "select * from examesAreas where dsExameArea like @dsExameArea";
+                strSQL = "select idExameArea as [ID],dsExameArea as [Área da Biomedicina] from examesAreas where dsExameArea like @dsExameArea";
                 sda = new SqlDataAdapter(strSQL, con.Conectar());
                 sda.SelectCommand.Parameters.AddWithValue("@dsExameArea", string.Format("%{0}%", dsExameArea));
             }

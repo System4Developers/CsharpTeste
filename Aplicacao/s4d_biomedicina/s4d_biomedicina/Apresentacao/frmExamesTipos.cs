@@ -37,11 +37,19 @@ namespace s4d_biomedicina.Apresentacao
         private void btnEditar_Click(object sender, EventArgs e)
         {
             this.comando = "editar";
-            this.idExameTipo = Convert.ToInt32(dgvExamesTipos.CurrentRow.Cells[0].Value);
+            try
+            {
+                this.idExameTipo = Convert.ToInt32(dgvExamesTipos.CurrentRow.Cells[0].Value);
 
-            frmExamesTiposManter frmExamesTiposManter = new frmExamesTiposManter(this.comando, idExameTipo);
-            frmExamesTiposManter.Show();
-            AtualizarTabela();
+                frmExamesTiposManter frmExamesTiposManter = new frmExamesTiposManter(this.comando, idExameTipo);
+                frmExamesTiposManter.Show();
+                AtualizarTabela();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Selecione um item da Tabela");
+            }
+            
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

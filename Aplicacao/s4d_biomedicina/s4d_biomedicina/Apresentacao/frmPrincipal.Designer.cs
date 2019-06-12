@@ -42,7 +42,6 @@
             this.tsiPacientes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTrocarUsuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSair = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbLogin = new System.Windows.Forms.ToolStripTextBox();
             this.mnsMenu = new System.Windows.Forms.MenuStrip();
@@ -90,13 +89,13 @@
             this.tsmExames});
             this.tsmAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmAdmin.Name = "tsmAdmin";
-            this.tsmAdmin.Size = new System.Drawing.Size(98, 23);
-            this.tsmAdmin.Text = "Administrador";
+            this.tsmAdmin.Size = new System.Drawing.Size(67, 23);
+            this.tsmAdmin.Text = "Cadastro";
             // 
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(121, 22);
+            this.tsiUsuarios.Size = new System.Drawing.Size(180, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.tsiUsuarios_Click);
             // 
@@ -107,27 +106,27 @@
             this.tsiExamesTipos,
             this.tsiExamesParametros});
             this.tsmExames.Name = "tsmExames";
-            this.tsmExames.Size = new System.Drawing.Size(121, 22);
+            this.tsmExames.Size = new System.Drawing.Size(180, 22);
             this.tsmExames.Text = "Exames";
             // 
             // tsiExamesAreas
             // 
             this.tsiExamesAreas.Name = "tsiExamesAreas";
-            this.tsiExamesAreas.Size = new System.Drawing.Size(138, 22);
+            this.tsiExamesAreas.Size = new System.Drawing.Size(180, 22);
             this.tsiExamesAreas.Text = "Áreas";
             this.tsiExamesAreas.Click += new System.EventHandler(this.tsiExamesAreas_Click);
             // 
             // tsiExamesTipos
             // 
             this.tsiExamesTipos.Name = "tsiExamesTipos";
-            this.tsiExamesTipos.Size = new System.Drawing.Size(138, 22);
+            this.tsiExamesTipos.Size = new System.Drawing.Size(180, 22);
             this.tsiExamesTipos.Text = "Tipos";
             this.tsiExamesTipos.Click += new System.EventHandler(this.tsiExamesTipos_Click);
             // 
             // tsiExamesParametros
             // 
             this.tsiExamesParametros.Name = "tsiExamesParametros";
-            this.tsiExamesParametros.Size = new System.Drawing.Size(138, 22);
+            this.tsiExamesParametros.Size = new System.Drawing.Size(180, 22);
             this.tsiExamesParametros.Text = "Parametros";
             this.tsiExamesParametros.Click += new System.EventHandler(this.tsiExamesParametros_Click);
             // 
@@ -137,13 +136,13 @@
             this.tsiPacientes});
             this.tsmPesquisa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmPesquisa.Name = "tsmPesquisa";
-            this.tsmPesquisa.Size = new System.Drawing.Size(67, 23);
-            this.tsmPesquisa.Text = "Localizar";
+            this.tsmPesquisa.Size = new System.Drawing.Size(71, 23);
+            this.tsmPesquisa.Text = "Consultar";
             // 
             // tsiPacientes
             // 
             this.tsiPacientes.Name = "tsiPacientes";
-            this.tsiPacientes.Size = new System.Drawing.Size(127, 22);
+            this.tsiPacientes.Size = new System.Drawing.Size(180, 22);
             this.tsiPacientes.Text = "Pacientes";
             this.tsiPacientes.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
@@ -151,30 +150,23 @@
             // 
             this.tsmLogin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmTrocarUsuario,
-            this.alterarSenhaToolStripMenuItem,
             this.tsmSair});
             this.tsmLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmLogin.Name = "tsmLogin";
-            this.tsmLogin.Size = new System.Drawing.Size(49, 23);
-            this.tsmLogin.Text = "Login";
+            this.tsmLogin.Size = new System.Drawing.Size(57, 23);
+            this.tsmLogin.Text = "Acesso";
             // 
             // tsmTrocarUsuario
             // 
             this.tsmTrocarUsuario.Name = "tsmTrocarUsuario";
-            this.tsmTrocarUsuario.Size = new System.Drawing.Size(154, 22);
+            this.tsmTrocarUsuario.Size = new System.Drawing.Size(180, 22);
             this.tsmTrocarUsuario.Text = "Trocar Usuario";
             this.tsmTrocarUsuario.Click += new System.EventHandler(this.tsmTrocarUsuario_Click);
-            // 
-            // alterarSenhaToolStripMenuItem
-            // 
-            this.alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
-            this.alterarSenhaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.alterarSenhaToolStripMenuItem.Text = "Alterar senha";
             // 
             // tsmSair
             // 
             this.tsmSair.Name = "tsmSair";
-            this.tsmSair.Size = new System.Drawing.Size(154, 22);
+            this.tsmSair.Size = new System.Drawing.Size(180, 22);
             this.tsmSair.Text = "Sair";
             this.tsmSair.Click += new System.EventHandler(this.tsmSair_Click);
             // 
@@ -252,7 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsiPacientes;
         private System.Windows.Forms.ToolStripMenuItem tsmLogin;
         private System.Windows.Forms.ToolStripMenuItem tsmTrocarUsuario;
-        private System.Windows.Forms.ToolStripMenuItem alterarSenhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmSair;
         private System.Windows.Forms.ToolStripTextBox tsbLogin;
         private System.Windows.Forms.MenuStrip mnsMenu;
